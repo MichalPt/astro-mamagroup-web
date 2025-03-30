@@ -1,0 +1,77 @@
+---
+import TitlePageLayout from "@/layouts/TitlePageBase.astro";
+
+const membersList: {name:string; position:string; path:any}[] = [
+    {
+        name: "Tomáš Mančal",
+        position: "group co-leader",
+        path: "/mancal/"
+    },
+    {
+        name: "Pavel Malý",
+        position: "group co-leader",
+        path: "/maly/"
+    },
+    {
+        name: "Michal Ptáček",
+        position: "PhD student",
+        path: "/ptacek/"
+    },
+    {
+        name: "Matteo Bruschi",
+        position: "postdoc",
+        path: "/bruschi/"
+    },
+    {
+        name: "Malcolm Garrow",
+        position: "postdoc",
+        path: "/garrow/"
+    },
+    {
+        name: "Veronika Vranková",
+        position: "PhD student",
+        path: "/vrankova/"
+    },
+    {
+        name: "Kateřina Charvátová",
+        position: "PhD student",
+        path: "/charvatova/"
+    },
+    {
+        name: "May Shein",
+        position: "PhD student",
+        path: "/shein/"
+    },
+    {
+        name: "Vladimír Sláma",
+        position: "collaborator",
+        path: "/slama/"
+    },
+    {
+        name: "František Šanda",
+        position: "collaborator",
+        path: "/sanda/"
+    },
+]
+---
+
+
+<TitlePageLayout meta={{ title: "Research" }}>
+    **group photo**
+
+    <h1>
+        Current members of the group:
+    </h1>
+
+    <div class="flex flex-wrap gap-4 justify-center mt-4 mb-15">
+        {membersList.map((person) => <a href="" class="relative items-center justify-center h-50 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest text-center">
+            <h3>{person.name}</h3>
+            <p><i>{person.position}</i></p>
+        </a>)}
+    </div>
+
+    <h1 class="mt-10">
+        Past members of the group:
+    </h1>
+
+</TitlePageLayout>
