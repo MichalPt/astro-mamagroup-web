@@ -1,0 +1,9 @@
+---
+const { list } = Astro.props;
+---
+
+{list.map((item) => (
+    <div class="ml-8">
+        {item.key}: {item.value}
+    </div>
+))}

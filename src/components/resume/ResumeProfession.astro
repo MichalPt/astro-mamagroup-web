@@ -5,6 +5,7 @@ const { list } = Astro.props
 {list.map((item) => (
     <div class="ml-8">
         <h6><i class="fa fa-calendar fa-fw">{item.till < item.from ? <span>since {item.from} </span> : <span>{item.from} &ndash; {item.till}</span>}</i></h6> 
+        {/* <h6><i class="fa fa-calendar fa-fw">{item.till < item.from ? <span>since {item.from} </span> : {item.till === item.from ? <span> {item.from} </span> : <span>{item.from} &ndash; {item.till}</span>}}</i></h6>  */}
         {item.position && <h5><b>{item.position}</b></h5>}
         {item.location && <h5>{item.location}</h5>}
         {item.task && <h5>{item.task}</h5>}
