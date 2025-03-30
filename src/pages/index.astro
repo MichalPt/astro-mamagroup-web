@@ -4,8 +4,8 @@ import SocialList from "@/components/SocialList.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import Note from "@/components/note/Note.astro";
 import { getAllPosts } from "@/data/post";
-import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
+import TitlePageLayout from "@/layouts/TitlePageBase.astro";
 
 // Posts
 const MAX_POSTS = 10;
@@ -20,15 +20,7 @@ const allNotes = await getCollection("note");
 const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 ---
 
-<PageLayout meta={{ title: "Home" }}>
-	<!-- Hero section -->
-	<!-- Background blur -->
-	<div class="absolute top-0 left-1/2 md:top-[-15%] -ml-[50vw] min-h-screen w-screen pointer-events-none blur-3xl opacity-50 overflow-x-hidden">
-		<div class="absolute top-[10%] right-[-40%] w-[65%] h-full bg-gradient-to-b from-purple-300 via-blue-300 to-transparent rounded-full opacity-30 dark:opacity-10"></div>
-		<div class="absolute top-[10%] left-[-40%] w-[65%] h-full bg-gradient-to-b from-blue-300 via-pink-300 to-transparent rounded-full opacity-30 dark:opacity-10"></div>
-		<div class="absolute top-[-20%] left-[-50%] w-[85%] h-full bg-gradient-to-b from-indigo-300 via-orange-300 to-transparent rounded-full opacity-60 dark:opacity-10"></div>
-		<div class="absolute top-[-20%] right-[-50%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-10"></div>
-	</div>
+<TitlePageLayout meta={{ title: "Home" }}>
 	<section class="max-w-xl mx-auto relative flex items-center justify-center h-screen -mt-24">
 		<div class="w-full text-center">
 			<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
@@ -125,5 +117,5 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 		<div class="text-center content-center h-10 w-10 bg-color-900"><span class="text-bgColor">900</span></div>
 	</div>
 	-->
-</PageLayout>
+</TitlePageLayout>
 
