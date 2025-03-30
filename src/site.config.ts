@@ -34,7 +34,7 @@ export const menuLinks: { path: string; title: string }[] = [
 	},
 	{
 		path: "/group/",
-		title: "Group",
+		title: "Research Group",
 	},
 	{
 		path: "/contacts/",
