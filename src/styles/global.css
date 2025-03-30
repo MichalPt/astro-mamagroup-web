@@ -9,7 +9,7 @@
 	font-style: normal;
   }
 
-  
+
 @font-face {
 	font-family: "SFProRounded";
 	src: url("../assets/fonts/SF-Pro-Rounded-Regular.latin.base.ttf") format("truetype");
@@ -370,3 +370,10 @@
 		@apply bg-transparent;
 	}
 }
+
+.center-img {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-grow: 1;
+  }

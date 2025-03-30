@@ -1,0 +1,147 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+const meta = {
+	description: "I'm a starter theme for Astro.build",
+	title: "About",
+};
+
+
+const personalList: { key:string; value:any}[] = [
+    {
+        key: "Date of birth",
+        value: "25/11/1989",
+    },
+    {
+        key: "e-mail",
+        value: "pavel.maly@matfyz.cuni.cz",
+    }
+];
+
+
+const professionsList: { from: any; till: any; location: string; position:string; task:string}[] = [
+	{
+		from: 2022,
+		till: 0,
+        location: "Faculty of Mathematics and Physics, Charles University",
+        position: "Assistent professor, coPI MaMa Group",
+        task: "Coherently and fluorescence-detected ultrafast spectroscopy of complex molecular systems.",
+	},
+    {
+		from: 2021,
+		till: 2023,
+        location: "Faculty of Mathematics and Physics, Charles University",
+        position: "MSCA research fellow",
+        task: "Work on project FluoTRAM.",
+	},
+    {
+		from: 2019,
+		till: 2021,
+        location: "",
+        position: "Humboldt research fellow",
+        task: "",
+	},
+    {
+		from: 2018,
+		till: 2019,
+        location: "Institute of Physical and Theoretical Chemistry, University of Würzburg, Germany",
+        position: "Postdoc at the group of prof. Tobias Brixner",
+        task: "Development of ultrafast nonlinear spectroscopy techniques, focus on comparison of coherent and incoherent signal detection.",
+	},
+];
+
+
+const educationList: { from: any; till: any; degree: string; awards: any; location: string; thesis:string; supervisor: string }[] = [
+	{
+		from: 2014,
+		till: 2018,
+        degree: "joint Ph.D. in Biophysics",
+        awards: "awarded Cum Laude (VU) and With Honors (CU)",
+        location: "Charles University in Prague, Czech Republic and Vrije Universiteit Amsterdam, Netherlands",
+        thesis: "Role of system-bath interaction timescale in photosynthetic excitation energy transfer",
+        supervisor: "Tomáš Mančal (CU) and Rienk van Grondelle (VU)",
+	},
+    {
+		from: 2012,
+		till: 2014,
+        degree: "M.Sc. in Physics, spec. Optics and Optoelectronics",
+        awards: "awarded With Honors",
+        location: "Faculty of Mathematics and Physics, Charles University in Prague, Czech Republic",
+        thesis: "Single-molecule spectroscopy of photosynthetic antenna systems",
+        supervisor: "Tomáš Mančal",
+	},
+    {
+		from: 2009,
+		till: 2012,
+        degree: "B.Sc. in Physics",
+        awards: "awarded With Honors",
+        location: "Faculty of Mathematics and Physics, Charles University in Prague, Czech Republic",
+        thesis: "Comparison of perturbative and non-perturbative approaches to optical spectroscopy",
+        supervisor: "Tomáš Mančal",
+	},
+];
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6">RNDr. Pavel Malý, Ph.D.</h1>
+	<div class="prose prose-citrus max-w-none">
+        <h2 class="mt-12 mb-4">
+            Personal Information
+        </h2>
+        <div>
+            {personalList.map((item) => (
+                <div>
+                    {item.key}: {item.value}
+                </div>
+            ))}
+
+        </div>
+        
+        <h2 class="mt-12 mb-4">
+            Professional Experience
+        </h2>
+        <div>
+            {professionsList.map((item) => (
+                <div class="ml-8">
+                    <h6><i class="fa fa-calendar fa-fw">{item.till < item.from ? <span>since {item.from} </span> : <span>{item.from} &ndash; {item.till}</span>}</i></h6> 
+                    {item.position && <h5><b>{item.position}</b></h5>}
+                    {item.location && <h5>{item.location}</h5>}
+                    {item.task && <h5>{item.task}</h5>}
+                    <hr class="mt-4 mb-3"/>
+                </div>
+            ))}
+        </div>
+
+        <h2 class="mt-12 mb-4">
+            Education
+        </h2>
+        <div>
+            {educationList.map((item) => (
+                <div class="ml-8">
+                    <h6><i class="fa fa-calendar fa-fw">{item.till < item.from ? <span>since {item.from} </span> : <span>{item.till}</span>}</i></h6> 
+                    <h5><b>{item.degree}</b>{item.awards && <span>, {item.awards}</span>}</h5>
+                    <h5>{item.location}</h5>
+                    <h5><i>Thesis:</i> {item.thesis}</h5>
+                    <h5><i>Supervisor:</i> {item.supervisor}</h5>
+                    <hr class="mt-4 mb-3"/>
+                </div>
+            ))}
+        </div>
+
+		<!-- <p>Here are my some of my awesome built in features:</p>
+		<ul class="list-inside list-disc" role="list">
+			<li>I'm ultra fast as I'm a static site</li>
+			<li>I'm fully responsive</li>
+		</ul>
+		<p>
+			Clone or fork my <a
+				aria-label="github repository"
+				class="citrus-link inline-block"
+				href="https://github.com/artemkutsan/astro-citrus"
+				rel="noreferrer"
+				target="_blank">repo</a
+			> if you like me!
+		</p> -->
+	</div>
+
+</PageLayout>
