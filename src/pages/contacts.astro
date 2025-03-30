@@ -1,7 +1,24 @@
 ---
 import TitlePageLayout from "@/layouts/TitlePageBase.astro";
+import { Image } from 'astro:assets';
+import buildingPhoto from "@/assets/images/building-1.png";
 ---
 
 <TitlePageLayout meta={{ title: "Contacts" }}>
-    Address:  Ke Karlovu 5, Ke Karlovu 2026/5, Praha 2, Czech Republic
+    <div class="flex mb-8 justify-center">
+        <Image src={buildingPhoto} alt="Building-photo" height="400" width="600"/>
+    </div>
+    <div class="flex justify-center">
+        <div class="mx-4">
+            <i>Address: </i>
+        </div> 
+        <div>
+            Institute of Physics, Theoretical Division<br>
+            Faculty of Mathematics and Physics<br>
+            Charles University<br>
+            Ke Karlovu 2026/5<br>
+            CZ-121 16 Prague 2<br>
+            Czech Republic
+        </div>
+    </div>
 </TitlePageLayout>
