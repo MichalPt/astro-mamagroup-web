@@ -1,0 +1,14 @@
+---
+const { list } = Astro.props;
+---
+
+{list.map((item) => (
+    <div class="ml-8">
+        <h6><i class="fa fa-calendar fa-fw">{item.till < item.from ? <span>since {item.from} </span> : <span>{item.till}</span>}</i></h6> 
+        <h5><b>{item.degree}</b>{item.awards && <span>, {item.awards}</span>}</h5>
+        <h5>{item.location}</h5>
+        <h5><i>Thesis:</i> {item.thesis}</h5>
+        <h5><i>Supervisor:</i> {item.supervisor}</h5>
+        <hr class="mt-4 mb-3"/>
+    </div>
+))}

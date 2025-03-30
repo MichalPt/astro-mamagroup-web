@@ -1,5 +1,7 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
+import ProfessionsList from "@/components/resume/ResumeProfession.astro";
+import EducationList from "@/components/resume/ResumeEducation.astro";
 
 const meta = {
 	description: "I'm a starter theme for Astro.build",
@@ -101,31 +103,14 @@ const educationList: { from: any; till: any; degree: string; awards: any; locati
             Professional Experience
         </h2>
         <div>
-            {professionsList.map((item) => (
-                <div class="ml-8">
-                    <h6><i class="fa fa-calendar fa-fw">{item.till < item.from ? <span>since {item.from} </span> : <span>{item.from} &ndash; {item.till}</span>}</i></h6> 
-                    {item.position && <h5><b>{item.position}</b></h5>}
-                    {item.location && <h5>{item.location}</h5>}
-                    {item.task && <h5>{item.task}</h5>}
-                    <hr class="mt-4 mb-3"/>
-                </div>
-            ))}
+            <ProfessionsList list={professionsList}/>
         </div>
 
         <h2 class="mt-12 mb-4">
             Education
         </h2>
         <div>
-            {educationList.map((item) => (
-                <div class="ml-8">
-                    <h6><i class="fa fa-calendar fa-fw">{item.till < item.from ? <span>since {item.from} </span> : <span>{item.till}</span>}</i></h6> 
-                    <h5><b>{item.degree}</b>{item.awards && <span>, {item.awards}</span>}</h5>
-                    <h5>{item.location}</h5>
-                    <h5><i>Thesis:</i> {item.thesis}</h5>
-                    <h5><i>Supervisor:</i> {item.supervisor}</h5>
-                    <hr class="mt-4 mb-3"/>
-                </div>
-            ))}
+            <EducationList list={educationList}/>
         </div>
 
 		<!-- <p>Here are my some of my awesome built in features:</p>
