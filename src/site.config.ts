@@ -2,7 +2,7 @@ import type { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
-	author: "Artem Kutsan",
+	author: "Michal Ptáček",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
 		locale: "en-GB",
@@ -25,10 +25,6 @@ export const siteConfig: SiteConfig = {
 // Used to generate links in both the Header & Footer.
 export const menuLinks: { path: string; title: string }[] = [
 	{
-		path: "/",
-		title: "Home",
-	},
-	{
 		path: "/mancal/",
 		title: "Tomáš Mančal",
 	},
@@ -37,15 +33,19 @@ export const menuLinks: { path: string; title: string }[] = [
 		title: "Pavel Malý",
 	},
 	{
+		path: "/group/",
+		title: "Group",
+	},
+	{
 		path: "/about/",
 		title: "About",
 	},
-	{
-		path: "/posts/",
-		title: "Blog",
-	},
-	{
-		path: "/notes/",
-		title: "Notes",
-	},
+	// {
+	// 	path: "/posts/",
+	// 	title: "Blog",
+	// },
+	// {
+	// 	path: "/notes/",
+	// 	title: "Notes",
+	// },
 ];

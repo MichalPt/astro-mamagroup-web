@@ -90,6 +90,9 @@ importers:
       '@iconify-json/mdi':
         specifier: ^1.2.2
         version: 1.2.3
+      '@iconify-json/oui':
+        specifier: ^1.2.4
+        version: 1.2.4
       '@iconify-json/solar':
         specifier: ^1.2.2
         version: 1.2.2
@@ -588,6 +591,9 @@ packages:
 
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
+
+  '@iconify-json/oui@1.2.4':
+    resolution: {integrity: sha512-h+1Hip0fMRLDeWIsIHTwSp3dCEcAuJgRZYgQA+L18RiFJ8rG03gL74rUXBD/K2W/18Lm1IQWRjr0YfJMWR69gQ==}
 
   '@iconify-json/solar@1.2.2':
     resolution: {integrity: sha512-lcTb6DWL4HZObiY1W3fHfuxxuQHUc6CFHFeywKEx7Ry0k+dU6POZCMC7oVLr0F8vuf+KgaQ3oOoGO/yFzOwrNg==}
@@ -3907,6 +3913,10 @@ snapshots:
       '@iconify/types': 2.0.0
 
   '@iconify-json/mdi@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/oui@1.2.4':
     dependencies:
       '@iconify/types': 2.0.0
 
