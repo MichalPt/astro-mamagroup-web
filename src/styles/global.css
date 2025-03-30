@@ -370,3 +370,7 @@
 .imginv {
   filter: invert(1);
 }
+
+.imgcircle {
+	clip-path: circle();
+  }
