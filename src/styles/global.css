@@ -102,8 +102,8 @@
 
 		/* Акценты */
 		--theme-accent-base: var(--bg-hue) 53% 27%; /* Основной акцентный цвет */
-		--theme-accent-one: var(--bg-hue) 53% 27%; /* Первый дополнительный акцентный цвет */
-		--theme-accent-two: 351deg 66% 48%; /* Второй дополнительный акцентный цвет */
+		--theme-accent-one: var(--bg-hue) 53% 20%; /* Первый дополнительный акцентный цвет */
+		--theme-accent-two: 10deg 66% 40%; /* Второй дополнительный акцентный цвет */
 		
 		/* Вариант */ /* --theme-accent-two: 344deg 63% 45%; */
 		
@@ -164,8 +164,8 @@
 
 		/* Акценты */
 		--theme-accent-base: var(--hue) 10% 85%; 
-		--theme-accent-one: 50deg 49% 80%; /* Первый дополнительный акцентный цвет */
-		--theme-accent-two: 50deg 72% 63%; /* 50deg 72% 63% */ /* Второй дополнительный акцентный цвет (был 45deg 80% 50%) */
+		--theme-accent-one: 150deg 49% 80%; /* Первый дополнительный акцентный цвет */
+		--theme-accent-two: 180deg 72% 98%; /* 50deg 72% 63% */ /* Второй дополнительный акцентный цвет (был 45deg 80% 50%) */
 		/* --theme-accent-two: 0deg 75% 89%; */
 		/* --theme-accent-base: var(--hue) 97% 71%; */
 
@@ -343,18 +343,15 @@
 		}
 	}
 
-	/* Основной стиль для блока pre */
 	pre {
 		@apply bg-[var(--code-bg)] text-[var(--theme-text)] rounded-lg leading-loose m-0;
 		/* @apply bg-[var(--code-bg)] text-[var(--theme-accent)] rounded-lg leading-loose m-0; */
 	}
 
-	/* Стиль для инлайнового кода (rehype pretty code переопределяет стили в tailwind.config.css) */
 	:not(pre) > code {
 		@apply bg-[var(--code-inline-bg)] px-2 py-1 text-sm rounded-lg;
 	}
 
-	/* Стиль для кнопки копирования кода rehype-pretty-copy (кнопка реализована отдельно) */
 	/*
 	button.rehype-pretty-copy {
 		@apply absolute top-1 right-1 bg-transparent m-auto size-8 rounded-md p-1 backdrop-blur-none;
@@ -363,17 +360,13 @@
 	*/
 }
 
-/* ПЕРЕПРОВЕРИТЬ !!! */
 @layer components {
-	/* Переопределение стилей для <mark> в статье */
 	article mark {
 		@apply bg-transparent;
 	}
 }
 
-.center-img {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	flex-grow: 1;
-  }
+
+.imginv {
+  filter: invert(1);
+}
