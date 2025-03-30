@@ -1,0 +1,144 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+import ProfessionsList from "@/components/resume/ResumeProfession.astro";
+import EducationList from "@/components/resume/ResumeEducation.astro";
+
+const meta = {
+	description: "I'm a starter theme for Astro.build",
+	title: "About",
+};
+
+
+const personalList: { key:string; value:any}[] = [
+    {
+        key: "Date of birth",
+        value: "23/04/1974",
+    },
+    {
+        key: "e-mail",
+        value: "tomas.mancal@matfyz.cuni.cz",
+    }
+];
+
+
+const professionsList: { from: any; till: any; location: string; position:string; task:string}[] = [
+	{
+		from: 2021,
+		till: 0,
+        location: "Faculty of Mathematics and Physics, Charles University",
+        position: "Associate Professor at the Charles University",
+        task: "",
+	},
+    {
+		from: 2012,
+		till: 0,
+        location: "",
+        position: "Editorial Board Member for Scientific Reports (Nature Publishing Group)",
+        task: "",
+	},
+    {
+		from: 2007,
+		till: 2020,
+        location: "Faculty of Mathematics and Physics, Charles University",
+        position: "Assistant Professor at the Charles University",
+        task: "Non-linear optical spectroscopy of dye molecules and photosynthetic complexes, effects of coherence in energy transfer in open quantum systems.",
+	},
+    {
+		from: 2014,
+		till: 2014,
+        location: "Faculty of Science, VU University Amsterdam, Netherlands",
+        position: "Visiting Professor (6 months)",
+        task: "",
+	},
+    {
+		from: 2004,
+		till: 2006,
+        location: "Lawrence Berkeley National Laboratory",
+        position: "Postdoctoral Research Fellow in Chemistry at the group of Prof. Graham R. Fleming",
+        task: "Simulations of two-dimensional optical coherent spectroscopy of photosynthetic systems.",
+	},
+    {
+		from: 2003,
+		till: 2004,
+        location: "Department of Chemistry, University of California, Berkeley",
+        position: "Postdoctoral Research Fellow in Chemistry at the group of Prof. Graham R. Fleming",
+        task: "Theory of two-dimensional optical spectroscopy and two-color photon echo peak shift.",
+	},
+    {
+		from: 1998,
+		till: 2002,
+        location: "Institute of Physics of the Humboldt-University at Berlin",
+        position: "group of Prof. Roland Zimmermann under supervision of Dr. Volkhard May",
+        task: "Non-Markovian dynamics of open quantum systems, optimal control theory of electron transfer.",
+	},
+];
+
+
+const educationList: { from: any; till: any; degree: string; awards: any; location: string; thesis:string; supervisor: string }[] = [
+	{
+		from: 1997,
+		till: 2002,
+        degree: "PhD in Physics",
+        awards: "",
+        location: "Humboldt-University at Berlin, Germany",
+        thesis: "Laser Pulse Control of Dissipative Dynamics in Molecular Systems",
+        supervisor: "Dr. Volkhard May",
+	},
+    {
+		from: 1992,
+		till: 1997,
+        degree: "M.Sc. in Physics",
+        awards: "",
+        location: "Faculty of Mathematics and Physics, Charles University in Prague, Czech Republic",
+        thesis: "Solution of Generalized Master Equation for a Model System in Interaction with hermodynamic Bath",
+        supervisor: "Prof. Lubomir Skala",
+	},
+];
+---
+
+<PageLayout meta={meta}>
+	<h1 class="title mb-6">doc. Mgr. Tomáš Mančal, Ph.D.</h1>
+	<div class="prose prose-citrus max-w-none">
+        <h2 class="mt-12 mb-4">
+            Personal Information
+        </h2>
+        <div>
+            {personalList.map((item) => (
+                <div>
+                    {item.key}: {item.value}
+                </div>
+            ))}
+
+        </div>
+        
+        <h2 class="mt-12 mb-4">
+            Professional Experience
+        </h2>
+        <div>
+            <ProfessionsList list={professionsList}/>
+        </div>
+
+        <h2 class="mt-12 mb-4">
+            Education
+        </h2>
+        <div>
+            <EducationList list={educationList}/>
+        </div>
+
+		<!-- <p>Here are my some of my awesome built in features:</p>
+		<ul class="list-inside list-disc" role="list">
+			<li>I'm ultra fast as I'm a static site</li>
+			<li>I'm fully responsive</li>
+		</ul>
+		<p>
+			Clone or fork my <a
+				aria-label="github repository"
+				class="citrus-link inline-block"
+				href="https://github.com/artemkutsan/astro-citrus"
+				rel="noreferrer"
+				target="_blank">repo</a
+			> if you like me!
+		</p> -->
+	</div>
+
+</PageLayout>
