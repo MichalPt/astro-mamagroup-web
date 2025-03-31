@@ -11,7 +11,7 @@ import profilePhoto from "@/assets/profile_photos/pavel-maly-400.jpg";
 <TitlePageLayout meta={{ title: "Malý" }}>
 	<section class="max-w-xl mx-auto relative flex items-center justify-center h-screen -mt-24">
 		<div class="w-full text-center">
-            <div class="flex justify-center space-x-4 mb-8">
+            <div class="flex justify-center space-x-4 mb-8 imgcircle">
                 <Image src={profilePhoto} alt="profile-photo" height="200" width="200"/>
             </div>
 			<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
@@ -40,17 +40,17 @@ import profilePhoto from "@/assets/profile_photos/pavel-maly-400.jpg";
 				</a>
 			</div>
             <div class="flex justify-center space-x-4 mt-4">
-				<a href="/mancal/about/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
+				<a href="/maly/teaching/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
 					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
 						Teaching
 					</span>
 				</a>
 
-				<a href="/mancal/research/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
+				<!-- <a href="/maly/outreach/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
 					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
 						Outreach
 					</span>
-				</a>
+				</a> -->
 			</div>
 		</div>
 	</section>
