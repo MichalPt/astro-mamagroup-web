@@ -15,6 +15,7 @@ const { list } = Astro.props;
           <div class="text-left grow">
             <p><b>{work.title} </b></p>
             <div class="text-sm">
+              {work.authors && <p>{work.authors}</p>}
               {work.journal && <p>@{work.journal}</p>}
               {work.doi && <p>DOI:<a href={`https://doi.org/${work.doi}`} class="hover:text-accent hover:underline"> {work.doi} </a></p>}
             </div>
