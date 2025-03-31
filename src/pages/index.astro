@@ -25,14 +25,14 @@ const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 <TitlePageLayout meta={{ title: "Home" }}>
 	<section class="max-w-xl mx-auto relative flex items-center justify-center h-screen -mt-24">
 		<div class="w-full text-center">
-			<div class="flex justify-center mb-4">
+			<div class="flex justify-center mb-4 dark:brightness-200">
 				<Image src={imgFmo} alt="fmo" height="500" width="500"/>
 			</div>
 			<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
 				Welcome to MaMa Group website
 			</span>
 			<p class="mt-4 mb-4 text-lg font-medium">
-				where we bridge theoretical and experimental knowledge of nonlinear optical spectroscopy
+				where we bridge theoretical and experimental knowledge<br> of nonlinear optical spectroscopy
 			</p>
 			<!-- <div class="flex justify-center mb-4">
 				<SocialList />

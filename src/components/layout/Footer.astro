@@ -1,6 +1,7 @@
 ---
 import { menuLinks, siteConfig } from "@/site.config";
 import { Image } from "astro:assets";
+import ImageInv from "../ImageInv.astro";
 import logoMffCuni from "@/assets/images/logo-mff-cuni-eng-300.png";
 
 const year = new Date().getFullYear();
@@ -24,7 +25,7 @@ const year = new Date().getFullYear();
 	<div class="justify-right">
 		<div class="flex-none">
 			<a href="https://www.mff.cuni.cz/">
-				<Image src={logoMffCuni} alt="logo-mff" height="150" width="300"/>
+				<ImageInv src={logoMffCuni} alt="logo-mff" height="150" width="300"/>
 			</a>
 		</div>
 		<br>

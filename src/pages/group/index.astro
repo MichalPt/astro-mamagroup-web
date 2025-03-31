@@ -7,67 +7,78 @@ const profilePhotoFolder = "/src/assets/profile_photos/"
 /* The argument of import.meta.glob must not contain any variable! Must be a string as it si now! */
 const allImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/profile_photos/*.{jpg,png,webp,jpeg,gif}");
 
+const positionOrder = {"group co-leader":1, "postdoc":2, "PhD student":3, "collaborator":4};
 
-const membersList: {name:string; position:string; path:any, photo:any}[] = [
+const membersList: {name:string; position:string; path:any, photo:any, order:number}[] = [
     {
         name: "Tomáš Mančal",
         position: "group co-leader",
-        path: "/mancal/",
+        path: "mancal",
         photo: "tomas-mancal-source.jpg",
+        order: 1
     },
     {
         name: "Pavel Malý",
         position: "group co-leader",
-        path: "/maly/",
+        path: "maly",
         photo: "pavel-maly-400.jpg",
+        order: 1
     },
     {
         name: "Michal Ptáček",
         position: "PhD student",
-        path: "/ptacek/",
+        path: "ptacek",
         photo: "michal-ptacek-300.jpg",
+        order: 1
     },
     {
         name: "Matteo Bruschi",
         position: "postdoc",
-        path: "/bruschi/",
+        path: "bruschi",
         photo: "profile-img.jpg",
+        order: 1
     },
     {
         name: "Malcolm Garrow",
         position: "postdoc",
-        path: "/garrow/",
+        path: "garrow",
         photo: "profile-img.jpg",
+        order: 2
     },
     {
         name: "Veronika Vranková",
         position: "PhD student",
-        path: "/vrankova/",
+        path: "vrankova",
         photo: "profile-img.jpg",
+        order: 1
     },
     {
         name: "Kateřina Charvátová",
         position: "PhD student",
-        path: "/charvatova/",
+        path: "charvatova",
         photo: "profile-img.jpg",
+        order: 1
     },
     {
         name: "May Shein",
         position: "PhD student",
-        path: "/shein/",
+        path: "shein",
         photo: "profile-img.jpg",
+        order: 1
     },
     {
         name: "Vladimír Sláma",
         position: "collaborator",
-        path: "/slama/",
+        path: "slama",
         photo: "profile-img.jpg",
+        order: 5
     },
     {
         name: "František Šanda",
         position: "collaborator",
-        path: "/sanda/",
+        path: "sanda",
         photo: "profile-img.jpg",
+        order: 1
     },
 ]
 ---
@@ -79,15 +90,22 @@ const membersList: {name:string; position:string; path:any, photo:any}[] = [
     <h1>
         Current members of the group:
     </h1>
-
-    <div class="flex flex-wrap gap-4 justify-center mt-4 mb-15">
-        {membersList.map((person) => <a href="" class="relative items-center justify-center h-50 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center">
-            <div class="flex justify-center text-center imgcircle mt-2">
-                <Image src={allImages[profilePhotoFolder+person.photo]()} alt="profile-photo" height="90" width="90"/>
-            </div>
-            <h3>{person.name}</h3>
-            <p><i>{person.position}</i></p>
-        </a>)}
+    <div class="justify-center flex">
+        <div class="flex flex-wrap gap-4 justify-center mt-4 mb-15 max-w-4xl">
+            {membersList.map((person) => 
+                <a 
+                    href=`/group/${person.path}` 
+                    class="relative items-center justify-center h-50 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center order-[var(--customposition)]"
+                    style="`--customposition:${person.order]}`"
+                >
+                    {/* <p>{positionOrder[person.position]}, {person.order}</p> */}
+                    <div class="flex justify-center text-center imgcircle mt-2">
+                        <Image src={allImages[profilePhotoFolder+person.photo]()} alt="profile-photo" height="90" width="90"/>
+                    </div>
+                    <h3>{person.name}</h3>
+                    <p><i>{person.position}</i></p>
+                </a>)}
+        </div>
     </div>
 
     <h1 class="mt-10">
