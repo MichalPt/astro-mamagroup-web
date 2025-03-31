@@ -1,27 +1,15 @@
 ---
 import TitlePageLayout from "@/layouts/TitlePageBase.astro";
 import orcidFetch from '@/scripts/orcidFetcher.js';
+import PublicationList from "@/components/PublicationList.astro";
 
 const orcid = '0000-0003-1736-3054';
 const token = import.meta.env.ORCID_ACCESS_TOKEN;
-
 const works = await orcidFetch(orcid, token);
 ---
 
 <TitlePageLayout meta={{ title: "Publications" }}>
-    Here will be listed my publications as automatically imported from ORCID.
+    <h1>List of publiations (automatically imported from ORCID):</h1>
 
-    <ul>
-        {works.map((work) => (
-          <li>
-            <h3 class="flex gap-x-4"> <div class="w-12">{work.pubDate.year["value"]}&nbsp;| </div> <div class="flex text-left"><b>{work.title} </b></div> </h3>
-
-            <div class="ml-16 text-sm">
-                {work.journal && <p>@{work.journal}</p>}
-                {work.doi && <p>DOI:<a href={`https://doi.org/${work.doi}`}> {work.doi} </a></p>}
-            </div>
-            </span>
-          </li>
-        ))}
-      </ul>
+    <PublicationList list="{works}">
 </TitlePageLayout>

@@ -1,0 +1,17 @@
+---
+const { list } = Astro.props;
+---
+
+<ul>
+    {list.map((work) => (
+      <li>
+        <h3 class="flex gap-x-4"> <div class="w-12">{work.pubDate.year["value"]}&nbsp;| </div> <div class="flex text-left"><b>{work.title} </b></div> </h3>
+
+        <div class="ml-16 text-sm">
+            {work.journal && <p>@{work.journal}</p>}
+            {work.doi && <p>DOI:<a href={`https://doi.org/${work.doi}`} class="hover:text-accent hover:underline"> {work.doi} </a></p>}
+        </div>
+        </span>
+      </li>
+    ))}
+</ul>
