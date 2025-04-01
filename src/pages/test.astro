@@ -1,0 +1,26 @@
+---
+const positionOrder = {
+  manager: 3,
+  developer: 1,
+  designer: 2,
+  // Add other positions as needed
+};
+
+const people = [
+  { name: 'Alice', position: 'manager' },
+  { name: 'Bob', position: 'developer' },
+  { name: 'David', position: 'designer' },
+  { name: 'Charlie', position: 'unknown' }, // Example of unknown position
+];
+---
+
+<div class="flex flex-wrap">
+  {people.map(person => {
+    const orderClass = positionOrder[person.position] !== undefined ? `order-${positionOrder[person.position]}` : 'order-last';
+    return (
+      <div class=`text-center ${orderClass} p-4`>
+        <p>{person.name}</p>
+      </div>
+    );
+  })}
+</div>

@@ -7,78 +7,75 @@ const profilePhotoFolder = "/src/assets/profile_photos/"
 /* The argument of import.meta.glob must not contain any variable! Must be a string as it si now! */
 const allImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/profile_photos/*.{jpg,png,webp,jpeg,gif}");
 
+// opt to default photo if it's not specified
+const defaultPhoto = 'profile-img.jpg';
+const getImagePath = (photo) => {
+  return photo ? allImages[profilePhotoFolder + photo]() : allImages[profilePhotoFolder + defaultPhoto]();
+};
+
+// order the members according to the dictionary, others will be put to the end
 const positionOrder = {"group co-leader":1, "postdoc":2, "PhD student":3, "collaborator":4};
 
-const membersList: {name:string; position:string; path:any, photo:any, order:number}[] = [
+const membersList: {name:string; position:string; path:any, photo:any}[] = [
     {
         name: "Tomáš Mančal",
         position: "group co-leader",
         path: "mancal",
         photo: "tomas-mancal-source.jpg",
-        order: 1
     },
     {
         name: "Pavel Malý",
         position: "group co-leader",
         path: "maly",
         photo: "pavel-maly-400.jpg",
-        order: 1
     },
     {
         name: "Michal Ptáček",
         position: "PhD student",
         path: "ptacek",
         photo: "michal-ptacek-300.jpg",
-        order: 1
     },
     {
         name: "Matteo Bruschi",
         position: "postdoc",
         path: "bruschi",
-        photo: "profile-img.jpg",
-        order: 1
+        photo: "",
     },
     {
         name: "Malcolm Garrow",
         position: "postdoc",
         path: "garrow",
-        photo: "profile-img.jpg",
-        order: 2
+        photo: "",
     },
     {
         name: "Veronika Vranková",
         position: "PhD student",
         path: "vrankova",
-        photo: "profile-img.jpg",
-        order: 1
+        photo: "",
     },
     {
         name: "Kateřina Charvátová",
         position: "PhD student",
         path: "charvatova",
-        photo: "profile-img.jpg",
-        order: 1
+        photo: "",
     },
     {
         name: "May Shein",
         position: "PhD student",
         path: "shein",
-        photo: "profile-img.jpg",
-        order: 1
+        photo: "",
     },
     {
         name: "Vladimír Sláma",
         position: "collaborator",
         path: "slama",
-        photo: "profile-img.jpg",
-        order: 5
+        photo: "",
     },
     {
         name: "František Šanda",
         position: "collaborator",
         path: "sanda",
-        photo: "profile-img.jpg",
-        order: 1
+        photo: "",
     },
 ]
 ---
@@ -93,13 +90,12 @@ const membersList: {name:string; position:string; path:any, photo:any, order:num
         <div class="flex flex-wrap gap-4 justify-center mt-4 mb-15 max-w-4xl">
             {membersList.map((person) => 
                 <a 
-                    href=`/group/${person.path}` 
-                    class="relative items-center justify-center h-50 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center order-[var(--customposition)]"
-                    style="`--customposition:${person.order]}`"
+                    href={`/group/${person.path}`} 
+                    class={`relative items-center justify-center h-50 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center order-${positionOrder[person.position] || 'last'}`}
                 >
-                    {/* <p>{positionOrder[person.position]}, {person.order}</p> */}
+                    {/* <p>{`order-${positionOrder[person.position] || 'last'}`}</p> */}
                     <div class="flex justify-center text-center imgcircle mt-2">
-                        <Image src={allImages[profilePhotoFolder+person.photo]()} alt="profile-photo" height="90" width="90"/>
+                        <Image src={getImagePath(person.photo)} alt="profile-photo" height="90" width="90"/>
                     </div>
                     <h3>{person.name}</h3>
                     <p><i>{person.position}</i></p>
