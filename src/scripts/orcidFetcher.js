@@ -21,7 +21,7 @@ const fetchWorks = async (orcid, token) => {
   const data = await response.json();
   const works = data.group.map(work => {
     const title = work['work-summary'][0]['title']['title']['value'];
-    const journal = work['work-summary'][0]['type'] === 'journal-article' || 'other' ? work['work-summary'][0]['journal-title']?.['value'] : 'N/A';
+    const journal = work['work-summary'][0]['type'] === 'journal-article' || 'other' ? work['work-summary'][0]['journal-title']?.['value'] : "";
     const pubDate = work['work-summary'][0]['publication-date'];
     const doi = work['work-summary'][0]['external-ids']['external-id'].find(id => id['external-id-type'] === 'doi')?.['external-id-value'];
     return { title, journal, pubDate, doi };

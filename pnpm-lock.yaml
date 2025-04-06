@@ -87,6 +87,9 @@ importers:
       '@biomejs/biome':
         specifier: ^1.9.4
         version: 1.9.4
+      '@iconify-json/fluent':
+        specifier: ^1.2.18
+        version: 1.2.18
       '@iconify-json/hugeicons':
         specifier: ^1.2.3
         version: 1.2.3
@@ -588,6 +591,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@iconify-json/fluent@1.2.18':
+    resolution: {integrity: sha512-CPSTjs9MI2+U8QXBNw6zyE+jJ7JzTbyWmmgtysjUIGzHln4jdTxSvNttOt73/Bc1BgNQuUiLjj2mh/K0nCfyIg==}
 
   '@iconify-json/hugeicons@1.2.3':
     resolution: {integrity: sha512-EujzAC9jlyJY+iFA2ehXoTgGfjKxMMD9xWGQbbo0MlqZelkg/dmENlqIMJjLy9B1sZltw1ol5eYhhzY69TwkQw==}
@@ -3934,6 +3940,10 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.0':
     optional: true
+
+  '@iconify-json/fluent@1.2.18':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/hugeicons@1.2.3':
     dependencies:

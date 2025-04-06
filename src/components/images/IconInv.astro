@@ -1,0 +1,9 @@
+---
+import { Icon } from "astro-icon/components";
+const { name, height, width } = Astro.props;
+---
+
+<div class="items-center justify-center flex">
+    <Icon name={name} class={`start-1/2 top-1/2 h-${height} w-${width} translate-x-1/2 scale-100 opacity-100 dark:scale-0 dark:opacity-0`}/>
+    <Icon name={name} class={`start-1/2 top-1/2 h-${height} w-${width} -translate-x-1/2 scale-0 opacity-0 dark:scale-100 dark:opacity-100 imginv`}/>
+</div>

@@ -374,3 +374,21 @@
 .imgcircle {
 	clip-path: circle();
   }
+
+
+/* contacts */
+.contacts-col {
+		@apply grid justify-center items-start content-start gap-4;
+}
+
+.contacts-row {
+	@apply flex flex-row gap-4 justify-start;
+}
+
+.contacts-row-left {
+	@apply flex-none w-6 text-right;
+}
+
+.contacts-row-right {
+	@apply flex-grow text-left;
+}
