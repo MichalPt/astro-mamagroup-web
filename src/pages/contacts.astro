@@ -3,6 +3,7 @@ import TitlePageLayout from "@/layouts/TitlePageBase.astro";
 import { Image } from 'astro:assets';
 import buildingPhoto from "@/assets/images/building-1.png";
 import { Icon } from "astro-icon/components";
+import ImageInv from "@/components/images/ImageInv.astro";
 
 const contacts: {type:string; icon:any, data:string;}[] = [
     {
@@ -37,12 +38,7 @@ const contacts: {type:string; icon:any, data:string;}[] = [
         <div class="contacts-row">
             <div class="contacts-row-left">
                 <Icon
-                    class="h-5 w-5 translate-y-1/4 scale-100 opacity-100"
-                    focusable="false"
-                    name="hugeicons:mail-01"
-                />
-                <Icon
-                    class="h-5 w-5 translate-y-1/4 scale-0 opacity-0"
+                    class="h-5 w-5 translate-y-1/4"
                     focusable="false"
                     name="hugeicons:mail-01"
                 />
@@ -59,12 +55,7 @@ const contacts: {type:string; icon:any, data:string;}[] = [
         <div class="contacts-row">
             <div class="contacts-row-left">
                 <Icon
-                    class="h-5 w-5 translate-y-1/4 scale-100 opacity-100"
-                    focusable="false"
-                    name="hugeicons:call"
-                />
-                <Icon
-                    class="h-5 w-5 translate-y-1/4 scale-0 opacity-0"
+                    class="h-5 w-5 translate-y-1/4"
                     focusable="false"
                     name="hugeicons:call"
                 />
@@ -77,12 +68,7 @@ const contacts: {type:string; icon:any, data:string;}[] = [
         <div class="contacts-row">
             <div class="contacts-row-left">
                 <Icon
-                    class="h-5 w-5 translate-y-1/4 scale-100 opacity-100"
-                    focusable="false"
-                    name="hugeicons:mail-at-sign-01"
-                />
-                <Icon
-                    class="h-5 w-5 translate-y-1/4 scale-0 opacity-0"
+                    class="h-5 w-5 translate-y-1/4"
                     focusable="false"
                     name="hugeicons:mail-at-sign-01"
                 />
@@ -95,12 +81,7 @@ const contacts: {type:string; icon:any, data:string;}[] = [
         <div class="contacts-row">
             <div class="contacts-row-left">
                 <Icon
-                    class="h-6 w-6 translate-y-1/4 scale-100 opacity-100"
-                    focusable="false"
-                    name="fluent:fax-16-regular"
-                />
-                <Icon
-                    class="h-6 w-6 translate-y-1/4 scale-0 opacity-0"
+                    class="h-6 w-6 translate-y-1/4"
                     focusable="false"
                     name="fluent:fax-16-regular"
                 />

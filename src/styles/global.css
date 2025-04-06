@@ -378,15 +378,15 @@
 
 /* contacts */
 .contacts-col {
-		@apply grid justify-center items-start content-start gap-4;
+		@apply grid justify-center items-start content-start gap-7;
 }
 
 .contacts-row {
-	@apply flex flex-row gap-4 justify-start;
+	@apply flex flex-row gap-5 justify-start;
 }
 
 .contacts-row-left {
-	@apply flex-none w-6 text-right;
+	@apply flex-none w-7 text-right;
 }
 
 .contacts-row-right {
