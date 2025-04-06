@@ -1,0 +1,155 @@
+[
+    {
+        "name": "Tomáš Mančal",
+        "position": "group co-leader",
+        "path": "mancal",
+        "photo": "tomas-mancal-source.jpg",
+        "active": "True"
+    },
+    {
+        "name": "Pavel Malý",
+        "position": "group co-leader",
+        "path": "maly",
+        "photo": "pavel-maly-400.jpg",
+        "active": "True"
+    },
+    {
+        "name": "Michal Ptáček",
+        "position": "PhD student",
+        "path": "ptacek",
+        "photo": "michal-ptacek-300.jpg",
+        "active": "True",
+        "years":{
+            "from":2023, 
+            "to":""
+        }
+    },
+    {
+        "name": "Matteo Bruschi",
+        "position": "postdoc",
+        "path": "bruschi",
+        "photo": "",
+        "active": "True",
+        "years":{
+            "from":2024, 
+            "to":""
+        }
+    },
+    {
+        "name": "Malcolm Garrow",
+        "position": "postdoc",
+        "path": "garrow",
+        "photo": "",
+        "active": "True",
+        "years":{
+            "from":2024, 
+            "to":""
+        }
+    },
+    {
+        "name": "Veronika Vranková",
+        "position": "PhD student",
+        "path": "vrankova",
+        "photo": "",
+        "active": "True",
+        "years":{
+            "from":2024, 
+            "to":2018
+        }
+    },
+    {
+        "name": "Kateřina Charvátová",
+        "position": "PhD student",
+        "path": "charvatova",
+        "photo": "",
+        "active": "True",
+        "years":{
+            "from":2024, 
+            "to":""
+        }
+    },
+    {
+        "name": "May Shein",
+        "position": "PhD student",
+        "path": "shein",
+        "photo": "",
+        "active": "True",
+        "years":{
+            "from":2024, 
+            "to":""
+        }
+    },
+    {
+        "name": "Vladislav Sláma",
+        "position": "collaborator",
+        "path": "slama",
+        "photo": "",
+        "active": "True",
+        "years":{
+            "from":2025, 
+            "to":""
+        }
+    },
+    {
+        "name": "František Šanda",
+        "position": "collaborator",
+        "path": "sanda",
+        "photo": "",
+        "active": "True"
+    },
+    {
+        "name": "Aurélia Chenu",
+        "position": "postdoc",
+        "path": "chenu",
+        "photo": "aurelia-chenu-120.jpg",
+        "active": "False",
+        "years":{
+            "from":2012, 
+            "to":2013
+        }
+    },
+    {
+        "name": "Joachim Seibt",
+        "position": "postdoc",
+        "path": "seibt",
+        "photo": "joachim-seibt-120.jpg",
+        "active": "False",
+        "years":{
+            "from":2015, 
+            "to":2018
+        }
+    },
+    {
+        "name": "Václav Perlík",
+        "position": "PhD student",
+        "path": "perlik",
+        "photo": "vaclav-perlik-120.jpg",
+        "active": "False",
+        "years":{
+            "from":2010, 
+            "to":2020
+        }
+    },
+    {
+        "name": "Jan Olšina",
+        "position": "PhD student",
+        "path": "olsina",
+        "photo": "jan-olsina-120.jpg",
+        "active": "False",
+        "years":{
+            "from":2010, 
+            "to":2014
+        }
+    },
+    {
+        "name": "Sayeh Rajabi",
+        "position": "postdoc",
+        "path": "rajabi",
+        "photo": "sayeh-rajabi-120.jpg",
+        "active": "False",
+        "years":{
+            "from":2017, 
+            "to":2018
+        }
+    }
+]
