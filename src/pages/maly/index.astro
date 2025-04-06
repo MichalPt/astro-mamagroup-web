@@ -9,7 +9,7 @@ import profilePhoto from "@/assets/profile_photos/pavel-maly-400.jpg";
 
 ---
 <TitlePageLayout meta={{ title: "Malý" }}>
-	<section class="max-w-xl mx-auto relative flex items-center justify-center h-screen -mt-24">
+	<section class="md:max-w-xl mx-auto relative flex items-center justify-center h-screen -mt-24">
 		<div class="w-full text-center">
             <div class="flex justify-center space-x-4 mb-8 imgcircle">
                 <Image src={profilePhoto} alt="profile-photo" height="200" width="200"/>
@@ -20,27 +20,25 @@ import profilePhoto from "@/assets/profile_photos/pavel-maly-400.jpg";
 			<p class="mt-4 mb-4 text-lg font-medium">
 				Hi! Welcome to my site!
 			</p>
-			<div class="flex justify-center space-x-4 mt-4">
-				<a href="/maly/about/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
+			<div class="flex flex-wrap justify-center space-x-4 space-y-2 mt-4">
+				<a href="/maly/about/" class="flex items-center justify-center min-h-10 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
 					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
 						About Me
 					</span>
 				</a>
 
-				<a href="/maly/research/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
+				<a href="/maly/research/" class="flex items-center justify-center min-h-10 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
 					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
 						Research Interests
 					</span>
 				</a>
 
-				<a href="/maly/publications/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
+				<a href="/maly/publications/" class="flex items-center justify-center min-h-10 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
 					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
 						Publications
 					</span>
 				</a>
-			</div>
-            <div class="flex justify-center space-x-4 mt-4">
-				<a href="/maly/teaching/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
+				<a href="/maly/teaching/" class="flex items-center justify-center min-h-10 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
 					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
 						Teaching
 					</span>
