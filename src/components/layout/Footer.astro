@@ -8,9 +8,9 @@ const year = new Date().getFullYear();
 ---
 
 <footer
-	class="semibold mt-auto flex w-full flex items-center justify-between gap-y-2 pb-4 pt-8 text-center align-top text-accent text-sm sm:flex-row sm:justify-between sm:text-sm"
->	<div>
-		<div class="justify-left mb-1">
+	class="semibold mt-auto flex w-full flex-col items-center justify-center gap-y-2 pb-4 pt-8 text-center align-top text-accent text-sm sm:flex-row sm:justify-between sm:text-sm"
+>	<div class="justify-center sm:justify-start">
+		<div class="justify-center sm:justify-left mb-1">
 			<a href="https://www.mff.cuni.cz/cs/fuuk/oddeleni-teoreticke/vitejte" class="hover:text-accent hover:underline">
 				Theoretical division
 			</a>|
@@ -18,28 +18,13 @@ const year = new Date().getFullYear();
 				Institute of Physics
 			</a>
 		</div>
-		<div class="flex me-0 font-semibold sm:me-4">
+		<div class="justify-center me-0 font-semibold sm:me-4">
 			&copy; {siteConfig.author} {year}
 		</div>
 	</div>
-	<div class="justify-right">
-		<div class="flex-none">
-			<a href="https://www.mff.cuni.cz/">
-				<ImageInv src={logoMffCuni} alt="logo-mff" height="150" width="300"/>
-			</a>
-		</div>
-		<br>
-		<!-- <nav
-			aria-label="More on this site"
-			class="flex justify-between space-x-4 font-medium text-light md:w-[14rem] w-auto"
-		>
-			{
-				menuLinks.map((link) => (
-					<a class="underline-offset-2 hover:text-accent hover:underline" href={link.path}>
-						{link.title}
-					</a>
-				))
-			}
-		</nav> -->
+	<div class="justify-center sm:justify-end">
+		<a href="https://www.mff.cuni.cz/">
+			<ImageInv src={logoMffCuni} alt="logo-mff" height="150" width="300"/>
+		</a>
 	</div>
 </footer>
