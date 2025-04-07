@@ -1,0 +1,55 @@
+---
+import PageLayout from "@/layouts/Base.astro";
+
+import { getStaticPaths, getStaticProps } from 'astro';
+import data from '@/pages/group/group.json';
+
+import { siteConfig } from "@/site.config";
+import type { SiteMeta } from "@/types";
+import { Image } from "astro:assets";
+
+
+export async function getStaticPaths() {
+  return data.map(person => ({
+    params: { path: person.path },
+    props: { person }
+  }));
+}
+
+// export async function getStaticProps({ params }) {
+//   const entry = data.find(e => e.path === params.path);
+//   return { props: { entry } };
+// }
+
+const profilePhotoFolder = "/src/assets/profile_photos/";
+const allImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/profile_photos/*.{jpg,png,webp,jpeg,gif}");
+const defaultPhoto = 'profile-img.jpg';
+const getImagePath = (photo) => {
+  return photo ? allImages[profilePhotoFolder + photo]() : allImages[profilePhotoFolder + defaultPhoto]();
+};
+
+const { person } = Astro.props;
+const { path } = Astro.params;
+
+interface Props {
+	meta: SiteMeta;
+}
+
+const meta = {
+	description: "Read my collection of notes",
+	title: "Notes",
+};
+---
+
+<PageLayout meta={meta}>
+  <div class="flex flex-col sm:flex-row justify-center align-items-end mt-4 gap-8">
+    <div class="justify-center text-center imgcircle">
+      <Image src={getImagePath(person.photo)} alt="profile-photo" height="160" width="160"/>
+  </div>
+  <div class="flex flex-col gap-y-2">
+    <h1>{person.name}</h1>
+    <div><i>{person.active === "True" ? "current" : "last"} position:</i> <p>{person.position}</p></div>
+    {person.email && <div><i>e-mail:</i> <p>{person.email}</p></div>}
+  </div>
+</PageLayout>
+

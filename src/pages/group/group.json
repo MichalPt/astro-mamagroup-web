@@ -4,14 +4,16 @@
         "position": "group co-leader",
         "path": "mancal",
         "photo": "tomas-mancal-source.jpg",
-        "active": "True"
+        "active": "True",
+        "email": "tomas.macal@matfyz.cuni.cz"
     },
     {
         "name": "Pavel Malý",
         "position": "group co-leader",
         "path": "maly",
         "photo": "pavel-maly-400.jpg",
-        "active": "True"
+        "active": "True",
+        "email": "pavel.maly@matfyz.cuni.cz"
     },
     {
         "name": "Michal Ptáček",
@@ -22,7 +24,8 @@
         "years":{
             "from":2023, 
             "to":""
-        }
+        },
+        "email": "michal.ptacek@matfyz.cuni.cz"
     },
     {
         "name": "Matteo Bruschi",
