@@ -47,7 +47,8 @@
         "years":{
             "from":2024, 
             "to":""
-        }
+        },
+        "email": "malcolm.garrow@matfyz.cuni.cz"
     },
     {
         "name": "Veronika Vranková",
@@ -69,10 +70,11 @@
         "years":{
             "from":2024, 
             "to":""
-        }
+        },
+        "email": "katerina.charvatova@matfyz.cuni.cz"
     },
     {
-        "name": "May Shein",
+        "name": "May Myat Noe Shein",
         "position": "PhD student",
         "path": "shein",
         "photo": "",
@@ -80,7 +82,8 @@
         "years":{
             "from":2024, 
             "to":""
-        }
+        },
+        "email": "maymyatnoe.shein789@student.cuni.cz"
     },
     {
         "name": "Vladislav Sláma",

@@ -1,9 +1,12 @@
 ---
+import Email from "../Email.astro";
+
 const { list } = Astro.props;
 ---
 
 {list.map((item) => (
     <div class="ml-8">
-        {item.key}: {item.value}
+        {/* {item.key}: {item.value} */}
+        {item.key}: {item.key === "e-mail" ? <Email email={item.value}/> : item.value}
     </div>
 ))}

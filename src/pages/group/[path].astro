@@ -1,12 +1,16 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
-
 import data from '@/pages/group/group.json';
-
 import type { SiteMeta } from "@/types";
 import { Image } from "astro:assets";
+import Email from "@/components/Email.astro";
 
 
+export async function getMdContent({path}) {
+  const customWebSites = import.meta.glob('@/pages/group/custom/*.{md,astro}', { eager: true });
+  const foundCustom = Object.values(customWebSites).map(f => f.file.includes(path) ? f.default : "");
+  return foundCustom;
+}
 
 export async function getStaticPaths() {
   return data.map(person => ({
@@ -30,20 +34,29 @@ interface Props {
 }
 
 const meta = {
-	description: "Read my collection of notes",
-	title: person.name ,
+	title: person.name
 };
+
+const mdContent = await getMdContent({ path: path });
 ---
 
 <PageLayout meta={meta}>
   <div class="flex flex-col sm:flex-row justify-center align-items-end mt-4 gap-8">
     <div class="justify-center text-center imgcircle">
       <Image src={getImagePath(person.photo)} alt="profile-photo" height="160" width="160"/>
+    </div>
+    <div class="flex flex-col gap-y-2">
+      <h1>{person.name}</h1>
+      <div><i>{person.active === "True" ? "current" : "last"} position:</i> <p>{person.position}</p></div>
+      {person.email && <div><i>e-mail:</i> <p><Email email={person.email}/></p></div>}
+    </div>
   </div>
-  <div class="flex flex-col gap-y-2">
-    <h1>{person.name}</h1>
-    <div><i>{person.active === "True" ? "current" : "last"} position:</i> <p>{person.position}</p></div>
-    {person.email && <div><i>e-mail:</i> <p>{person.email}</p></div>}
-  </div>
+  
+  {mdContent && 
+    <div class="flex flex-col justify-center max-w-1/2 mt-6">
+      {/* <div set:html={mdContent} class="text-left"/> */}
+      {<foundCustom />}
+    </div>
+  }
 </PageLayout>
 
