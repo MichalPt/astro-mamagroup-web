@@ -1,12 +1,11 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
 
-import { getStaticPaths, getStaticProps } from 'astro';
 import data from '@/pages/group/group.json';
 
-import { siteConfig } from "@/site.config";
 import type { SiteMeta } from "@/types";
 import { Image } from "astro:assets";
+
 
 
 export async function getStaticPaths() {
@@ -15,11 +14,6 @@ export async function getStaticPaths() {
     props: { person }
   }));
 }
-
-// export async function getStaticProps({ params }) {
-//   const entry = data.find(e => e.path === params.path);
-//   return { props: { entry } };
-// }
 
 const profilePhotoFolder = "/src/assets/profile_photos/";
 const allImages = import.meta.glob<{ default: ImageMetadata }>("/src/assets/profile_photos/*.{jpg,png,webp,jpeg,gif}");
@@ -37,7 +31,7 @@ interface Props {
 
 const meta = {
 	description: "Read my collection of notes",
-	title: "Notes",
+	title: person.name ,
 };
 ---
 
