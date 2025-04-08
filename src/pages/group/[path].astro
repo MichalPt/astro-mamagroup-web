@@ -4,11 +4,17 @@ import data from '@/pages/group/group.json';
 import type { SiteMeta } from "@/types";
 import { Image } from "astro:assets";
 import Email from "@/components/Email.astro";
-
+import type { AstroInstance, MarkdownInstance } from "astro";
 
 export async function getMdContent({path}) {
-  const customWebSites = import.meta.glob('@/pages/group/custom/*.{md,astro}', { eager: true });
-  const foundCustom = Object.values(customWebSites).map(f => f.file.includes(path) ? f.default : "");
+  const customWebSites = import.meta.glob<MarkdownInstance>('@/pages/group/custom/*.md', { eager: true });
+  const foundCustom = Object.values(customWebSites).map(f => f.file.split('/').at(-1).includes(path) ? f.compiledContent() : "");
+  return foundCustom;
+}
+
+export async function getAstroContent({path}) {
+  const customWebSites = import.meta.glob<AstroInstance>('@/pages/group/custom/*.astro', { eager: true });
+  const foundCustom = Object.values(customWebSites).filter(f => f.file.split('/').at(-1).includes(path));
   return foundCustom;
 }
 
@@ -38,6 +44,7 @@ const meta = {
 };
 
 const mdContent = await getMdContent({ path: path });
+const astroContent = await getAstroContent({ path: path });
 ---
 
 <PageLayout meta={meta}>
@@ -52,11 +59,17 @@ const mdContent = await getMdContent({ path: path });
     </div>
   </div>
   
-  {mdContent && 
-    <div class="flex flex-col justify-center max-w-1/2 mt-6">
-      {/* <div set:html={mdContent} class="text-left"/> */}
-      {<foundCustom />}
-    </div>
+  {astroContent ? 
+    astroContent && astroContent.map(({ default: Component }) => (
+      <div class="mt-6">
+        <Component/>
+      </div>
+    ))
+    :
+    mdContent && 
+      <div class="flex flex-col justify-center max-w-1/2 mt-6">
+        <div set:html={mdContent} class="text-left"/>
+      </div>
   }
 </PageLayout>
 
