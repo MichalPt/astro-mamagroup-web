@@ -59,17 +59,16 @@ const astroContent = await getAstroContent({ path: path });
     </div>
   </div>
   
-  {astroContent ? 
-    astroContent && astroContent.map(({ default: Component }) => (
-      <div class="mt-6">
-        <Component/>
-      </div>
-    ))
-    :
-    mdContent && 
-      <div class="flex flex-col justify-center max-w-1/2 mt-6">
-        <div set:html={mdContent} class="text-left"/>
-      </div>
-  }
+{astroContent && astroContent.map(({ default: Component }) => (
+    <div class="mt-6">
+      <Component/>
+    </div>
+  ))}
+
+{mdContent && 
+  <div class="flex flex-col justify-center max-w-1/2 mt-6">
+    <div set:html={mdContent} class="text-left"/>
+  </div>
+}
 </PageLayout>
 
