@@ -1,19 +1,19 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
-import data from '@/pages/group/group.json';
+import data from '@/content/group.json';
 import type { SiteMeta } from "@/types";
 import { Image } from "astro:assets";
 import Email from "@/components/Email.astro";
 import type { AstroInstance, MarkdownInstance } from "astro";
 
 export async function getMdContent({path}) {
-  const customWebSites = import.meta.glob<MarkdownInstance>('@/pages/group/custom/*.md', { eager: true });
+  const customWebSites = import.meta.glob<MarkdownInstance>('@/content/custom/*.md', { eager: true });
   const foundCustom = Object.values(customWebSites).map(f => f.file.split('/').at(-1).includes(path) ? f.compiledContent() : "");
   return foundCustom;
 }
 
 export async function getAstroContent({path}) {
-  const customWebSites = import.meta.glob<AstroInstance>('@/pages/group/custom/*.astro', { eager: true });
+  const customWebSites = import.meta.glob<AstroInstance>('@/content/custom/*.astro', { eager: true });
   const foundCustom = Object.values(customWebSites).filter(f => f.file.split('/').at(-1).includes(path));
   return foundCustom;
 }
