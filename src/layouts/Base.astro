@@ -6,6 +6,7 @@ import Header from "@/components/layout/Header.astro";
 import Footer from "@/components/layout/Footer.astro";
 import { siteConfig } from "@/site.config";
 import type { SiteMeta } from "@/types";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
 	meta: SiteMeta;
@@ -22,6 +23,7 @@ const {
 >
 	<head>
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
+		<ClientRouter />
 	</head>
 	<body class="min-w-3xl relative m-auto min-h-screen w-full max-w-6xl grow bg-bgColor">
 		<ThemeProvider />
