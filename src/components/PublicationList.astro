@@ -13,7 +13,7 @@ const { list } = Astro.props;
             |
           </div>
           <div class="text-left grow">
-            <p><b>{work.title} </b></p>
+            <b><p set:html={work.title}/></b>
             <div class="text-sm">
               {work.authors && <p>{work.authors}</p>}
               {work.journal && <p>@{work.journal}</p>}
