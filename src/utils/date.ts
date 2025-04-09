@@ -9,7 +9,7 @@ export function getFormattedDate(
 		return "Invalid Date";
 	}
 
-	return new Intl.DateTimeFormat(siteConfig.date.locale, {
+	return new Intl.DateTimeFormat('en-GB', {
 		...(siteConfig.date.options as Intl.DateTimeFormatOptions),
 		...options,
 	}).format(date);

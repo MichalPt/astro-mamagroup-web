@@ -7,6 +7,13 @@ export async function getAllPosts(): Promise<CollectionEntry<"post">[]> {
 	});
 }
 
+/** filter out draft posts based on the environment */
+export async function getAllNews(): Promise<CollectionEntry<"news">[]> {
+	return await getCollection("news", ({ data }) => {
+		return import.meta.env.PROD ? !data.draft : true;
+	});
+}
+
 /** groups posts by year (based on option siteConfig.sortPostsByUpdatedDate), using the year as the key
  *  Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so.
  */

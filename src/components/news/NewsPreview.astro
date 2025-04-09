@@ -1,0 +1,25 @@
+---
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "@/components/FormattedDate.astro";
+import type { HTMLTag, Polymorphic } from "astro/types";
+import { siteConfig } from "@/site.config";
+import Image from "astro/components/Image.astro";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+	post: CollectionEntry<"news">;
+};
+
+const { as: Tag = "div", post } = Astro.props;
+---
+<a data-astro-prefetch href={`/news/${post.id}/`} class="citrus-link relative items-center justify-center h-90 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center">
+    <div class="flex flex-col m-4">
+        <Tag class="citrus-link font-medium text-accent-base">
+                {post.data.title}
+        </Tag>
+        <FormattedDate
+            class="text-lighter text-xs no-underline"
+            date={post.data.publishDate}
+            dateTimeOptions={siteConfig.date.options}
+        /> 
+    </div>
+</a>

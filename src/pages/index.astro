@@ -1,63 +1,70 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import SocialList from "@/components/SocialList.astro";
+import NewsPreview from "@/components/news/NewsPreview.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import Note from "@/components/note/Note.astro";
-import { getAllPosts } from "@/data/post";
+import { getAllNews, getAllPosts } from "@/data/post";
 import { collectionDateSort } from "@/utils/date";
 import TitlePageLayout from "@/layouts/TitlePageBase.astro";
 import { Image } from "astro:assets";
 import imgFmo from "@/assets/images/fmo-1000.png";
 
-// Posts
-const MAX_POSTS = 10;
+// Posts, News
+const MAX_POSTS = 5;
+const allNews = await getAllNews();
+const allNewsByDate = allNews
+	.sort(collectionDateSort)
+	.slice(0, MAX_POSTS) as CollectionEntry<"news">[];
+
 const allPosts = await getAllPosts();
 const allPostsByDate = allPosts
 	.sort(collectionDateSort)
 	.slice(0, MAX_POSTS) as CollectionEntry<"post">[];
-
-// Notes
-const MAX_NOTES = 2;
-const allNotes = await getCollection("note");
-const latestNotes = allNotes.sort(collectionDateSort).slice(0, MAX_NOTES);
 ---
 
 <TitlePageLayout meta={{ title: "Home" }}>
-	<section class="max-w-xl mx-auto relative flex items-center justify-center h-screen -mt-24">
-		<div class="w-full text-center">
-			<div class="flex justify-center mb-4 dark:brightness-200">
-				<Image src={imgFmo} alt="fmo" height="500" width="500"/>
+	<div>
+		<section class="max-w-xl mx-auto relative flex items-center justify-center h-screen -mt-24">
+			<div class="w-full text-center">
+				<div class="flex justify-center mb-4 dark:brightness-200">
+					<Image src={imgFmo} alt="fmo" height="500" width="500"/>
+				</div>
+				<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
+					Welcome to MaMa Group website
+				</span>
+				<p class="mt-4 mb-4 text-lg font-medium">
+					where we bridge theoretical and experimental knowledge<br> of nonlinear optical spectroscopy
+				</p>
+				<!-- <div class="flex justify-center mb-4">
+					<SocialList />
+				</div> -->
+				<!-- <div class="flex justify-center space-x-4 mt-4">
+					<a href="/posts/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
+						<span class="text-bgColor font-semibold">
+							Read Blog
+						</span>
+					</a>
+
+					<a href="/notes/wake-up/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
+						<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
+							Wake up
+						</span>
+					</a>
+				</div> -->
 			</div>
-			<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
-				Welcome to MaMa Group website
-			</span>
-			<p class="mt-4 mb-4 text-lg font-medium">
-				where we bridge theoretical and experimental knowledge<br> of nonlinear optical spectroscopy
-			</p>
-			<!-- <div class="flex justify-center mb-4">
-				<SocialList />
-			</div> -->
-			<!-- <div class="flex justify-center space-x-4 mt-4">
-				<a href="/posts/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
-					<span class="text-bgColor font-semibold">
-						Read Blog
-					</span>
-				</a>
+		</section>
 
-				<a href="/notes/wake-up/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
-					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
-						Wake up
-					</span>
-				</a>
-			</div> -->
-		</div>
-	</section>
+		<section class="max-w-3xl mx-auto relative flex flex-col items-center justify-center -mt-24 client:visible">
+			<h2 class="text-center mb-4">
+				<a href="/news" class="title text-2xl citrus-link">News</a>
+			</h2>
+			<div class="mt-4 flex flex-col w-full align-content-center gap-4">
+				{ allNewsByDate.map((p) => <NewsPreview post={p} />)}
+			</div>
+		</section>
+	</div>
 
-	<section class="max-w-xl mx-auto relative flex items-center justify-center client:visible">
-		<div class="w-full text-center">
-			<a href="/news" class="title text-2xl">News</a>
-		</div>
-	</section>
 
 	<!-- Posts Section -->
 	<!-- <section aria-label="Blog post list" class="'mt-[-100vh] pt-[100vh]'">

@@ -5,10 +5,10 @@ export const siteConfig: SiteConfig = {
 	author: "Michal Ptáček",
 	// Date.prototype.toLocaleDateString() parameters, found in src/utils/date.ts.
 	date: {
-		locale: "en-GB",
+		locale: "cs",
 		options: {
 			day: "numeric",
-			month: "short",
+			month: "numeric",
 			year: "numeric",
 		},
 	},

@@ -49,6 +49,32 @@ const note = defineCollection({
 	}),
 });
 
+const news = defineCollection({
+	loader: glob({ base: "./src/content/news", pattern: "**/*.{md,mdx}" }),
+	schema: ({ image }) =>
+		baseSchema.extend({
+			description: z.string().optional(),
+			image: z 
+				.object({
+					alt: z.string(),
+					src: image(),
+				})
+				.optional(),
+			tags: z
+				.array(z.string())
+				.default([])
+				.transform(removeDupsAndLowerCase),
+			publishDate: z
+				.string()
+				.or(z.date())
+				.transform((val) => new Date(val)),
+			updatedDate: z
+				.string()
+				.optional()
+				.transform((str) => (str ? new Date(str) : undefined)),
+		}),
+});
+
 // Series
 const series = defineCollection({
 	loader: glob({ base: "./src/content/series", pattern: "**/*.{md,mdx}" }),
@@ -62,4 +88,4 @@ const series = defineCollection({
 // End
 
 // Series
-export const collections = { post, note, series };
+export const collections = { post, note, series, news };

@@ -1,9 +1,9 @@
 ---
-title: Hello, Welcome
-description: An introduction to using the note feature in Astro Citrus
-publishDate: 08/04/2025
+title: "New website"
+publishDate: "2025-04-08"
+tags: ['website',]
 ---
 
 # New website
 
-We have a new website!
+We have a new website! Hurray!
