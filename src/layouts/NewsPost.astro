@@ -7,20 +7,21 @@ import WebMentions from "@/components/blog/webmentions/index.astro";
 import BaseLayout from "./Base.astro";
 import SeriesPanel from "@/components/SeriesPanel.astro";
 import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
 
 interface Props {
 	post: CollectionEntry<"post">;
 }
 
 const { post } = Astro.props;
-const { ogImage, title, description, updatedDate, publishDate, seriesId } = post.data;
+const { image, title, description, updatedDate, publishDate } = post.data;
 
-const socialImage = ogImage ?? `/og-image/${post.id}.png`;
+// const socialImage = ogImage ?? `/og-image/${post.id}.png`;
 const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
 const { headings } = await render(post);
 ---
 
-<BaseLayout meta={{ articleDate, description, ogImage: socialImage, title }}>
+<BaseLayout meta={{ articleDate, description, title }}>
 	<!-- <div class="fixed left-0 top-0 z-10 flex h-16 md:h-20 w-full bg-bgColor overflow-hidden"> -->
 		<!-- Background 
 			TODO: This approach is not optimal and requires improvements. 
@@ -68,12 +69,17 @@ const { headings } = await render(post);
 	-->
 
 	<!-- SeriesPanel is inserted into the named slot "sidebar" -->
-	{seriesId && (<SeriesPanel slot="sidebar" seriesId={seriesId} />)}
+	<!-- {seriesId && (<SeriesPanel slot="sidebar" seriesId={seriesId} />)} -->
 
 	<NewsPostHead content={post} />
 
 	<div class="mt-6 flex sm:grid-cols-[auto_1fr] md:items-start gap-x-8">
 		<article class="grid flex-grow grid-cols-1 break-words pt-4" data-pagefind-body>
+            {image && 
+                <div class="flex justify-center mb-8">
+                    <Image src={image} alt={image.split('/').at(-1)} height="160" width="160"/>
+                </div>
+            }
 			<div class="prose prose-citrus max-w-none flex-grow prose-headings:font-semibold prose-headings:text-accent-base prose-headings:before:text-accent-two sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none">
 				<slot />
 			</div>
@@ -113,7 +119,7 @@ const { headings } = await render(post);
 	</div>
 
 	<!-- Series button for mobile screens -->
-	{seriesId && (
+	<!-- {seriesId && (
 		<mobile-button
 			id="toggle-panel-mobile"
 			class="size-12 flex items-center justify-center block sm:hidden fixed bottom-4 shadow-[0px_10px_25px_rgba(0,0,0,0.15)] border border-special-lighter right-4 z-50 rounded-lg bg-bgColor text-accent-base hover:text-bg-accent-base/90"
@@ -123,7 +129,7 @@ const { headings } = await render(post);
 				<Icon class="size-8" name="solar:notes-bold"/>
 			</span>
 		</mobile-button>
-	)}
+	)} -->
 
 	<!-- NEEDS IMPROVEMENT!!! -->
 	<!-- Table of Contents button for mobile screens -->

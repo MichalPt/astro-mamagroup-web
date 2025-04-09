@@ -54,11 +54,8 @@ const news = defineCollection({
 	schema: ({ image }) =>
 		baseSchema.extend({
 			description: z.string().optional(),
-			image: z 
-				.object({
-					alt: z.string(),
-					src: image(),
-				})
+			image: z
+				.string()
 				.optional(),
 			tags: z
 				.array(z.string())
