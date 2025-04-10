@@ -23,21 +23,59 @@ export const siteConfig: SiteConfig = {
 };
 
 // Used to generate links in both the Header & Footer.
-export const menuLinks: { path: string; title: string }[] = [
+export const menuLinks: { path: string; title: string; showsub?: boolean; subfolder?: object }[] = [
 	{
-		path: "/mancal/",
+		path: "/mancal",
 		title: "Tomáš Mančal",
+		showsub: true,
+		subfolder: [
+			{
+				path: "/about",
+				title: "About Me"
+			},
+			{
+				path: "/teaching",
+				title: "Teaching"
+			},
+			{
+				path: "/publications",
+				title: "Publications"
+			},
+			{
+				path: "/outreach",
+				title: "Outreach"
+			}
+		]
 	},
 	{
-		path: "/maly/",
+		path: "/maly",
 		title: "Pavel Malý",
+		showsub: true,
+		subfolder: [
+			{
+				path: "/about",
+				title: "About Me"
+			},
+			{
+				path: "/teaching",
+				title: "Teaching"
+			},
+			{
+				path: "/publications",
+				title: "Publications"
+			},
+			{
+				path: "/outreach",
+				title: "Outreach"
+			}
+		]
 	},
 	{
-		path: "/group/",
+		path: "/group",
 		title: "Research Group",
 	},
 	{
-		path: "/contacts/",
+		path: "/contacts",
 		title: "Contacts",
 	}
 	// {

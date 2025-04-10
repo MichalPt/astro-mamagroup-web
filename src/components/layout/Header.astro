@@ -5,11 +5,82 @@ import { siteConfig, menuLinks } from "@/site.config";
 import { Icon } from "astro-icon/components";
 import { Image } from 'astro:assets';
 import ImageInv from "../images/ImageInv.astro";
+
+export interface SubNavigationLink {
+	title: string;
+	path: string;
+}
+
+export interface NavigationLink {
+	title: string;
+	path: string;
+	showsub?: boolean;
+	subfolder?: SubNavigationLink[];
+}
+
+// const { main }: { main: NavigationLink[] } = menuLinks;
 ---
+
+<style>
+	.group:hover .group-hover:block {
+		display: block;
+	}
+	.active .group-hover:block {
+		display: block;
+	}
+</style>
+
+<!-- <script>
+	const currentUrl = window.location.pathname;
+	console.log("debug:", currentUrl)
+	
+	document.addEventListener('DOMContentLoaded', () => {
+		const navItems = document.querySelectorAll('.group');
+		const currentUrl = window.location.pathname;
+		navItems.forEach(item => {
+			const itemUrl = item.getElementsByTagName('a')[0].pathname;
+			if (currentUrl.includes(itemUrl)) {
+				item.classList.add('active');
+			}
+			console.log("XXXXX", currentUrl, "XXX", itemUrl)
+
+			item.addEventListener('mouseover', () => {
+				item.querySelector('.group-hover:block').style.display = 'block';
+			});
+			
+			item.addEventListener('mouseout', () => {
+				if (!item.classList.contains('active')) {
+					item.querySelector('.group-hover:block').style.display = 'none';
+				}
+			});
+		});
+	});
+</script> -->
+
+<!-- <style>
+	ul {
+	  list-style-type: none;
+	  margin: 0;
+	  padding: 0;
+	  overflow: hidden;
+	}
+	
+	li {
+	  float: left;
+	}
+	
+	li a {
+	  display: block;
+	  text-align: center;
+	  padding: 16px;
+	  text-decoration: none;
+	}
+	</style> -->
+	
 
 <header
 	id="main-header"
-	class="fixed px-4 md:px-0 left-0 z-20 flex items-center md:relative top-0 h-20 w-full bg-bgColor md:bg-transparent overflow-hidden"
+	class="fixed px-4 md:px-0 left-0 z-20 flex items-center md:relative top-0 h-20 w-full bg-bgColor md:bg-transparent"
 >	
 	<!-- Background 
 			TODO: This approach is not optimal and requires improvements. 
@@ -55,7 +126,7 @@ import ImageInv from "../images/ImageInv.astro";
 			</a>
 			<nav
 				aria-label="Main menu"
-				class="top-20 text-sm mx-auto ml-4 ml-auto hidden flex-col items-end justify-center gap-x-8 rounded-md bg-bgColor font-medium text-accent-two shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:flex-row sm:items-center sm:rounded-none sm:bg-transparent sm:shadow-none sm:backdrop-blur-none md:flex"
+				class="relative top-20 text-sm mx-auto ml-4 ml-auto hidden text-center md:flex flex-col items-end justify-center gap-x-8 lg:gap-x-10 xl:gap-x-16 rounded-md bg-bgColor font-medium text-accent-two shadow backdrop-blur group-[.menu-open]:z-50 group-[.menu-open]:flex sm:static sm:z-auto sm:flex-row sm:items-center sm:rounded-none sm:bg-transparent sm:shadow-none sm:backdrop-blur-none"
 				id="main-navigation-menu"
 			>	
 				<!--				
@@ -83,8 +154,8 @@ import ImageInv from "../images/ImageInv.astro";
 				</a>
 				-->
 
-				<!-- Ссылки меню -->
-				{
+				<!-- MENU LINKS -->
+				<!-- {
 					menuLinks.map((link) => (
 						<a
 							aria-current={Astro.url.pathname === link.path ? "page" : false}
@@ -95,7 +166,75 @@ import ImageInv from "../images/ImageInv.astro";
 							{link.title}
 						</a>
 					))
-				}
+				} -->
+
+				<!-- <ul	id="nav-menu" class="navbar-nav order-3 hidden w-full md:order-1 md:flex md:w-auto"> -->
+					{
+						menuLinks.map((menu) => (
+						<>
+							{menu.showsub ? (
+							<div class="nav-item nav-dropdown group relative cursor-pointer">
+								<span class="nav-link inline-flex items-center underline-offset-2 hover:underline text-base">
+								{menu.title}
+								<svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
+									<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+								</svg>
+								</span>
+								<ul class="nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100">
+								{menu.subfolder?.map((child) => (
+									<li class="nav-dropdown-item">
+									<a href={menu.path+child.path} class="underline-offset-2 hover:underline text-base">
+										{child.title}
+									</a>
+									</li>
+								))}
+								</ul>
+							</div>
+							) : (
+							<div class="nav-item">
+								<a href={menu.path} class="underline-offset-2 hover:underline text-base">
+								{menu.title}
+								</a>
+							</div>
+							)}
+						</>
+						))
+					}
+				<!-- </ul> -->
+				
+				<!-- <div class="group">
+					<a href="/mancal" class="underline-offset-2 hover:underline text-base">Tomáš Mančal</a>
+					<div class="absolute hidden group-hover:block bg-gray-200 flex justify-center">
+						<div class="flex flex-row gap-x-6 justify-center p-4">
+							<div><a href="/mancal/about">About Me</a></div>
+							<div><a href="/mancal/publications">Publications</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="group">
+					<a href="/maly" class="underline-offset-2 hover:underline text-base">Pavel Malý</a>
+					<div class="static hidden group-hover:block bg-gray-200">
+						<div class="flex flex-row gap-x-6 justify-center h-auto">
+							<div><a href="/maly/about">About Me</a></div>
+							<div><a href="/maly/publications">Publications</a></div>
+							<div><a href="/maly/publications">333333333</a></div>
+							<div><a href="/maly/publications">4444444444</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="group">
+					<a href="/group" class="underline-offset-2 hover:underline text-base">Research Group</a>
+					<div class="absolute hidden group-hover:block bg-gray-700 p-2">
+						<ul class="space-y-2">
+							<li><a href="/mancal/about">About Me</a></li>
+							<li><a href="/mancal/publications">Publications</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="">
+					<a href="/contacts" class="underline-offset-2 hover:underline text-base">Contacts</a>
+				</div> -->
+
 				
 				<!-- <a
 					class="flex h-8 items-center rounded-lg bg-accent-base/5 px-4 text-accent-base underline-offset-2 hover:bg-accent-base/10"
@@ -157,7 +296,7 @@ import ImageInv from "../images/ImageInv.astro";
 			-->
 
 			<div class="ml-auto w-fit">
-				<div id="buttons-panel" class="top-4 md:top-8 -ml-[4.5rem] flex space-x-2">
+				<div id="buttons-panel" class="top-4 md:top-8 ml-[0.5rem] flex space-x-2">
 					<Search />
 					<ThemeToggle />
 				</div>
