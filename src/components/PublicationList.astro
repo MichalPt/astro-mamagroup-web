@@ -4,6 +4,9 @@ const omitInTitle = ["author correction", ];
 const filteredList = list.filter(work => !omitInTitle.some(key => work.title.toLowerCase().includes(key.toLowerCase())));
 ---
 
+<h1>List of publications:</h1>
+<p class="text-sm mb-2">(automatically imported from ORCID)</p>
+
 <ul class="list-none">
     {filteredList.map((work) => (
       <li>
@@ -18,7 +21,7 @@ const filteredList = list.filter(work => !omitInTitle.some(key => work.title.toL
             <b><p set:html={work.title}/></b>
             <div class="text-sm">
               {work.authors && <p>{work.authors}</p>}
-              {work.journal && <p>@{work.journal}</p>}
+              {work.journal && <p><i>@{work.journal}</i></p>}
               {work.doi && <p>DOI:<a href={`https://doi.org/${work.doi}`} class="hover:text-accent hover:underline"> {work.doi} </a></p>}
             </div>
           </div> 

@@ -1,4 +1,4 @@
-const omitCapitalizing = ["de", "von", "van", "la"];
+const omitCapitalizing = ["de", "da", "von", "van", "la", "le"];
 
 export function capitalize(str: string): string {
     const list = str.split(' '); 
