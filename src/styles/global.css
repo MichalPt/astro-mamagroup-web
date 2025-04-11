@@ -262,7 +262,6 @@
 		@apply min-h-8 h-auto !important;
 	}
 
-	/* Нужно для кнопки копирования кода при отключенном rehype-pretty-code */
 	/*
 	pre {
 		@apply relative;
@@ -373,6 +372,11 @@
 
 .imgcircle {
 	clip-path: circle();
+  }
+
+.img{
+	width: 100%;
+	height: auto;
   }
 
 
