@@ -1,22 +1,29 @@
 ---
+import Base from "@/layouts/Base.astro";
+
 const positionOrder = {
   "manager": 3,
   "developer": 1,
   "designer": 2,
-  // Add other positions as needed
+  "unknown": 4
 };
 
 const people = [
-  { name: 'Alice', position: 'managerss' },
+  { name: 'Alice', position: 'manager' },
   { name: 'Bob', position: 'developer' },
   { name: 'David', position: 'designer' },
-  { name: 'Charlie', position: 'unknown' }, // Example of unknown position
+  { name: 'Charlie', position: 'unknown' },
+  { name: 'Emil', position: 'designer' },
+  { name: 'Frank', position: 'unknown' }
 ];
 ---
 
-<div class="flex">
-  {people.map(person => <div class={`text-center order-${positionOrder[person.position] || 'last'} p-4`}>
-        <p>{person.name}</p>
+<Base meta={{ title: "Home" }}>
+  <div class="flex flex-col flex-wrap">
+    {people.map(person => (
+      <div class={`text-center ${positionOrder[person.position] !== undefined ? `order-${positionOrder[person.position]}` : 'order-last'} p-4`}>
+        <p>{person.name}, {person.position}, {positionOrder[person.position] || 'last'}</p>
       </div>
-    )}
-</div>
+    ))}
+  </div>
+</Base>

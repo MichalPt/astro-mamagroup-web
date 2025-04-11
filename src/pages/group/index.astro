@@ -15,7 +15,7 @@ const getImagePath = (photo) => {
 };
 
 // order the members according to the dictionary, others will be put to the end
-const positionOrder = {"group co-leader":1, "postdoc":2, "PhD student":3, "collaborator":4};
+const positionOrder = { "group co-leader": 1, "postdoc": 2, "PhD student": 3, "collaborator": 'last', "secretary": 'last', };
 
 const activeMembers = membersList.filter((person) => person.active == "True");
 const pastMembers = membersList.filter((person) => person.active == "False");
@@ -28,10 +28,10 @@ const pastMembers = membersList.filter((person) => person.active == "False");
         </h1>
         <div class="justify-center flex mt-4">
             <div class="flex flex-wrap gap-4 justify-center mt-4 mb-5 max-w-4xl">
-                {activeMembers.map((person) => 
+                {activeMembers.map(person => 
                     <a 
                         href={`/group/${person.path}`} 
-                        class={`relative items-center justify-center h-50 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center order-${positionOrder[person.position] || 'last'}`}
+                        class={`relative items-center justify-center h-50 px-4 py-2 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center ${positionOrder[person.position] !== undefined ? `order-${positionOrder[person.position]}` : 'order-last'}`}
                     >
                         {/* <p>{`order-${positionOrder[person.position] || 'last'}`}</p> */}
                         <div class="flex justify-center text-center imgcircle mt-2">

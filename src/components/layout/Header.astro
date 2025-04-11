@@ -174,8 +174,8 @@ export interface NavigationLink {
 						<>
 							{menu.showsub ? (
 							<div class="nav-item nav-dropdown group relative cursor-pointer">
-								<span class="nav-link inline-flex items-center underline-offset-2 hover:underline text-base">
-								{menu.title}
+								<span class="nav-link inline-flex items-center">
+									<a href={menu.path} class="underline-offset-2 hover:underline text-base">{menu.title}</a>
 								<svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
 									<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
 								</svg>

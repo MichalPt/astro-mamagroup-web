@@ -411,11 +411,11 @@
   }
   
   .nav-link {
-	@apply p-3 transition hover:underline md:p-4;
+	@apply p-3 transition md:p-4;
   }
   
   .nav-dropdown-list {
-	@apply z-20 rounded-lg bg-white px-4 py-2 shadow transition;
+	@apply z-20 rounded-lg bg-white px-4 py-2 shadow transition top-[3rem] left-1/2 -translate-x-1/2 delay-200 ease-in-out duration-200;
   }
   
   .nav-dropdown-item {
@@ -423,6 +423,6 @@
   }
   
   .nav-dropdown-link {
-	@apply block min-w-[150px] py-1 transition hover:underline;
+	@apply block min-w-[150px] py-1 transition;
   }
   
