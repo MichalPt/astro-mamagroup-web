@@ -7,7 +7,7 @@ const filteredList = list.filter(work => !omitInTitle.some(key => work.title.toL
 <h1>List of publications:</h1>
 <p class="text-sm mb-2">(automatically imported from ORCID)</p>
 
-<ul class="list-none h-screen mx-auto">
+<ul class="list-none mx-auto py-2">
     {filteredList.map((work) => (
       <li>
         <h3 class="flex gap-x-2"> 
