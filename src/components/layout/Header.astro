@@ -397,7 +397,10 @@ export interface NavigationLink {
 		  closeMenuIcon.classList.remove("scale-100", "opacity-100");
   
 		  toggleNavMenuMobileButton.setAttribute("aria-expanded", "false");
-		  location.reload();
+		  
+		  setTimeout(() => {
+			location.reload();
+		  }, 300); 
 		});
 	  });
 	});
