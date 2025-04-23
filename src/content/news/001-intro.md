@@ -1,6 +1,6 @@
 ---
 title: "New website"
-publishDate: "2025-04-08"
+publishDate: "2025-04-23"
 image: "/news/website.png"
 tags: ['website',]
 teaser: "We have a new website! You can visit it right now!"

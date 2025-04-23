@@ -53,7 +53,7 @@ const EmblaCarousel = (props) => {
               {/* <div className="embla__slide__number"> */}
                 {/* <span>{index + 1}</span> */}
                   <div className="flex flex-col items-center justify-center text-center m-4">
-                      <a data-astro-prefetch href={`/news/${post.id}/`} className="citrus-link relative px-4 hover:brightness-80">
+                      <a href={`/news/${post.id}/`} className="citrus-link relative px-4 hover:brightness-80">
                         {post.data.image && 
                             <div className="flex justify-center">
                                 <img src={post.data.image} alt={post.data.image.split('/').at(-1)} height="120" width="120"/>
