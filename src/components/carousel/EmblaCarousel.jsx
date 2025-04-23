@@ -56,7 +56,7 @@ const EmblaCarousel = (props) => {
                       <a href={`/news/${post.id}/`} className="citrus-link relative px-4 hover:brightness-80">
                         {post.data.image && 
                             <div className="flex justify-center">
-                                <img src={post.data.image} alt={post.data.image.split('/').at(-1)} height="120" width="120"/>
+                                <img src={post.data.image} alt={post.data.image.split('/').at(-1)} height="120" width="450" layout="responsive"/>
                             </div>
                         }
                       </a>

@@ -76,8 +76,8 @@ const { headings } = await render(post);
 	<div class="mt-6 flex sm:grid-cols-[auto_1fr] md:items-start gap-x-8">
 		<article class="grid flex-grow grid-cols-1 break-words pt-4" data-pagefind-body>
             {image && 
-                <div class="flex justify-center mb-8">
-                    <Image src={image} alt={image.split('/').at(-1)} height="160" width="160"/>
+                <div class="flex justify-start mb-8">
+                    <Image src={image} alt={image.split('/').at(-1)} height="160" width="600" layout="responsive"/>
                 </div>
             }
 			<div class="prose prose-citrus max-w-none flex-grow prose-headings:font-semibold prose-headings:text-accent-base prose-headings:before:text-accent-two sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none">
