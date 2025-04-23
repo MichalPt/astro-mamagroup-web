@@ -36,7 +36,8 @@
         "years":{
             "from":2024, 
             "to":""
-        }
+        },
+        "email": "matteo.bruschi@matfyz.cuni.cz"
     },
     {
         "name": "Malcolm Garrow",
@@ -59,7 +60,8 @@
         "years":{
             "from":2024, 
             "to":2018
-        }
+        },
+        "email": "veronika.vrankova277@student.cuni.cz"
     },
     {
         "name": "Kateřina Charvátová",
@@ -101,7 +103,8 @@
         "position": "collaborator",
         "path": "sanda",
         "photo": "",
-        "active": "True"
+        "active": "True",
+        "email": "frantisek.sanda@matfyz.cuni.cz"
     },
     {
         "name": "Aurélia Chenu",
