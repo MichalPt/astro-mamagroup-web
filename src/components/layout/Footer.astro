@@ -9,7 +9,7 @@ const year = new Date().getFullYear();
 
 <footer
 	class="semibold mt-auto flex w-full flex-col items-center justify-center gap-y-2 pb-4 pt-8 text-center align-top text-accent text-sm sm:flex-row sm:justify-between sm:text-sm"
->	<div class="justify-center sm:justify-start">
+>	<div class="flex flex-col justify-center sm:justify-start grow">
 		<div class="justify-center sm:justify-left mb-1">
 			<a href="https://www.mff.cuni.cz/cs/fuuk/oddeleni-teoreticke/vitejte" class="hover:text-accent hover:underline">
 				Theoretical division
@@ -22,7 +22,7 @@ const year = new Date().getFullYear();
 			&copy; {siteConfig.author} {year}
 		</div>
 	</div>
-	<div class="justify-center sm:justify-end">
+	<div class="flex justify-center sm:justify-end -mx-35">
 		<a href="https://www.mff.cuni.cz/">
 			<ImageInv src={logoMffCuni} alt="logo-mff" height="150" width="300"/>
 		</a>

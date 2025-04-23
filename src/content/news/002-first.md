@@ -7,3 +7,5 @@ tags: ["article",]
 # New article
 
 We have a new website!
+
+You can visit it right now!

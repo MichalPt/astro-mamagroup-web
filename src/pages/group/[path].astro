@@ -13,7 +13,7 @@ export async function getMdContent({path}) {
 }
 
 export async function getAstroContent({path}) {
-  const customWebSites = import.meta.glob<AstroInstance>('@/content/custom/*.astro', { eager: true });
+  const customWebSites = import.meta.glob<AstroInstance>('@/content/custom/*.{astro,mdx}', { eager: true });
   const foundCustom = Object.values(customWebSites).filter(f => f.file.split('/').at(-1).includes(path));
   return foundCustom;
 }

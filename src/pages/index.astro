@@ -9,6 +9,7 @@ import { collectionDateSort } from "@/utils/date";
 import TitlePageLayout from "@/layouts/TitlePageBase.astro";
 import { Image } from "astro:assets";
 import imgFmo from "@/assets/images/fmo-1000.png";
+import EmblaCarousel from "@/components/carousel/EmblaCarousel";
 
 // Posts, News
 const MAX_POSTS = 5;
@@ -17,18 +18,24 @@ const allNewsByDate = allNews
 	.sort(collectionDateSort)
 	.slice(0, MAX_POSTS) as CollectionEntry<"news">[];
 
-const allPosts = await getAllPosts();
-const allPostsByDate = allPosts
-	.sort(collectionDateSort)
-	.slice(0, MAX_POSTS) as CollectionEntry<"post">[];
+// const allPosts = await getAllPosts();
+// const allPostsByDate = allPosts
+// 	.sort(collectionDateSort)
+// 	.slice(0, MAX_POSTS) as CollectionEntry<"post">[];
+
+const options = { direction: 'ltr', loop: true };
+const indices = Array.from(Array(MAX_POSTS).keys());
+const slides = allNewsByDate;
+console.log(allNewsByDate)
+// const slides = ["aaa", "bbb", "ccc"];
 ---
 
 <TitlePageLayout meta={{ title: "Home" }}>
 	<div class="flex flex-col">
-		<section class="max-w-xl mx-auto relative flex shrink items-center justify-center h-screen -mt-24">
+		<!-- <section class="max-w-xl mx-auto relative flex shrink items-center justify-center h-screen -mt-24">
 			<div class="w-full text-center">
 				<div class="flex justify-center mb-4 dark:brightness-200">
-					<!-- <Image src={imgFmo} alt="fmo" widths={[254, 500]} sizes="(max-width: 608px) 254px, 500px"/> -->
+					<Image src={imgFmo} alt="fmo" widths={[254, 500]} sizes="(max-width: 608px) 254px, 500px"/>
 					<Image src={imgFmo} alt="fmo" width="500" height="500"/>
 				</div>
 				<span class="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
@@ -37,10 +44,10 @@ const allPostsByDate = allPosts
 				<p class="mt-4 mb-4 text-lg font-medium">
 					where we bridge theoretical and experimental knowledge<br> of nonlinear optical spectroscopy
 				</p>
-				<!-- <div class="flex justify-center mb-4">
+				<div class="flex justify-center mb-4">
 					<SocialList />
-				</div> -->
-				<!-- <div class="flex justify-center space-x-4 mt-4">
+				</div>
+				<div class="flex justify-center space-x-4 mt-4">
 					<a href="/posts/" class="relative flex items-center justify-center h-8 px-4 rounded-lg shadow-lg hover:brightness-110 transition-all bg-gradient-to-r from-accent-one to-accent-two">
 						<span class="text-bgColor font-semibold">
 							Read Blog
@@ -52,20 +59,23 @@ const allPostsByDate = allPosts
 							Wake up
 						</span>
 					</a>
-				</div> -->
+				</div>
 			</div>
-		</section>
+		</section> -->
 
-		<section class="max-w-3xl mx-auto relative flex flex-col items-center justify-center -mt-2 mb-6 client:visible">
+		<!-- <section class="max-w-3xl mx-auto relative flex flex-col items-center justify-center -mt-2 mb-6 client:visible">
 			<h2 class="text-center mb-4">
 				<a href="/news" class="title text-2xl citrus-link">News</a>
 			</h2>
 			<div class="mt-4 flex flex-col w-full align-content-center gap-4">
 				{ allNewsByDate.map((p) => <NewsPreview post={p} />)}
 			</div>
-		</section>
+		</section> -->
 	</div>
-
+	<div class="">
+		<EmblaCarousel slides={slides} options={options} client:load/>
+	</div>
+	
 
 	<!-- Posts Section -->
 	<!-- <section aria-label="Blog post list" class="'mt-[-100vh] pt-[100vh]'">
