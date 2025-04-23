@@ -39,7 +39,7 @@ const EmblaCarousel = (props) => {
         <div className="embla__container">
           <div className="embla__slide text-center flex flex-col items-center justify-center">
             <div className="mb-4 dark:brightness-200">
-              <img className="embla__slide__img" src="/public/images/fmo-1000.png" alt="fmo"/>
+              <img className="embla__slide__img" src="public/images/fmo-1000.png" alt="fmo"/>
             </div>
             <span className="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
               Welcome to MaMa Group website
@@ -52,13 +52,14 @@ const EmblaCarousel = (props) => {
             <div className="embla__slide flex flex-col items-center justify-center" key={post.id}>
               {/* <div className="embla__slide__number"> */}
                 {/* <span>{index + 1}</span> */}
-                <a data-astro-prefetch href={`/news/${post.id}/`} className="citrus-link relative items-center justify-center my-auto px-4 hover:brightness-80 text-center">
                   <div className="flex flex-col m-4">
-                      {post.data.image && 
-                          <div className="flex justify-center">
-                              <img src={post.data.image} alt={post.data.image.split('/').at(-1)} height="120" width="120"/>
-                          </div>
-                      }
+                      <a data-astro-prefetch href={`/news/${post.id}/`} className="citrus-link relative items-center justify-center my-auto px-4 hover:brightness-80 text-center">
+                        {post.data.image && 
+                            <div className="flex justify-center">
+                                <img src={post.data.image} alt={post.data.image.split('/').at(-1)} height="120" width="120"/>
+                            </div>
+                        }
+                      </a>
                       <div className="citrus-link font-medium text-accent-base">
                         {/* <time>{post.data.publishDate}</time> */}
                         <a href={'/news'}><h2>News</h2></a>
@@ -73,7 +74,7 @@ const EmblaCarousel = (props) => {
                       />  */}
                       
                   </div>
-              </a>
+              
               {/* </div> */}
             </div>
           ))}
