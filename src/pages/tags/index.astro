@@ -3,8 +3,8 @@ import Badge from "@/components/Badge.astro";
 import { getAllNews, getUniqueTagsWithCount } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 
-const allPosts = await getAllNews();
-const allTags = getUniqueTagsWithCount(allPosts);
+const allNews = await getAllNews();
+const allTags = getUniqueTagsWithCount(allNews);
 
 const meta = {
 	description: "A list of all the topics I've written about in my posts",
