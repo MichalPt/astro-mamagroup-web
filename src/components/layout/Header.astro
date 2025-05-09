@@ -4,7 +4,6 @@ import ThemeToggle from "@/components/ThemeToggle.astro";
 import { siteConfig, menuLinks } from "@/site.config";
 import { Icon } from "astro-icon/components";
 import { Image } from 'astro:assets';
-import ImageInv from "../images/ImageInv.astro";
 
 export interface SubNavigationLink {
 	title: string;
@@ -67,7 +66,6 @@ export interface NavigationLink {
 					<!--svg class="inline-block size-8 fill-current text-accent-base dark:text-accent-two drop-shadow-[0px_2.5px_2.5px_rgba(0,0,0,0.35)]">
 						<use href="/brand.svg#citrus"></use>
 					</svg-->
-					<!-- <ImageInv src="/logo-mama-group.png" alt="Logo" height="80" width="80" loading="eager"/> -->
 					<Image src="/logo-mama-group.png" alt="Logo" height="80" width="80" class="dark:imginv"/>
 				</div>
 				

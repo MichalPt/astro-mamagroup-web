@@ -1,16 +1,15 @@
 ---
 import { menuLinks, siteConfig } from "@/site.config";
 import { Image } from "astro:assets";
-import ImageInv from "../images/ImageInv.astro";
 import logoMffCuni from "@/assets/images/logo-mff-cuni-eng-300.png";
 
 const year = new Date().getFullYear();
 ---
 
 <footer
-	class="semibold mt-auto flex w-full flex-col items-center justify-center gap-y-2 pb-4 pt-8 text-center align-top text-accent text-sm sm:flex-row sm:justify-between sm:text-sm"
->	<div class="flex flex-col justify-center sm:justify-start grow">
-		<div class="justify-center sm:justify-left mb-1">
+	class="semibold mt-auto flex flex-col items-center justify-center gap-y-2 pb-4 pt-8 text-center align-top text-accent text-sm md:flex-row md:justify-between md:text-sm"
+>	<div class="flex flex-col justify-center md:justify-start">
+		<div class="justify-center md:justify-left mb-1">
 			<a href="https://www.mff.cuni.cz/cs/fuuk/oddeleni-teoreticke/vitejte" class="hover:text-accent hover:underline">
 				Theoretical division
 			</a>|
@@ -22,13 +21,13 @@ const year = new Date().getFullYear();
 			</a>
 
 		</div>
-		<div class="justify-center me-0 font-semibold sm:me-4">
+		<div class="justify-center me-0 font-semibold md:me-4">
 			&copy; {siteConfig.author} {year}
 		</div>
 	</div>
-	<div class="flex justify-center sm:justify-end -mx-35">
+	<div class="flex justify-center md:justify-end">
 		<a href="https://www.mff.cuni.cz/">
-			<ImageInv src={logoMffCuni} alt="logo-mff" height="150" width="300"/>
+			<Image src={logoMffCuni} alt="logo-mff" height="150" width="300" class="dark:imginv"/>
 		</a>
 	</div>
 </footer>
