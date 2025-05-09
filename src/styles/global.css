@@ -436,7 +436,7 @@
 
 /* Carousel */
 .embla {
-	max-width: 58rem;
+	max-width: 90%;
 	margin: auto;
 	--slide-height: 30rem;
 	--slide-spacing: 2rem;
