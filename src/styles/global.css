@@ -419,7 +419,7 @@
   }
   
   .nav-dropdown-list {
-	@apply z-20 rounded-lg bg-white px-4 py-2 shadow transition top-[3rem] delay-200 ease-in-out duration-200;
+	@apply z-20 rounded-lg bg-white px-4 py-2 shadow transition top-[3rem] delay-200 ease-in-out duration-200 dark:bg-gray-700;
   }
 
   .nav-dropdown-list-mobile {
