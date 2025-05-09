@@ -436,11 +436,11 @@
 
 /* Carousel */
 .embla {
-	max-width: 90%;
+	max-width: 95%;
 	margin: auto;
 	--slide-height: 30rem;
 	--slide-spacing: 2rem;
-	--slide-size: 100%;
+	--slide-size: 95%;
   }
   .embla__viewport {
 	overflow: hidden;
