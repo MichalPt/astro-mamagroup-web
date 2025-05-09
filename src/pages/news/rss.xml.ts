@@ -3,7 +3,7 @@ import { siteConfig } from "@/site.config";
 import rss from "@astrojs/rss";
 
 export const GET = async () => {
-    const notes = await getCollection("note");
+    const notes = await getCollection("news");
 
     return rss({
         title: siteConfig.title,
