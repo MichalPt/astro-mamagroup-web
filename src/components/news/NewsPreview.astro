@@ -12,7 +12,7 @@ type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 const { as: Tag = "div", post } = Astro.props;
 const image = post.data.image;
 ---
-<a data-astro-prefetch href={`/news/${post.id}/`} class="citrus-link relative shrink items-center justify-center h-90 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center">
+<a data-astro-prefetch href={`/news/${post.id}/`} class="citrus-link relative max-w-3xl items-center justify-center h-90 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center">
     <div class="flex flex-col m-4">
         {post.data.image && 
             <div class="flex justify-center">

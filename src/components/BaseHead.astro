@@ -11,7 +11,7 @@ const { articleDate, description, ogImage, title } = Astro.props;
 const titleSeparator = "•";
 const siteTitle = `${title} ${titleSeparator} ${siteConfig.title}`;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url).href;
+// const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url).href;
 ---
 
 <meta charset="utf-8" />
@@ -44,7 +44,7 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <meta content="" name="theme-color" />
 
 {/* Open Graph / Facebook */}
-<meta content={articleDate ? "article" : "website"} property="og:type" />
+<!-- <meta content={articleDate ? "article" : "website"} property="og:type" />
 <meta content={title} property="og:title" />
 <meta content={description} property="og:description" />
 <meta content={canonicalURL} property="og:url" />
@@ -60,14 +60,14 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 			<meta content={articleDate} property="article:published_time" />
 		</>
 	)
-}
+} -->
 
 {/* Twitter */}
-<meta content="summary_large_image" property="twitter:card" />
+<!-- <meta content="summary_large_image" property="twitter:card" />
 <meta content={canonicalURL} property="twitter:url" />
 <meta content={title} property="twitter:title" />
 <meta content={description} property="twitter:description" />
-<meta content={socialImageURL} property="twitter:image" />
+<meta content={socialImageURL} property="twitter:image" /> -->
 
 {/* Sitemap */}
 <link href="/sitemap-index.xml" rel="sitemap" />
@@ -76,13 +76,13 @@ const socialImageURL = new URL(ogImage ? ogImage : "/social-card.png", Astro.url
 <link href="/rss.xml" rel="alternate" title={siteConfig.title} type="application/rss+xml" />
 
 {/* Webmentions */}
-{
+<!-- {
 	WEBMENTION_URL && (
 		<>
 			<link href={WEBMENTION_URL} rel="webmention" />
 			{WEBMENTION_PINGBACK && <link href={WEBMENTION_PINGBACK} rel="pingback" />}
 		</>
 	)
-}
+} -->
 
 <meta content={Astro.generator} name="generator" />
