@@ -19,11 +19,11 @@ import rehypeUnwrapImages from "rehype-unwrap-images";
 
 import react from "@astrojs/react";
 
-// import rehypePrettyCode from "rehype-pretty-code";
-// import {
-//   transformerMetaHighlight,
-//   transformerNotationDiff,
-// } from "@shikijs/transformers";
+import rehypePrettyCode from "rehype-pretty-code";
+import {
+  transformerMetaHighlight,
+  transformerNotationDiff,
+} from "@shikijs/transformers";
 
 // https://astro.build/config
 export default defineConfig({
@@ -93,24 +93,25 @@ export default defineConfig({
         },
       ],
 
-    //   [
-    //     rehypePrettyCode,
-    //     {
-    //       theme: {
-    //         light: "rose-pine-dawn", // after changing the theme, the server needs to be restarted
-    //         dark: "rose-pine", // after changing the theme, the server needs to be restarted
-    //       },
+      [
+        rehypePrettyCode,
+        {
+          theme: {
+            light: "rose-pine-dawn", // after changing the theme, the server needs to be restarted
+            dark: "rose-pine", // after changing the theme, the server needs to be restarted
+          },
 
-    //       transformers: [transformerNotationDiff(), transformerMetaHighlight()],
-    //     },
-    //   ],
+          transformers: [transformerNotationDiff(), transformerMetaHighlight()],
+        },
+      ],
       rehypeUnwrapImages,
     ],
   },
   // https://docs.astro.build/en/guides/prefetch/
   prefetch: true,
   // ! Please remember to replace the following site property with your own domain
-  site: "http://mamagroup.netlify.app//",
+  // site: "http://mamagroup.netlify.app//",
+  site: "https://mama-group.cz//",
   vite: {
     build: {
       sourcemap: true, // Source maps generation
