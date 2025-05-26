@@ -5,7 +5,8 @@
         "path": "mancal",
         "photo": "tomas-mancal-source.jpg",
         "active": "True",
-        "email": "tomas.macal@matfyz.cuni.cz"
+        "email": "tomas.macal@matfyz.cuni.cz",
+        "orcid": "0000-0003-1736-3054"
     },
     {
         "name": "Pavel Malý",
@@ -13,7 +14,8 @@
         "path": "maly",
         "photo": "pavel-maly-400.jpg",
         "active": "True",
-        "email": "pavel.maly@matfyz.cuni.cz"
+        "email": "pavel.maly@matfyz.cuni.cz",
+        "orcid": "0000-0001-9244-9718"
     },
     {
         "name": "Michal Ptáček",
@@ -25,7 +27,8 @@
             "from":2023, 
             "to":""
         },
-        "email": "michal.ptacek@matfyz.cuni.cz"
+        "email": "michal.ptacek@matfyz.cuni.cz",
+        "orcid": "0009-0006-0879-4943"
     },
     {
         "name": "Matteo Bruschi",
@@ -37,7 +40,8 @@
             "from":2024, 
             "to":""
         },
-        "email": "matteo.bruschi@matfyz.cuni.cz"
+        "email": "matteo.bruschi@matfyz.cuni.cz",
+        "orcid": "0000-0001-7838-0363"
     },
     {
         "name": "Malcolm Garrow",
@@ -49,7 +53,8 @@
             "from":2024, 
             "to":""
         },
-        "email": "malcolm.garrow@matfyz.cuni.cz"
+        "email": "malcolm.garrow@matfyz.cuni.cz",
+        "orcid": "0000-0002-0029-2547"
     },
     {
         "name": "Veronika Vranková",
@@ -61,7 +66,8 @@
             "from":2024, 
             "to":2018
         },
-        "email": "veronika.vrankova277@student.cuni.cz"
+        "email": "veronika.vrankova277@student.cuni.cz",
+        "orcid": "0000-0002-9648-151X"
     },
     {
         "name": "Kateřina Charvátová",
@@ -73,7 +79,8 @@
             "from":2024, 
             "to":""
         },
-        "email": "katerina.charvatova@matfyz.cuni.cz"
+        "email": "katerina.charvatova@matfyz.cuni.cz",
+        "orcid": "0000-0003-2532-1372"
     },
     {
         "name": "May Myat Noe Shein",
@@ -85,7 +92,8 @@
             "from":2024, 
             "to":""
         },
-        "email": "maymyatnoe.shein789@student.cuni.cz"
+        "email": "maymyatnoe.shein789@student.cuni.cz",
+        "orcid": "0009-0003-9074-5806"
     },
     {
         "name": "Vladislav Sláma",
@@ -96,7 +104,8 @@
         "years":{
             "from":2025, 
             "to":""
-        }
+        },
+        "orcid": "0000-0001-7339-5523"
     },
     {
         "name": "František Šanda",
@@ -104,7 +113,8 @@
         "path": "sanda",
         "photo": "",
         "active": "True",
-        "email": "frantisek.sanda@matfyz.cuni.cz"
+        "email": "frantisek.sanda@matfyz.cuni.cz",
+        "orcid": "0000-0003-2416-8804"
     },
     {
         "name": "Aurélia Chenu",
@@ -115,7 +125,8 @@
         "years":{
             "from":2012, 
             "to":2013
-        }
+        },
+        "orcid": "0000-0002-4461-8289"
     },
     {
         "name": "Joachim Seibt",
@@ -126,7 +137,8 @@
         "years":{
             "from":2015, 
             "to":2018
-        }
+        },
+        "orcid": "0000-0002-8701-8853"
     },
     {
         "name": "Václav Perlík",

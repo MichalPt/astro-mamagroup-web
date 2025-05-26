@@ -413,7 +413,7 @@
 
 /* Carousel */
 .embla {
-	max-width: 90%;
+	max-width: 85%;
 	margin: auto;
 	--slide-height: 30rem;
 	--slide-spacing: 2rem;
@@ -597,7 +597,7 @@
   }
   .embla__slide__img {
 	border-radius: 1.8rem;
-	display: block;
+	display: flex;
 	height: var(--slide-height);
 	width: 100%;
 	object-fit: cover;

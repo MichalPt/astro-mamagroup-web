@@ -49,13 +49,14 @@ const astroContent = await getAstroContent({ path: path });
 
 <PageLayout meta={meta}>
   <div class="flex flex-col sm:flex-row justify-center align-items-end mt-4 gap-8">
-    <div class="justify-center text-center imgcircle">
-      <Image src={getImagePath(person.photo)} alt="profile-photo" height="160" width="160"/>
+    <div class="justify-center text-center">
+      <Image src={getImagePath(person.photo)} alt="profile-photo" height="160" width="160" class="imgcircle"/>
     </div>
     <div class="flex flex-col gap-y-2">
       <h1>{person.name}</h1>
       <div><i>{person.active === "True" ? "current" : "last"} position:</i> <p>{person.position}</p></div>
       {person.email && <div><i>e-mail:</i> <p><Email email={person.email}/></p></div>}
+      {person.orcid && <div><i>ORCID:</i> <p class="hover:text-link"><a href={`https://orcid.org/${person.orcid}`}>{person.orcid}</a></p></div>}
     </div>
   </div>
   
