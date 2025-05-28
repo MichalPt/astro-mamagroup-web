@@ -4,6 +4,7 @@ import NewsPreview from "@/components/news/NewsPreview.astro";
 import { getAllNews, getAllPosts } from "@/data/post";
 import { collectionDateSort } from "@/utils/date";
 import TitlePageLayout from "@/layouts/TitlePageBase.astro";
+import PageLayout from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 import imgFmo from "@/assets/images/fmo-1000.png";
 import EmblaCarousel from "@/components/carousel/EmblaCarousel";
@@ -23,7 +24,7 @@ const moreNewsByDate = allNews
 const options = { direction: 'ltr', loop: true };
 ---
 
-<TitlePageLayout meta={{ title: "Home" }}>
+<PageLayout meta={{ title: "Home" }}>
 	<!-- <div class="flex flex-col"> -->
 		<!-- <section class="max-w-xl mx-auto relative flex shrink items-center justify-center h-screen -mt-24">
 			<div class="w-full text-center">
@@ -65,9 +66,9 @@ const options = { direction: 'ltr', loop: true };
 			</div>
 		</section> -->
 	<!-- </div> -->
-	<div class="flex flex-col">
-		<section class="h-svh md:h-[calc(100svh-80px)] pt-[80px] md:pt-0">
-			<div class="max-w-full">
+	<div class="flex flex-col gap-[80px]">
+		<section class="md:pt-0">
+			<div class="">
 				<EmblaCarousel slides={topNewsByDate} options={options} client:load/>
 			</div>
 		</section>
@@ -118,5 +119,5 @@ const options = { direction: 'ltr', loop: true };
 		)
 	} -->
 
-</TitlePageLayout>
+</PageLayout>
 
