@@ -603,11 +603,11 @@
 @media (max-width: 640px) {
     .embla {
         max-width: 100vw;
-        width: 90%;
-		margin: 0;
-        --slide-height: 25rem;
+        width: 95%;
+		margin: 0 auto;
+        --slide-height: 100svh;
         --slide-spacing: 5vw;
-        --slide-size: 90vw;
+        --slide-size: 95vw;
     }
 
     .embla__viewport {
@@ -636,12 +636,12 @@
 
     .embla__controls {
         margin-top: 1rem;
-        gap: 0.2rem;
+        gap: 0.1rem;
         grid-template-columns: auto auto auto;
     }
 
     .embla__buttons {
-        gap: 0.4rem;
+        gap: 0.2rem;
     }
 
     .embla__button {
@@ -657,11 +657,11 @@
 @media (min-width: 641px) and (max-width: 767px) {
     .embla {
         max-width: 100vw;
-        width: 90vw;
-		margin: 0;
+        width: 95vw;
+		margin: 0 auto;
         --slide-height: 25rem;
         --slide-spacing: 5vw;
-        --slide-size: 90%;
+        --slide-size: 95vw;
     }
 
     .embla__viewport {
