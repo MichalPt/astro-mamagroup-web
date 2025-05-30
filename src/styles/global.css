@@ -430,6 +430,7 @@
 	flex: 0 0 var(--slide-size);
 	min-width: 0;
 	padding-left: var(--slide-spacing);
+	padding-right: var(--slide-spacing);
 }
 .embla__slide__number {
 	box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
@@ -596,24 +597,27 @@
 	border-radius: 1.8rem;
 	display: flex;
 	height: var(--slide-height);
-	width: 100%;
+	width: 95svh;
 	object-fit: contain;
 }
 
 @media (max-width: 640px) {
     .embla {
-        max-width: 100vw;
-        width: 95%;
+        max-width: 95svw;
+        width: 90svw;
+		height: calc(100svh - 80px);
 		margin: 0 auto;
-        --slide-height: 100svh;
-        --slide-spacing: 5vw;
-        --slide-size: 95vw;
+        --slide-height: 35rem;
+        --slide-spacing: 2.5svw;
+        --slide-size: 90svw;
     }
 
     .embla__viewport {
-        width: 100vw;
-        max-width: 100vw;
+        width: 90svw;
+        max-width: 95svw;
+		height: calc(100svh - 80px - 4rem);
 		overflow: hidden;
+		vertical-align: middle;
     }
 
     .embla__container {
@@ -621,17 +625,19 @@
     }
 
     /* .embla__slide {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
+        margin-top: auto;
+        margin-bottom: auto;
         flex: 0 0 95%;
-        max-width: 95%;
+		vertical-align: middle;
+		align-items: center;
     } */
 
     .embla__slide__img {
-        height: 12rem;
-        max-height: 12rem;
+        width: 80svw;
+        max-width: 80svw;
+		height: auto;
         object-fit: contain;
-        width: 100%;
+		border-radius: 1.8rem;
     }
 
     .embla__controls {
@@ -656,17 +662,17 @@
 
 @media (min-width: 641px) and (max-width: 767px) {
     .embla {
-        max-width: 100vw;
-        width: 95vw;
+        max-width: 95svw;
+        width: 90svw;
 		margin: 0 auto;
-        --slide-height: 25rem;
+        --slide-height: 100svh;
         --slide-spacing: 5vw;
-        --slide-size: 95vw;
+        --slide-size: 90svw;
     }
 
     .embla__viewport {
-        width: 100%;
-        max-width: 100vw;
+        width: 95svw;
+        max-width: 95vw;
 		overflow: hidden;
 	}
 
