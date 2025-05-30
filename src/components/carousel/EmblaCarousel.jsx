@@ -15,7 +15,7 @@ const EmblaCarousel = (props) => {
   const { slides, options } = props
   const progressNode = useRef(null)
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Autoplay({ playOnInit: true, delay: 18000 })
+    Autoplay({ playOnInit: true, delay: 10000 })
   ])
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -67,7 +67,7 @@ const EmblaCarousel = (props) => {
                         <span className="text-lighter text-xs">{getFormattedDate(post.data.publishDate)}</span>
                         <a href={`/news/${post.id}/`} className="citrus-link relative">
                           <h1 className="mt-4 title">{post.data.title}</h1>
-                          {post.data.teaser && <div className="mt-1">{post.data.teaser}</div>}
+                          {post.data.teaser && <div className="mt-1 text-sm sm:text-lg">{post.data.teaser}</div>}
                         </a>
                       </div>
                   </div>
