@@ -64,10 +64,11 @@ const EmblaCarousel = (props) => {
                         {/* <a href={'/news'} className="citrus-link">
                           <h2>News</h2>
                         </a> */}
-                        <span className="text-lighter text-xs">{getFormattedDate(post.data.publishDate)}</span>
+                        
                         <a href={`/news/${post.id}/`} className="citrus-link relative">
                           <h1 className="mt-4 title">{post.data.title}</h1>
-                          {post.data.teaser && <div className="mt-1 text-sm sm:text-lg">{post.data.teaser}</div>}
+                          <span className="text-lighter text-xs/5">{getFormattedDate(post.data.publishDate)}</span>
+                          {post.data.teaser && <div className="mt-1 text-sm sm:text-lg max-w-4/10">{post.data.teaser}</div>}
                         </a>
                       </div>
                   </div>
