@@ -41,10 +41,10 @@ const EmblaCarousel = (props) => {
           {/* First slide with welcome message */}
           <div className="embla__slide text-center flex flex-col items-center justify-center">
             <img className="embla__slide__img mb-4  dark:brightness-200 w-full h-auto object-cover" src="images/fmo-1000.png" alt="fmo"/>
-            <span className="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
+            <span className="title text-2xl sm:text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
               Welcome to MaMa Group website
             </span>
-            <p className="mt-4 mb-4 text-lg font-medium">
+            <p className="mt-4 mb-4 text-sm sm:text-lg font-medium">
               where we bridge theoretical and experimental knowledge<br/> of nonlinear optical spectroscopy
             </p>
           </div>
