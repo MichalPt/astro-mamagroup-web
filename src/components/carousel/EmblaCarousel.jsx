@@ -15,7 +15,7 @@ const EmblaCarousel = (props) => {
   const { slides, options } = props
   const progressNode = useRef(null)
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
-    Autoplay({ playOnInit: true, delay: 8000 })
+    Autoplay({ playOnInit: true, delay: 18000 })
   ])
 
   const { selectedIndex, scrollSnaps, onDotButtonClick } =
@@ -40,9 +40,7 @@ const EmblaCarousel = (props) => {
 
           {/* First slide with welcome message */}
           <div className="embla__slide text-center flex flex-col items-center justify-center">
-            <div className="mb-4 dark:brightness-200 w-full">
-              <img className="embla__slide__img w-full h-auto object-cover" src="images/fmo-1000.png" alt="fmo"/>
-            </div>
+            <img className="embla__slide__img mb-4  dark:brightness-200 w-full h-auto object-cover" src="images/fmo-1000.png" alt="fmo"/>
             <span className="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
               Welcome to MaMa Group website
             </span>
