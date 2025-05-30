@@ -28,7 +28,7 @@ const EmblaCarousel = (props) => {
     onNextButtonClick
   } = usePrevNextButtons(emblaApi)
 
-  const { autoplayIsPlaying, toggleAutoplay, onAutoplayButtonClick } =
+  const { autoplayIsPlaying, onAutoplayButtonClick } =
     useAutoplay(emblaApi)
 
   const { showAutoplayProgress } = useAutoplayProgress(emblaApi, progressNode)
@@ -37,9 +37,11 @@ const EmblaCarousel = (props) => {
     <div className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
+
+          {/* First slide with welcome message */}
           <div className="embla__slide text-center flex flex-col items-center justify-center">
-            <div className="mb-4 dark:brightness-200">
-              <img className="embla__slide__img" src="images/fmo-1000.png" alt="fmo"/>
+            <div className="mb-4 dark:brightness-200 w-full">
+              <img className="embla__slide__img w-full h-auto object-cover" src="images/fmo-1000.png" alt="fmo"/>
             </div>
             <span className="title text-3xl bg-gradient-to-r from-accent-two/85 via-accent-one/85 to-accent-two/85 dark:from-accent-two dark:via-accent-one dark:to-accent-two bg-clip-text text-transparent">
               Welcome to MaMa Group website
@@ -48,38 +50,29 @@ const EmblaCarousel = (props) => {
               where we bridge theoretical and experimental knowledge<br/> of nonlinear optical spectroscopy
             </p>
           </div>
+
+          {/* Slides with posts */}
           {slides.map((post) => (
             <div className="embla__slide flex flex-col items-center justify-center" key={post.id}>
-              {/* <div className="embla__slide__number"> */}
-                {/* <span>{index + 1}</span> */}
-                  <div className="flex flex-col items-center justify-center text-center m-4">
+                  <div className="flex flex-col items-center justify-center text-center m-4 w-full">
                       <a href={`/news/${post.id}/`} className="citrus-link relative px-4 hover:brightness-80">
                         {post.data.image && 
-                            <div className="flex justify-center">
-                                <img src={post.data.image} alt={post.data.image.split('/').at(-1)} height="120" width="450" layout="responsive"/>
+                            <div className="flex justify-center w-full">
+                                <img className="embla__slide__img w-full h-auto object-cover" src={post.data.image} alt={post.data.image.split('/').at(-1)} height="120" width="450" layout="responsive"/>
                             </div>
                         }
                       </a>
-                      <div className="citrus-link font-medium text-accent-base">
-                        {/* <time>{post.data.publishDate}</time> */}
-                        <a href={'/news'} className="citrus-link">
+                      <div className="font-medium text-accent-base w-full">
+                        {/* <a href={'/news'} className="citrus-link">
                           <h2>News</h2>
-                        </a>
+                        </a> */}
                         <span className="text-lighter text-xs">{getFormattedDate(post.data.publishDate)}</span>
                         <a href={`/news/${post.id}/`} className="citrus-link relative">
                           <h1 className="mt-4 title">{post.data.title}</h1>
                           {post.data.teaser && <div className="mt-1">{post.data.teaser}</div>}
                         </a>
                       </div>
-                      {/* <FormattedDate
-                          class="text-lighter text-xs no-underline"
-                          date={post.data.publishDate}
-                          dateTimeOptions={siteConfig.date.options}
-                      />  */}
-                      
                   </div>
-              
-              {/* </div> */}
             </div>
           ))}
         </div>

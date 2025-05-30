@@ -66,21 +66,19 @@ const options = { direction: 'ltr', loop: true };
 			</div>
 		</section> -->
 	<!-- </div> -->
-	<div class="flex flex-col gap-[80px]">
-		<section class="md:pt-0">
-			<div class="">
-				<EmblaCarousel slides={topNewsByDate} options={options} client:load/>
-			</div>
-		</section>
+	<div class="flex flex-col gap-[80px] w-full">
+		<div class="w-full overflow-hidden px-0">
+			<EmblaCarousel slides={topNewsByDate} options={options} client:load/>
+		</div>
 
 		<section class="mx-auto flex flex-col items-center justify-center mb-6 client:visible">
-			<h2 class="text-center mb-4">
-				<a href="/news" class="title text-3xl citrus-link">News</a>
-			</h2>
-			<div class="mt-4 flex flex-col md:grid md:grid-cols-4 align-content-center gap-4">
-				{ moreNewsByDate.map((p) => <NewsPreview post={p} />)}
-			</div>
-		</section>
+        <h2 class="text-center mb-4">
+            <a href="/news" class="title text-3xl citrus-link">News</a>
+        </h2>
+        <div class="mt-4 flex flex-col md:grid md:grid-cols-4 align-content-center gap-4">
+            { moreNewsByDate.map((p) => <NewsPreview post={p} />)}
+        </div>
+    </section>
 	</div>
 
 	<!-- Posts Section -->
