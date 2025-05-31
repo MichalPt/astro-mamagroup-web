@@ -13,7 +13,7 @@ export const siteConfig: SiteConfig = {
 		},
 	},
 	// Used as the default description meta property and webmanifest description
-	description: "MaMa Group website",
+	description: "MaMa Research Group, Institute of Physics, Charles University, Czechia",
 	// HTML lang property, found in src/layouts/Base.astro L:18 & astro.config.ts L:48
 	lang: "en-GB",
 	// Meta property, found in src/components/BaseHead.astro L:42
@@ -78,16 +78,4 @@ export const menuLinks: { path: string; title: string; showsub?: boolean; subfol
 		path: "/contacts",
 		title: "Contacts",
 	}
-	// {
-	// 	path: "/about/",
-	// 	title: "About",
-	// },
-	// {
-	// 	path: "/posts/",
-	// 	title: "Blog",
-	// },
-	// {
-	// 	path: "/notes/",
-	// 	title: "Notes",
-	// },
 ];
