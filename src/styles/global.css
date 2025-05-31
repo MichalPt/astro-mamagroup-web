@@ -416,7 +416,7 @@
 	max-width: 100%;
 	width: 80%;
 	margin: auto;
-	--slide-height: 26rem;
+	--slide-height: calc(70vh - 80px);
 	--slide-spacing: 1rem;
 	--slide-size: 100%;
 	overflow: hidden;
