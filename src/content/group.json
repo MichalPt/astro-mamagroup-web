@@ -64,7 +64,7 @@
         "active": "True",
         "years":{
             "from":2024, 
-            "to":2018
+            "to":""
         },
         "email": "veronika.vrankova277@student.cuni.cz",
         "orcid": "0000-0002-9648-151X"
@@ -101,10 +101,16 @@
         "path": "slama",
         "photo": "vladislav-slama-120.jpg",
         "active": "True",
-        "years":{
-            "from":2025, 
-            "to":""
-        },
+        "years":[
+            {
+                "from":2011, 
+                "to":2018
+            },
+            {
+                "from":2025, 
+                "to":""
+            }
+        ],
         "orcid": "0000-0001-7339-5523"
     },
     {
