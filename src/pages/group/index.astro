@@ -20,6 +20,13 @@ const positionOrder = { "group co-leader": 1, "postdoc": 2, "PhD student": 3, "c
 
 const activeMembers = membersList.filter((person) => person.active == "True");
 const pastMembers = membersList.filter((person) => person.active == "False");
+
+// Sort people by position order
+const sortedActiveMembers = activeMembers.sort((a, b) => {
+  const orderA = positionOrder[a.position] || 999;
+  const orderB = positionOrder[b.position] || 999;
+  return orderA - orderB;
+});
 ---
 
 <Base meta={{ title: "Group" }}>
@@ -28,10 +35,10 @@ const pastMembers = membersList.filter((person) => person.active == "False");
             Current members of the group
         </h1>
         <div class="flex flex-wrap gap-4 justify-center mt-4 mb-5 max-w-4xl">
-            {activeMembers.map(person => 
+            {sortedActiveMembers.map(person => 
                 <a 
                     href={`/group/${person.path}`} 
-                    class={`h-50 px-4 py-2 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center ${positionOrder[person.position] !== undefined ? `order-${positionOrder[person.position]}` : 'order-last'}`}
+                    class={`h-50 px-4 py-2 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center`}
                 >
                     <div class="flex justify-center text-center imgcircle mt-2">
                         <Image src={getImagePath(person.photo)} alt="profile-photo" height="90" width="90"/>
@@ -60,7 +67,12 @@ const pastMembers = membersList.filter((person) => person.active == "False");
                     </div>
                     <h3>{person.name}</h3>
                     <p><i>{person.position}</i></p>
-                    {person.years && <p><i>{person.years.from} &ndash; {person.years.to}</i></p>}
+                    {person.years && (Array.isArray(person.years) ? (
+                            <p><i>{person.years.map(years => years.from === years.to ? (`${years.from}`) : (`${years.from} \u2013 ${years.to}`)).join(', ')}</i></p>
+                        ) : (
+                            <p><i>{person.years.from} &ndash; {person.years.to}</i></p>
+                        )
+                    )}
                 </a>)}
         </div>
     </section>
