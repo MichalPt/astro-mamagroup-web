@@ -7,64 +7,12 @@ import TitlePageLayout from "@/layouts/TitlePageBase.astro";
 import PageLayout from "@/layouts/Base.astro";
 import { Image } from "astro:assets";
 import EmblaCarousel from "@/components/carousel/EmblaCarousel";
+import Research from "@/components/Research.astro";
 
 const meta = {
     description: "About our research",
     title: "About",
 };
-
-// Import all images from the research folder
-const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/images/research/*.{jpg,png,webp,jpeg,gif}");
-
-// Function to get imported image
-const getImage = async (imageName: string) => {
-    const imagePath = `/src/assets/images/research/${imageName}`;
-    const imageModule = images[imagePath];
-    if (imageModule) {
-        const module = await imageModule();
-        return module.default;
-    }
-    return null;
-};
-
-const researchAreas = [
-    {
-        title: "Open Quantum Systems",
-        description: "We investigate the dynamics of quantum systems that interact with their environment. We dwelve into the understanding how environmental effects influence quantum coherence, energy and charge transfer in molecular aggregates, and decoherence processes in complex quantum systems. As well as generalized master equations, non-markovian dynamics, and the interpretation of quantum theory.",
-        image: "oqs-01.png"
-    },
-    {
-        title: "Primary Processes in Photosynthesis",
-        description: "We study the fundamental quantum mechanical processes that occur during light harvesting and energy transfer in photosynthetic complexes. This includes the modeling of excitonic states, energy transfer pathways, and the (lack of) role of coherence and quantum mechanics in photosynthesis. We are also interested in the function, structure, and light harvesting properties of various photosynthetic reaction centers and antennas, including chlorosomes, phycobilisomes, and light-harvesting complexes.",
-        image: ""
-    },
-    {
-        title: "Nonlinear Spectroscopy",
-        description: "We develop theoretical frameworks for understanding and interpreting nonlinear optical spectroscopy experiments. This includes multidimensional spectroscopy techniques that provide us with a deep understanding of dynamical processes in complex molecular systems.",
-        image: "nonlinear-spectroscopy-01.png"
-    },
-    {
-        title: "New Materials and Quantum Technologies",
-        description: "We explore potential applications of design principles from nature in quantum computing, quantum sensing, and energy harvesting. Our research aims to bridge fundamental physics with practical technological applications.",
-        image: ""
-    },
-    {
-        title: "Single Molecule Spectroscopy",
-        description: "We investigate the behavior of individual molecules using advanced spectroscopic techniques. This includes studying the dynamics of single molecules, their interactions with light, and the effects of the environment on their properties. We aim to understand how single molecule spectroscopy can provide insights into molecular behavior that are not accessible through ensemble measurements.",
-        image: ""
-    }
-];
-
-// Process all research areas and load their images
-const processedResearchAreas = await Promise.all(
-    researchAreas.map(async (area) => {
-        if (area.image) {
-            const imageData = await getImage(area.image);
-            return { ...area, imageData };
-        }
-        return { ...area, imageData: null };
-    })
-);
 
 // Posts, News
 const maxNews = 10;
@@ -129,61 +77,11 @@ const options = { direction: 'ltr', loop: true };
 			</section>
 		)
 	} -->
-<section class="md:max-w-2xl mx-auto relative sm:mt-[3svh]" id="research-section">
-        <div class="w-full text-center transition-all duration-300" id="content-wrapper">
-            <div class="py-10">
-                <h1 class="title mb-6">About Our Research Group</h1>
-                <div class="prose prose-citrus max-w-none">
-                    <p class="mb-4 text-sm sm:text-base">
-                        We are a research group based at the Institute of Physics, Charles University in Prague,
-                        Czech Republic. Our aim is to bridge the theoretical and experimental knowledge in the fields of
-                    </p>
-                    <div class="space-y-3 mb-4 mx-auto">
-                        {processedResearchAreas.map((area, index) => (
-                            <div class="border border-gray-200 rounded-lg overflow-hidden">
-                                <button 
-                                    class="w-full px-4 py-3 text-left bg-gray-50 hover:bg-gray-200 flex items-center justify-between focus:outline-none transition-colors cursor-pointer"
-                                    data-dropdown-toggle={`dropdown-${index}`}
-                                    aria-expanded="false"
-                                    type="button"
-                                >
-                                    <span class="font-medium text-base sm:text-lg text-gray-600">{area.title}</span>
-                                    <svg 
-                                        class="w-5 h-5 text-gray-500 transform transition-transform duration-200 shrink-0"
-                                        data-dropdown-arrow={`dropdown-${index}`}
-                                        fill="none" 
-                                        stroke="currentColor" 
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                                <div 
-                                    class="hidden px-4 sm:px-8 py-0 sm:py-4 bg-gray-50 border-t border-gray-200 transition-all duration-300"
-                                    data-dropdown-content={`dropdown-${index}`}
-                                >
-                                    <p class="prose prose-citrus text-balance text-left text-sm sm:text-base leading-relaxed mb-1 sm:mb-4">
-										{area.description}
-									</p>
-                                    
-									{area.imageData && (
-                                        <div class="">
-                                            <Image 
-                                                src={area.imageData} 
-                                                alt={area.title}
-												inferSize
-                                                class="w-full mx-auto"
-                                            />
-                                        </div>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
-        </div>
+		
+	<section class="md:max-w-2xl mx-auto relative sm:mt-[3svh]" id="research-section">
+		<Research />
     </section>
+
 	<section class="mx-auto flex flex-col items-center justify-center mb-6 client:visible">
 		<h2 class="text-center mb-4">
 			<a href="/news" class="title text-3xl citrus-link">News</a>
@@ -194,67 +92,4 @@ const options = { direction: 'ltr', loop: true };
 	</section>
 </TitlePageLayout>
 
-<script>
-    let hasExpanded = false;
-
-    function initDropdowns() {
-        // Remove existing event listeners to prevent duplicates
-        const existingButtons = document.querySelectorAll('[data-dropdown-toggle]');
-        existingButtons.forEach(button => {
-            const newButton = button.cloneNode(true);
-            button.parentNode?.replaceChild(newButton, button);
-        });
-
-        const toggleButtons = document.querySelectorAll('[data-dropdown-toggle]');
-        const section = document.getElementById('research-section');
-        const wrapper = document.getElementById('content-wrapper');
-        
-        toggleButtons.forEach((button, index) => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                
-                const targetId = button.getAttribute('data-dropdown-toggle');
-                const content = document.querySelector(`[data-dropdown-content="${targetId}"]`);
-                const arrow = document.querySelector(`[data-dropdown-arrow="${targetId}"]`);
-                
-                if (content && arrow) {
-                    const isHidden = content.classList.contains('hidden');
-                    
-                    if (isHidden) {
-                        // First expansion - remove centering
-                        if (!hasExpanded && section && wrapper) {
-                            section.classList.remove('flex', 'items-center', 'justify-center', 'h-svh', 'md:h-[calc(100svh-80px)]');
-                            section.classList.add('pt-[80px]', 'md:pt-0');
-                            hasExpanded = true;
-                        }
-                        
-                        content.classList.remove('hidden');
-                        arrow.classList.add('rotate-180');
-                        button.setAttribute('aria-expanded', 'true');
-                    } else {
-                        content.classList.add('hidden');
-                        arrow.classList.remove('rotate-180');
-                        button.setAttribute('aria-expanded', 'false');
-                    }
-                }
-            });
-        });
-    }
-
-    // Initialize on page load
-    document.addEventListener('DOMContentLoaded', () => {
-        initDropdowns();
-    });
-    
-    // Re-initialize after navigation
-    document.addEventListener('astro:after-swap', () => {
-        hasExpanded = false; // Reset state on navigation
-        initDropdowns();
-    });
-    
-    document.addEventListener('astro:page-load', () => {
-        hasExpanded = false; // Reset state on navigation
-        initDropdowns();
-    });
-</script>
 
