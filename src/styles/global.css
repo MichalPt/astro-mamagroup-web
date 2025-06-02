@@ -349,13 +349,15 @@
 
 .imgcircle {
 	clip-path: circle();
-  }
+	}
 
 .img{
 	width: 100%;
 	height: auto;
-  }
-
+	}
+.rotate-180 {
+        transform: rotate(180deg);
+    }
 
 /* contacts */
 .contacts-col {
