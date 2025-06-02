@@ -159,18 +159,20 @@ const options = { direction: 'ltr', loop: true };
                                     </svg>
                                 </button>
                                 <div 
-                                    class="hidden px-8 py-4 bg-gray-50 border-t border-gray-200 transition-all duration-300"
+                                    class="hidden px-4 sm:px-8 py-0 sm:py-4 bg-gray-50 border-t border-gray-200 transition-all duration-300"
                                     data-dropdown-content={`dropdown-${index}`}
                                 >
-                                    <p class="prose prose-citrus text-balance text-left text-sm sm:text-base leading-relaxed mb-4">{area.description}</p>
-                                    {area.imageData && (
+                                    <p class="prose prose-citrus text-balance text-left text-sm sm:text-base leading-relaxed mb-1 sm:mb-4">
+										{area.description}
+									</p>
+                                    
+									{area.imageData && (
                                         <div class="">
                                             <Image 
                                                 src={area.imageData} 
                                                 alt={area.title}
-                                                class="w-full h-auto mx-auto"
-                                                width={500} 
-                                                height={500}
+												inferSize
+                                                class="w-full mx-auto"
                                             />
                                         </div>
                                     )}
