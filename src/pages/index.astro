@@ -188,7 +188,7 @@ const options = { direction: 'ltr', loop: true };
 		<h2 class="text-center mb-4">
 			<a href="/news" class="title text-3xl citrus-link">News</a>
 		</h2>
-		<div class="mt-4 flex flex-col md:grid md:grid-cols-4 align-content-center gap-4">
+		<div class="mt-4 flex flex-col w-full md:grid md:grid-cols-4 align-content-center gap-4">
 			{ moreNewsByDate.map((p) => <NewsPreview post={p} />)}
 		</div>
 	</section>

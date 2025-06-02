@@ -13,7 +13,7 @@ const { as: Tag = "div", post } = Astro.props;
 const image = post.data.image;
 ---
 <a data-astro-prefetch href={`/news/${post.id}/`} class="citrus-link relative flex items-end justify-center h-90 px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-80 hover:bg-special-lightest text-center">
-    <div class="flex flex-col m-4">
+    <div class="flex flex-col m-4 w-full sm:shrink">
         {post.data.image && 
             <div class="flex grow justify-center items-center">
                 <Image src={image} alt={image.split('/').at(-1)} height="150" width="150"/>
