@@ -46,10 +46,10 @@ const prevVideo = videoIndex > 0 ? videos[videoIndex - 1] : null;
 const nextVideo = videoIndex < videos.length - 1 ? videos[videoIndex + 1] : null;
 
 const prevUrl = prevVideo
-    ? `${rootPath}${course.id}/${prevVideo.title}`
+    ? `${rootPath}${course.id}/${slugify(prevVideo.title)}`
     : null;
 const nextUrl = nextVideo
-    ? `${rootPath}${course.id}/${nextVideo.title}`
+    ? `${rootPath}${course.id}/${slugify(nextVideo.title)}`
     : null;
 
 const meta = {
