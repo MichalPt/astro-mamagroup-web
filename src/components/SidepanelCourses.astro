@@ -62,6 +62,9 @@ const currentPath = Astro.url.pathname;
         display: block;
         pointer-events: auto;
     }
+    #close-panel {
+        display: none;
+    }
 }
 </style>
 
@@ -115,6 +118,7 @@ const currentPath = Astro.url.pathname;
     function initSidepanel() {
         const collapsed = document.getElementById('sidepanel-collapsed');
         const expanded = document.getElementById('sidepanel-expanded');
+        const closeButton = document.getElementById('close-panel');
         let overPanel = false;
 
         // Check if elements exist before adding event listeners
@@ -129,8 +133,9 @@ const currentPath = Astro.url.pathname;
         // Re-select the new elements
         const freshCollapsed = document.getElementById('sidepanel-collapsed');
         const freshExpanded = document.getElementById('sidepanel-expanded');
+        const freshCloseButton = document.getElementById('close-panel');
 
-        if (!freshCollapsed || !freshExpanded) return;
+        if (!freshCollapsed || !freshExpanded || !freshCloseButton) return;
 
         freshCollapsed.addEventListener('mouseenter', () => {
             freshExpanded.classList.add('visible');
@@ -145,6 +150,12 @@ const currentPath = Astro.url.pathname;
             freshExpanded.classList.add('visible');
         });
         freshExpanded.addEventListener('mouseleave', () => {
+            overPanel = false;
+            freshExpanded.classList.remove('visible');
+        });
+        
+        // Add close button functionality
+        freshCloseButton.addEventListener('click', () => {
             overPanel = false;
             freshExpanded.classList.remove('visible');
         });
