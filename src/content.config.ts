@@ -72,6 +72,47 @@ const news = defineCollection({
 		}),
 });
 
+
+function createCourseCollection(path: string) { 
+	return defineCollection({
+		loader: glob({ base: `./src/content/${path}`, pattern: "**/*.json" }),
+		schema: z.object({
+			courseName: z.string(),
+			courseCode: z.string().optional(),
+			courseDescription: z.string().optional(),
+			language: z.string(),
+			semester: z.enum(["summer", "winter", "both"]).default("winter").optional(),
+			courseVisible: z.boolean().default(true).optional(),
+			showDates: z.boolean().default(false).optional(),
+			content: z.array(
+				z.object({
+					sectionTitle: z.string(),
+					sectionVisible: z.boolean().default(true).optional(),
+					sectionContent: z.array(
+						z.object({
+							subsectionTitle: z.string(),
+							subsectionVisible: z.boolean().default(true).optional(),
+							subsectionContent: z.array(
+								z.object({
+									title: z.string(),
+									videoUrl: z.string().url(),
+									pdfName: z.string().optional(),
+									visible: z.boolean().default(true).optional(),
+									label: z.string().optional(),
+									description: z.string().optional()
+								})
+							)
+						})
+					)
+				})
+			)
+		})
+	})
+};
+
+const coursesMancal = createCourseCollection("mancal-teaching");
+const coursesMaly = createCourseCollection("maly-teaching");
+
 // Series
 const series = defineCollection({
 	loader: glob({ base: "./src/content/series", pattern: "**/*.{md,mdx}" }),
@@ -79,10 +120,10 @@ const series = defineCollection({
 		id: z.string(),
 		title: z.string(),
 		description: z.string(),
-		featured: z.boolean().default(false), // Пометка для популярных серий
+		featured: z.boolean().default(false),
 	}),
 });
 // End
 
 // Series
-export const collections = { post, note, series, news };
+export const collections = { post, note, series, news, coursesMancal, coursesMaly };
