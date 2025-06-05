@@ -1,0 +1,160 @@
+---
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+
+interface Props {
+    collectionName: string;
+}
+
+const { collectionName } = Astro.props;
+const courses = await getCollection(collectionName);
+
+// Custom semester order
+const semesterOrder = { winter: 0, summer: 1, both: 2 };
+const semesters = ["winter", "summer"];
+
+// Sort courses by semester, then by courseName
+// courses = courses.sort((a, b) => {
+//     const semA = semesterOrder[(a.data.semester as keyof typeof semesterOrder) ?? "winter"] ?? 0;
+//     const semB = semesterOrder[(b.data.semester as keyof typeof semesterOrder) ?? "winter"] ?? 0;
+//     if (semA !== semB) return semA - semB;
+//     return a.data.courseName.localeCompare(b.data.courseName, undefined, { sensitivity: "base" });
+// });
+
+const currentPath = Astro.url.pathname;
+
+---
+
+<style>
+.sidepanel-collapsed {
+    @apply w-10 h-16 bg-bgColor rounded-r-lg shadow-lg flex items-center justify-center cursor-pointer transition-all duration-300;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 41;
+}
+.sidepanel-expanded {
+    @apply w-80 max-w-80 bg-bgColor shadow-[5px_0px_10px_rgba(0,0,0,0.05)];
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 300ms, transform 300ms;
+    z-index: 42;
+    pointer-events: none;
+}
+.sidepanel-expanded.visible {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+@media (min-width: 1800px) {
+    .sidepanel-collapsed {
+        display: none;
+    }
+    .sidepanel-expanded {
+        opacity: 1 !important;
+        transform: translateX(0) !important;
+        display: block;
+        pointer-events: auto;
+    }
+}
+</style>
+
+<div>
+    <div class="sidepanel-collapsed" id="sidepanel-collapsed">
+        <Icon name="hugeicons:arrow-right-02" class="w-6 h-6 text-accent-base" />
+    </div>
+    <aside class="sidepanel-expanded" id="sidepanel-expanded">
+        <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-orange-300 via-pink-300 to-purple-300 opacity-30 dark:opacity-0 -z-10"></div>
+        <div class="flex h-full flex-col px-6 pt-4 md:pt-8 w-full md:w-80 md:min-w-80 md:max-w-80 bg-accent-base/5 border-r border-special-light">
+            <div class="flex">
+                <div class="title text-2xl font-semibold text-accent-base">
+                    Courses
+                </div>
+            </div>
+            <button
+                id="close-panel"
+                class="absolute top-4 right-4 md:top-8 md:right-8 h-8 w-8 flex items-center justify-center rounded-lg bg-accent-base/5 text-accent-base hover:bg-accent-base/10"
+                aria-label="Close Series Panel"
+            >
+                <Icon class="h-6 w-6" name="hugeicons:cancel-01" />
+            </button>
+            <div class="">
+                {semesters.map((semester) => 
+                    <h4 class="text-accent-base mt-4 text-xl">{semester} semester:</h4>
+                    <ol class="mt-1 text-sm font-medium text-light list-disc pl-4">
+                        {courses.filter((course) => (course.data.semester ?? "winter") === semester).map((course) => (
+                            <li>
+                                <a href={`/mancal/teaching/${course.id}`}>
+                                    {course.data.courseName}
+                                </a>
+                            </li>
+                        ))}
+                    </ol> 
+                )}
+
+                <!-- <p class="mt-2 text-bold">Summer semester:</p>
+                <ol class="mt-4 text-sm font-medium text-light gap-2">
+                    {courses.filter((course) => (course.data.semester ?? "winter") === "summer").map((course) => (
+                        <a href={`/mancal/teaching/${course.id}`}>
+                                {course.data.courseName}
+                            </a>
+                    ))}
+                </ol> -->
+            </div>
+        </div>
+    </aside>
+</div>
+
+<script type="module">
+    function initSidepanel() {
+        const collapsed = document.getElementById('sidepanel-collapsed');
+        const expanded = document.getElementById('sidepanel-expanded');
+        let overPanel = false;
+
+        // Check if elements exist before adding event listeners
+        if (!collapsed || !expanded) return;
+
+        // Remove existing listeners by cloning elements (prevents duplicates)
+        const newCollapsed = collapsed.cloneNode(true);
+        const newExpanded = expanded.cloneNode(true);
+        collapsed.parentNode.replaceChild(newCollapsed, collapsed);
+        expanded.parentNode.replaceChild(newExpanded, expanded);
+
+        // Re-select the new elements
+        const freshCollapsed = document.getElementById('sidepanel-collapsed');
+        const freshExpanded = document.getElementById('sidepanel-expanded');
+
+        if (!freshCollapsed || !freshExpanded) return;
+
+        freshCollapsed.addEventListener('mouseenter', () => {
+            freshExpanded.classList.add('visible');
+        });
+        freshCollapsed.addEventListener('mouseleave', () => {
+            setTimeout(() => {
+                if (!overPanel) freshExpanded.classList.remove('visible');
+            }, 10);
+        });
+        freshExpanded.addEventListener('mouseenter', () => {
+            overPanel = true;
+            freshExpanded.classList.add('visible');
+        });
+        freshExpanded.addEventListener('mouseleave', () => {
+            overPanel = false;
+            freshExpanded.classList.remove('visible');
+        });
+    }
+
+    // Initialize on page load
+    document.addEventListener("DOMContentLoaded", initSidepanel);
+
+    // Re-initialize after Astro navigation
+    document.addEventListener("astro:after-swap", initSidepanel);
+
+    // Fallback for other routing systems
+    document.addEventListener("astro:page-load", initSidepanel);
+</script>

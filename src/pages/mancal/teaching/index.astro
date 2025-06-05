@@ -1,0 +1,66 @@
+---
+import Badge from "@/components/Badge.astro";
+import { getCollection } from 'astro:content';
+import PageLayout from "@/layouts/Base.astro";
+import CoursesLayout from "@/layouts/Courses.astro";
+
+const coursesName = "coursesMancal";
+const semesters = ["winter", "summer"];
+const rootPath = "/mancal/teaching/";
+
+const allCourses = await getCollection(coursesName);
+console.log('Courses found:', allCourses.length);
+
+const meta = {
+	description: "Homepage for Mancal courses",
+	title: "Mancal Courses",
+};
+---
+
+<CoursesLayout meta={meta} collectionName={coursesName}>
+    <!-- <SidepanelCourses collectionName="coursesMancal"/> -->
+
+	<div class="title text-3xl font-semibold text-accent-base mb-6">Courses</div>
+
+	<div class="items-center gap-2 flex flex-col">
+		<div class="">
+			{semesters.map((semester) => 
+				<h4 class="text-accent-base mt-4 text-xl">{semester} semester:</h4>
+				<ol class="mt-1 text-sm font-medium text-light list-disc pl-4">
+					{allCourses.filter((course) => (course.data.semester ?? "winter") === semester).map((course) => (
+						<li>
+							<a href={`${rootPath}${course.id}`}>
+								{course.data.courseName}
+							</a>
+						</li>
+					))}
+				</ol> 
+			)}
+
+        <!-- <p>Found {allCourses.length} courses</p>
+
+		{
+			allCourses.map((course) => (
+                <div class="flex items-center ">
+                    <a href={`/mancal/teaching/${course.id}`}>
+						{course.data.courseName}
+					</a>
+                </div>
+			))
+		} -->
+	</div>
+
+	<!-- <div>
+		{allCourses.flatMap((course) =>
+			course.data.content.flatMap((section) =>
+				section.sectionContent.flatMap((subsection) =>
+					subsection.subsectionContent.map((video, idx, arr) => 
+						<a href={`/mancal/teaching/${course.id}/${video.title}`} class="block mb-2">
+							1: {course.data.courseName}, 2: {section.sectionTitle}, 3: {subsection.subsectionTitle}, 4: {video.title}, {idx}
+						</a>
+					)
+				)
+			)
+		)}
+	</div> -->
+</CoursesLayout>

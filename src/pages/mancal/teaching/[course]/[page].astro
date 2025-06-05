@@ -1,0 +1,73 @@
+---
+import { getCollection } from "astro:content";
+import CoursesLayout from "@/layouts/Courses.astro";
+import type { CollectionEntry } from "astro:content";
+
+const collectionName = "coursesMancal";
+const rootPath = "/mancal/teaching/";
+
+export async function getStaticPaths() {
+    // The getCollection function accepts only literal string, not a vriable!
+    const courses = await getCollection("coursesMancal");
+    return courses.flatMap((course) =>
+        course.data.content.flatMap((section) =>
+            section.sectionContent.flatMap((subsection) =>
+                subsection.subsectionContent.map((video, idx, arr) => ({
+                    params: {
+                        course: course.id,
+                        page: video.title,
+                    },
+                    props: {
+                        course,
+                        section,
+                        subsection,
+                        video,
+                        videoIndex: idx,
+                        videos: arr,
+                    },
+                }))
+            )
+        )
+    );
+}
+
+const { course, section, subsection, video, videoIndex, videos } = Astro.props;
+
+// Pagination logic for previous/next video in the same subsection
+const prevVideo = videoIndex > 0 ? videos[videoIndex - 1] : null;
+const nextVideo = videoIndex < videos.length - 1 ? videos[videoIndex + 1] : null;
+
+const prevUrl = prevVideo
+    ? `${rootPath}${course.id}/${prevVideo.title}`
+    : null;
+const nextUrl = nextVideo
+    ? `${rootPath}${course.id}/${nextVideo.title}`
+    : null;
+
+const meta = {
+    title: video.title,
+    description: video.description || "",
+};
+
+const videoId = video.videoUrl.split("watch?v=")[1];
+---
+
+<CoursesLayout meta={meta} collectionName={collectionName}>
+    <div>
+        <a href=`${rootPath}${course.id}`>
+            {course.data.courseName} / {section.sectionTitle} / {subsection.subsectionTitle} /
+        </a>
+    </div>
+
+    <h1 class="title mb-6">{video.title}</h1>
+    <p>{video.description}</p>
+
+    <div class="flex justify-center mt-8">
+        <iframe src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <nav class="flex justify-between mt-8">
+        {prevUrl && <a href={prevUrl}>← Previous Video</a>}
+        {nextUrl && <a href={nextUrl}>Next Video →</a>}
+    </nav>
+</CoursesLayout>
