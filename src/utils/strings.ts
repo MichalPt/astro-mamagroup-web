@@ -8,3 +8,13 @@ export function capitalize(str: string): string {
     );
     return capitalized.join(' ');
     }
+
+export function slugify(str: string): string {
+    return str
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s]/g, '') // Remove non-alphanumeric characters except spaces and hyphens
+        .replace(/\s/g, '-') // Replace spaces with hyphens
+        .replace(/-+/g, '-') // Replace multiple hyphens with a single hyphen
+        .replace(/(^-|-$)+/g, "");
+}

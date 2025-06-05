@@ -3,6 +3,7 @@ import Badge from "@/components/Badge.astro";
 import { getCollection } from 'astro:content';
 import PageLayout from "@/layouts/Base.astro";
 import CoursesLayout from "@/layouts/Courses.astro";
+import { slugify } from "@/utils/strings.ts"
 
 const coursesName = "coursesMancal";
 const semesters = ["winter", "summer"];
@@ -50,17 +51,17 @@ const meta = {
 		} -->
 	</div>
 
-	<!-- <div>
+	<div>
 		{allCourses.flatMap((course) =>
 			course.data.content.flatMap((section) =>
 				section.sectionContent.flatMap((subsection) =>
 					subsection.subsectionContent.map((video, idx, arr) => 
-						<a href={`/mancal/teaching/${course.id}/${video.title}`} class="block mb-2">
-							1: {course.data.courseName}, 2: {section.sectionTitle}, 3: {subsection.subsectionTitle}, 4: {video.title}, {idx}
+						<a href={`${rootPath}${course.id}/${slugify(video.title)}`} class="block mb-2">
+							1: {course.id}, 3: {subsection.subsectionTitle}, 4: {video.title}, {idx}
 						</a>
 					)
 				)
 			)
 		)}
-	</div> -->
+	</div>
 </CoursesLayout>

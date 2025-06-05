@@ -1,10 +1,11 @@
 ---
-// filepath: /home/mptacek/astro-mamagroupweb/astro-mamaweb/src/pages/mancal/teaching/[course].astro
 import { getCollection } from "astro:content";
 import CoursesLayout from "@/layouts/Courses.astro";
 import type { CollectionEntry } from "astro:content";
+import { slugify } from "@/utils/strings.ts"
 
 const collectionName = "coursesMancal";
+const rootPath = "/mancal/teaching/";
 
 export async function getStaticPaths() {
     const courses = await getCollection("coursesMancal");
@@ -41,7 +42,7 @@ const meta = {
                         <ul class="ml-4 list-decimal">
                             {subsection.subsectionContent.map((video) => (
                                 <li>
-                                    <a href={`/mancal/teaching/${course.id}/${video.title}`}>
+                                    <a href={`${rootPath}${course.id}/${slugify(video.title)}`}>
                                         {video.title}
                                     </a>
                                 </li>

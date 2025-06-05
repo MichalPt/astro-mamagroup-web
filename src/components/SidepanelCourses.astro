@@ -1,6 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
+import { slugify } from "@/utils/strings.ts";
 
 interface Props {
     collectionName: string;

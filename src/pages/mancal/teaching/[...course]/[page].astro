@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import CoursesLayout from "@/layouts/Courses.astro";
 import type { CollectionEntry } from "astro:content";
+import { slugify } from "@/utils/strings.ts"
 
 const collectionName = "coursesMancal";
 const rootPath = "/mancal/teaching/";
@@ -15,7 +16,14 @@ export async function getStaticPaths() {
                 subsection.subsectionContent.map((video, idx, arr) => ({
                     params: {
                         course: course.id,
-                        page: video.title,
+                        page: slugify(video.title),
+                        // page: video.title
+                        //         .toLowerCase()
+                        //         .trim()
+                        //         .replace(/[^a-z0-9\s]/g, '') // Remove non-alphanumeric characters except spaces and hyphens
+                        //         .replace(/\s/g, '-') // Replace spaces with hyphens
+                        //         .replace(/-+/g, '-') // Replace multiple hyphens with a single hyphen
+                        //         .replace(/(^-|-$)+/g, ""),
                     },
                     props: {
                         course,
