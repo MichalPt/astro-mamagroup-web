@@ -26,8 +26,8 @@ const meta = {
 	<div class="items-center gap-2 flex flex-col">
 		<div class="">
 			{semesters.map((semester) => 
-				<h4 class="text-accent-base mt-4 text-xl">{semester} semester:</h4>
-				<ol class="mt-1 text-sm font-medium text-light list-disc pl-4">
+				<h4 class="text-accent-base mt-4 text:xl sm:text-2xl">{semester} semester:</h4>
+				<ol class="mt-1 text-sm sm:text-base font-medium text-light list-disc pl-4">
 					{allCourses.filter((course) => (course.data.semester ?? "winter") === semester).map((course) => (
 						<li>
 							<a href={`${rootPath}${course.id}`}>

@@ -62,23 +62,23 @@ const videoId = video.videoUrl.split("watch?v=")[1];
 
 <CoursesLayout meta={meta} collectionName={collectionName}>
     <div>
-        <a href=`${rootPath}${course.id}`>
+        <a href=`${rootPath}${course.id}` class="text-xs sm:text-sm text-light">
             {course.data.courseName} / {section.sectionTitle} / {subsection.subsectionTitle} /
         </a>
     </div>
 
-    <h1 class="title mb-6">{videoIndex+1} {video.title}</h1>
-    <p>{video.description}</p>
+    <h1 class="text-base sm:text-2xl title mb-4">{videoIndex+1} {video.title}</h1>
+    {video.description && <p class="mb-2">{video.description}</p>}
 
-    <div class="flex justify-center mt-8">
+    <div class="flex justify-center mt-4 mb-4">
         <iframe src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
-    <nav class="flex flex-row mt-8">
+    <nav class="flex flex-row mt-4">
         {prevUrl && 
             <a href={prevUrl} class="flex flex-col items-right">
-                <div  class="text-base">← Previous Video</div>
-                <div class="text-sm text-light">
+                <div  class="text-sm sm:text-base">← Previous Video</div>
+                <div class="text-xs sm:text-sm text-light">
                     <div>{prevVideo.title}</div>
                     <div>({videoIndex} of {videos.length})</div>
                 </div>
@@ -87,8 +87,8 @@ const videoId = video.videoUrl.split("watch?v=")[1];
         <div class="mx-auto"></div>
         {nextUrl && 
             <a href={nextUrl} class="flex flex-col text-right items-right">
-                <div class="text-base">Next Video →</div>
-                <div class="text-sm text-light">
+                <div class="text-sm sm:text-base">Next Video →</div>
+                <div class="text-xs sm:text-sm text-light">
                     <div>{nextVideo.title}</div>
                     <div>({videoIndex + 2} of {videos.length})</div>
                 </div>
