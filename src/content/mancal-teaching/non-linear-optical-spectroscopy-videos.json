@@ -1,0 +1,149 @@
+{
+    "courseName": "Nonlinear Optical Spectroscopy",
+    "courseCode": "",
+    "courseDescription": "A complete English language introductory course of theoretical non-linear (optical) spectroscopy held at the Faculty of Mathematics and Physics of the Charles University as NOOE119: Non-linear Optical Spectroscopy (NOOE119: Nelineární optická spektroskopie). Non-linear optical spectroscopy is a crucial tool for observation of open quantum systems on the natural time-scales of their dynamics. However, the relation between observed spectroscopic signals and the quantum dynamics is highly non-trivial. This course is designed to shed light on this relation, and help students to find answers related not just to non-linear spectroscopy itself, but also to the general topics of open quantum systems, quantum biology and applied quantum mechanics.",
+    "language": "English",
+    "semester": "summer",
+    "courseVisible": true,
+    "showDates": false,
+    "content": [
+        {
+            "sectionTitle": "Non-Linear Optical Spectroscopy",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Introduction to Non-Linear Optical Spectroscopy",
+                    "subsectionVisisble": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Welcome note from teh lecturer",
+                            "videoUrl": "https://www.youtube.com/watch?v=xeVtEwQ9kMA",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Basic information about the lecture from the lecturer. This is the last time you see my face in the videos!"
+                        },
+                        {
+                            "title": "Introduction to non-linear spectroscopy",
+                            "videoUrl": "https://www.youtube.com/watch?v=l93fYyqNFFw",
+                            "pdfName": ["Lecture_1_Part_1.pdf", "Lecture_1_Part_2.pdf"],
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "N-wave mixing, dynamics of driven open quantum systems",
+                            "videoUrl": "https://www.youtube.com/watch?v=1x6jgqgMGMs",
+                            "pdfName": ["Lecture_2_Part_1.pdf", "Lecture_2_Part_2.pdf"],
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "N-wave mixing as a non-linear light-matter interaction process. Introduction to the necessary tools, results and approximations of open quantum systems for non-linear optical spectroscopy."
+                        },
+                        {
+                            "title": "Equations of motion for the reduced density matrix",
+                            "videoUrl": "https://www.youtube.com/watch?v=nI8F68fUggY",
+                            "pdfName": "Lecture_3_part_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Reduced density matrix theory using super-operator notation. Evolution super-operator, Liouvillian and transition dipole moment super-operator. Phenomenological master equation to describe relaxation of the reduced density matrix. Secular approximation, dependence of the master equation on the initial condition."
+                        },
+                        {
+                            "title": "Time-dependent Perturbation Theory, Response Functions",
+                            "videoUrl": "https://www.youtube.com/watch?v=WO_Zvvuj0PA",
+                            "pdfName": "Lecture_04_Part_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Time-dependent perturbation theory in the classical electric field. The three important steps towards perturbation expansion of the equations of motion, definition of the time ordered exponential and detailed discussion of its n-th order. Definition of the response function and an example in the third order. Level structure of the investigated molecular systems. Response function of a two-level system consists of eight terms."
+                        },
+                        {
+                            "title": "Liouville pathways, three pulse experiment",
+                            "videoUrl": "https://www.youtube.com/watch?v=8vWfrZdHMxo",
+                            "pdfName": "Lecture_5_part_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Double-sided Feynman diagrams for Liouville pathways. Rephasing and non-rephasing pathways and selection of the signal type by signal direction. General arrangement of a three-pulse experiment. Dependence of the signal type on pulse ordering. "
+                        },
+                        {
+                            "title": "Geometry of the three-pulse experiment, spectroscopic lineshapes, heterodyne detection",
+                            "videoUrl": "https://www.youtube.com/watch?v=BFXeuYDP1kM",
+                            "pdfName": "Lecture_06_Part_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Geometry of the three pulse experiment and separate detection of rephasing and non-rephasing pathways by spatial and temporal arrangements of pulses. Introduction to the interaction ordering problem with pulses of finite length. Relations of Liouville pathways to absorption lineshapes. Lineshapes as components of Liouville pathways. Heterodyne detection of non-linear response and the problem of phase. Linear absorption as homodyne detection of the first order signal."
+                        },
+                        {
+                            "title": "Pump-probe spectroscopy (part 1)",
+                            "videoUrl": "https://www.youtube.com/watch?v=lpmLzGkQO8E",
+                            "pdfName": "Lecture_07_Part_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Pump-probe experiment as a differential absorption spectroscopy in phenomenological formulation. Discussion of Liouville pathways involved in the pump-probe non-linear response. Expression of Liouville pathway contributions in terms of absorption line shape. Formulation of the response using evolution superoperator elements for the excited state evolution. Two-level system with excited state decay. Derivation of the evolution superoperator for the excited state decay."
+                        },
+                        {
+                            "title": "Pump-probe spectroscopy (part 2)",
+                            "videoUrl": "https://www.youtube.com/watch?v=l7W0ZnaEdXY",
+                            "pdfName": "Lecture_8_part_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Liouville pathways for energy transfer processes. Identification Liouville pathway types for energy transfer pathways. Complete list of Liouville pathways for a relaxing two-level system. Differential absorption (DA) in terms of Liouville pathways. General expression for pump-probe (PP) also known as DA and its dependence on time T. Response of the systems with excited state absorption. Generalization of the theory to a multi-level, multi-band systems. Recipe how to calculate absorption and DA spectra. Introduction to the problem of orientational averaging in an isotropic sample."
+                        },
+                        {
+                            "title": "Orientational averaging in pump-probe and magic angle",
+                            "videoUrl": "https://www.youtube.com/watch?v=fvamzH6b8zM",
+                            "pdfName": "Lecture_9_part_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Rotational averaging of the third order Liouville pathways. Examples for pathways describing population decay, energy transfer and excited state coherence. Derivation of the magic angle condition for a single transition and in a general case. Cancelation of the signal of even order spectroscopies in an isotropic sample. Observation of energy transfer by pump-probe spectroscopy and construction of two-dimensional frequency resolved pump-probe."
+                        },
+                        {
+                            "title": "Pump-probe spectroscopy with pulse of finite temporal width",
+                            "videoUrl": "https://www.youtube.com/watch?v=TzGVEEkGKUs",
+                            "pdfName": "Lecture_10_part_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Discussion of the spectrally narrow excitation pulses and the trade-off between time and frequency resolution in pump-probe spectroscopy. Formulation of the non-linear response with finite pump-pulses and infinitely broad probe pulse. Convolution theorem and its application in evaluation of the response. Example of narrow line shapes and a formula for correction of the pump-probe spectrum to pump pulse spectrum."
+                        },
+                        {
+                            "title": "Construction of spectroscopy with simultaneous time and frequency resolutions",
+                            "videoUrl": "https://www.youtube.com/watch?v=uBhvs4iF-aY",
+                            "pdfName": "Lecture_11_part_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Details of the pump-probe detection scheme and its generalization to two non-colinear pump pulses. The idea of a generalized susceptibility for the probe pulse gets scrutinized and found valid under relatively general conditions. Constructing spectrum from complex lineshapes and the definition of a coherent two-dimensional (2D) spectra, which could provide a simultaneous high resolution in time and frequency. Basic properties of 2D spectrum."
+                        },
+                        {
+                            "title": "Two-dimensional Cohetent Fourier-transformed Spectroscopy",
+                            "videoUrl": "https://www.youtube.com/watch?v=LZ6FR60HYQA",
+                            "pdfName": "Lecture_12_part_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Summary of the expected properties of 2D spectrum introduced earlier. Geometric and temporal arrangements of the pulses in the 2D experiment. Detection of the complex non-linear signal and determination of its unknown phase factor. Example spectrum of a donor-acceptor system exhibiting energy transfer and no excited state delocalization. Complete discussion of the Liouville pathways composing the non-linear signal. Placement of the contribution of the individual Liouville pathways into a 2D spectrum."
+                        },
+                        {
+                            "title": "Properties of Two-dimensional Spectra",
+                            "videoUrl": "https://www.youtube.com/watch?v=qIdZ6SkqiGs",
+                            "pdfName": "Lecture_13_part_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": "Amplitudes of the peaks in the 2D spectrum. How is disorder in molecular transition energies influencing absorption and 2DFT spectra. Additivity of the 2DFT spectrum for an ensemble of molecules and the identification of homogeneous and inhomogeneous linewidths in 2DFT spectrum. Energy transfer and excitonic interactions in 2DFT spectra. Summary of 2DFT standard properties. Application of 2DFT on observation of electronic coherence."
+                        }
+                    ]
+                }
+            ]    
+        }
+    ]
+}

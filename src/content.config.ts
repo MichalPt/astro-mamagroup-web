@@ -96,7 +96,8 @@ function createCourseCollection(path: string) {
 								z.object({
 									title: z.string(),
 									videoUrl: z.string().url(),
-									pdfName: z.string().optional(),
+									pdfName: z.string().or(z.array(z.string())).transform((val) => 
+    												Array.isArray(val) ? val : [val]).optional(),
 									visible: z.boolean().default(true).optional(),
 									label: z.string().optional(),
 									description: z.string().optional()
