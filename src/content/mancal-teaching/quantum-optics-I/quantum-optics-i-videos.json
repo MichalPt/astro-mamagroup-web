@@ -1,0 +1,1157 @@
+{
+    "courseName": "Quantum Optics I",
+    "courseCode": "",
+    "courseDescription": "",
+    "language": "Czech",
+    "semester": "winter",
+    "courseVisible": true,
+    "showDates": false,
+    "content": [
+        {
+            "sectionTitle": "Introduction",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Introduction and historical excursions",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Intro",
+                            "videoUrl": "https://www.youtube.com/watch?v=iVhrEiETIIk",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Hustota módů 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=ZQL_aTIFPF0",
+                            "pdfName": "mody_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Hustota módů 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=odO1Tnnzxos",
+                            "pdfName": "mody_2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Entropie k Planckovu zákonu 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=vw_KrTnFAKg",
+                            "pdfName": "entropie_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Entropie k Planckovu zákonu 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=c6MPkmiC-KI",
+                            "pdfName": "entropie_2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Entropie k Planckovu zákonu 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=-JuC0kjyWhI",
+                            "pdfName": "entropie_3_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Planckův zákon",
+                            "videoUrl": "https://www.youtube.com/watch?v=qu59bPcABZA",
+                            "pdfName": "planck_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Einsteinovo zavedení fotonu",
+                            "videoUrl": "https://www.youtube.com/watch?v=r-tXpJ72nXc",
+                            "pdfName": "foton_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Maxwell Equations",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Maxwell  Equations 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=LMgYhpzdTgM",
+                            "pdfName": "maxwell_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Maxwell Equations 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=jGjjL1fMOvk",
+                            "pdfName": "maxwell_2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Transversal and longitudinal fields",
+                            "videoUrl": "https://www.youtube.com/watch?v=E3K1AW2RFjc",
+                            "pdfName": "pric_a_pod_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Vector potential in Fourier picture",
+                            "videoUrl": "https://www.youtube.com/watch?v=pmnq9rjpJyw",
+                            "pdfName": "fourier_picture_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Hamiltonian in Fourier picture",
+                            "videoUrl": "https://www.youtube.com/watch?v=RVliV2-nX_A",
+                            "pdfName": "ham_fourier_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionTitle": "Cannonical Quantization of Electromagnetic Field",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Lagrangian and Hamiltonian of Electromagnetic Field",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "*Variational Calculus 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=w_F_2Nw83FY",
+                            "pdfName": "variace1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Variational Calculus 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=zK_x-F-ah4I",
+                            "pdfName": "variace2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Lagrange Formulation of Mechanics 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=wc3ik7WArjY",
+                            "pdfName": "lagrange1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Lagrange Formulation of Mechanics 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=eefQQqhqb3M",
+                            "pdfName": "lagrange2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Lagrange Formulation of Mechanics 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=5NmnlAVK0vE",
+                            "pdfName": "lagrange3_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Hamiltonian Formulation of Mechanics",
+                            "videoUrl": "https://www.youtube.com/watch?v=RhyJ5xIZmZg",
+                            "pdfName": "ham_form_mech.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Free Electromagnetic Field (Lagrange Formalism) 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=OPAuDN6pDEo",
+                            "pdfName": "elmag_lag1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Free Electromagnetic Field (Lagrange Formalism) 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=AI4P8vlH2y4",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Free Electromagnetic Field (Hamilton Formalism) 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=y0xzA2uXohA",
+                            "pdfName": "free_elmag_ham12.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Free Electromagnetic Field (Hamilton Formalism) 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=CnEWvwh46es",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Lagrangian Expressed in Field Modes",
+                            "videoUrl": "https://www.youtube.com/watch?v=NeOlZcyofpo",
+                            "pdfName": "lag_in_modes.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Canonical Quantization in Coulomb Gauge",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Kvantování a princip korespondence",
+                            "videoUrl": "https://www.youtube.com/watch?v=teHko9HtdMo",
+                            "pdfName": "kvant_1.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Druhé kvantování",
+                            "videoUrl": "https://www.youtube.com/watch?v=a3izV1k3krI",
+                            "pdfName": "kvant_23.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Důležité operátory v druhém kvantování",
+                            "videoUrl": "https://www.youtube.com/watch?v=RwPrJltLbRs",
+                            "pdfName": "kvant_4.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionTitle": "States of Light",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Eigenstates of the Hamiltonian",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Pure states of Electromagnetic Field",
+                            "videoUrl": "https://www.youtube.com/watch?v=dwg2T-bydQg",
+                            "pdfName": "stavy_pole_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Electromagnetic Vacuum",
+                            "videoUrl": "https://www.youtube.com/watch?v=ekvoaSLRQh4",
+                            "pdfName": "elmag_vakuum_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "State with One Photon",
+                            "videoUrl": "https://www.youtube.com/watch?v=yEDXToMLLgg",
+                            "pdfName": "jeden_foton_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "State with a Sharp Number of Photons 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=UediGGKP_Mc",
+                            "pdfName": "dva_fotony_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "State with a Sharp Number of Photons 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=7fYsVtPpPVQ",
+                            "pdfName": "n_fotonu_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Coherent States",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Non-stationary States 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=hAhxS3Fy6hE",
+                            "pdfName": "nestac_stavy_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Non-stationary States 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=Is3r-Qt5p8w",
+                            "pdfName": "nestac_stavy_2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Coherent states 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=A_m7i0UrH7o",
+                            "pdfName": "coh_12.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Coherent states 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=DjSMV8_6gCg",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Coherent states 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=C7FwhLuU6Wo",
+                            "pdfName": "coh_3.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Mixed states of Light",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "*Statistical Operator 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=8qd6GhbOe1I",
+                            "pdfName": "statisticky_operator_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Statistical Operator 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=w5O9__wqPpw",
+                            "pdfName": "statisticky_operator_2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Statistical Operator 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=Kz-UqzFO62Q",
+                            "pdfName": "statisticky_operator_3_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Statistical Operator 4",
+                            "videoUrl": "https://www.youtube.com/watch?v=q6F0q-eMvIA",
+                            "pdfName": "statisticky_operator_4_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Reduced Density Matrix 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=a1Gn4oODGO8",
+                            "pdfName": "redukovana_mh_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Reduced Density Matrix 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=X-bN1h5bLgw",
+                            "pdfName": "redukovana_mh_2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Thermal Light",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Thermal Light",
+                            "videoUrl": "https://www.youtube.com/watch?v=Xzvs9jT5oZA",
+                            "pdfName": "tepelne_zareni_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Bose-Einstein Distribution",
+                            "videoUrl": "https://www.youtube.com/watch?v=CXHZEM7HvS8",
+                            "pdfName": "beinstein.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Energy Density",
+                            "videoUrl": "https://www.youtube.com/watch?v=O5MVfP2CJyw",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Erratum: Energy Density",
+                            "videoUrl": "https://www.youtube.com/watch?v=QFzN1lnb_vY",
+                            "pdfName": "erratum_hst.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Conduction of Heat by Radiation",
+                            "videoUrl": "https://www.youtube.com/watch?v=jORT5IB05sQ",
+                            "pdfName": "salani.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionTitle": "Light-Matter Interaction",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Lagrangian and Hamiltonian of Light-Matter Interaction",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Light-Matter Interaction 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=8HRRnxM7WaY",
+                            "pdfName": "interakce1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Light-Matter Interaction 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=NLzb21xlwWA",
+                            "pdfName": "interakce2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Light-Matter Interaction 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=XFG9KItQbro",
+                            "pdfName": "int_lm_3.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Light-Matter Interaction 4",
+                            "videoUrl": "https://www.youtube.com/watch?v=TF6jcpuKGTg",
+                            "pdfName": "int_lm_4.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Light-Matter Interaction 5",
+                            "videoUrl": "https://www.youtube.com/watch?v=AXL62yGE0Nw",
+                            "pdfName": "int_lm_5.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Semiclassical interaction Hamiltonian in Dipole Approximation",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Semiclassical Interaction Hamiltonian 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=v330Lvz0XZA",
+                            "pdfName": "dip_priblizeni.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Semiclassical Interaction Hamiltonian 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=u6iF-b3OiEU",
+                            "pdfName": "semic_dip_2.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Semiclassical Interaction Hamiltonian 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=zZXIC0Qgh-I",
+                            "pdfName": "semic_dip_3.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Absorption and Emission of Light by Matter",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Einstein Coefficients",
+                            "videoUrl": "https://www.youtube.com/watch?v=tnO_RdFLI04",
+                            "pdfName": "einsteincoeff.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Absorption and Emission Experiments 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=_508UhIdLKk",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Absorption and Emission Experiments 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=r8nlgH5le84",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Absorption and Emission Experiments 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=APgleZKbHOc",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Absorption and Emission Experiments 4",
+                            "videoUrl": "https://www.youtube.com/watch?v=8sOJ7ezAt30",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Absorption and Emission Experiments 5",
+                            "videoUrl": "https://www.youtube.com/watch?v=RZzAugIhx2Q",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Projection Operator Technique, Green's Functions",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Projection Operators",
+                            "videoUrl": "https://www.youtube.com/watch?v=sjvpob-Bnuo",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Projection Operators and Equations of Motion",
+                            "videoUrl": "https://www.youtube.com/watch?v=3t8uMSEWvec",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Green's Functions 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=t0dh_H9hSok",
+                            "pdfName": "greenfce1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Green's Functions 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=b2dxHUS-gQo",
+                            "pdfName": "greenfce2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Excited State Lifetime; Lineshape of Emission Line",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Excited State Lifetime 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=m_V9YSmp4KA",
+                            "pdfName": "dobazivota1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Excited State Lifetime 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=2hyXC3_rlqQ",
+                            "pdfName": "dobazivota2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Excited State Lifetime 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=vl3dyZIk1sE",
+                            "pdfName": "dobazivota3_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Excited State Lifetime 4",
+                            "videoUrl": "https://www.youtube.com/watch?v=3pLiel5D8iI",
+                            "pdfName": "dobazivota4_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Excited State Lifetime 5",
+                            "videoUrl": "https://www.youtube.com/watch?v=IG3_GN8sIgA",
+                            "pdfName": "dobazivota5_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Excited State Lifetime 6",
+                            "videoUrl": "https://www.youtube.com/watch?v=K-t4aEI0b60",
+                            "pdfName": "dobazivota6_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Excited State Lifetime 7",
+                            "videoUrl": "https://www.youtube.com/watch?v=uZXQqW59pgE",
+                            "pdfName": "dobazivota7_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Excited State Lifetime 8",
+                            "videoUrl": "https://www.youtube.com/watch?v=Scf3U0pm6O0",
+                            "pdfName": "dobazivota8_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Excited State Lifetime 9",
+                            "videoUrl": "https://www.youtube.com/watch?v=SLnROxA814U",
+                            "pdfName": "dobazivota9_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Excited State Lifetime 10",
+                            "videoUrl": "https://www.youtube.com/watch?v=jwDnCcIBkuU",
+                            "pdfName": "dobazivota10_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Broadening of Emission and Absorption Lines",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Absorption Lineshape 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=zaLGOewp4zo",
+                            "pdfName": "rozsireni_a_cary1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Absorption Lineshape 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=5KQy96_IYyU",
+                            "pdfName": "rozsireni_a_cary2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Absorption Lineshape 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=XJyHUHdKHEM",
+                            "pdfName": "rozsireni_a_cary3_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Absorption Lineshape 4",
+                            "videoUrl": "https://www.youtube.com/watch?v=Qd0ikZr2hu8",
+                            "pdfName": "rozsireni_a_cary4_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Optical Coherence 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=d3aa8FdEkA4",
+                            "pdfName": "koherence_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Optical Coherence 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=v9EcOe_T5MQ",
+                            "pdfName": "koherence_2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Absorption Lineshape 5",
+                            "videoUrl": "https://www.youtube.com/watch?v=kOT0_r50w8s",
+                            "pdfName": "sirka_a_cary5_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Emission Lineshape 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=lOdyduCnSbk",
+                            "pdfName": "emisni_cara1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Emission Lineshape 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=udG0FmjCPe4",
+                            "pdfName": "emisni_cara2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Emission Lineshape 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=28xlcgX8JYs",
+                            "pdfName": "Emisnicara.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Emission lineshape 1 (preferred alternative)",
+                            "videoUrl": "https://www.youtube.com/watch?v=P648tGm9bAs",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Emission lineshape 2 (preferred alternative)",
+                            "videoUrl": "https://www.youtube.com/watch?v=6jCFKpfkD68",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Emission lineshape 3 (preferred alternative)",
+                            "videoUrl": "https://www.youtube.com/watch?v=_ggGiJaxR9I",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Temperature and Collision Broadenings",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Temperature broadening of emission line",
+                            "videoUrl": "https://www.youtube.com/watch?v=y6b6mUmFMxE",
+                            "pdfName": "Teplotni_rozsireni_spektralni_cary.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Collisional Broadening",
+                            "videoUrl": "https://www.youtube.com/watch?v=bxaC6cvqSno",
+                            "pdfName": "Srazkove_rozsireni_em_cary.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Stimulated Transitions",
+                            "videoUrl": "https://www.youtube.com/watch?v=Rk8DW2qWQ_k",
+                            "pdfName": "Vynucene_prechody_atomu.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Interaction with Coherent Light",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Effective Hamiltonian",
+                            "videoUrl": "https://www.youtube.com/watch?v=QTMQvCIlgGQ",
+                            "pdfName": "intcoh_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Effective Hamiltonian 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=XPij20Uggec",
+                            "pdfName": "intcoh_2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Semiclassical Approximation",
+                            "videoUrl": "https://www.youtube.com/watch?v=Qxno9TNQr84",
+                            "pdfName": "intcoh_3_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Resonance Conditions",
+                            "videoUrl": "https://www.youtube.com/watch?v=5Ri4kTOfIgs",
+                            "pdfName": "intcoh_4_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Rotating Wave Approximation",
+                            "videoUrl": "https://www.youtube.com/watch?v=_mgJsx3XYb8",
+                            "pdfName": "intcoh_5_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Rabi Oscillations 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=QcQdzwzXhaM",
+                            "pdfName": "rabi_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Rabi Oscillations 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=evKrHQ1XdzI",
+                            "pdfName": "rabi_2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Rabi Oscillations 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=uypqEhqPVak",
+                            "pdfName": "rabi_3_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Bloch Equations",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Phenomenological Bloch Equations",
+                            "videoUrl": "https://www.youtube.com/watch?v=_3GdUH3iQ6s",
+                            "pdfName": "bloch_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Coefficients of Bloch Equations",
+                            "videoUrl": "https://www.youtube.com/watch?v=1Qntj36hkJw",
+                            "pdfName": "bloch_2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Bloch Vector 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=vL9vWSqBUdc",
+                            "pdfName": "bloch_vec_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Bloch Vector 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=BnMnDiaMxE0",
+                            "pdfName": "bloch_vec_2_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Rotating Wave Approximation",
+                            "videoUrl": "https://www.youtube.com/watch?v=RzGuI4JB8Bs",
+                            "pdfName": "bloch_vec_3_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Bloch Equations in RWA",
+                            "videoUrl": "https://www.youtube.com/watch?v=qRZVLkAXN5M",
+                            "pdfName": "bloch_vec_4_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Pi and Pi/2 Pulses",
+                            "videoUrl": "https://www.youtube.com/watch?v=TBzleTpG6RE",
+                            "pdfName": "bloch_vec_5_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Photon Echo",
+                            "videoUrl": "https://www.youtube.com/watch?v=xcPNs-wmCpE",
+                            "pdfName": "pecho_1_strip.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionTitle": "Miscellaneous",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Absorption of Pulsed Light",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "*Absorption of an Ultra-short Pulse - part 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=AbJJrKPemqg",
+                            "pdfName": "absorption_short_1and2.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Absorption of an Ultra-short Pulse - part 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=H74Oz_eDzMo",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Absorption of an Ultra-short Pulse - part 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=e5gD3ekAU4U",
+                            "pdfName": "absorption_short_3.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Linear Susceptibility",
+                            "videoUrl": "https://www.youtube.com/watch?v=uHWUHfu2JQE",
+                            "pdfName": "susceptibilita.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

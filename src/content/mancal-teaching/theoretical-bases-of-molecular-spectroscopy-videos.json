@@ -1,0 +1,41 @@
+{
+    "courseName": "Theoretical Bases of Molecular Spectroscopy",
+    "courseCode": "",
+    "courseDescription": "",
+    "language": "English",
+    "semester": "winter",
+    "courseVisible": true,
+    "showDates": false,
+    "content": [
+        {
+            "sectionTitle": "Multi-photon and Raman Spectroscopies",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Standard resonance condition and multiphoton absorption",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Strictly two-level system",
+                            "videoUrl": "https://www.youtube.com/watch?v=b30bUiYc3Ns",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Two-photon absorption",
+                            "videoUrl": "https://www.youtube.com/watch?v=PnBJFNvj95Q",
+                            "pdfName": "Odezva_strictly_dvouhladinoveho.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

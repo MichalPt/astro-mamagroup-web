@@ -1,0 +1,776 @@
+{
+    "courseName": "Fundamental of Transport Phenomena in Molecular Systems I",
+    "courseCode": "",
+    "courseDescription": "",
+    "language": "Czech",
+    "semester": "winter",
+    "courseVisible": true,
+    "showDates": false,
+    "content": [
+        {
+            "sectionTitle": "Úvod",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Přehled kvantové mechaniky",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "*Schrödingerova rovnice, stavový vektor, časový vývoj",
+                            "videoUrl": "https://www.youtube.com/watch?v=Hxm4hliy_38",
+                            "pdfName": "Prehled_1.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Složené systémy, rozklad stavového vektoru",
+                            "videoUrl": "https://www.youtube.com/watch?v=jOfcaBwHOwE",
+                            "pdfName": "Prehled_2.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Statistický operátor 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=_pLrOT59QyI",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Statistický operátor 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=f6bZH0mbs3w",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Pohybové rovnice pro otevřené systémy",
+                            "videoUrl": "https://www.youtube.com/watch?v=gWrlJL6cOXw",
+                            "pdfName": "Prehled_3.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Interakční obraz 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=oFJoYyTJkvc",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Interakční obraz 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=1mq4u42iwU4",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Interakční obraz 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=i0e__xSq2NY",
+                            "pdfName": "Interakcni_obraz.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Superoperátorová reprezentace",
+                            "videoUrl": "https://www.youtube.com/watch?v=0Cpeuk-is3g",
+                            "pdfName": "Superoperatorova_reprezentace.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Reprezentace jedničky",
+                            "videoUrl": "https://www.youtube.com/watch?v=E7YBhSzdmZQ",
+                            "pdfName": "Reprerentace_jidnicky.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Fenomenologie transportních jevů a fotosyntéza",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Přenosové jevy ve fyzice",
+                            "videoUrl": "https://www.youtube.com/watch?v=q-JmiIQcWLs",
+                            "pdfName": "uvod_1.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Fotosyntetické antény",
+                            "videoUrl": "https://www.youtube.com/watch?v=hIpWvVuz_PI",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Fenomenologický popis přenosu energie",
+                            "videoUrl": "https://www.youtube.com/watch?v=sAvM2e3Y7N8",
+                            "pdfName": "fen_prenos.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Rychlostní konstanty",
+                            "videoUrl": "https://www.youtube.com/watch?v=jIo8EWNMQKY",
+                            "pdfName": "rych_konst.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Statistický operátor I",
+                            "videoUrl": "https://www.youtube.com/watch?v=EH8n_bEcPq8",
+                            "pdfName": "stat_op.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Statistický operátor II",
+                            "videoUrl": "https://www.youtube.com/watch?v=_iP80oYXHpQ",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Fenomenologie matice hustoty I",
+                            "videoUrl": "https://www.youtube.com/watch?v=LR3Qw3FhZ8I",
+                            "pdfName": "dmpheno_1.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Fenomenologie II - kinetické rovnice",
+                            "videoUrl": "https://www.youtube.com/watch?v=3c3-YlKcqaQ",
+                            "pdfName": "pozitivita_2.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Základní modely molekulárních excitonů",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Model molekulárních excitonů 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=zM13p0r25bA",
+                            "pdfName": "model_12.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Model molekulárních excitonů 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=uJ4c7FvH2xI",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Model lázně",
+                            "videoUrl": "https://www.youtube.com/watch?v=2Vsmcvakjos",
+                            "pdfName": "model_3.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Interakce systém-lázeň",
+                            "videoUrl": "https://www.youtube.com/watch?v=28TMLC5P46E",
+                            "pdfName": "model_4.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Kolektivní excitované stavy",
+                            "videoUrl": "https://www.youtube.com/watch?v=Dd-AkZL4j5w",
+                            "pdfName": "model_5.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Kolektivní excitované stavy v interakci s okolím",
+                            "videoUrl": "https://www.youtube.com/watch?v=p567_HeXgI0",
+                            "pdfName": "febath_1.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Excitony jako kvazičástice",
+                            "videoUrl": "https://www.youtube.com/watch?v=k-CS0A3Wo40",
+                            "pdfName": "febath_2.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Rozfázování koherence 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=g--GYDzksNc",
+                            "pdfName": "febath_3.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Rozfázování koherence 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=Q_C7oO76IaQ",
+                            "pdfName": "febath_4.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Korelační funkce lázně",
+                            "videoUrl": "https://www.youtube.com/watch?v=mh6MWOWX1kw",
+                            "pdfName": "corf_12.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Spektrální hustota",
+                            "videoUrl": "https://www.youtube.com/watch?v=dipiIr-HicU",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Spektrální hustota - dokončení",
+                            "videoUrl": "https://www.youtube.com/watch?v=Nfyu-mfqN9g",
+                            "pdfName": "corf_3.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Fluktuace přechodových energií v důsledku interakce s lázní",
+                            "videoUrl": "https://www.youtube.com/watch?v=oDBdt7nLdsc",
+                            "pdfName": "fluktuace_prechodu.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Doplněk A: Statistický operátor",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "*Vztah statistického operátoru a stavového vektoru",
+                            "videoUrl": "https://www.youtube.com/watch?v=q5ol-HkV7ws",
+                            "pdfName": "dm.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Statistický operátor souboru",
+                            "videoUrl": "https://www.youtube.com/watch?v=qAn3ctculho",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Koherence a dekoherence",
+                            "videoUrl": "https://www.youtube.com/watch?v=EHl9ChYMBsU",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionTitle": "Obecné metody teorie otevřených systémů",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Projekčně operátorové techniky",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Projekční operátor a superoperátorový formalisms",
+                            "videoUrl": "https://www.youtube.com/watch?v=9U_ocWlTGuw",
+                            "pdfName": "projtech_123.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Pohybové rovnice s projekčním operátorem",
+                            "videoUrl": "https://www.youtube.com/watch?v=IWFCADSJpz4",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Nakajimova-Zwanzigova identita",
+                            "videoUrl": "https://www.youtube.com/watch?v=03QCAbqp35I",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Konvoluční a nekonvoluční rovnice",
+                            "videoUrl": "https://www.youtube.com/watch?v=vDbMod4nr78",
+                            "pdfName": "konv_nekonv.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Argyres-Kelly projektor 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=MTFpWkxyh1U",
+                            "pdfName": "argkproj.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Argyres-Kelly projektor a spektroskopická počáteční podmínka",
+                            "videoUrl": "https://www.youtube.com/watch?v=j692jOWldCE",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Nakajima-Zwanzig v interakčním obraze 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=fLPxycACBKc",
+                            "pdfName": "naka_zv_int_1.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Nakajima-Zwanzig v interakčním obraze 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=8YM2AhzuyeQ",
+                            "pdfName": "naka_zv_int_2.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Pohybové rovnice druhého řádu",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Rovnice 2. řádu v interakci systém-lázeň",
+                            "videoUrl": "https://www.youtube.com/watch?v=wmTcxz5rLN4",
+                            "pdfName": "druhrad.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Rovnice 2. řádu přímočaře 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=uj1M8he1FBM",
+                            "pdfName": "druh_prim_12.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Rovnice 2. řádu přímočaře 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=v9OuynQ69ME",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Resonanční interakce jako poruchový člen 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=xy5xpC7AYvg",
+                            "pdfName": "res_int_12.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Resonanční interakce jako poruchový člen 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=ZkNtUZn419o",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Resonanční interakce jako poruchový člen 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=o3-L0XhGZFY",
+                            "pdfName": "weak_res_12.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Rychlostní konstanty pro slabou resonanční vazbu",
+                            "videoUrl": "https://www.youtube.com/watch?v=8813hl7gI7k",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Fermiho zlaté pravidlo (vyčíslení rychlostních konstant)",
+                            "videoUrl": "https://www.youtube.com/watch?v=et6Cqb-kQQs",
+                            "pdfName": "fermi_12.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Fermiho zlaté pravidlo (nezávislé odvození)",
+                            "videoUrl": "https://www.youtube.com/watch?v=E6a2UizhbOQ",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Fermiho zlaté pravidlo pro kontinuum stavů",
+                            "videoUrl": "https://www.youtube.com/watch?v=L62x9LcoEWs",
+                            "pdfName": "fermi_3.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionTitle": "Redfieldovy rovnice a Redfieldův tenzor",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Obecný tenzor relaxace druhého řádu",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Volba reprezentační báze",
+                            "videoUrl": "https://www.youtube.com/watch?v=tFHo0ul5zlA",
+                            "pdfName": "basis.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Kvantová řídící rovnice 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=mj5cAcp3o6Q",
+                            "pdfName": "qme_1.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Kvantová řídící rovnice 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=OZpBSiwrEsE",
+                            "pdfName": "qme_2.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Kvantová řídící rovnice a Lindbladova forma",
+                            "videoUrl": "https://www.youtube.com/watch?v=zgi-wbZij0g",
+                            "pdfName": "qme_3.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Redfieldovy rovnice",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Obecné Redfieldovy rovnice 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=s47_gE3vsTk",
+                            "pdfName": "redf_1234.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Obecné Redfieldovy rovnice 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=rsvizshhCXw",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Redfieldovy rovnice v sekulární aproximaci",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Sekulární aproximace",
+                            "videoUrl": "https://www.youtube.com/watch?v=7KQ6iKxnF7Q",
+                            "pdfName": "secular_approximation_cz.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Redfieldovy rovnice v sekulární aproximaci 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=xiFB981FSg8",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Redfieldovy rovnice v sekulární aproximaci 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=pePiwxzL5JI",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Redfieldovy rovnice v sekulární aproximaci 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=cHWe9-mwkOc",
+                            "pdfName": "secular_redfield_cz.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Termodynamická rovnováha v Redfieldově teorii 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=SLm-Pmf1I8Y",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Termodynamická rovnováha v Redfieldově teorii 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=Ckr2eUAWbp4",
+                            "pdfName": "equilibrium_in_sec_Redfield_cz.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionTitle": "Försterova teorie a odpovídající relaxační tenzor",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Experimentální relevance Försterovy teorie",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Försterova rychlostní konstanta jako překryv spekter 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=RbcWccDbrvY",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Försterova rychlostní konstanta jako překryv spekter 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=l-U6ReQ9yA8",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Försterova rychlostní konstanta jako překryv spekter 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=3JZty8_FAa4",
+                            "pdfName": "Foerster_jako_prekryv.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Termodynamická rovnováha ve Försterově teorii",
+                            "videoUrl": "https://www.youtube.com/watch?v=A1yQ8FAamGA",
+                            "pdfName": "Detailni_rovnovaha.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Försterův relaxační tenzor",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Konstrukce Försterova tenzoru",
+                            "videoUrl": "https://www.youtube.com/watch?v=9gbwmfSnclk",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Försterův tenzor v Lindbladově formě",
+                            "videoUrl": "https://www.youtube.com/watch?v=M7dEVMBuPCU",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Rozfázování v důsledku fluktuací přechodů",
+                            "videoUrl": "https://www.youtube.com/watch?v=hww6JNqb8pk",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Rozfázování v Lindbladově formě",
+                            "videoUrl": "https://www.youtube.com/watch?v=AIkYFXzxido",
+                            "pdfName": "Konstrukce_Foersterova_tenzoru.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Limity platnosti Försterovy teorie 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=JtUKhnHGp_4",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Limity platnosti Försterovy teorie 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=FrXcSbWeT2s",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Příklad antén LH2",
+                            "videoUrl": "https://www.youtube.com/watch?v=qqNOQrpWZHw",
+                            "pdfName": "Limity_platnasti_Foersterovy_teorie.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

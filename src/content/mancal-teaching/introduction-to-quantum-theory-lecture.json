@@ -1,0 +1,983 @@
+{
+    "courseName": "Introduction to Quantum Theory",
+    "courseCode": "",
+    "courseDescription": "",
+    "language": "Czech",
+    "semester": "summer",
+    "courseVisible": true,
+    "showDates": false,
+    "content": [
+        {
+            "sectionTitle": "Basics of Quantum Mechanics",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Introductory Notes",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Introduction to Introduction",
+                            "videoUrl": "https://www.youtube.com/watch?v=gvBTr0eiitM",
+                            "pdfName": "01_01_uvod.pptx",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "The Notion of State in Classical and Quantum Mechanics",
+                            "videoUrl": "https://www.youtube.com/watch?v=veq4RkPJ1SQ",
+                            "pdfName": "01_02_pojem_stavu_ve_fyzice.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Introduction to Quantum States",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Stern-Gerlach Experiments",
+                            "videoUrl": "https://www.youtube.com/watch?v=QUDKVWY1cnU",
+                            "pdfName": "01_03_stern_gerlach.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Quantum Mechanical State and Probability",
+                            "videoUrl": "https://www.youtube.com/watch?v=96PQaLTOt38",
+                            "pdfName": "01_04_stav_a_pravdepodobnost_stavu.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Measurement and Operators",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Measurement and Filtering of States",
+                            "videoUrl": "https://www.youtube.com/watch?v=9eSbb9nDftY",
+                            "pdfName": "02_01_Mereni_a_priprava_stavu.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Filters as a Prelude to Operators",
+                            "videoUrl": "https://www.youtube.com/watch?v=1eBsmZ8Uf2k",
+                            "pdfName": "02_02_Operatory.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Measureable Quantities as Operators",
+                            "videoUrl": "https://www.youtube.com/watch?v=Hsy9y6_hXTU",
+                            "pdfName": "02_03_Meritelne_veliciny.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Matrix Representation of Operators",
+                            "videoUrl": "https://www.youtube.com/watch?v=GnwVa_97M7w",
+                            "pdfName": "02_04_Representace_operatoru_maticemi.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Spin Operators",
+                            "videoUrl": "https://www.youtube.com/watch?v=bf_HZmz8HEE",
+                            "pdfName": "02_05_Operatory_spinu.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Measurement and Operators (continuation)",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "de Brogliovy vlny",
+                            "videoUrl": "https://www.youtube.com/watch?v=glsDX_LrZAc",
+                            "pdfName": "03_01_De_Brogliovy_vlny.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Systémy s více stupni volnosti",
+                            "videoUrl": "https://www.youtube.com/watch?v=XSTwV_TW0Bs",
+                            "pdfName": "03_02_Systemy_s_vice_stupni_volnosti.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Vlastní stavy hybnosti",
+                            "videoUrl": "https://www.youtube.com/watch?v=Q3nVfo2a-U0",
+                            "pdfName": "03_03_Vlastni_stavy_hybnosti_v_prostoru.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Popis kvantově mechanických systémů v prostoru",
+                            "videoUrl": "https://www.youtube.com/watch?v=89y8gLOQt7M",
+                            "pdfName": "03_04_Popis_kvantovych_systemu_v_prostoru.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Operátory v souřadnicové reprezentaci",
+                            "videoUrl": "https://www.youtube.com/watch?v=YfVclNdUXEk",
+                            "pdfName": "03_05_Operatory_v_souradnicove_reprezentaci.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Princip superpozice",
+                            "videoUrl": "https://www.youtube.com/watch?v=MXRciccx9Ms",
+                            "pdfName": "03_06_Princip_superpozice.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Schrödingerova rovnice a časový vývoj systémů",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Stacionární Schrödingerova rovnice",
+                            "videoUrl": "https://www.youtube.com/watch?v=7cnUDFAX-sE",
+                            "pdfName": "04_01_Schroedingerova_rovnice.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Schrödingerova rovnice v souřadnicové reprezentaci",
+                            "videoUrl": "https://www.youtube.com/watch?v=wN3EU4zS-WE",
+                            "pdfName": "04_02_Schroedingerov_rovnice_v_souradnicove_reprezentaci.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Časová Schrödingerova rovnice",
+                            "videoUrl": "https://www.youtube.com/watch?v=hpBubWD2lMU",
+                            "pdfName": "04_03_Casova_schroedingerova_rovnice.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Historická poznámka",
+                            "videoUrl": "https://www.youtube.com/watch?v=qmerehk-Tuo",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Časový vývoj kvantově mechanického systému",
+                            "videoUrl": "https://www.youtube.com/watch?v=m63smqVSo9A",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Evoluční operátor",
+                            "videoUrl": "https://www.youtube.com/watch?v=sHvJ2f5s25c",
+                            "pdfName": "04_04_Casovy_vyvoj_v_kvantove_mechanice.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Schrödingerův, Heisenbergův a Diracův obraz",
+                            "videoUrl": "https://www.youtube.com/watch?v=7z9WYk0oB3o",
+                            "pdfName": "04_05_Schrodingerir__Heisentergir_a_Diracv_obrar.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Případ časově závislých hamiltoniánů",
+                            "videoUrl": "https://www.youtube.com/watch?v=2UkF1DsN2k8",
+                            "pdfName": "04_06_Pripad_casove_zavislych_hamiltonianu.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Důsledky komutačních relací",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Kanonické kvantování a Ehrenfestův teorém",
+                            "videoUrl": "https://www.youtube.com/watch?v=fhH2dwShA48",
+                            "pdfName": "04_07_Kanonicke_kvanotovani.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Relace neurčitosti",
+                            "videoUrl": "https://www.youtube.com/watch?v=kRJun-Q6lTk",
+                            "pdfName": "04_09_Relace_neurcitosti.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Rozplývání vlnového balíku",
+                            "videoUrl": "https://www.youtube.com/watch?v=BIYNOAHqjLw",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Volná částice v obecném stavu",
+                            "videoUrl": "https://www.youtube.com/watch?v=ZSb7PlQisC8",
+                            "pdfName": "04_10_Rozplyvani_vlnoveho_baliku-compressed.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Shrnutí úvodních kapitol",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "*Kvantová mechanika ve čtyřech postulátech I.",
+                            "videoUrl": "https://www.youtube.com/watch?v=5ZjDtiIY5Yk",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Kvantová mechanika ve čtyřech postulátech II.",
+                            "videoUrl": "https://www.youtube.com/watch?v=l4rBtebTzZk",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Kvantová mechanika ve čtyřech postulátech III.",
+                            "videoUrl": "https://www.youtube.com/watch?v=yc6ew9GRhds",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Kvantová mechanika ve čtyřech postulátech IV.",
+                            "videoUrl": "https://www.youtube.com/watch?v=3dsuyJguudo",
+                            "pdfName": "04_11_Postulaty.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionTitle": "Two-Level Systems, QBits and One Dimensional Problems",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Časový vývoj ve dvouhladinových systémech",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "*Dvouhladinový systém a Blochova sféra",
+                            "videoUrl": "https://www.youtube.com/watch?v=uIhSAHOM31E",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Systém více dvouhladinových systémů/Qbitů",
+                            "videoUrl": "https://www.youtube.com/watch?v=1Ou-iqml_Zs",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Systém dvou interagujících hladin - část 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=PjXHb52JLk8",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Systém dvou interagujících hladin - část 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=ThEGXWe7QkU",
+                            "pdfName": "05_01_Dvouhladinovy_system.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*(Ne)Vratnost a zachování energie",
+                            "videoUrl": "https://www.youtube.com/watch?v=0UDwbDG8fxw",
+                            "pdfName": "05_02_vratnost.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Energie dvouhladinového systému",
+                            "videoUrl": "https://www.youtube.com/watch?v=_8mbiqzLCPg",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Operátor hybnosti ve dvouhladinovém systému",
+                            "videoUrl": "https://www.youtube.com/watch?v=jg0uZQgDdrA",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Meze populačních oscilací dvouhladinového systému",
+                            "videoUrl": "https://www.youtube.com/watch?v=OseEjC6ImFo",
+                            "pdfName": "05_03_Energie_a_hybrost_dvojhladinoveho_system.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Harmonický oscilátor",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Klasický harmonický oscilátor - část 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=jj1a-eSdUiI",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Klasický harmonický oscilátor - část 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=mTxWvkwBaH4",
+                            "pdfName": "06_01_Klasicky_harmonicky_oscilator.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Kvantový harmonický oscilátor - část 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=ZyQTnE3MuGE",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Kvantový harmonický oscilátor - část 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=7-bWM7XKe-w",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Kvantový harmonický oscilátor - část 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=Q8fIDDNBhQA",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Kvantový harmonický oscilátor - část 4",
+                            "videoUrl": "https://www.youtube.com/watch?v=6rbTWCPO8xc",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Kvantový harmonický oscilátor - část 5",
+                            "videoUrl": "https://www.youtube.com/watch?v=haGz_V85WOo",
+                            "pdfName": "06_02_Kvantovy_harmonicky_oscilator.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Dipólové přechody v harmonickém oscilátoru - část 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=KRreG9plsTw",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Dipólové přechody v harmonickém oscilátoru - část 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=rkIuKovg5mQ",
+                            "pdfName": "06_03_Vyberova_pravidla.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Harmonický oscilátor v souřadnicové reprezentaci",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Harmonický oscilátor v souřadnicové reprezentaci - část 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=7ADyPINd2SQ",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Harmonický oscilátor v souřadnicové reprezentaci - část 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=XfxjUBHhdGY",
+                            "pdfName": "06_04_HO_souradnicova_reprezentace.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Počáteční podmínky pro pohyb harmonického oscilátoru",
+                            "videoUrl": "https://www.youtube.com/watch?v=8f2dfMKi3KM",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Posunutý základní stav harmonického oscilátoru",
+                            "videoUrl": "https://www.youtube.com/watch?v=CgtJs7EFtpI",
+                            "pdfName": "06_05_vychyleny_zakladni_stav.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Časový vývoj koherentního stavu",
+                            "videoUrl": "https://www.youtube.com/watch?v=wkrz8_vyU7U",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Časově závislý posunovací operátor",
+                            "videoUrl": "https://www.youtube.com/watch?v=BKjmaTGmgNs",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Tvar a pozice vlnového balíku",
+                            "videoUrl": "https://www.youtube.com/watch?v=4yHk9-8rMWM",
+                            "pdfName": "06_06_Casovy_vyvoj_koherentniho_stavu.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Časově závislá vnější porucha",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "*Role rezonance při přechodu mezi dvěma stavy - část 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=gKgAVaGEqt8",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Role rezonance při přechodu mezi dvěma stavy - část 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=9pPdopQ1CzE",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Role rezonance při přechodu mezi dvěma stavy - část 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=TkgY6WSwz64",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Role rezonance při přechodu mezi dvěma stavy - část 4",
+                            "videoUrl": "https://www.youtube.com/watch?v=FA6DOr7eJ-g",
+                            "pdfName": "07_01_Rezonance_pro_prechod_mezi_dvema_stavy.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Časově proměnná vazba v aproximaci rotující vlnou",
+                            "videoUrl": "https://www.youtube.com/watch?v=b_NOTcghPU0",
+                            "pdfName": "07_02_Casove_pro_vazba_rigo.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Potenciální jáma",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Nekonečně hluboká pravoúhlá potenciální jáma",
+                            "videoUrl": "https://www.youtube.com/watch?v=lkuh30s2CNY",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Standardní řešení nekonečné jámy",
+                            "videoUrl": "https://www.youtube.com/watch?v=VWDuo2HGrpA",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Výběrová pravidla pro přechody v \"sudém\" potenciálu",
+                            "videoUrl": "https://www.youtube.com/watch?v=4JpBan_z6eY",
+                            "pdfName": "08_01_nekonecna_jama.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Pravoúhlá potenciální jáma konečné hloubky - část 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=_0MdII-ZSL4",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Pravoúhlá potenciální jáma konečné hloubky - část 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=SkIjaWBZEKA",
+                            "pdfName": "08_02_konecna_jama.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Hrátky s qbity",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Úvod do kvantových logických hradel",
+                            "videoUrl": "https://www.youtube.com/watch?v=rvMKA5Y241k",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Operace na dvou qbitech a problém měření",
+                            "videoUrl": "https://www.youtube.com/watch?v=L7gg1I2ebTk",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Teleportace kvantového stavu - část 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=jbEAMzyRNs8",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Teleportace kvantového stavu - část 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=am8jMuc00KE",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Nemožnost klonování kvantového stavu",
+                            "videoUrl": "https://www.youtube.com/watch?v=5hu6eGqfXq0",
+                            "pdfName": "09_01_Hratky_s_qbity.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionTitle": "Úvod do přibližných metod v kvantové mechanice",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Variační principy",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "*Ritzův variační princip",
+                            "videoUrl": "https://www.youtube.com/watch?v=m6N6oFrN2DM",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Základní stav atomu vodíku",
+                            "videoUrl": "https://www.youtube.com/watch?v=MqTaEBVCfes",
+                            "pdfName": "10_01_ritz_a_ground_state.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Optimalizace lineárních parametrů",
+                            "videoUrl": "https://www.youtube.com/watch?v=f-dWObAkPlI",
+                            "pdfName": "10_04_Opti_linear.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Poruchová teorie",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "*Úvod do poruchové teorie",
+                            "videoUrl": "https://www.youtube.com/watch?v=1lA0K-27jq0",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Korekce prvního řádu",
+                            "videoUrl": "https://www.youtube.com/watch?v=qs5A-rFSE4U",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "*Druhý řád teorie poruch",
+                            "videoUrl": "https://www.youtube.com/watch?v=7YHKzK26TO8",
+                            "pdfName": "10_02_Poruchova_teorie.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionTitle": "Kvantový systém ve 3D: příprava na atom vodíku",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Moment hybnosti",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Operátor momentu hybnosti",
+                            "videoUrl": "https://www.youtube.com/watch?v=zZ_nxCmLDU4",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Komutační relace s operátorem momentu hybnosti",
+                            "videoUrl": "https://www.youtube.com/watch?v=4eCK7OD0Vhk",
+                            "pdfName": "11_01_Operator_momentu_hybnosti.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Tuhý rotátor",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Tuhý rotátor - část 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=hEzroCNzKa0",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Tuhý rotátor - část 2",
+                            "videoUrl": "https://www.youtube.com/watch?v=FX_9BPJQ9yA",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Tuhý rotátor - část 3",
+                            "videoUrl": "https://www.youtube.com/watch?v=MnE1g6aKYWE",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Tuhý rotátor - část 4",
+                            "videoUrl": "https://www.youtube.com/watch?v=52qY-Ehu6xw",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Vlastní funkce kvandrátu momentu hybnosti",
+                            "videoUrl": "https://www.youtube.com/watch?v=tJwmTL4_5Mo",
+                            "pdfName": "11_02_tuhy_rotator_momh.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "sectionTitle": "Atom vodíku",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Úvod do problému",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Problém dvou těles",
+                            "videoUrl": "https://www.youtube.com/watch?v=RzfOtKXynVg",
+                            "pdfName": "vodik_def.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Atomové jednotky",
+                            "videoUrl": "https://www.youtube.com/watch?v=aWn1hfsFxkE",
+                            "pdfName": "12_02_Atomove_jednotky.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Operátor momentu hybnosti ve sférických souřadnicích",
+                            "videoUrl": "https://www.youtube.com/watch?v=QA-h_Rj9bho",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Separace proměnných",
+                            "videoUrl": "https://www.youtube.com/watch?v=tjDjqxgbeA0",
+                            "pdfName": "separace_prom.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                },
+                {
+                    "subsectionTitle": "Stavy atomu vodíku: s-stavy",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Transformace problému na problém s diskrétním spektrem",
+                            "videoUrl": "https://www.youtube.com/watch?v=6JJbFpWTpj4",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Energie s-stavů vodíku",
+                            "videoUrl": "https://www.youtube.com/watch?v=Iv1gp8rw42o",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Vztah mezi vlastními funkcemi dvou alternativních vlastních problémů",
+                            "videoUrl": "https://www.youtube.com/watch?v=Vx9Q5nKs19E",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Dokončení souřadnicové reprezentace s-stavů",
+                            "videoUrl": "https://www.youtube.com/watch?v=LEpLuRedj24",
+                            "pdfName": "",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Nástin obecného řešení atomu vodíku algebraickou metodou",
+                            "videoUrl": "https://www.youtube.com/watch?v=2Y1Zg0wkJwo",
+                            "pdfName": "s-stavy_vodiku_a_jejich_energie-compressed.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
