@@ -1,7 +1,7 @@
 {
     "courseName": "Fundamental of Transport Phenomena in Molecular Systems I",
-    "courseCode": "",
-    "courseDescription": "",
+    "courseCode": "NBCM041",
+    "courseDescription": "The lecture introduces students into the description of quantum states of molecules and their aggregates, introduces Frenkel exciton model, charge transfer states, Wannier-Mott excitions, discusses the influence of thermodynamic bath and phonons on the transfer of energy and electrons, and provides a compact unified quantum mechanical description of transport phenomena from the point of view of open quantum system theory. The theory will be presented in the context of primary processes in photosynthesis.",
     "language": "Czech",
     "semester": "winter",
     "courseVisible": true,

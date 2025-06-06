@@ -1,7 +1,7 @@
 {
     "courseName": "Quantum Optics I",
-    "courseCode": "",
-    "courseDescription": "",
+    "courseCode": "NBCM067",
+    "courseDescription": "Quantum theory of electromagnetic radiation, interaction of light with matter, kinetic processes, introduction into spectroscopy and theory of open systems.",
     "language": "Czech",
     "semester": "winter",
     "courseVisible": true,
