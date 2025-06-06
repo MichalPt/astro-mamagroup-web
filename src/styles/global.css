@@ -722,3 +722,22 @@ iframe {
         grid-template-columns: auto auto auto;
     }
 }
+
+
+/* Course lists */
+
+.course-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.course-list li {
+    color: hsl(var(--theme-accent-base) / 1);
+}
+
+.course-list li::before {
+    content: '@';
+    color: hsl(var(--theme-accent-two));
+    margin-right: 0rem;
+    font-weight: 600;
+}

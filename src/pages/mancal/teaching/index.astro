@@ -21,21 +21,21 @@ const meta = {
 <CoursesLayout meta={meta} collectionName={coursesName}>
     <!-- <SidepanelCourses collectionName="coursesMancal"/> -->
 
-	<div class="title text-3xl font-semibold text-accent-base mb-6">Courses</div>
+	<div class="title text-3xl font-semibold text-accent-base mb-4">Courses</div>
 
-	<div class="items-center gap-2 flex flex-col">
+	<div class="items-center flex flex-col">
 		<div class="">
 			{semesters.map((semester) => 
-				<h4 class="text-accent-base mt-4 text:xl sm:text-2xl">{semester} semester:</h4>
-				<ol class="mt-1 text-sm sm:text-base font-medium text-light list-disc pl-4">
+				<h2 class="mt-4 mb-2 text:xl sm:text-2xl">{semester} semester:</h2>
+				<ul class="course-list mt-1 text-sm sm:text-base font-medium">
 					{allCourses.filter((course) => (course.data.semester ?? "winter") === semester).map((course) => (
 						<li>
-							<a href={`${rootPath}${course.id}`}>
+							<a href={`${rootPath}${course.id}`} class="text-accent-base">
 								{course.data.courseName}
 							</a>
 						</li>
 					))}
-				</ol> 
+				</ul> 
 			)}
 
         <!-- <p>Found {allCourses.length} courses</p>
