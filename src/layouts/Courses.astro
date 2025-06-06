@@ -64,9 +64,9 @@ const courses = await getCollection(collectionName);
 		{description}
 	</p> -->
 
-	<div class="mt-6 flex sm:grid-cols-[auto_1fr] md:items-start gap-x-8">
-		<article class="grid flex-grow grid-cols-1 break-words pt-4" data-pagefind-body>
-			<div class="prose prose-citrus max-w-none flex-grow prose-headings:font-semibold prose-headings:text-accent-base prose-headings:before:text-accent-two sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none">
+	<div class="mt-1 flex w-full gap-x-8">
+		<article class="break-words pt-4" data-pagefind-body>
+			<div class="prose prose-citrus prose-headings:font-semibold prose-headings:text-accent-base prose-headings:before:text-accent-two sm:prose-headings:before:content-['@'] sm:prose-h2:before:content-[''] sm:prose-h3:before:content-['#'] sm:prose-h4:before:content-['##'] sm:prose-h5:before:content-['###'] sm:prose-th:before:content-none">
 				<slot />
 			</div>
 		</article>

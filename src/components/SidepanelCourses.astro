@@ -23,7 +23,26 @@ const semesters = ["winter", "summer"];
 // });
 
 const currentPath = Astro.url.pathname;
+const rootPath = currentPath.split('/').slice(0, 3).join('/') + '/';
 
+// Function to check if current path matches
+function isCurrentPath(path: string) {
+    return currentPath === path || currentPath.startsWith(path + '/');
+}
+
+// Function to check if any child path is current
+function hasCurrentChild(course: any) {
+    const coursePath = `${rootPath}${course.id}`;
+    if (isCurrentPath(coursePath)) return true;
+    
+    return course.data.content.some((section: any) =>
+        section.sectionContent.some((subsection: any) =>
+            subsection.subsectionContent.some((video: any) =>
+                isCurrentPath(`${rootPath}${course.id}/${video.title}`)
+            )
+        )
+    );
+}
 ---
 
 <style>
@@ -36,7 +55,7 @@ const currentPath = Astro.url.pathname;
     z-index: 41;
 }
 .sidepanel-expanded {
-    @apply w-80 max-w-80 bg-bgColor shadow-[5px_0px_10px_rgba(0,0,0,0.05)];
+    @apply w-[100vw] md:w-80 md:max-w-80 bg-bgColor shadow-[5px_0px_10px_rgba(0,0,0,0.05)];
     position: fixed;
     left: 0;
     top: 0;
@@ -46,13 +65,41 @@ const currentPath = Astro.url.pathname;
     transition: opacity 300ms, transform 300ms;
     z-index: 42;
     pointer-events: none;
+    overflow-y: auto;
 }
 .sidepanel-expanded.visible {
     opacity: 1;
     transform: translateX(0);
     pointer-events: auto;
 }
-@media (min-width: 1800px) {
+
+.dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.dropdown-content.expanded {
+    max-height: 1000px;
+    transition: max-height 0.3s ease-in;
+}
+
+.dropdown-toggle {
+    cursor: pointer;
+    user-select: none;
+}
+
+.chevron {
+    transition: transform 0.2s ease;
+}
+.chevron.rotated {
+    transform: rotate(90deg);
+}
+
+.current-page {
+    @apply bg-accent-base/10 text-accent-base font-medium;
+}
+
+@media (min-width: 1850px) {
     .sidepanel-collapsed {
         display: none;
     }
@@ -70,7 +117,6 @@ const currentPath = Astro.url.pathname;
 
 <div>
     <div class="sidepanel-collapsed" id="sidepanel-collapsed">
-        <!-- <Icon name="hugeicons:arrow-right-02" class="w-4 sm:w-6 h-6 text-accent-base" /> -->
          <svg 
             class="w-4 sm:w-6 h-6 transform transition-transform duration-200 shrink-0"
             fill="none" 
@@ -81,7 +127,7 @@ const currentPath = Astro.url.pathname;
         </svg>
     </div>
     <aside class="sidepanel-expanded" id="sidepanel-expanded">
-        <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-orange-300 via-pink-300 to-purple-300 opacity-30 dark:opacity-0 -z-10"></div>
+        <div class="absolute inset-0 w-full h-full bg-gradient-to-b from-purple-300 to-indigo-300 opacity-30 dark:opacity-0 -z-10"></div>
         <div class="flex h-full flex-col px-6 pt-4 md:pt-8 w-full md:w-80 md:min-w-80 md:max-w-80 bg-accent-base/5 border-r border-special-light">
             <div class="flex">
                 <div class="title text-2xl font-semibold text-accent-base">
@@ -95,28 +141,130 @@ const currentPath = Astro.url.pathname;
             >
                 <Icon class="h-6 w-6" name="hugeicons:cancel-01" />
             </button>
-            <div class="">
-                {semesters.map((semester) => 
-                    <h4 class="text-accent-base mt-4 text-xl">{semester} semester:</h4>
-                    <ol class="mt-1 text-sm font-medium text-light list-disc pl-4">
-                        {courses.filter((course) => (course.data.semester ?? "winter") === semester).map((course) => (
-                            <li>
-                                <a href={`/mancal/teaching/${course.id}`}>
-                                    {course.data.courseName}
-                                </a>
-                            </li>
-                        ))}
-                    </ol> 
-                )}
-
-                <!-- <p class="mt-2 text-bold">Summer semester:</p>
-                <ol class="mt-4 text-sm font-medium text-light gap-2">
-                    {courses.filter((course) => (course.data.semester ?? "winter") === "summer").map((course) => (
-                        <a href={`/mancal/teaching/${course.id}`}>
-                                {course.data.courseName}
-                            </a>
-                    ))}
-                </ol> -->
+            
+            <div class="space-y-4">
+                {semesters.map((semester) => {
+                    const semesterCourses = courses.filter((course) => (course.data.semester ?? "winter") === semester);
+                    if (semesterCourses.length === 0) return null;
+                    
+                    return (
+                        <div>
+                            <h4 class="text-accent-base text-xl mt-6 font-semibold">{semester} semester:</h4>
+                            <div class="mt-4 mb-4 space-y-2">
+                                {semesterCourses.map((course) => {
+                                    const courseExpanded = hasCurrentChild(course);
+                                    const coursePath = `${rootPath}${course.id}`;
+                                    
+                                    return (
+                                        <div class={`border-l-4 pl-2 ${isCurrentPath(coursePath) ? 'border-orange-400' : 'border-gray-100'}`}>
+                                            <!-- Course Level -->
+                                            <div class="flex items-center justify-between">
+                                                <a 
+                                                    href={coursePath}
+                                                    class={`text-sm font-medium hover:text-accent-base flex-1 ${isCurrentPath(coursePath) ? 'current-page' : ''}`}
+                                                    // class="text-sm font-medium hover:text-accent-base flex-1"
+                                                >
+                                                    {course.data.courseName}
+                                                </a>
+                                                <button 
+                                                    class="dropdown-toggle p-1 hover:bg-accent-base/10 rounded"
+                                                    data-target={`course-${course.id}`}
+                                                >
+                                                    <svg class={`w-4 h-4 chevron ${courseExpanded ? 'rotated' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            
+                                            <!-- Course Content -->
+                                            <div class={`dropdown-content ml-0 mb-3 ${courseExpanded ? 'expanded' : ''}`} id={`course-${course.id}`}>
+                                                {course.data.content.map((section) => {
+                                                    const sectionHasCurrent = section.sectionContent.some((subsection: any) =>
+                                                        subsection.subsectionContent.some((video: any) =>
+                                                            isCurrentPath(`${rootPath}${course.id}/${slugify(video.title)}`)
+                                                        )
+                                                    );
+                                                    
+                                                    return (
+                                                        <div class="mt-2 mb-2 border-l-2 border-gray-100 pl-2">
+                                                            <!-- Section Level -->
+                                                            <div class="flex items-center justify-between">
+                                                                <a 
+                                                                    href={`${rootPath}${course.id}#section:${slugify(section.sectionTitle)}`}
+                                                                    class="text-xs font-medium hover:text-accent-base text-gray-600 dark:text-gray-400 flex-1"
+                                                                >
+                                                                    {section.sectionTitle}
+                                                                </a>
+                                                                <button 
+                                                                    class="dropdown-toggle p-1 hover:bg-accent-base/10 rounded"
+                                                                    data-target={`section-${course.id}-${slugify(section.sectionTitle)}`}
+                                                                >
+                                                                    <svg class={`w-3 h-3 chevron ${sectionHasCurrent ? 'rotated' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                                    </svg>
+                                                                </button>
+                                                            </div>
+                                                            
+                                                            <!-- Section Content -->
+                                                            <div class={`dropdown-content ml-1 ${sectionHasCurrent ? 'expanded' : ''}`} id={`section-${course.id}-${slugify(section.sectionTitle)}`}>
+                                                                {section.sectionContent.map((subsection) => {
+                                                                    const subsectionHasCurrent = subsection.subsectionContent.some((video: any) =>
+                                                                        isCurrentPath(`${rootPath}${course.id}/${slugify(video.title)}`)
+                                                                    );
+                                                                    
+                                                                    return (
+                                                                        <div class="mt-1 mb-1 ml-1">
+                                                                            <!-- Subsection Level -->
+                                                                            <div class="flex items-center justify-between">
+                                                                                <a 
+                                                                                    href={`${rootPath}${course.id}#section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}`} 
+                                                                                    class="text-xs hover:text-accent-base text-gray-500 dark:text-gray-500 flex-1"
+                                                                                >
+                                                                                        {subsection.subsectionTitle}
+                                                                                </a>
+                                                                                <button 
+                                                                                    class="dropdown-toggle p-1 hover:bg-accent-base/10 rounded"
+                                                                                    data-target={`subsection-${course.id}-${slugify(subsection.subsectionTitle)}`}
+                                                                                >
+                                                                                    <svg class={`w-3 h-3 chevron ${subsectionHasCurrent ? 'rotated' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                                                                    </svg>
+                                                                                </button>
+                                                                            </div>
+                                                                            
+                                                                            <!-- Videos List -->
+                                                                            <div class={`dropdown-content ml-2 ${subsectionHasCurrent ? 'expanded' : ''}`} id={`subsection-${course.id}-${slugify(subsection.subsectionTitle)}`}>
+                                                                                <ol class="space-y-1 mt-1 pl-6 text-xs list-decimal">
+                                                                                    {subsection.subsectionContent.map((video) => {
+                                                                                        const videoPath = `${rootPath}${course.id}/${slugify(video.title)}`;
+                                                                                        return (
+                                                                                            <li>
+                                                                                                <a 
+                                                                                                    href={videoPath}
+                                                                                                    class={`text-xs block py-1 px-1 rounded hover:bg-accent-base/10 ${isCurrentPath(videoPath) ? 'current-page' : ''}`}
+                                                                                                >
+                                                                                                    {video.title}
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        );
+                                                                                    })}
+                                                                                </ol>
+                                                                            </div>
+                                                                        </div>
+                                                                    );
+                                                                })}
+                                                            </div>
+                                                        </div>
+                                                    );
+                                                })}
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     </aside>
@@ -145,6 +293,7 @@ const currentPath = Astro.url.pathname;
 
         if (!freshCollapsed || !freshExpanded || !freshCloseButton) return;
 
+        // Sidepanel hover functionality
         freshCollapsed.addEventListener('mouseenter', () => {
             freshExpanded.classList.add('visible');
         });
@@ -166,6 +315,31 @@ const currentPath = Astro.url.pathname;
         freshCloseButton.addEventListener('click', () => {
             overPanel = false;
             freshExpanded.classList.remove('visible');
+        });
+
+        // Dropdown toggle functionality
+        const dropdownToggles = freshExpanded.querySelectorAll('.dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const targetId = toggle.getAttribute('data-target');
+                const targetContent = document.getElementById(targetId);
+                const chevron = toggle.querySelector('.chevron');
+                
+                if (targetContent && chevron) {
+                    const isExpanded = targetContent.classList.contains('expanded');
+                    
+                    if (isExpanded) {
+                        targetContent.classList.remove('expanded');
+                        chevron.classList.remove('rotated');
+                    } else {
+                        targetContent.classList.add('expanded');
+                        chevron.classList.add('rotated');
+                    }
+                }
+            });
         });
     }
 
