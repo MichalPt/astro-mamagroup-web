@@ -35,10 +35,10 @@ const meta = {
             }
     </h1>
     
-    <div class="mt-0">
+    <div class="w-full max-w-[90vw] mt-0">
         {course.data.courseDescription && 
             <h2 class="title mb-1">Course description:</h2>
-            <p class="ml-4">{course.data.courseDescription}</p>
+            <p class="ml-4 w-full">{course.data.courseDescription}</p>
             }
         <h2 class="title mt-0 mb-0">Study materials (in {course.data.language}):</h2>
         {course.data.content.map((section) => (

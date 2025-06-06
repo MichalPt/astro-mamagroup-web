@@ -64,9 +64,9 @@ const courses = await getCollection(collectionName);
 		{description}
 	</p> -->
 
-	<div class="mt-1 flex w-full gap-x-8">
-		<article class="break-words pt-4" data-pagefind-body>
-			<div class="prose prose-citrus prose-headings:font-semibold prose-headings:text-accent-base prose-headings:before:text-accent-two sm:prose-headings:before:content-['@'] sm:prose-h2:before:content-[''] sm:prose-h3:before:content-['#'] sm:prose-h4:before:content-['##'] sm:prose-h5:before:content-['###'] sm:prose-th:before:content-none">
+	<!-- <div class="mt-1 w-[90svw] align-left gap-x-8"> -->
+		<article class="w-full break-words pt-4" data-pagefind-body>
+			<div class="w-[100vw] md:w-[75vw] max-w-none md:max-w-[75vw] prose prose-citrus prose-headings:font-semibold prose-headings:text-accent-base prose-headings:before:text-accent-two sm:prose-headings:before:content-['@'] sm:prose-h2:before:content-[''] sm:prose-h3:before:content-['#'] sm:prose-h4:before:content-['##'] sm:prose-h5:before:content-['###'] sm:prose-th:before:content-none">
 				<slot />
 			</div>
 		</article>
@@ -80,7 +80,7 @@ const courses = await getCollection(collectionName);
 				</aside>
 			)
 		} -->
-	</div>
+	<!-- </div> -->
 
 	<div class="left-0 right-12 z-50 ml-auto w-full md:absolute">
 		<button
