@@ -61,17 +61,30 @@ const videoId = video.videoUrl.split("watch?v=")[1];
 ---
 
 <CoursesLayout meta={meta} collectionName={collectionName}>
-    <div>
-        <a href=`${rootPath}${course.id}` class="text-xs sm:text-sm text-light">
-            {course.data.courseName} / {section.sectionTitle} / {subsection.subsectionTitle} /
-        </a>
-    </div>
+    <span class="flex flex-wrap text-xs leading-tight gap-x-1">
+        <a href={rootPath.split('/').slice(1,2).toString()} class="text-light">
+            Tomáš Mančal
+        </a> / 
+        <a href={rootPath} class="text-light">
+            Teaching
+        </a> / 
+        <a href=`${rootPath}${course.id}` class="text-light">
+            {course.data.courseName}
+        </a> /
+        <a href=`${rootPath}${course.id}#section:${slugify(section.sectionTitle)}` class="text-light">
+            {section.sectionTitle}
+        </a> /
+        <a href=`${rootPath}${course.id}#section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}` class="text-light">
+            {subsection.subsectionTitle}
+        </a> /
+    </span>
 
-    <h1 class="text-base sm:text-2xl title mb-4">{videoIndex+1} {video.title}</h1>
+    <h2 class="title text-base sm:text-2xl title mb-4">{videoIndex+1} {video.title}</h2>
+
     {video.description && <p class="mb-2">{video.description}</p>}
 
     <div class="flex justify-center mt-4 mb-4">
-        <iframe src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
     <nav class="flex flex-row mt-4">

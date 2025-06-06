@@ -28,6 +28,17 @@ const meta = {
 ---
 
 <CoursesLayout meta={meta} collectionName={collectionName}>
+    <span class="flex flex-wrap text-xs leading-tight gap-x-1">
+        <a href={rootPath.split('/').slice(1,2).toString()} class="text-light">
+            Tomáš Mančal
+        </a> / 
+        <a href={rootPath} class="text-light">
+            Teaching
+        </a> / 
+        <a href=`${rootPath}${course.id}` class="text-light">
+            {course.data.courseName}
+        </a> /
+    </span>
     <h1 class="title mt-1 mb-2">
         {course.data.courseName} 
         {course.data.courseCode && 
