@@ -46,7 +46,7 @@ export default {
     extend: {
       screens: {
         xs: "320px", // Add xs size
-        "3xl": "1800px",
+        "3xl": "1850px",
         // xl: '1200px',
       },
       maxWidth: {
