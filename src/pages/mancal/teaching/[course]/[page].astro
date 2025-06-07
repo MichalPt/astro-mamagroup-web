@@ -79,8 +79,8 @@ const videoId = video.videoUrl.split("watch?v=")[1];
     {video.description && <p class="mb-2">{video.description}</p>}
 
     {video.pdfName && <p class="mb-2">
-        <a href={`${contentFolder}${courseId}/files/${video.pdfName}`} class="text-light hover:text-accent-base">
-            <span class="text-sm sm:text-base">Download attachment: </span>
+        <a href={`${contentFolder}${courseId}/files/${video.pdfName}`} target="_blank" class="text-light hover:text-accent-base">
+            <span class="text-sm sm:text-base">Attachment: </span>
             <span class="text-xs sm:text-sm">{video.pdfName}</span>
         </a>
     </p>}
