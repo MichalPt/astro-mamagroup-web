@@ -6,6 +6,7 @@ import { slugify } from "@/utils/strings.ts"
 
 const collectionName = "coursesMancal";
 const rootPath = "/mancal/teaching/";
+const contentFolder = "/content/mancal-teaching/";
 
 export async function getStaticPaths() {
     // The getCollection function accepts only literal string, not a vriable!
@@ -77,7 +78,7 @@ const videoId = video.videoUrl.split("watch?v=")[1];
     {video.description && <p class="mb-2">{video.description}</p>}
 
     {video.pdfName && <p class="mb-2">
-        <a href={`/content/mancal-teaching/${course.id.split('/')[0]}/${video.pdfName}`} class="text-light hover:text-accent-base">
+        <a href={`${contentFolder}${course.id}/files/${video.pdfName}`} class="text-light hover:text-accent-base">
             <span class="text-sm sm:text-base">Download PDF: </span>
             <span class="text-xs sm:text-sm">{video.pdfName}</span>
         </a>
