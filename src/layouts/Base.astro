@@ -10,10 +10,12 @@ import { ClientRouter } from "astro:transitions";
 
 interface Props {
 	meta: SiteMeta;
+	enableShift?: boolean;
 }
 
 const {
 	meta: { articleDate, description = siteConfig.description, ogImage, title },
+	enableShift = false
 } = Astro.props;
 ---
 
@@ -40,7 +42,7 @@ const {
 			<div class="absolute top-[-85%] right-[-30%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-5"></div>
 		</div>
 	
-		<div class="relative flex min-h-screen w-full 3xl:ml-40 transition-all duration-300 ease-in-out">
+		<div class=`relative flex min-h-screen w-full transition-all duration-300 ease-in-out ${enableShift ? '3xl:ml-40' : ''}`>
 			<!-- Sidebar for Docs Series -->
 			<slot name="sidebar" />
 			<!-- Main container for the page content -->
