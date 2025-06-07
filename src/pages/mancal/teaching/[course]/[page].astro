@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import CoursesLayout from "@/layouts/Courses.astro";
 import type { CollectionEntry } from "astro:content";
-import { slugify } from "@/utils/strings.ts"
+import { slugify, processCourseId } from "@/utils/strings.ts"
 
 const collectionName = "coursesMancal";
 const rootPath = "/mancal/teaching/";
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
             section.sectionContent.flatMap((subsection) =>
                 subsection.subsectionContent.map((video, idx, arr) => ({
                     params: {
-                        course: course.id,
+                        course: processCourseId(course.id),
                         page: slugify(video.title),
                     },
                     props: {
@@ -34,16 +34,17 @@ export async function getStaticPaths() {
 }
 
 const { course, section, subsection, video, videoIndex, videos } = Astro.props;
+const courseId = processCourseId(course.id);
 
 // Pagination logic for previous/next video in the same subsection
 const prevVideo = videoIndex > 0 ? videos[videoIndex - 1] : null;
 const nextVideo = videoIndex < videos.length - 1 ? videos[videoIndex + 1] : null;
 
 const prevUrl = prevVideo
-    ? `${rootPath}${course.id}/${slugify(prevVideo.title)}`
+    ? `${rootPath}${courseId}/${slugify(prevVideo.title)}`
     : null;
 const nextUrl = nextVideo
-    ? `${rootPath}${course.id}/${slugify(nextVideo.title)}`
+    ? `${rootPath}${courseId}/${slugify(nextVideo.title)}`
     : null;
 
 const meta = {
@@ -62,13 +63,13 @@ const videoId = video.videoUrl.split("watch?v=")[1];
         <a href={rootPath} class="text-light">
             Teaching
         </a> / 
-        <a href=`${rootPath}${course.id}` class="text-light">
+        <a href=`${rootPath}${courseId}` class="text-light">
             {course.data.courseName}
         </a> /
-        <a href=`${rootPath}${course.id}#section:${slugify(section.sectionTitle)}` class="text-light">
+        <a href=`${rootPath}${courseId}#section:${slugify(section.sectionTitle)}` class="text-light">
             {section.sectionTitle}
         </a> /
-        <a href=`${rootPath}${course.id}#section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}` class="text-light">
+        <a href=`${rootPath}${courseId}#section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}` class="text-light">
             {subsection.subsectionTitle}
         </a> /
     </span>
@@ -78,8 +79,8 @@ const videoId = video.videoUrl.split("watch?v=")[1];
     {video.description && <p class="mb-2">{video.description}</p>}
 
     {video.pdfName && <p class="mb-2">
-        <a href={`${contentFolder}${course.id}/files/${video.pdfName}`} class="text-light hover:text-accent-base">
-            <span class="text-sm sm:text-base">Download PDF: </span>
+        <a href={`${contentFolder}${courseId}/files/${video.pdfName}`} class="text-light hover:text-accent-base">
+            <span class="text-sm sm:text-base">Download attachment: </span>
             <span class="text-xs sm:text-sm">{video.pdfName}</span>
         </a>
     </p>}

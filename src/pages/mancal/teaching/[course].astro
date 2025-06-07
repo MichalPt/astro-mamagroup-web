@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import CoursesLayout from "@/layouts/Courses.astro";
 import type { CollectionEntry } from "astro:content";
-import { slugify } from "@/utils/strings.ts"
+import { slugify, processCourseId } from "@/utils/strings.ts"
 
 const collectionName = "coursesMancal";
 const rootPath = "/mancal/teaching/";
@@ -11,7 +11,7 @@ export async function getStaticPaths() {
     const courses = await getCollection("coursesMancal");
     return courses.map((course) => ({
         params: {
-            course: course.id,
+            course: processCourseId(course.id),
         },
         props: {
             course,
@@ -20,6 +20,7 @@ export async function getStaticPaths() {
 }
 
 const { course } = Astro.props;
+const courseId = processCourseId(course.id);
 
 const meta = {
     title: course.data.courseName,
@@ -35,7 +36,7 @@ const meta = {
         <a href={rootPath} class="text-light">
             Teaching
         </a> / 
-        <a href=`${rootPath}${course.id}` class="text-light">
+        <a href=`${rootPath}${courseId}` class="text-light">
             {course.data.courseName}
         </a> /
     </span>
@@ -62,7 +63,7 @@ const meta = {
                             {subsection.subsectionContent.map((video) => (
                                 <li id={slugify(video.title)}>
                                     {/* Link to the video page */}
-                                    <a href={`${rootPath}${course.id}/${slugify(video.title)}`} class="text-base hover:text-accent-base text-light">
+                                    <a href={`${rootPath}${courseId}/${slugify(video.title)}`} class="text-base hover:text-accent-base text-light">
                                         {video.title}
                                     </a>
                                 </li>

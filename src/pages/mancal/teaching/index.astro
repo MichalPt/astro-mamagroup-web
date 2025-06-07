@@ -3,7 +3,7 @@ import Badge from "@/components/Badge.astro";
 import { getCollection } from 'astro:content';
 import PageLayout from "@/layouts/Base.astro";
 import CoursesLayout from "@/layouts/Courses.astro";
-import { slugify } from "@/utils/strings.ts"
+import { slugify, processCourseId } from "@/utils/strings.ts"
 
 const coursesName = "coursesMancal";
 const semesters = ["winter", "summer"];
@@ -29,7 +29,7 @@ const meta = {
 				<ul class="course-list mt-1 text-sm sm:text-base font-medium">
 					{allCourses.filter((course) => (course.data.semester ?? "winter") === semester).map((course) => (
 						<li>
-							<a href={`${rootPath}${course.id}`} class="text-accent-base">
+							<a href={`${rootPath}${processCourseId(course.id)}`} class="text-accent-base">
 								{course.data.courseName}
 							</a>
 						</li>

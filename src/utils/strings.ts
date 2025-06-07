@@ -18,3 +18,7 @@ export function slugify(str: string): string {
         .replace(/-+/g, '-') // Replace multiple hyphens with a single hyphen
         .replace(/(^-|-$)+/g, "");
 }
+
+export function processCourseId(courseId: string): string {
+    return courseId.split('/')[0] ?? courseId;
+}

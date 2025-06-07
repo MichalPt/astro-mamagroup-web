@@ -1,7 +1,7 @@
 ---
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
-import { slugify } from "@/utils/strings.ts";
+import { slugify, processCourseId } from "@/utils/strings.ts";
 
 interface Props {
     collectionName: string;
@@ -32,13 +32,13 @@ function isCurrentPath(path: string) {
 
 // Function to check if any child path is current
 function hasCurrentChild(course: any) {
-    const coursePath = `${rootPath}${course.id}`;
+    const coursePath = `${rootPath}${processCourseId(course.id)}`;
     if (isCurrentPath(coursePath)) return true;
     
     return course.data.content.some((section: any) =>
         section.sectionContent.some((subsection: any) =>
             subsection.subsectionContent.some((video: any) =>
-                isCurrentPath(`${rootPath}${course.id}/${video.title}`)
+                isCurrentPath(`${rootPath}${processCourseId(course.id)}/${video.title}`)
             )
         )
     );
@@ -159,7 +159,7 @@ function hasCurrentChild(course: any) {
                             <div class="mt-4 mb-4 space-y-2">
                                 {semesterCourses.map((course) => {
                                     const courseExpanded = hasCurrentChild(course);
-                                    const coursePath = `${rootPath}${course.id}`;
+                                    const coursePath = `${rootPath}${processCourseId(course.id)}`;
                                     
                                     return (
                                         <div class={`border-l-4 pl-2 ${isCurrentPath(coursePath) ? 'border-orange-400' : 'border-gray-100'}`}>
@@ -187,7 +187,7 @@ function hasCurrentChild(course: any) {
                                                 {course.data.content.map((section) => {
                                                     const sectionHasCurrent = section.sectionContent.some((subsection: any) =>
                                                         subsection.subsectionContent.some((video: any) =>
-                                                            isCurrentPath(`${rootPath}${course.id}/${slugify(video.title)}`)
+                                                            isCurrentPath(`${rootPath}${processCourseId(course.id)}/${slugify(video.title)}`)
                                                         )
                                                     );
                                                     
@@ -196,7 +196,7 @@ function hasCurrentChild(course: any) {
                                                             <!-- Section Level -->
                                                             <div class="flex items-center justify-between">
                                                                 <a 
-                                                                    href={`${rootPath}${course.id}#section:${slugify(section.sectionTitle)}`}
+                                                                    href={`${rootPath}${processCourseId(course.id)}#section:${slugify(section.sectionTitle)}`}
                                                                     class="text-xs font-medium hover:text-accent-base text-gray-600 dark:text-gray-400 flex-1"
                                                                 >
                                                                     {section.sectionTitle}
@@ -215,7 +215,7 @@ function hasCurrentChild(course: any) {
                                                             <div class={`dropdown-content ml-1 ${sectionHasCurrent ? 'expanded' : ''}`} id={`section-${course.id}-${slugify(section.sectionTitle)}`}>
                                                                 {section.sectionContent.map((subsection) => {
                                                                     const subsectionHasCurrent = subsection.subsectionContent.some((video: any) =>
-                                                                        isCurrentPath(`${rootPath}${course.id}/${slugify(video.title)}`)
+                                                                        isCurrentPath(`${rootPath}${processCourseId(course.id)}/${slugify(video.title)}`)
                                                                     );
                                                                     
                                                                     return (
@@ -223,7 +223,7 @@ function hasCurrentChild(course: any) {
                                                                             <!-- Subsection Level -->
                                                                             <div class="flex items-center justify-between">
                                                                                 <a 
-                                                                                    href={`${rootPath}${course.id}#section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}`} 
+                                                                                    href={`${rootPath}${processCourseId(course.id)}#section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}`} 
                                                                                     class="text-xs hover:text-accent-base text-gray-500 dark:text-gray-500 flex-1"
                                                                                 >
                                                                                         {subsection.subsectionTitle}
@@ -242,7 +242,7 @@ function hasCurrentChild(course: any) {
                                                                             <div class={`dropdown-content ml-2 ${subsectionHasCurrent ? 'expanded' : ''}`} id={`subsection-${course.id}-${slugify(subsection.subsectionTitle)}`}>
                                                                                 <ol class="space-y-1 mt-1 pl-6 text-xs list-decimal">
                                                                                     {subsection.subsectionContent.map((video) => {
-                                                                                        const videoPath = `${rootPath}${course.id}/${slugify(video.title)}`;
+                                                                                        const videoPath = `${rootPath}${processCourseId(course.id)}/${slugify(video.title)}`;
                                                                                         return (
                                                                                             <li>
                                                                                                 <a 
