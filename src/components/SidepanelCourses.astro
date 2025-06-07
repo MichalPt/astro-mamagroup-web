@@ -196,7 +196,7 @@ function hasCurrentChild(course: any) {
                                                             <!-- Section Level -->
                                                             <div class="flex items-center justify-between">
                                                                 <a 
-                                                                    href={`${rootPath}${processCourseId(course.id)}#section:${slugify(section.sectionTitle)}`}
+                                                                    href={`${rootPath}${processCourseId(course.id)}/#section:${slugify(section.sectionTitle)}`}
                                                                     class="text-xs font-medium hover:text-accent-base text-gray-600 dark:text-gray-400 flex-1"
                                                                 >
                                                                     {section.sectionTitle}
@@ -223,7 +223,7 @@ function hasCurrentChild(course: any) {
                                                                             <!-- Subsection Level -->
                                                                             <div class="flex items-center justify-between">
                                                                                 <a 
-                                                                                    href={`${rootPath}${processCourseId(course.id)}#section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}`} 
+                                                                                    href={`${rootPath}${processCourseId(course.id)}/#section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}`} 
                                                                                     class="text-xs hover:text-accent-base text-gray-500 dark:text-gray-500 flex-1"
                                                                                 >
                                                                                         {subsection.subsectionTitle}

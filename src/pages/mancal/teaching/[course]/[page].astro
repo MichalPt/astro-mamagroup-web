@@ -66,17 +66,17 @@ const videoId = video.videoUrl.split("watch?v=")[1];
         <a href=`${rootPath}${courseId}` class="text-light">
             {course.data.courseName}
         </a> /
-        <a href=`${rootPath}${courseId}#section:${slugify(section.sectionTitle)}` class="text-light">
+        <a href=`${rootPath}${courseId}/#section:${slugify(section.sectionTitle)}` class="text-light">
             {section.sectionTitle}
         </a> /
-        <a href=`${rootPath}${courseId}#section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}` class="text-light">
+        <a href=`${rootPath}${courseId}/#section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}` class="text-light">
             {subsection.subsectionTitle}
         </a> /
     </span>
 
-    <h2 class="title text-base sm:text-2xl title mb-4">{videoIndex+1} {video.title}</h2>
+    <h2 class="title text-base sm:text-2xl mb-1 mt-1">{videoIndex+1} - {video.title}</h2>
 
-    {video.description && <p class="mb-2">{video.description}</p>}
+    {video.description && <p class="mb-1">{video.description}</p>}
 
     {video.pdfName && <p class="mb-2">
         <a href={`${contentFolder}${courseId}/files/${video.pdfName}`} target="_blank" class="text-light hover:text-accent-base">
@@ -85,7 +85,7 @@ const videoId = video.videoUrl.split("watch?v=")[1];
         </a>
     </p>}
 
-    <div class="flex justify-center mt-4 mb-4">
+    <div class="flex justify-center mt-6 mb-4">
         <iframe src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 
