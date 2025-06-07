@@ -25,7 +25,7 @@ const {
 		<BaseHead articleDate={articleDate} description={description} ogImage={ogImage} title={title} />
 		<ClientRouter />
 	</head>
-	<body class="relative m-auto min-h-screen w-full max-w-6xl grow bg-bgColor">
+	<body class="relative m-auto min-h-screen w-full max-w-6xl 4xl:max-w-9xl grow bg-bgColor">
 		<ThemeProvider />
 		<SkipLink />
 		<!-- Background -->
@@ -40,11 +40,11 @@ const {
 			<div class="absolute top-[-85%] right-[-30%] w-[85%] h-full bg-gradient-to-b from-orange-300 via-indigo-300 to-transparent rounded-full opacity-60 dark:opacity-5"></div>
 		</div>
 	
-		<div class="relative flex min-h-screen w-full">
+		<div class="relative flex min-h-screen w-full 3xl:ml-40 transition-all duration-300 ease-in-out">
 			<!-- Sidebar for Docs Series -->
 			<slot name="sidebar" />
 			<!-- Main container for the page content -->
-			<div id="container" class="relative m-auto max-w-6xl grow flex flex-col min-h-screen">
+			<div id="container" class="relative m-auto max-w-6xl 4xl:max-w-9xl grow flex flex-col min-h-screen">
 				<Header />
 				<div class="mx-auto flex-grow px-4 pt-[80px] md:pt-4">	
 					<main id="main" class="relative flex-grow">

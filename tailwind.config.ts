@@ -46,7 +46,8 @@ export default {
     extend: {
       screens: {
         xs: "320px", // Add xs size
-        "3xl": "1850px",
+        "3xl": "1750px",
+        "4xl": "2200px",
         // xl: '1200px',
       },
       maxWidth: {
@@ -57,6 +58,7 @@ export default {
         "4xl": "54rem", // !!! // default 56rem (896px)
         "5xl": "64rem", // default 64rem (1024px)
         "6xl": "76rem", // !!! // default 72rem (1152px)
+        "9xl": "112rem", // !!! // default 72rem (1152px)
       },
       colors: {
         color: {
