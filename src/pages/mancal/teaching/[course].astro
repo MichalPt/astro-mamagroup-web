@@ -2,10 +2,12 @@
 import { getCollection } from "astro:content";
 import CoursesLayout from "@/layouts/Courses.astro";
 import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
 import { slugify, processCourseId } from "@/utils/strings.ts"
 
 const collectionName = "coursesMancal";
 const rootPath = "/mancal/teaching/";
+const contentFolder = "/content/mancal-teaching/";
 
 export async function getStaticPaths() {
     const courses = await getCollection("coursesMancal");
@@ -65,10 +67,35 @@ const meta = {
                             <ul class="ml-8 list-decimal">
                                 {subsection.subsectionContent.map((video) => (
                                     <li id={slugify(video.title)}>
-                                        {/* Link to the video page */}
-                                        <a href={`${rootPath}${courseId}/${slugify(video.title)}`} class="text-base hover:text-accent-base text-light">
-                                            {video.title}
-                                        </a>
+                                        <div class="flex items-left group">
+                                            <a href={`${rootPath}${courseId}/${slugify(video.title)}`} class="text-base hover:text-accent-base text-light flex items-left gap-x-1 peer">
+                                                {video.title}
+                                            </a>
+                                            {/* <span class="flex items-left in-hover:text-accent-base group/icons"> */}
+                                                {video.videoUrl && 
+                                                    <a href={video.videoUrl} target="_blank" class="ml-1">
+                                                            <Icon
+                                                            name="ri:video-fill"
+                                                            class="text-gray-300 dark:text-gray-600 peer-hover:text-accent-base group-hover:text-accent-base"
+                                                            focusable="false"
+                                                            width="1.4em"
+                                                            height="1.4em"
+                                                        />
+                                                    </a>
+                                                } 
+                                                {video.pdfName && 
+                                                    <a href={`${contentFolder}${courseId}/files/${video.pdfName}`} target="_blank" class="">
+                                                        <Icon
+                                                            name="ri:sticky-note-fill"
+                                                            class="text-gray-300 dark:text-gray-600 group-hover:text-accent-base"
+                                                            focusable="false"
+                                                            width="1.4em"
+                                                            height="1.4em"
+                                                        />
+                                                    </a>
+                                                }
+                                            {/* </span> */}
+                                        </div>
                                     </li>
                                 ))}
                             </ul>
