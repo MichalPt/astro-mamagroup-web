@@ -42,16 +42,16 @@ const meta = {
             {course.data.courseName}
         </a> /
     </span>
-    <h1 class="title mt-1 mb-2">
+    <h1 class="title mt-1 mb-4">
         {course.data.courseName} 
         {course.data.courseCode && 
             <a href={`https://is.cuni.cz/studium/predmety/index.php?do=predmet&kod=${course.data.courseCode}`} class="text-lighter">({course.data.courseCode})</a>
             }
     </h1>
     
-    <div class="mt-0">
+    <div class="">
         {course.data.courseDescription && 
-            <h2 class="title mb-1">Course description:</h2>
+            <h2 class="title mt-2 mb-1">Course description:</h2>
             <p class="ml-4">{course.data.courseDescription}</p>
         }
         <h2 class="title mt-0 mb-0">Study materials (in {course.data.language}):</h2>

@@ -47,7 +47,7 @@ function hasCurrentChild(course: any) {
 
 <style>
 .sidepanel-collapsed {
-    @apply w-5 md:w-10 h-12 md:h-16 bg-bgColor rounded-r-lg shadow-lg flex items-center justify-center cursor-pointer transition-all duration-300;
+    @apply w-5 md:w-10 h-12 md:h-16 bg-white dark:bg-[#272727] rounded-r-lg shadow-lg flex items-center justify-center cursor-pointer transition-all duration-300;
     position: fixed;
     left: 0;
     top: 50%;
@@ -55,7 +55,7 @@ function hasCurrentChild(course: any) {
     z-index: 41;
 }
 .sidepanel-expanded {
-    @apply w-[100vw] md:w-80 md:max-w-80 bg-bgColor shadow-[5px_0px_10px_rgba(0,0,0,0.05)];
+    @apply w-[100vw] md:w-80 md:max-w-80 shadow-[5px_0px_10px_rgba(0,0,0,0.05)];
     position: fixed;
     left: 0;
     top: 0;
@@ -68,10 +68,10 @@ function hasCurrentChild(course: any) {
     overflow-y: auto;
     overflow-x: hidden;
     background-attachment: fixed;
-    background: linear-gradient(to bottom, hsl(214, 93%, 95%), hsl(230, 94%, 94%));
+    background: linear-gradient(to bottom, #e6f1fe, #e1e6fe); /* Light mode */
 }
-.sidepanel-expanded .dark {
-    background-color: #1e293b; /* dark:bg-gray-900 */
+:global(html[data-theme="dark"]) .sidepanel-expanded {
+    background: linear-gradient(to bottom, #2a2e32, #272727); /* Dark mode */
 }
 .sidepanel-expanded.visible {
     opacity: 1;
