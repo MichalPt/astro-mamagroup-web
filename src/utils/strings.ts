@@ -22,3 +22,7 @@ export function slugify(str: string): string {
 export function processCourseId(courseId: string): string {
     return courseId.split('/')[0] ?? courseId;
 }
+
+export function removeDupsAndLowerCase(array: string[]) {
+	return [...new Set(array.map((str) => str.toLowerCase()))];
+}

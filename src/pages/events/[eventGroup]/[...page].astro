@@ -1,0 +1,193 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/Base.astro";
+import type { CollectionEntry } from "astro:content";
+import type { GetStaticPaths, Page } from "astro";
+import { slugify } from "@/utils/strings.ts";
+
+export const getStaticPaths = (async ({ paginate }) => {
+    const MAX_POSTS_PER_PAGE = 10;
+    
+    // Get all events
+    const allEvents = await getCollection('events');
+    
+    // Group events by eventGroup
+    const eventsByGroup = allEvents.reduce((groups, event) => {
+        const group = event.data.group || 'uncategorized';
+        if (!groups[group]) {
+            groups[group] = [];
+        }
+        groups[group].push(event);
+        return groups;
+    }, {} as Record<string, CollectionEntry<"events">[]>);
+    
+    // Create paginated paths for each group
+    const paths = [];
+    
+    for (const [eventGroup, events] of Object.entries(eventsByGroup)) {
+        // Sort events by date (using first date in array)
+        const sortedEvents = events.sort((a, b) => {
+            const dateA = Array.isArray(a.data.date) ? a.data.date[0] : a.data.date;
+            const dateB = Array.isArray(b.data.date) ? b.data.date[0] : b.data.date;
+            return new Date(dateB).getTime() - new Date(dateA).getTime(); // Newest first
+        });
+        
+        // Create paginated paths for this group
+        const groupPaths = paginate(sortedEvents, {
+            params: { eventGroup: slugify(eventGroup) },
+            pageSize: MAX_POSTS_PER_PAGE,
+            props: { 
+                eventGroup,
+                allGroups: Object.keys(eventsByGroup)
+            },
+        });
+        
+        paths.push(...groupPaths);
+    }
+    
+    return paths;
+}) satisfies GetStaticPaths;
+
+interface Props {
+    page: Page<CollectionEntry<"events">>;
+    eventGroup: string;
+    allGroups: string[];
+}
+
+const { page, eventGroup, allGroups } = Astro.props;
+
+const meta = {
+    description: `Events in ${eventGroup}`,
+    title: `${eventGroup} Events`,
+};
+
+const paginationProps = {
+    ...(page.url.prev && {
+        prevUrl: {
+            text: "← Previous Page",
+            url: page.url.prev,
+        },
+    }),
+    ...(page.url.next && {
+        nextUrl: {
+            text: "Next Page →",
+            url: page.url.next,
+        },
+    }),
+};
+
+// Helper function to format date display
+function formatEventDate(date: Date | Date[]) {
+    const dates = Array.isArray(date) ? date : [date];
+    if (dates.length === 1) {
+        return new Intl.DateTimeFormat('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+        }).format(new Date(dates[0]));
+    } else {
+        const start = new Intl.DateTimeFormat('en-US', { 
+            month: 'short', 
+            day: 'numeric' 
+        }).format(new Date(dates[0]));
+        const end = new Intl.DateTimeFormat('en-US', { 
+            year: 'numeric', 
+            month: 'short', 
+            day: 'numeric' 
+        }).format(new Date(dates[1]));
+        return `${start} - ${end}`;
+    }
+}
+---
+
+<BaseLayout meta={meta}>
+    <div class="mb-6">
+        <h1 class="title mb-4">
+            {eventGroup} Events
+        </h1>
+        
+        <!-- Group Navigation -->
+        <div class="flex flex-wrap gap-2 mb-6">
+            {allGroups.map((group) => (
+                <a 
+                    href={`/events/${slugify(group)}`}
+                    class={`px-3 py-1 rounded-full text-sm transition-colors ${
+                        group === eventGroup 
+                            ? 'bg-accent-base text-white' 
+                            : 'bg-gray-200 hover:bg-gray-300 text-gray-700'
+                    }`}
+                >
+                    {group}
+                </a>
+            ))}
+        </div>
+    </div>
+
+    <!-- Events List -->
+    <div class="space-y-6">
+        {page.data.map((event) => (
+            <article class="border rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <div class="flex justify-between items-start mb-3">
+                    <h2 class="text-xl font-semibold">
+                        <a 
+                            href={`/events/${slugify(eventGroup)}/${slugify(event.data.name)}`}
+                            class="hover:text-accent-base transition-colors"
+                        >
+                            {event.data.name}
+                        </a>
+                    </h2>
+                    <time class="text-sm text-gray-600 whitespace-nowrap ml-4">
+                        {event.data.date}
+                    </time>
+                </div>
+                
+                {event.data.description && (
+                    <p class="text-gray-700 mb-3">
+                        {event.data.description}
+                    </p>
+                )}
+                
+                {event.data.tags && (
+                    <div class="flex flex-wrap gap-2">
+                        {event.data.tags.map((tag) => (
+                            <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
+                                {tag}
+                            </span>
+                        ))}
+                    </div>
+                )}
+            </article>
+        ))}
+    </div>
+
+    <!-- Pagination -->
+    {(page.url.prev || page.url.next) && (
+        <nav class="flex justify-between items-center mt-8 pt-8 border-t">
+            {page.url.prev ? (
+                <a 
+                    href={page.url.prev}
+                    class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+                >
+                    ← Previous Page
+                </a>
+            ) : (
+                <div></div>
+            )}
+            
+            <span class="text-gray-600 text-sm">
+                Page {page.currentPage} of {page.lastPage}
+            </span>
+            
+            {page.url.next ? (
+                <a 
+                    href={page.url.next}
+                    class="flex items-center gap-2 px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded transition-colors"
+                >
+                    Next Page →
+                </a>
+            ) : (
+                <div></div>
+            )}
+        </nav>
+    )}
+</BaseLayout>

@@ -14,6 +14,13 @@ export async function getAllNews(): Promise<CollectionEntry<"news">[]> {
 	});
 }
 
+/** filter out draft posts based on the environment */
+export async function getAllEvents(): Promise<CollectionEntry<"events">[]> {
+	return await getCollection("events", ({ data }) => {
+		return import.meta.env.PROD ? !data.visible : true;
+	});
+}
+
 /** groups posts by year (based on option siteConfig.sortPostsByUpdatedDate), using the year as the key
  *  Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so.
  */
@@ -24,6 +31,20 @@ export function groupPostsByYear(posts: CollectionEntry<"post">[]) {
 			acc[year] = [];
 		}
 		acc[year]?.push(post);
+		return acc;
+	}, {});
+}
+
+/** groups posts by year (based on option siteConfig.sortPostsByUpdatedDate), using the year as the key
+ *  Note: This function doesn't filter draft posts, pass it the result of getAllPosts above to do so.
+ */
+export function groupEventsByYear(events: CollectionEntry<"events">[]) {
+	return events.reduce<Record<string, CollectionEntry<"events">[]>>((acc, event) => {
+		const year = event.data.date[0].getFullYear();
+		if (!acc[year]) {
+			acc[year] = [];
+		}
+		acc[year]?.push(event);
 		return acc;
 	}, {});
 }

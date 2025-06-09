@@ -1,9 +1,6 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
-
-function removeDupsAndLowerCase(array: string[]) {
-	return [...new Set(array.map((str) => str.toLowerCase()))];
-}
+import { removeDupsAndLowerCase } from "./utils/strings.ts";
 
 const baseSchema = z.object({
 	title: z.string().max(60),
@@ -72,7 +69,25 @@ const news = defineCollection({
 		}),
 });
 
+// Events (MayMeeting, workshops, schools, etc.)
+const events = defineCollection({
+	loader: glob({ base: "./src/content/events", pattern: "**/*.{md,mdx}" }),
+	schema: z.object({
+			name: z.string(),
+			group: z.string(),
+			date: z.string().or(z.date()).or(z.array(z.string().or(z.date())))
+				.transform((val) => { Array.isArray(val) ? val.map((date) => new Date(date)) : [new Date(val)] }),
+			tags: z
+				.array(z.string())
+				.default([])
+				.transform(removeDupsAndLowerCase),
+			createBanner: z.boolean().default(false).optional(),
+			visible: z.boolean().default(true).optional(),
+		}),
+});
 
+// Function to create a course collection with a specific path
+// This function allows for reusability and avoids code duplication
 function createCourseCollection(path: string) { 
 	return defineCollection({
 		loader: glob({ base: `./src/content/${path}`, pattern: "**/*.json" }),
@@ -111,20 +126,10 @@ function createCourseCollection(path: string) {
 	})
 };
 
+// Courses
 const coursesMancal = createCourseCollection("mancal-teaching");
 const coursesMaly = createCourseCollection("maly-teaching");
 
-// Series
-const series = defineCollection({
-	loader: glob({ base: "./src/content/series", pattern: "**/*.{md,mdx}" }),
-	schema: z.object({
-		id: z.string(),
-		title: z.string(),
-		description: z.string(),
-		featured: z.boolean().default(false),
-	}),
-});
-// End
 
 // Series
-export const collections = { post, note, series, news, coursesMancal, coursesMaly };
+export const collections = { post, note, news, coursesMancal, coursesMaly, events };
