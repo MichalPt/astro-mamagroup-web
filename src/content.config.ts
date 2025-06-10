@@ -82,6 +82,7 @@ const events = defineCollection({
 				.default([])
 				.transform(removeDupsAndLowerCase),
 			createBanner: z.boolean().default(false).optional(),
+			autoHideBanner: z.boolean().default(true).optional(),
 			visible: z.boolean().default(true).optional(),
 		}),
 });

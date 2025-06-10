@@ -1,0 +1,210 @@
+---
+import { getCollection } from "astro:content";
+import { slugify } from "@/utils/strings.ts";
+
+const today = new Date();
+
+// Get highlighted entries from both collections
+const events = await getCollection("events", ({ data }) => data.createBanner && data.visible);
+// const news = await getCollection("news", ({ data }) => data.createBanner === true);
+
+// Combine and sort by date (newest first)
+const bannerEventItems = [...events] //, ...news]
+    .map(event => ({
+        id: event.id,
+        title: event.data.name,
+        type: "event",
+        date: Array.isArray(event.data.date) ? event.data.reverse()[0] : event.data.date,
+        autoHide: event.data.autoHideBanner || false,
+        url: `/events/${slugify(event.data.group)}/${slugify(event.data.name)}`
+    }))
+
+const filteredItems = bannerEventItems.filter(item => {
+    const itemDate = new Date(item.date);
+    return item.autoHide === false || (item.autoHide === true && itemDate >= today); // Only show items that are today or in the future if autoHide is false
+});
+console.log("Banner items:", filteredItems.length);
+
+// Only render if there are items to show
+const shouldRender = filteredItems.length > 0;
+---
+
+{shouldRender && (
+    <div id="banner" class="h-8 py-1 w-100vw relative bg-red-800 dark:bg-gray-300 text-white dark:text-gray-900">
+        <div class="w-100lvw px-4 h-full">
+            <div class="flex w-full items-center justify-between h-full">
+                <!-- Left: Pagination Dots -->
+                <div class="flex items-center w-16">
+                    {filteredItems.length > 1 && (
+                        <div class="flex gap-1">
+                            {filteredItems.map((_, index) => (
+                                <button 
+                                    class={`w-2 h-2 rounded-full transition-all duration-300 ${index === 0 ? 'bg-white dark:bg-black' : 'bg-white/50 dark:bg-black/25'}`}
+                                    data-dot={index}
+                                    aria-label={`Go to banner item ${index + 1}`}
+                                ></button>
+                            ))}
+                        </div>
+                    )}
+                </div>
+                
+                <!-- Center: Content Area -->
+                <div class="flex-1 relative h-full flex items-center justify-center">
+                    {filteredItems.map((item, index) => (
+                        <div 
+                            class={`banner-item absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
+                            data-index={index}
+                        >
+                            <div class="flex items-center gap-3">
+                                <!-- Type Badge -->
+                                <span class="px-2 py-1 bg-white/20 dark:bg-white rounded text-xs font-medium uppercase tracking-wide flex-shrink-0">
+                                    {item.type.toUpperCase()}
+                                </span>
+                                
+                                <!-- Content -->
+                                <div class="flex items-center">
+                                    {item.url ? (
+                                        <a href={item.url} class="hover:underline block">
+                                            <div class="text-xs md:text-sm whitespace-nowrap">
+                                                {item.title}
+                                            </div>
+                                        </a>
+                                    ) : (
+                                        <div>
+                                            <div class="text-xs md:text-sm whitespace-nowrap">
+                                                {item.title}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+                
+                <!-- Right: Close Button -->
+                <div class="flex items-center justify-end w-16">
+                    <button 
+                        id="banner-close" 
+                        class="flex-shrink-0 w-6 h-6 flex items-center justify-center hover:bg-white/20 rounded transition-colors"
+                        aria-label="Close banner"
+                    >
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+)}
+
+<script>
+    function initBanner() {
+        const banner = document.getElementById('banner');
+        const closeButton = document.getElementById('banner-close');
+        const bannerItems = document.querySelectorAll('.banner-item');
+        const dots = document.querySelectorAll('[data-dot]');
+        
+        if (!banner || bannerItems.length === 0) return;
+        
+        let currentIndex = 0;
+        let rotationInterval;
+        
+        // Close banner functionality
+        closeButton?.addEventListener('click', function() {
+            banner.style.transform = 'translateY(-100%)';
+            setTimeout(() => {
+                banner.style.display = 'none';
+            }, 300);
+            if (rotationInterval) {
+                clearInterval(rotationInterval);
+            }
+        });
+        
+        // Only setup rotation if there are multiple items
+        if (bannerItems.length > 1) {
+            function showItem(index) {
+                // Update opacity only - no layout changes
+                bannerItems.forEach((item, i) => {
+                    if (i === index) {
+                        item.classList.remove('opacity-0');
+                        item.classList.add('opacity-100');
+                    } else {
+                        item.classList.remove('opacity-100');
+                        item.classList.add('opacity-0');
+                    }
+                });
+                
+                // Update dots
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.remove('bg-white/40');
+                        dot.classList.add('bg-white');
+                    } else {
+                        dot.classList.remove('bg-white');
+                        dot.classList.add('bg-white/40');
+                    }
+                });
+                
+                currentIndex = index;
+            }
+            
+            function nextItem() {
+                const next = (currentIndex + 1) % bannerItems.length;
+                showItem(next);
+            }
+            
+            // Dot click handlers
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    showItem(index);
+                    // Reset interval
+                    if (rotationInterval) {
+                        clearInterval(rotationInterval);
+                    }
+                    rotationInterval = setInterval(nextItem, 8000);
+                });
+            });
+            
+            // Start automatic rotation
+            rotationInterval = setInterval(nextItem, 8000);
+            
+            // Pause rotation on hover
+            banner.addEventListener('mouseenter', () => {
+                if (rotationInterval) {
+                    clearInterval(rotationInterval);
+                }
+            });
+            
+            banner.addEventListener('mouseleave', () => {
+                rotationInterval = setInterval(nextItem, 8000);
+            });
+        }
+        
+        // Store interval reference for cleanup
+        banner._rotationInterval = rotationInterval;
+    }
+    
+    // Initialize on both page load events
+    document.addEventListener('DOMContentLoaded', initBanner);
+    document.addEventListener('astro:page-load', initBanner);
+    
+    // Cleanup on page navigation
+    document.addEventListener('astro:before-preparation', () => {
+        const banner = document.getElementById('banner');
+        if (banner && banner._rotationInterval) {
+            clearInterval(banner._rotationInterval);
+        }
+    });
+</script>
+
+<style>
+    #banner {
+        transition: transform 0.3s ease-out;
+    }
+    
+    .banner-item {
+        transition: opacity 0.5s ease-in-out;
+    }
+</style>
