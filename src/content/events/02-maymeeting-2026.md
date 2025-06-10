@@ -1,10 +1,10 @@
 ---
-name: "Prague MayMeeting 2024"
+name: "Prague MayMeeting 2026"
 group: "maymeeting"
-date: ["2024-06-10", "2024-06-11"]
+date: ["2026-06-10", "2026-06-11"]
 createBanner: true
 autoHideBanner: true
-visible: true
+visible: false
 ---
 # Prague May Meeting 2024
 
