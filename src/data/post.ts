@@ -10,14 +10,7 @@ export async function getAllPosts(): Promise<CollectionEntry<"post">[]> {
 /** filter out draft posts based on the environment */
 export async function getAllNews(): Promise<CollectionEntry<"news">[]> {
 	return await getCollection("news", ({ data }) => {
-		return import.meta.env.PROD ? data.visible : true;
-	});
-}
-
-/** filter out draft posts based on the environment */
-export async function getAllEvents(): Promise<CollectionEntry<"events">[]> {
-	return await getCollection("events", ({ data }) => {
-		return import.meta.env.PROD ? !data.visible : true;
+		return import.meta.env.PROD ? (data.visible ? data.visible : true ) : true;
 	});
 }
 
