@@ -4,6 +4,7 @@ import { removeDupsAndLowerCase } from "./utils/strings.ts";
 
 const baseSchema = z.object({
 	title: z.string().max(60),
+	visible: z.boolean().default(true).optional(),
 });
 
 const post = defineCollection({
@@ -66,6 +67,14 @@ const news = defineCollection({
 				.string()
 				.optional()
 				.transform((str) => (str ? new Date(str) : undefined)),
+			createBanner: z.boolean().default(false).optional(),
+			autoHideBanner: z.boolean().default(true).optional(),
+			autoHideBannerAfter: z
+				.number()
+				.or(z.string().transform((val) => Number(val)))
+				.default(30) // Default to 30 days
+				.transform((val) => val * 24 * 60 * 60 * 1000) // Convert days to milliseconds
+				.optional(),
 		}),
 });
 
@@ -75,8 +84,16 @@ const events = defineCollection({
 	schema: z.object({
 			name: z.string(),
 			group: z.string(),
-			date: z.string().or(z.date()).or(z.array(z.string().or(z.date())))
-				.transform((val) => { Array.isArray(val) ? val.map((date) => new Date(date)) : [new Date(val)] }),
+			date: z
+				.string()
+				.or(z.array(z.string()))
+				.transform((val) =>
+					Array.isArray(val)
+						? val.map((d) => new Date(d))
+						: [new Date(val)]
+				),
+			// date: z.string().or(z.array(z.string())),
+				// .transform((val) => { Array.isArray(val) ? val.map((date) => new Date(date)) : new Date(val) }),
 			tags: z
 				.array(z.string())
 				.default([])

@@ -10,7 +10,7 @@ export async function getAllPosts(): Promise<CollectionEntry<"post">[]> {
 /** filter out draft posts based on the environment */
 export async function getAllNews(): Promise<CollectionEntry<"news">[]> {
 	return await getCollection("news", ({ data }) => {
-		return import.meta.env.PROD ? !data.draft : true;
+		return import.meta.env.PROD ? data.visible : true;
 	});
 }
 

@@ -5,25 +5,48 @@ import { slugify } from "@/utils/strings.ts";
 const today = new Date();
 
 // Get highlighted entries from both collections
-const events = await getCollection("events", ({ data }) => data.createBanner && data.visible);
-// const news = await getCollection("news", ({ data }) => data.createBanner === true);
+const events = await getCollection("events", ({ data }) => 
+    (data.createBanner ? data.createBanner : false) && (data.visible ? data.visible : true));
+
+const news = await getCollection("news", ({ data }) => 
+    (data.createBanner ? data.createBanner : false) && (data.visible ? data.visible : true));
 
 // Combine and sort by date (newest first)
-const bannerEventItems = [...events] //, ...news]
+const bannerEventItems = events
     .map(event => ({
         id: event.id,
         title: event.data.name,
         type: "event",
-        date: Array.isArray(event.data.date) ? event.data.reverse()[0] : event.data.date,
+        date: new Date(Array.isArray(event.data.date) ? event.data.date.reverse()[0] : event.data.date),
         autoHide: event.data.autoHideBanner || false,
         url: `/events/${slugify(event.data.group)}/${slugify(event.data.name)}`
     }))
 
-const filteredItems = bannerEventItems.filter(item => {
-    const itemDate = new Date(item.date);
+const bannerNewsItems = news
+    .map(newi => ({
+        id: newi.id,
+        title: newi.data.title,
+        type: "news",
+        date: (() => {
+            const publishDate = new Date(newi.data.publishDate);
+            const afterMs = typeof newi.data.autoHideBannerAfter === "number" ? newi.data.autoHideBannerAfter : 30 * 24 * 60 * 60 * 1000;
+            return new Date(publishDate.getTime() + afterMs);
+        })(),
+        autoHide: newi.data.autoHideBanner || false,
+        url: `/news/${newi.id}`
+    }))
+
+console.log("Banner events:", bannerEventItems, "Banner news:", bannerNewsItems);
+
+const filteredItems = [...bannerEventItems, ...bannerNewsItems].filter(item => {
+// const filteredItems = bannerEventItems.filter(item => {
+    const itemDate = new Date(item.date.getTime() + 24 * 60 * 60 * 1000); // Add one day to the date to include the whole day
+    const out = item.autoHide === false || (item.autoHide === true && itemDate >= today);
+    // console.log(`Item: ${item.title}, Date: ${itemDate}, ${today}, ${out}`)
     return item.autoHide === false || (item.autoHide === true && itemDate >= today); // Only show items that are today or in the future if autoHide is false
 });
-console.log("Banner items:", filteredItems.length);
+
+// console.log("Filtered banner items:", filteredItems);
 
 // Only render if there are items to show
 const shouldRender = filteredItems.length > 0;
@@ -54,13 +77,13 @@ const shouldRender = filteredItems.length > 0;
                         <div 
                             class={`banner-item absolute inset-0 flex items-center justify-center transition-opacity duration-500 ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
                             data-index={index}
+                            style="z-index:1"
                         >
                             <div class="flex items-center gap-3">
                                 <!-- Type Badge -->
                                 <span class="px-2 py-1 bg-white/20 dark:bg-white rounded text-xs font-medium uppercase tracking-wide flex-shrink-0">
                                     {item.type.toUpperCase()}
                                 </span>
-                                
                                 <!-- Content -->
                                 <div class="flex items-center">
                                     {item.url ? (
@@ -135,18 +158,18 @@ const shouldRender = filteredItems.length > 0;
                         item.classList.add('opacity-0');
                     }
                 });
-                
+
                 // Update dots
                 dots.forEach((dot, i) => {
                     if (i === index) {
-                        dot.classList.remove('bg-white/40');
-                        dot.classList.add('bg-white');
+                        dot.classList.remove('bg-white/50', 'dark:bg-black/25');
+                        dot.classList.add('bg-white', 'dark:bg-black');
                     } else {
-                        dot.classList.remove('bg-white');
-                        dot.classList.add('bg-white/40');
+                        dot.classList.remove('bg-white', 'dark:bg-black');
+                        dot.classList.add('bg-white/50', 'dark:bg-black/25');
                     }
                 });
-                
+
                 currentIndex = index;
             }
             
@@ -206,5 +229,11 @@ const shouldRender = filteredItems.length > 0;
     
     .banner-item {
         transition: opacity 0.5s ease-in-out;
+    }
+    .banner-item.opacity-0 {
+        pointer-events: none;
+    }
+    .banner-item.opacity-100 {
+        pointer-events: auto;
     }
 </style>
