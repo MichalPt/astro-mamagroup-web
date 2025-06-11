@@ -2,11 +2,13 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import NewsPreview from "@/components/news/NewsPreview.astro";
 import { getAllNews, getAllPosts } from "@/data/post";
-import { collectionDateSort } from "@/utils/date";
+import { collectionDateSort, collectionDateIntervalSort } from "@/utils/date";
 import TitlePageLayout from "@/layouts/TitlePageBase.astro";
 import PageLayout from "@/layouts/Base.astro";
 import EmblaCarousel from "@/components/carousel/EmblaCarousel";
 import Research from "@/components/Research.astro";
+import { slugify } from "@/utils/strings.ts";
+import EventEntry from "@/components/events/EventEntry.astro";
 
 const meta = {
     description: "Research group at Charles University in Prague, Czechia. We focus on nonlinear spectroscopy of molecular aggregates and theory of open quantum systems.",
@@ -17,6 +19,7 @@ const meta = {
 const maxNews = 10;
 const maxTopNews = 3; // plus intro slide
 const allNews = await getAllNews();
+const events = await getCollection("events", ({ data }) => typeof data.visible === "boolean" ? data.visible : true);
 
 const topNewsByDate = allNews
 	.sort(collectionDateSort)
@@ -24,6 +27,8 @@ const topNewsByDate = allNews
 const moreNewsByDate = allNews
 	.sort(collectionDateSort)
 	.slice(0, maxNews) as CollectionEntry<"news">[];
+const sorrtedEvents = events
+	.sort(collectionDateIntervalSort) as CollectionEntry<"events">[];
 
 const options = { direction: 'ltr', loop: true };
 ---
@@ -87,6 +92,17 @@ const options = { direction: 'ltr', loop: true };
 		</h2>
 		<div class="mt-4 flex flex-col w-full md:grid md:grid-cols-4 align-content-center gap-4">
 			{ moreNewsByDate.map((p) => <NewsPreview post={p} />)}
+		</div>
+	</section>
+
+	<section class="mx-auto flex flex-col items-center justify-center mb-6 client:visible">
+		<h2 class="text-center mb-4">
+			<a href="/events" class="title text-3xl citrus-link">Events</a>
+		</h2>
+		<div class="mt-4 flex flex-col w-full md:grid md:grid-cols-3 align-content-center gap-4">
+			{events.map((event) => 
+				<EventEntry event={event}/>
+			)}
 		</div>
 	</section>
 </TitlePageLayout>

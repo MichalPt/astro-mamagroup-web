@@ -1,10 +1,10 @@
 ---
-name: "Prague May Summer School 2024"
+name: "Prague May Summer School 2026"
 group: "school"
-date: ["2024-06-13", "2024-06-14"]
+date: ["2026-06-13", "2026-06-14"]
 createBanner: true
 autoHideBanner: true
-visible: true
+visible: false
 ---
 
 # Prague May Summer School 2025

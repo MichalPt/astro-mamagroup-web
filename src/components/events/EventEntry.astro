@@ -1,0 +1,33 @@
+---
+import type { CollectionEntry } from "astro:content";
+import FormattedDate from "@/components/FormattedDate.astro";
+import type { HTMLTag, Polymorphic } from "astro/types";
+import { siteConfig } from "@/site.config";
+import Image from "astro/components/Image.astro";
+import {slugify} from "@/utils/strings.ts";
+import { formatDateInterval} from "@/utils/date.ts";
+
+type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
+	event: CollectionEntry<"events">;
+};
+
+const { as: Tag = "div", event } = Astro.props;
+const image = event.data.image;
+const today = new Date();
+---
+<a 
+    data-astro-prefetch href={`/events/${slugify(event.data.group)}/${slugify(event.data.name)}/`} 
+    class=`citrus-link relative flex items-end justify-center h-90 p-4 rounded-lg shadow-lg ${event.data.date.reverse()[0] > today ? "bg-special-lighter hover:bg-special-lightest" : "bg-special-lighter opacity-45 hover:bg-special-lighter text-white"} hover:brightness-80  text-center`
+>
+    <div class="flex flex-col m-4 pw-full sm:shrink justify-center my-auto">
+        {event.data.image && 
+            <div class="flex grow justify-center items-center">
+                <Image src={image} alt={image.split('/').at(-1)} height="150" width="150"/>
+            </div>
+        }
+        <Tag class="citrus-link font-medium text-accent-base leading-5">
+                {event.data.name}
+        </Tag>
+        <div class="text-xs/5 text-lighter">{formatDateInterval(event.data.date)}</div>
+    </div>
+</a>
