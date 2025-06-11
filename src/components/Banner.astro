@@ -123,6 +123,8 @@ const shouldRender = filteredItems.length > 0;
 )}
 
 <script>
+    const delay = 3000;
+
     function initBanner() {
         const banner = document.getElementById('banner');
         const closeButton = document.getElementById('banner-close');
@@ -145,39 +147,39 @@ const shouldRender = filteredItems.length > 0;
             }
         });
         
+        function showItem(index) {
+            // Update opacity only - no layout changes
+            bannerItems.forEach((item, i) => {
+                if (i === index) {
+                    item.classList.remove('opacity-0');
+                    item.classList.add('opacity-100');
+                } else {
+                    item.classList.remove('opacity-100');
+                    item.classList.add('opacity-0');
+                }
+            });
+
+            // Update dots
+            dots.forEach((dot, i) => {
+                if (i === index) {
+                    dot.classList.remove('bg-white/50', 'dark:bg-black/25');
+                    dot.classList.add('bg-white', 'dark:bg-black');
+                } else {
+                    dot.classList.remove('bg-white', 'dark:bg-black');
+                    dot.classList.add('bg-white/50', 'dark:bg-black/25');
+                }
+            });
+
+            currentIndex = index;
+        }
+        
+        function nextItem() {
+            const next = (currentIndex + 1) % bannerItems.length;
+            showItem(next);
+        }
+
         // Only setup rotation if there are multiple items
         if (bannerItems.length > 1) {
-            function showItem(index) {
-                // Update opacity only - no layout changes
-                bannerItems.forEach((item, i) => {
-                    if (i === index) {
-                        item.classList.remove('opacity-0');
-                        item.classList.add('opacity-100');
-                    } else {
-                        item.classList.remove('opacity-100');
-                        item.classList.add('opacity-0');
-                    }
-                });
-
-                // Update dots
-                dots.forEach((dot, i) => {
-                    if (i === index) {
-                        dot.classList.remove('bg-white/50', 'dark:bg-black/25');
-                        dot.classList.add('bg-white', 'dark:bg-black');
-                    } else {
-                        dot.classList.remove('bg-white', 'dark:bg-black');
-                        dot.classList.add('bg-white/50', 'dark:bg-black/25');
-                    }
-                });
-
-                currentIndex = index;
-            }
-            
-            function nextItem() {
-                const next = (currentIndex + 1) % bannerItems.length;
-                showItem(next);
-            }
-            
             // Dot click handlers
             dots.forEach((dot, index) => {
                 dot.addEventListener('click', () => {
@@ -186,12 +188,12 @@ const shouldRender = filteredItems.length > 0;
                     if (rotationInterval) {
                         clearInterval(rotationInterval);
                     }
-                    rotationInterval = setInterval(nextItem, 8000);
+                    rotationInterval = setInterval(nextItem, delay);
                 });
             });
             
             // Start automatic rotation
-            rotationInterval = setInterval(nextItem, 8000);
+            rotationInterval = setInterval(nextItem, delay);
             
             // Pause rotation on hover
             banner.addEventListener('mouseenter', () => {
@@ -201,7 +203,7 @@ const shouldRender = filteredItems.length > 0;
             });
             
             banner.addEventListener('mouseleave', () => {
-                rotationInterval = setInterval(nextItem, 8000);
+                rotationInterval = setInterval(nextItem, delay);
             });
         }
         
