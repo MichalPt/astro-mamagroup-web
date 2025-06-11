@@ -6,10 +6,10 @@ const today = new Date();
 
 // Get highlighted entries from both collections
 const events = await getCollection("events", ({ data }) => 
-    (data.createBanner ? data.createBanner : false) && (data.visible ? data.visible : true));
+    (data.createBanner ? data.createBanner : false) && (typeof data.visible === "boolean" ? data.visible : true));
 
 const news = await getCollection("news", ({ data }) => 
-    (data.createBanner ? data.createBanner : false) && (data.visible ? data.visible : true));
+    (data.createBanner ? data.createBanner : false) && (typeof data.visible === "boolean" ? data.visible : true));
 
 // Combine and sort by date (newest first)
 const bannerEventItems = events
