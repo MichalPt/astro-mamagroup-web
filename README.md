@@ -193,6 +193,8 @@ The `/src` folder has the following structure:
 | `site.config.ts` | Config file |
 | other |  |
 
+**IMPORTANT** - do NOT rename the `/src` subfolders! Their names need to be like this to get properly recognized by Astro and its plugins and integrations.
+
 
 ## Some important folders and structure of their content
 
@@ -202,6 +204,7 @@ The content folder is the one a contributor to the website will be interacting w
 
 
 ### Folder `/pages`
+
 
 
 

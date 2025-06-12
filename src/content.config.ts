@@ -185,4 +185,4 @@ const coursesMaly = createCourseCollection("maly-teaching");
 const outreachMancal = createOutreachCollection("mancal-outreach");
 
 // Series
-export const collections = { post, note, news, coursesMancal, coursesMaly, outreachMancal, events };
+export const collections = { news, coursesMancal, coursesMaly, outreachMancal, events };
