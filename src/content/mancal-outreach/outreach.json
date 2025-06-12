@@ -1,0 +1,388 @@
+[
+    {
+        "sectionTitle": "Public Lectures",
+        "sectionVisible": true,
+        "sectionContent": [
+            {
+                "subsectionTitle": "Biologické čtvrtky ve Viničné",
+                "subsectionVisible": true,
+                "subsectionContent": [
+                    {
+                        "title": "Kvantová mechanika ve službách přírody",
+                        "linkUrl": "https://youtu.be/_bDZXi9XTwY",
+                        "date": "2021-11-17",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "subsectionTitle": "Pátečníci (popularizační sekce Českého klubu skeptiků Sisyfos)",
+                "subsectionVisible": true,
+                "subsectionContent": [
+                    {
+                        "title": "Fotosyntéza v době postpravdivé: pro a proti kvantové biologie",
+                        "linkUrl": "https://www.youtube.com/watch?reload=9&v=5LWbmAwKUuo",
+                        "date": "2019-01-11",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "sectionTitle": "Interviews",
+        "sectionVisible": true,
+        "sectionContent": [
+            {
+                "subsectionTitle": "Neuron Fund for Support of Science",
+                "subsectionVisible": true,
+                "subsectionContent": [
+                    {
+                        "title": "Vědci pod mikroskopem",
+                        "linkUrl": "https://www.youtube.com/watch?v=CIazghKaBlA",
+                        "date": "",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Neuron Impuls 2014 v oboru fyzika (rozhovor)",
+                        "linkUrl": "https://youtu.be/U5mHO3_ws9E",
+                        "date": "",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Neuron Inpuls 2014 ve fyzice",
+                        "linkUrl": "https://www.nfneuron.cz/person/tomas-mancal",
+                        "date": "",
+                        "type": "website",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "sectionTitle": "Publications for general public",
+        "sectionVisible": true,
+        "sectionContent": [
+            {
+                "subsectionTitle": "Vesmír",
+                "subsectionVisible": true,
+                "subsectionContent": [
+                    {
+                        "title": "Víra v hříšnost víry",
+                        "linkUrl": "https://vesmir.cz/cz/casopis/archiv-casopisu/2022/cislo-1/vira-hrisnost-viry.html",
+                        "date": "2022-01-03",
+                        "type": "website",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Revoluce, která nenastala",
+                        "linkUrl": "https://vesmir.cz/cz/casopis/archiv-casopisu/2020/cislo-7/revoluce-ktera-nenastala.html",
+                        "date": "2020-07-13",
+                        "type": "website",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "subsectionTitle": "Československý časopis pro fyziku",
+                "subsectionVisible": true,
+                "subsectionContent": [
+                    {
+                        "title": "Heisenbergův magický krok (Čs. čas. fyz. 61 (2011) 151)",
+                        "linkUrl": "",
+                        "date": "",
+                        "type": "other",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Primární procesy ve fotosyntéze: Od buňky ke kvantové superpozici a zpět (Čs. čas. fyz. 71 (2021) 344)",
+                        "linkUrl": "",
+                        "date": "",
+                        "type": "other",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "subsectionTitle": "ArXiv",
+                "subsectionVisible": true,
+                "subsectionContent": [
+                    {
+                        "title": "Translation of Werner Heisenberg's Paper \"Quantum-Theoretical Reinterpretation of Kinematic and Mechanical Relations\" Zeitschrift für Physik 33, 1925, 879-893 into Czech language",
+                        "linkUrl": "https://arxiv.org/abs/2108.03119",
+                        "date": "2021-08-06",
+                        "type": "pdf",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "sectionTitle": "Outside Science",
+        "sectionVisible": true,
+        "sectionContent": [
+            {
+                "subsectionTitle": "Zastavení u Matky Terezy 2022",
+                "subsectionVisible": true,
+                "subsectionContent": [
+                    {
+                        "title": "P. František Čech",
+                        "linkUrl": "https://youtu.be/Cc2mNEKUgAE",
+                        "date": "2022-06-16",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "P. Jaroslav Brož",
+                        "linkUrl": "https://youtu.be/TDDiL7_2eHo",
+                        "date": "2022-05-19",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Michaela Duffková",
+                        "linkUrl": "https://youtu.be/6mKHM4BF-jA",
+                        "date": "2022-03-31",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Michal Stehlík",
+                        "linkUrl": "https://youtu.be/7wHYMtCGJjY",
+                        "date": "2022-03-03",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Tomáš Kotrlý",
+                        "linkUrl": "https://youtu.be/kVcXMklWsOs",
+                        "date": "2022-01-13",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "subsectionTitle": "Zastavení u Matky Terezy 2021",
+                "subsectionVisible": true,
+                "subsectionContent": [
+                    {
+                        "title": "Daniel Hůle",
+                        "linkUrl": "https://youtu.be/ij0DRcbx4gU",
+                        "date": "2022-08-25",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Jiří Kylar",
+                        "linkUrl": "https://youtu.be/5TtW3raDPXk",
+                        "date": "2021-11-18",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Jana Frantíková",
+                        "linkUrl": "https://youtu.be/vf41HunlIG4",
+                        "date": "2021-10-14",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Ilirian Kuka",
+                        "linkUrl": "https://youtu.be/T15h6Rg8tkM",
+                        "date": "2021-09-09",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Anna Rajská (Dejmková)",
+                        "linkUrl": "https://youtu.be/VxdYUOQqSII",
+                        "date": "2021-06-03",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Patrik Proško",
+                        "linkUrl": "https://youtu.be/5BImPI82-ZI",
+                        "date": "2021-05-06",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Ladislav Heryán",
+                        "linkUrl": "https://youtu.be/FMpCTHd8tW0?list=PLfvYmv-HGhlY545OR5C2evGqQLsmoliBR",
+                        "date": "2021-04-08",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Petra Plemlová",
+                        "linkUrl": "https://youtu.be/Bkj7GTcRLSk?list=PLfvYmv-HGhlY545OR5C2evGqQLsmoliBR",
+                        "date": "2021-03-11",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Vladimír Kuncl",
+                        "linkUrl": "https://youtu.be/YnGt86eAcig?list=PLfvYmv-HGhlY545OR5C2evGqQLsmoliBR",
+                        "date": "2021-02-11",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Jakub Suchel",
+                        "linkUrl": "https://youtu.be/z_0J6R13MBg?list=PLfvYmv-HGhlY545OR5C2evGqQLsmoliBR",
+                        "date": "2021-01-14",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    }
+                ]
+            },
+            {
+                "subsectionTitle": "Zastavení u Matky Terezy 2020",
+                "subsectionVisible": true,
+                "subsectionContent": [
+                    {
+                        "title": "Ondřej Boháč",
+                        "linkUrl": "https://youtu.be/yBQ1Qo-PeqA?list=PLfvYmv-HGhlY545OR5C2evGqQLsmoliBR",
+                        "date": "2020-12-03",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Jiří Grygar",
+                        "linkUrl": "https://youtu.be/iRfkpg85vZU?list=PLfvYmv-HGhlY545OR5C2evGqQLsmoliBR",
+                        "date": "2020-10-15",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    },
+                    {
+                        "title": "Jiří Zajíc a Mikuláš Minář",
+                        "linkUrl": "https://youtu.be/CMkUQii03Fc?list=PLfvYmv-HGhlY545OR5C2evGqQLsmoliBR",
+                        "date": "2020-05-20",
+                        "type": "video",
+                        "visible": true,
+                        "language": "Czech",
+                        "label": "",
+                        "tags": [],
+                        "description": ""
+                    }
+                ]
+            }
+        ]
+    }
+]

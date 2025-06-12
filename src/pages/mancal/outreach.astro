@@ -1,7 +1,89 @@
 ---
 import TitlePageLayout from "@/layouts/TitlePageBase.astro";
+import BaseLayout from "@/layouts/Base.astro";
+import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
+import FormattedDate from "@/components/FormattedDate.astro";
+import { siteConfig } from "@/site.config";
+
+const outreach = await getCollection("outreachMancal", ({ data }) => typeof data.sectionVisible === "boolean" ? data.sectionVisible : true);
+console.log("Outreach sections:", outreach.length);
+console.log(outreach)
+
+function getItemIcon(type: string): string {
+    switch (type) {
+        case "video":
+            return "ri:video-fill";
+        case "pdf":
+            return "ri:file-fill";
+        case "website":
+            return "ri:window-fill";
+        case "other":
+            return "ri:file-unknow-fill";
+        default:
+            return "ri:file-unknow-fill";
+    }
+}
 ---
 
-<TitlePageLayout meta={{ title: "Teaching" }}>
-    Here will be listed my contributions to science popularization.
-</TitlePageLayout>
+<BaseLayout meta={{ title: "Teaching" }}>
+    <div class="flex flex-col gap-4 mt-2">
+        {outreach.map((file) => (
+            file.data.map((section) => (  
+                <div class="mb-4 ml-1">
+                    <h2 class="text-lg/5 font-semibold mt-4">{section.sectionTitle}</h2>
+                    <hr class="h-px mt-0 mb-2 bg-gray-200 border-0 dark:bg-gray-700"/>
+
+                    <div class="columns-md">
+                        {section.sectionContent.map((subsection) => (
+                            <div class="break-inside-avoid-column">
+                                <h3 class="text-md/5 font-semibold ml-4 md:ml-6 mt-1 mb-1">{subsection.subsectionTitle}</h3>
+                                <ul class="list-disc pl-6 ml-4 md:ml-6 space-y-1 sm:space-y-2">
+                                    {subsection.subsectionContent.map((item) => (        
+                                        <li class="ml-2 flex flex-row items-left gap-x-1">
+                                            {item.type && 
+                                                <Icon 
+                                                    name={getItemIcon(item.type)}
+                                                    class="shrink-0"
+                                                    focusable="false"
+                                                    width="1.3em"
+                                                    height="1.3em"
+                                                />
+                                            }
+                                            {(item.linkUrl && item.linkUrl.length > 0) ? (
+                                                <a href={item.linkUrl} class="citrus-link shrink items-center justify-center leading-5" target="_blank">
+                                                    {item.title}
+                                                    {item.date && 
+                                                        <span class="inline-flex items-center px-2 py-0.5 bg-gray-200 dark:bg-gray-600/50 rounded-lg text-xs text-lighter ml-0 w-auto">
+                                                            <FormattedDate
+                                                                class="no-underline"
+                                                                date={new Date(item.date)}
+                                                                dateTimeOptions={siteConfig.date.options}
+                                                            />
+                                                        </span>
+                                                    }
+                                                </a>
+                                            ) : (
+                                                <div class="shrink items-center justify-center leading-4">
+                                                    {item.title}
+                                                    {item.date && 
+                                                        <span class="inline-flex items-center px-2 py-0.5 bg-gray-200 dark:bg-gray-600/50 rounded-lg text-xs text-lighter ml-0 w-auto">
+                                                            <FormattedDate
+                                                                class="no-underline"
+                                                                date={new Date(item.date)}
+                                                                dateTimeOptions={siteConfig.date.options}
+                                                            />
+                                                        </span>
+                                                    }
+                                                </div>
+                                            )}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            ))))}
+    </div>
+</BaseLayout>

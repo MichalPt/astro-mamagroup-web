@@ -104,6 +104,38 @@ const events = defineCollection({
 		}),
 });
 
+
+function createOutreachCollection(path: string) {
+	return defineCollection({
+		loader: glob({ base: `./src/content/${path}`, pattern: "**/*.json" }),
+		schema: z.array(
+					z.object({
+						sectionTitle: z.string(),
+						sectionVisible: z.boolean().default(true).optional(),
+						sectionContent: z.array(
+							z.object({
+								subsectionTitle: z.string(),
+								subsectionVisible: z.boolean().default(true).optional(),
+								subsectionContent: z.array(
+									z.object({
+										title: z.string(),
+										linkUrl: z.string().url().or(z.literal("")).optional(),
+										date: z.string().or(z.date()).optional(),
+										visible: z.boolean().default(true).optional(),
+										type: z.enum(["video", "pdf", "website", "other"]).default("other").optional(),
+										language: z.string().default("Czech").optional(),
+										label: z.string().optional(),
+										description: z.string().optional(),
+										tags: z.array(z.string()).default([]).transform(removeDupsAndLowerCase).optional()
+									})
+								)
+							})
+						)
+					})
+				)
+	})
+};
+
 // Function to create a course collection with a specific path
 // This function allows for reusability and avoids code duplication
 function createCourseCollection(path: string) { 
@@ -148,6 +180,8 @@ function createCourseCollection(path: string) {
 const coursesMancal = createCourseCollection("mancal-teaching");
 const coursesMaly = createCourseCollection("maly-teaching");
 
+// Outreach
+const outreachMancal = createOutreachCollection("mancal-outreach");
 
 // Series
-export const collections = { post, note, news, coursesMancal, coursesMaly, events };
+export const collections = { post, note, news, coursesMancal, coursesMaly, outreachMancal, events };
