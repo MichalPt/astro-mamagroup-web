@@ -34,7 +34,7 @@ export function formatDateInterval(dates: Date[] | string[]): string {
 
     // Convert to Date objects if needed
     const toDate = (d: Date | string) => d instanceof Date ? d : new Date(d);
-    const [start, end] = [toDate(dates[0]), dates.length > 1 ? toDate(dates[1]) : null];
+    const [end, start] = [toDate(dates[0]), dates.length > 1 ? toDate(dates[1]) : null];
 
     const pad = (n: number) => n.toString().padStart(2, "0");
 
