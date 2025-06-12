@@ -185,7 +185,7 @@ The `/src` folder has the following structure:
 | `/data` | ? |
 | `/layouts` | Main layouts of the pages |
 | `/pages` | !!! The tree structure of this folder directly translates into the webpage tree !!! The webpages themselves |
-| `/plugins` | ? |
+| `/plugins` | Folder for script files based on plugins |
 | `/scripts` | Scripts that are used on multiple places of the website |
 | `/styles` | Folder for CSS styles |
 | `/utils` | Folder for small handy scripts |
@@ -193,6 +193,19 @@ The `/src` folder has the following structure:
 | `site.config.ts` | Config file |
 | other |  |
 
+
+## Some important folders and structure of their content
+
+### Folder `/content`
+
+The content folder is the one a contributor to the website will be interacting with the most often. It contains all the input JSON files that are sourced to create parts of the website like courses (`/mancal-teaching`, `/maly-teaching`), news (`/news`), events (`/events`), outreach (`/mancal-outreach`), or members of the group (`group.json`) and files to customize their personal profile website (`/custom`).
+
+
+### Folder `/pages`
+
+
+
+<!-- 
 ## Configure
 
 - Edit the config file `src/site.config.ts` for basic site meta data
@@ -278,4 +291,4 @@ The project is build on the [Astro Citrus](https://github.com/ArtemKutsan/astro-
 
 ## License
 
-MIT
+MIT -->
