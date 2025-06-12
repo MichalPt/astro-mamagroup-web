@@ -4,6 +4,8 @@ import CoursesLayout from "@/layouts/Courses.astro";
 import type { CollectionEntry } from "astro:content";
 import { Icon } from "astro-icon/components";
 import { slugify, processCourseId } from "@/utils/strings.ts"
+import { siteConfig } from "@/site.config";
+import FormattedDate from "@/components/FormattedDate.astro";
 
 const collectionName = "coursesMancal";
 const rootPath = "/mancal/teaching/";
@@ -91,6 +93,15 @@ const meta = {
                                                         />
                                                     </a>
                                                 }
+                                                {(video.date && course.data.showDates ) && ( 
+                                                        <span class="inline-flex items-center px-2 py-0.5 bg-gray-200 dark:bg-gray-600/50 rounded-lg text-xs text-lighter ml-1 w-auto">
+                                                            <FormattedDate
+                                                                class="no-underline"
+                                                                date={new Date(video.date)}
+                                                                dateTimeOptions={siteConfig.date.options}
+                                                            />
+                                                        </span>)
+                                                    }
                                         </div>
                                     </li>
                                 ))}

@@ -165,7 +165,8 @@ function createCourseCollection(path: string) {
     												Array.isArray(val) ? val : [val]).optional(),
 									visible: z.boolean().default(true).optional(),
 									label: z.string().optional(),
-									description: z.string().optional()
+									description: z.string().optional(),
+									date: z.string().or(z.date()).optional(),
 								})
 							)
 						})

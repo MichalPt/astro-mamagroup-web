@@ -5,7 +5,7 @@
     "language": "Czech",
     "semester": "winter",
     "courseVisible": true,
-    "showDates": false,
+    "showDates": true,
     "content": [
         {
             "sectionTitle": "Introduction",
