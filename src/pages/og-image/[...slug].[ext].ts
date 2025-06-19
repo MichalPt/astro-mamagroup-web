@@ -151,8 +151,8 @@ export async function GET(context: APIContext) {
 
 export async function getStaticPaths() {
   const news = await getCollection("news");
-  const events = await getCollection("events");
-  const posts = [...news, ...events]
+  // const events = await getCollection("events");
+  const posts = [...news]
   return posts
     .filter(({ data }) => !data.ogImage)
     .flatMap((post) => {
