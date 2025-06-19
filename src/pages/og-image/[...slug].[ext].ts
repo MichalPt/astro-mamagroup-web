@@ -158,14 +158,14 @@ export async function getStaticPaths() {
         {
           params: { slug: post.id, ext: "png" },
           props: {
-            pubDate: post.data.updatedDate ?? post.data.publishDate,
+            pubDate: post.data.updatedDate ?? post.data.date,
             title: post.data.title,
           },
         },
         {
           params: { slug: post.id, ext: "svg" },
           props: {
-            pubDate: post.data.updatedDate ?? post.data.publishDate,
+            pubDate: post.data.updatedDate ?? post.data.date,
             title: post.data.title,
           },
         },

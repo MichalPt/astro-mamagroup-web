@@ -5,9 +5,10 @@ date: ["2024-06-10", "2024-06-11"]
 createBanner: true
 autoHideBanner: true
 visible: true
+tags: ["maymeeting","prague"]
 ---
 
-# Prague May Meeting 2024
+<!-- # Prague May Meeting 2024 -->
 
 Welcome to the Prague May Meeting information page. Here is a brief overview of the upcoming meeting. Any information missing? Write to: [tomas.mancal@matfyz.cuni.cz](mailto:mancal@matfyz.cuni.cz).
 

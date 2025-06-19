@@ -3,17 +3,20 @@ import type { CollectionEntry } from "astro:content";
 import Pagination from "@/components/Paginator.astro";
 import PostPreview from "@/components/blog/PostPreview.astro";
 import NewsPreview from "@/components/news/NewsPreview.astro";
-import { getAllNews, getUniqueTags, groupPostsByYear } from "@/data/post";
+import { getUniqueTags, groupEventsByYear } from "@/data/post";
+import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
 import type { GetStaticPaths, Page } from "astro";
 import { Icon } from "astro-icon/components";
 import Badge from "@/components/Badge.astro";
+import { getPostPath } from "@/data/post";
+import FormattedDate from "@/components/FormattedDate.astro";
 
 export const getStaticPaths = (async ({ paginate }) => {
-	const MAX_POSTS_PER_PAGE = 5;
+	const MAX_POSTS_PER_PAGE = 20;
 	const MAX_TAGS = 10;
-	const allNews = await getAllNews();
+	const allNews = await getCollection("events", ({ data }) => typeof data.visible === "boolean" ? data.visible : true);
 	const uniqueTags = getUniqueTags(allNews).slice(0, MAX_TAGS);
 	return paginate(allNews.sort(collectionDateSort), {
 		pageSize: MAX_POSTS_PER_PAGE,
@@ -22,15 +25,15 @@ export const getStaticPaths = (async ({ paginate }) => {
 }) satisfies GetStaticPaths;
 
 interface Props {
-	page: Page<CollectionEntry<"news">>;
+	page: Page<CollectionEntry<"events">>;
 	uniqueTags: string[];
 }
 
 const { page, uniqueTags } = Astro.props;
 
 const meta = {
-	description: "What's up in our group?",
-	title: "News",
+	description: "Events organized by our group",
+	title: "Events",
 };
 
 const paginationProps = {
@@ -48,28 +51,45 @@ const paginationProps = {
 	}),
 };
 
-const groupedByYear = groupPostsByYear(page.data);
+const groupedByYear = groupEventsByYear(page.data);
 const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
 ---
 
 <PageLayout meta={meta}>
 	<h1 class="title mb-6 mt-4 flex items-center gap-2">
-		News
-		<a class="text-accent-two" href="/news/rss.xml" target="_blank">
+		Events
+		<a class="text-accent-two" href="/events/rss.xml" target="_blank">
 			<span class="sr-only">RSS feed</span>
 			<Icon aria-hidden="true" class="h-6 w-6" focusable="false" name="mdi:rss" />
 		</a>
 	</h1>
-	<div class="flex gap-y-8 grow min-w-[60vw] max-w-6xl mx-auto justify-between">
-		<section aria-label="Blog post list" class="grow mr-auto">
+	<div class="grid gap-y-8 sm:flex w-full max-w-6xl sm:gap-x-8 mx-auto justify-between">
+		<section aria-label="Blog post list">
 			{
 				descYearKeys.map((yearKey) => (
 					<>
 						<h4 class="title text-light">{yearKey}</h4>
-						<ul class="mb-8 mt-4 space-y-8 text-start">
-							{groupedByYear[yearKey]?.map((p) => (
+						<ul class="mb-8 mt-4 space-y-4 text-start">
+							{groupedByYear[yearKey]?.map((post) => (
 								<li class="grid gap-2 sm:grid-cols-[auto_1fr] sm:[&_q]:col-start-2">
-									<NewsPreview post={p} withDesc={true} />
+									{/* <NewsPreview post={p} withDesc={true} /> */}
+									<a data-astro-prefetch href={getPostPath(post)} class="flex flex-row gap-x-3 items-center">
+										<Icon aria-hidden="true" class="h-5 w-5" focusable="false" name={post.data.icon} />
+										
+										<div class="citrus-link font-semibold text-accent-base">
+												{post.data.name}
+										</div>
+										<FormattedDate 
+											class="text-sm shrink-0 ml-1 mr-4 text-lighter" 
+											date={post.data.date}
+										/>
+										
+									</a>
+									{/* {groupDictionary[post.collection] && 
+											<a class="text-sm text-lighter font-thin bg-accent-two text-white px-[7px] py-[1px] rounded-lg items-center text-center" href={`/${post.collection}/`}>
+												{groupDictionary[post.collection]}
+											</a>
+									} */}
 								</li>
 							))}
 						</ul>
@@ -77,6 +97,7 @@ const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
 				))
 			}
 		</section>
+		<div class="flex"/>
 		{
 			!!uniqueTags.length && (
 				<aside class="md:min-w-[14rem] md:max-w-[14rem] md:basis-[14rem]">
@@ -122,3 +143,31 @@ const descYearKeys = Object.keys(groupedByYear).sort((a, b) => +b - +a);
 	</div>
 	<Pagination {...paginationProps} />
 </PageLayout>
+
+<!-- ---
+import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/Base.astro";
+import { slugify } from "@/utils/strings";
+
+const events = await getCollection("events");
+console.log(events.length, "events loaded");
+
+const meta = {
+    title: "Events",
+    description: "",
+};
+
+---
+
+<BaseLayout meta={meta}>
+	<h1 class="title mb-6 flex items-center gap-2">
+		Events
+	</h1>
+    {events.map((event) => (
+        <div class="flex mb-8">
+			<a href={`/events/${slugify(event.data.group)}/${slugify(event.data.name)}`} class="text-accent-base hover:underline">
+            	<h2 class="text-2xl font-bold mb-2">{event.data.name}</h2>
+			</a>
+        </div>
+    ))}
+</BaseLayout> -->

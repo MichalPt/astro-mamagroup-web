@@ -28,7 +28,7 @@ const bannerNewsItems = news
         title: newi.data.title,
         type: "news",
         date: (() => {
-            const publishDate = new Date(newi.data.publishDate);
+            const publishDate = new Date(newi.data.date);
             const afterMs = typeof newi.data.autoHideBannerAfter === "number" ? newi.data.autoHideBannerAfter : 30 * 24 * 60 * 60 * 1000;
             return new Date(publishDate.getTime() + afterMs);
         })(),

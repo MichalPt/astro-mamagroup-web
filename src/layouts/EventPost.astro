@@ -1,45 +1,51 @@
 ---
 import { type CollectionEntry, render } from "astro:content";
-// import Masthead from "@/components/blog/Masthead.astro";
-import NewsPostHead from "@/components/news/NewsPostHead.astro";
+import EventsPostHead from "@/components/events/EventsPostHead.astro";
 // import TOC from "@/components/blog/TOC.astro";
 // import WebMentions from "@/components/blog/webmentions/index.astro";
 import BaseLayout from "./Base.astro";
 import { Image } from "astro:assets";
 
 interface Props {
-	newspost: CollectionEntry<"news">;
+	eventpost: CollectionEntry<"events">;
 }
 
-const { newspost } = Astro.props;
-const { image, title, teaser, updatedDate, date } = newspost.data;
+const { eventpost } = Astro.props;
+const { name, date } = eventpost.data;
 
 // const socialImage = ogImage ?? `/og-image/${post.id}.png`;
-const articleDate = updatedDate?.toISOString() ?? date.toISOString();
-const { headings } = await render(newspost);
+// const articleDate = updatedDate?.toISOString() ?? publishDate.toISOString();
+const { headings } = await render(eventpost);
+
+let dateInterval: Date;
+if (Array.isArray(date)) {
+	dateInterval = new Date(String(date[0]));
+} else {
+	dateInterval = new Date(date);
+}
+
+const meta = {
+    title: name,
+    description: "",
+};
 ---
 
-<BaseLayout meta={{ articleDate, title }}>
-	<NewsPostHead content={newspost} />
+<BaseLayout meta={meta}>
 
-	<div class="mt-6 flex sm:grid-cols-[auto_1fr] md:items-start gap-x-8 w-full">
+	<EventsPostHead content={eventpost} />
+
+	<div class="mt-6 flex sm:grid-cols-[auto_1fr] md:items-start gap-x-8">
 		<article class="grid flex-grow grid-cols-1 break-words pt-4" data-pagefind-body>
-            {image && 
-                <div class="flex justify-start mb-8">
-                    <Image src={image} alt={image.split('/').at(-1)} height="160" width="600" layout="responsive"/>
-                </div>
-            }
-			<div class="max-w-4xl prose prose-citrus flex-grow prose-headings:font-semibold prose-headings:text-accent-base prose-headings:before:text-accent-two sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none">
+			<div class="prose prose-citrus max-w-4xl flex-grow">
 				<slot />
 			</div>
-			<!-- <WebMentions /> -->
 		</article>
 	</div>
 
-	<div class="left-0 right-12 z-50 ml-auto w-fit md:absolute">
+	<div class="left-0 right-12 z-50 mx-auto w-fit md:absolute">
 		<button
 			id="to-top-button"
-			class="fixed bottom-14 flex h-12 w-12 text-light translate-y-28 items-center justify-center rounded-full bg-bgColor text-3xl drop-shadow-xl transition-all duration-300 hover:text-accent-two data-[show=true]:translate-y-0 data-[show=true]:opacity-100"
+			class="fixed bottom-16 flex h-12 w-12 text-light translate-y-28 items-center justify-center rounded-full bg-bgColor text-3xl drop-shadow-xl transition-all duration-300 hover:text-accent-two data-[show=true]:translate-y-0 data-[show=true]:opacity-100"
 			aria-label="Back to Top"
 			data-show="false"
 		>	

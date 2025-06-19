@@ -6,23 +6,30 @@ import { getAllNews, getUniqueTags } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
 import type { GetStaticPaths, Page } from "astro";
+import { getCollection } from "astro:content";
+import FormattedDate from "@/components/FormattedDate.astro";
+import { getPostPath } from "@/data/post";
+import { Icon } from "astro-icon/components";
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
 	const allNews = await getAllNews();
-	const sortedNews = allNews.sort(collectionDateSort);
-	const uniqueTags = getUniqueTags(sortedNews);
+	const allEvents = await getCollection("events");
+	const allPosts = [...allNews, ...allEvents];
+	// Sort all posts by date
+	const sortedPosts = allPosts.sort(collectionDateSort);
+	const uniqueTags = getUniqueTags(sortedPosts);
 
 	return uniqueTags.flatMap((tag) => {
-		const filterPosts = sortedNews.filter((post) => post.data.tags.includes(tag));
+		const filterPosts = sortedPosts.filter((post) => post.data.tags.includes(tag));
 		return paginate(filterPosts, {
-			pageSize: 10,
+			pageSize: 20,
 			params: { tag },
 		});
 	});
 };
 
 interface Props {
-	page: Page<CollectionEntry<"post">>;
+	page: Page<CollectionEntry<"events" | "news">>;
 }
 
 const { page } = Astro.props;
@@ -47,20 +54,42 @@ const paginationProps = {
 		},
 	}),
 };
+
+const groupDictionary: Record<string, string> = {
+	events: "event",
+	news: "news",
+};
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-6 flex items-center">
+	<h1 class="title mb-6 mt-4 flex items-center">
 		<a class="text-accent-two sm:hover:underline" href="/tags/">Tags</a>
 		<span class="me-3 ms-2">→</span>
 		<span class="text-2xl">#{tag}</span>
 	</h1>
-	<section aria-label="Blog post list">
-		<ul class="space-y-4">
+	<section aria-label="Blog post list min-w-5xl mx-auto">
+		<ul class="space-y-4 flex flex-col min-w-5xl mx-auto">
 			{
-				page.data.map((p) => (
-					<li class="grid-cols-[auto_1fr]">
-						<PostPreview post={p} />
+				page.data.map((post) => (
+					<li class="flex md:ml-4">
+						{/* <PostPreview post={p} /> */}
+						<a data-astro-prefetch href={getPostPath(post)} class="flex flex-row gap-x-3 items-center">
+							<Icon aria-hidden="true" class="h-5 w-5" focusable="false" name={post.data.icon} />
+							
+							<div class="citrus-link font-semibold text-accent-base">
+									{post.data.title ? post.data.title : post.data.name}
+							</div>
+							<FormattedDate 
+								class="text-sm shrink-0 ml-1 mr-4 text-lighter" 
+								date={post.data.date}
+							/>
+							
+						</a>
+						{groupDictionary[post.collection] && 
+								<a class="text-xs text-white dark:text-gray-800 font-thin bg-accent-two px-[7px] py-[1px] rounded-lg flex justify-center items-center text-center" href={`/${post.collection}/`}>
+									{groupDictionary[post.collection]?.toUpperCase()}
+								</a>
+						}
 					</li>
 				))
 			}

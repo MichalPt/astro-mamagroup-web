@@ -27,6 +27,39 @@ export interface NavigationLink {
 	}
 </style>
 
+<style>
+    /* Force normal positioning for buttons */
+    #buttons-panel,
+    #buttons-panel *,
+    site-search,
+    site-search *,
+    theme-toggle,
+    theme-toggle * {
+        position: relative !important;
+        /* top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important; */
+    }
+    
+    /* Exception for icons inside buttons that need centering */
+    /* theme-toggle button svg,
+    site-search button svg {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+    } */
+    
+    /* Ensure custom elements display properly */
+    /* site-search,
+    theme-toggle {
+        display: inline-block !important;
+        position: relative !important;
+    } */
+</style>
+
 <header
 	id="main-header"
 	class="fixed md:relative px-4 top-0 md:top-4 h-[80px] z-20 w-full left-0 bg-bgColor md:bg-transparent"
@@ -321,12 +354,4 @@ export interface NavigationLink {
         initDropdownButtons();
     });
 </script>
-
-
-
-
-
-
-
-
 

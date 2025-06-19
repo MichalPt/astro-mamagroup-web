@@ -59,7 +59,7 @@ const news = defineCollection({
 				.array(z.string())
 				.default([])
 				.transform(removeDupsAndLowerCase),
-			publishDate: z
+			date: z
 				.string()
 				.or(z.date())
 				.transform((val) => new Date(val)),
@@ -75,6 +75,7 @@ const news = defineCollection({
 				.default(30) // Default to 30 days
 				.transform((val) => val * 24 * 60 * 60 * 1000) // Convert days to milliseconds
 				.optional(),
+			icon: z.string().optional().default("solar:clipboard-list-bold"),
 		}),
 });
 
@@ -101,6 +102,7 @@ const events = defineCollection({
 			createBanner: z.boolean().default(false).optional(),
 			autoHideBanner: z.boolean().default(true).optional(),
 			visible: z.boolean().default(true).optional(),
+			icon: z.string().optional().default("ri:team-fill"),
 		}),
 });
 

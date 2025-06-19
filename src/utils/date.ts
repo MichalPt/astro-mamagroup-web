@@ -2,31 +2,65 @@ import type { CollectionEntry } from "astro:content";
 import { siteConfig } from "@/site.config";
 
 export function getFormattedDate(
-	date: Date | undefined,
-	options?: Intl.DateTimeFormatOptions,
+    date: Date | Array<String | Date> | undefined,
+    options?: DateTimeFormatOptions,
 ): string {
-	if (date === undefined) {
-		return "Invalid Date";
-	}
+    if (date === undefined) {
+        return "Invalid Date";
+    }
 
-	return new Intl.DateTimeFormat('en-GB', {
-		...(siteConfig.date.options as Intl.DateTimeFormatOptions),
-		...options,
-	}).format(date);
+    return new Intl.DateTimeFormat('en-GB', {
+        ...(siteConfig.date.options as DateTimeFormatOptions),
+        ...options,
+    }).format(new Date(date));
 }
 
 export function collectionDateSort(
-	a: CollectionEntry<"post" | "note" | "news">,
-	b: CollectionEntry<"post" | "note" | "news">,
+    a: CollectionEntry<"news" | "events">, // Remove "post" reference
+    b: CollectionEntry<"news" | "events">, // Remove "post" reference
 ) {
-	return b.data.publishDate.getTime() - a.data.publishDate.getTime();
+    // Handle news items with publishDate
+    // if (a.data.date && b.data.date) {
+    //     return b.data.date.getTime() - a.data.date.getTime();
+    // }
+    // // Handle events with date array
+    // else 
+    if (a.data.date && b.data.date) {
+        const aDate = Array.isArray(a.data.date) ? a.data.date[0] : a.data.date;
+        const bDate = Array.isArray(b.data.date) ? b.data.date[0] : b.data.date;
+        return bDate.getTime() - aDate.getTime();
+    }
+    // // Mixed types: news vs events
+    // else if (a.data.date && b.data.date) {
+    //     const bDate = Array.isArray(b.data.date) ? b.data.date[0] : b.data.date;
+    //     return bDate.getTime() - a.data.date.getTime();
+    // }
+    // else if (a.data.date && b.data.date) {
+    //     const aDate = Array.isArray(a.data.date) ? a.data.date[0] : a.data.date;
+    //     return b.data.date.getTime() - aDate.getTime();
+    // }
+    // Fallback
+    return 0;
 }
 
 export function collectionDateIntervalSort(
-	a: CollectionEntry<"events">,
-	b: CollectionEntry<"events">,
+    a: CollectionEntry<"events">,
+    b: CollectionEntry<"events">,
 ) {
-	return b.data.date[0].getTime() - a.data.date[0].getTime();
+    const aDate = Array.isArray(a.data.date) ? a.data.date[0] : a.data.date;
+    const bDate = Array.isArray(b.data.date) ? b.data.date[0] : b.data.date;
+    return bDate.getTime() - aDate.getTime();
+}
+
+// Helper function to extract date from any collection entry
+export function getEntryDate(entry: CollectionEntry<"news" | "events">): Date | undefined {
+    if ('publishDate' in entry.data && entry.data.date) {
+        return entry.data.date;
+    }
+    if ('date' in entry.data && entry.data.date) {
+        return Array.isArray(entry.data.date) ? entry.data.date[0] : entry.data.date;
+    }
+    return undefined;
 }
 
 export function formatDateInterval(dates: Date[] | string[]): string {
@@ -34,7 +68,7 @@ export function formatDateInterval(dates: Date[] | string[]): string {
 
     // Convert to Date objects if needed
     const toDate = (d: Date | string) => d instanceof Date ? d : new Date(d);
-    const [end, start] = [toDate(dates[0]), dates.length > 1 ? toDate(dates[1]) : null];
+    const [start, end] = [toDate(dates[1]), dates.length > 1 ? toDate(dates[0]) : null];
 
     const pad = (n: number) => n.toString().padStart(2, "0");
 

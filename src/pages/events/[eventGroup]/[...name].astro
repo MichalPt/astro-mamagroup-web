@@ -2,9 +2,10 @@
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
 import BaseLayout from "@/layouts/Base.astro";
-import { getAllEvents, getUniqueTags, groupEventsByYear } from "@/data/post";
+import { getUniqueTags, groupEventsByYear } from "@/data/post";
 import type { GetStaticPaths, Page } from "astro";
 import { slugify } from "@/utils/strings.ts"
+import EventPostLayout from "@/layouts/EventPost.astro";
 
 export async function getStaticPaths() {
     // The getCollection function accepts only literal string, not a vriable!
@@ -31,8 +32,12 @@ const meta = {
 
 ---
 
-<BaseLayout meta={meta}>
+<!-- <BaseLayout meta={meta}>
 	<article class="prose">
 	    <Content />
 	</article>
-</BaseLayout>
+</BaseLayout> -->
+
+<EventPostLayout eventpost={event}>
+	<Content />
+</EventPostLayout>

@@ -1,13 +1,13 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import NewsPreview from "@/components/news/NewsPreview.astro";
-import { getAllNews, getAllPosts } from "@/data/post";
+import { getAllNews } from "@/data/post";
 import { collectionDateSort, collectionDateIntervalSort } from "@/utils/date";
 import TitlePageLayout from "@/layouts/TitlePageBase.astro";
 import PageLayout from "@/layouts/Base.astro";
 import EmblaCarousel from "@/components/carousel/EmblaCarousel";
 import Research from "@/components/Research.astro";
-import { slugify } from "@/utils/strings.ts";
+import { slugify } from "@/utils/strings";
 import EventEntry from "@/components/events/EventEntry.astro";
 
 const meta = {

@@ -1,12 +1,13 @@
 ---
-name: "Prague May Summer School 2024"
+name: "Prague May Summer School 2025"
 group: "school"
 date: ["2024-06-13", "2024-06-14"]
 createBanner: true
 autoHideBanner: true
+tags: ["school", "prague"]
 ---
 
-# Prague May Summer School 2025
+<!-- # Prague May Summer School 2025 -->
 
 An associated event of the [Prague May Meeting](/events/maymeeting/prague-maymeeting-2024)
 

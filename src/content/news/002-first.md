@@ -1,6 +1,6 @@
 ---
 title: "Published article"
-publishDate: "2025-04-09"
+date: "2025-04-09"
 tags: ["article",]
 image: "/news/article-spectro-temporal-symmetry-2025.png"
 ---

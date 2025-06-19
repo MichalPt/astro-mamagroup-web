@@ -2,33 +2,31 @@
 import type { CollectionEntry } from "astro:content";
 import FormattedDate from "@/components/FormattedDate.astro";
 import type { HTMLTag, Polymorphic } from "astro/types";
+import { Icon } from "astro-icon/components";
+import { getPostPath } from "@/data/post";
 
 type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
-	post: CollectionEntry<"post">;
+	post: CollectionEntry<"news" | "events">;
 	withDesc?: boolean;
 };
 
 const { as: Tag = "div", post, withDesc = false } = Astro.props;
+
+const rootUrl = getPostPath(post);
 ---
 
 <div class={withDesc ? "flex flex-col" : "flex flex-col grow sm:flex-row sm:items-center sm:justify-between"}>
 	{!withDesc ? (
 		<>
+			<Icon aria-hidden="true" class="h-5 w-5" focusable="false" name={post.data.icon} />
 			<FormattedDate
 				class="shrink-0 text-lighter text-sm sm:order-2 sm:text-right"
-				date={post.data.publishDate}
-				dateTimeOptions={{
-					// hour: "2-digit",
-					// minute: "2-digit",
-					year: "numeric",
-					month: "long",
-					day: "2-digit",
-				}}
+				date={post.data.date}
 			/>
 			<Tag class="citrus-link font-medium text-accent-base sm:order-1 sm:flex-gro md:line-clamp-1">
-				<a data-astro-prefetch href={`/posts/${post.id}/`}>
+				<a data-astro-prefetch href={rootUrl}>
 					{post.data.draft && <span class="text-red-500">(Draft) </span>}
-					{post.data.title}
+					{post.data.title ? post.data.title : post.data.name}
 				</a>
 			</Tag>
 		</>
@@ -36,18 +34,11 @@ const { as: Tag = "div", post, withDesc = false } = Astro.props;
 		<>
 			<FormattedDate 
 				class="text-sm shrink-0 text-lighter" 
-				date={post.data.publishDate}
-				dateTimeOptions={{
-					// hour: "2-digit",
-					// minute: "2-digit",
-					year: "numeric",
-					month: "long",
-					day: "2-digit",
-				}}
+				date={post.data.date}
 			/>
 			<Tag class="citrus-link font-medium text-accent-base mt-2.5">
-				<a data-astro-prefetch href={`/posts/${post.id}/`}>
-					{post.data.title}
+				<a data-astro-prefetch href={rootUrl}>
+					{post.data.title ? post.data.title : post.data.name}
 				</a>
 			</Tag>
 			<p class="mt-0.5 line-clamp-2">{post.data.description}</p>

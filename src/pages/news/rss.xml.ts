@@ -11,8 +11,8 @@ export const GET = async () => {
         site: import.meta.env.SITE,
         items: notes.map((note) => ({
             title: note.data.title,
-            pubDate: note.data.publishDate,
-            link: `group/news/${note.id}/`,
+            pubDate: note.data.date,
+            link: `/news/${note.id}/`,
         })),
     });
 };

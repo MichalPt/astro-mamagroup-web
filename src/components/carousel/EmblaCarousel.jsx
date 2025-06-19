@@ -67,7 +67,7 @@ const EmblaCarousel = (props) => {
                         
                         <a href={`/news/${post.id}/`} className="citrus-link relative">
                           <h1 className="mt-4 title">{post.data.title}</h1>
-                          <span className="text-lighter text-xs/5">{getFormattedDate(post.data.publishDate)}</span>
+                          <span className="text-lighter text-xs/5">{getFormattedDate(post.data.date)}</span>
                           {post.data.teaser && <div className="mt-1 text-sm sm:text-lg max-w-4/10">{post.data.teaser}</div>}
                         </a>
                       </div>

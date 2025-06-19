@@ -1,6 +1,6 @@
 ---
 title: "Les Houches 2025"
-publishDate: "2025-03-01"
+date: "2025-03-01"
 image: "/news/les-houches-2025.WebP"
 tags: ['leshouches','school','group']
 teaser: "Our entire group attended the winter school and follow-up workshop in Les Houches (FR)."
