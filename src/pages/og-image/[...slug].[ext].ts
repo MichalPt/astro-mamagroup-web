@@ -2,7 +2,7 @@ import SFProRoundedBold from "@/assets/fonts/SF-Pro-Rounded-Bold.latin.base.ttf"
 import SFProRoundedSemibold from "@/assets/fonts/SF-Pro-Rounded-Semibold.latin.base.ttf";
 import SFProRoundedMedium from "@/assets/fonts/SF-Pro-Rounded-Medium.latin.base.ttf";
 import SFProRoundedRegular from "@/assets/fonts/SF-Pro-Rounded-Regular.latin.base.ttf";
-import { getAllPosts } from "@/data/post";
+import { getCollection } from "astro:content";
 import { siteConfig } from "@/site.config";
 import { getFormattedDate } from "@/utils/date";
 import { Resvg } from "@resvg/resvg-js";
@@ -150,7 +150,9 @@ export async function GET(context: APIContext) {
 }
 
 export async function getStaticPaths() {
-  const posts = await getAllPosts();
+  const news = await getCollection("news");
+  const events = await getCollection("events");
+  const posts = [...news, ...events]
   return posts
     .filter(({ data }) => !data.ogImage)
     .flatMap((post) => {
