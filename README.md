@@ -149,4 +149,4 @@ You can still edit and send pull requests of your code even **without** having t
 
 ---
 
-**For more detailed information abou the website including "How to"s please visit the [wiki page](https://github.com/MichalPt/astro-mamagroup-web/wiki) of this GitHub project.**
+**For more detailed information abou the website including tutorials and "How to ..." please visit the [wiki page](https://github.com/MichalPt/astro-mamagroup-web/wiki) of this GitHub project.**
