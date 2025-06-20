@@ -1,7 +1,7 @@
 ---
 name: "Prague May Summer School 2026"
 group: "school"
-date: ["2026-06-13", "2026-06-14"]
+date: ["2026-05-13", "2026-06-14"]
 createBanner: true
 autoHideBanner: true
 visible: false
@@ -35,7 +35,7 @@ Non-linear time and frequency resolved spectroscopy with coherent and incoherent
 
 ## Accommodation: 
 
-June 12 -- 14/15 (based on preference), University dormitory Vltava (
+June 12 &ndash; 14/15 (based on preference), University dormitory Vltava (
 
 Chemická 953, 148 28 Prague 4, bus 177 and metro line C station Chodov), single-person rooms with bathroom shared between two, no fee
 
@@ -47,14 +47,14 @@ Expenses mostly covered, University canteen and selected restaurants
 
 **Wednesday 12th:** arrival, accommodation, voluntary get-together
 
-**Thursday 13th:** 9:00-12:40 Morning lectures, 14:00-17:10 Afternoon lecture + Experimental demonstration, 17:10-18:20 poster session with coffee, 18:30 Common dinner
+**Thursday 13th:** 9:00&ndash;12:40 Morning lectures, 14:00&ndash;17:10 Afternoon lecture + Experimental demonstration, 17:10&ndash;18:20 poster session with coffee, 18:30 Common dinner
 
-**Friday 14th:** 9:00-12:40 Morning lectures, 14:00-17:10 afternoon lectures with practical applications, 18:00 Walk through historical Prague, departure/voluntary get-together
+**Friday 14th:** 9:00&ndash;12:40 Morning lectures, 14:00&ndash;17:10 afternoon lectures with practical applications, 18:00 Walk through historical Prague, departure/voluntary get-together
 
 ## Expected number of participants: 
 
 around 20
 
-Registration for the school has been closed now.
+***Registration for the school has been closed now.***
 
 For information write to: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz).

@@ -107,6 +107,8 @@ const events = defineCollection({
 });
 
 
+// Function to create an outreach collection with a specific path
+// This function allows for reusability and avoids code duplication
 function createOutreachCollection(path: string) {
 	return defineCollection({
 		loader: glob({ base: `./src/content/${path}`, pattern: "**/*.json" }),
