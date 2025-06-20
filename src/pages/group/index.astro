@@ -18,8 +18,8 @@ const getImagePath = (photo) => {
 // order the members according to the dictionary, others will be put to the end
 const positionOrder = { "group co-leader": 1, "postdoc": 2, "PhD student": 3, "collaborator": 'last', "secretary": 'last', };
 
-const activeMembers = membersList.filter((person) => person.active == "True");
-const pastMembers = membersList.filter((person) => person.active == "False");
+const activeMembers = membersList.filter((person) => String(person.active).toLowerCase() == "true");
+const pastMembers = membersList.filter((person) => String(person.active).toLowerCase() == "false");
 
 // Sort people by position order
 const sortedActiveMembers = activeMembers.sort((a, b) => {
