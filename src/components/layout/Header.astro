@@ -43,24 +43,6 @@ export interface NavigationLink {
         transform: none !important; */
     }
     
-    /* Ensure proper spacing on all devices */
-    #buttons-panel > div:first-child {
-        margin-right: 0.5rem;
-    }
-    
-    /* Force spacing for mobile devices */
-    @media (max-width: 768px) {
-        #buttons-panel {
-            gap: 0.5rem;
-        }
-        #buttons-panel > div {
-            margin-right: 0.5rem;
-        }
-        #buttons-panel > div:last-child {
-            margin-right: 0;
-        }
-    }
-    
     /* Exception for icons inside buttons that need centering */
     /* theme-toggle button svg,
     site-search button svg {
@@ -152,13 +134,9 @@ export interface NavigationLink {
 
 		<!-- Buttons section -->
 		<div class="flex items-center gap-x-2 flex-shrink-0">
-			<div id="buttons-panel" class="flex items-center">
-				<div class="mr-2">
-					<Search />
-				</div>
-				<div>
-					<ThemeToggle />
-				</div>
+			<div id="buttons-panel" class="flex gap-x-2">
+				<Search />
+				<ThemeToggle />
 			</div>
 			
 			<mobile-button
