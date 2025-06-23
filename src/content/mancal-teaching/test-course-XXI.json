@@ -1,0 +1,41 @@
+{
+    "courseName": "New Course XXI",
+    "courseCode": "NBCM067",
+    "courseDescription": "Course description for New Course XXI",
+    "language": "Czech",
+    "semester": "winter",
+    "courseVisible": false,
+    "showDates": true,
+    "content": [
+        {
+            "sectionTitle": "Introduction",
+            "sectionVisisble": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Introduction and historical excursions",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Intro",
+                            "videoUrl": "https://www.youtube.com/watch?v=iVhrEiETIIk",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "date": "2023-10-01",
+                            "description": ""
+                        },
+                        {
+                            "title": "Hustota módů 1",
+                            "videoUrl": "https://www.youtube.com/watch?v=ZQL_aTIFPF0",
+                            "pdfName": "kokos.png",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
