@@ -10,7 +10,7 @@ const contentFolder = "/content/mancal-teaching/";
 
 export async function getStaticPaths() {
     // The getCollection function accepts only literal string, not a vriable!
-    const courses = await getCollection("coursesMancal");
+    const courses = await getCollection("coursesMancal", ({ data }) => data.courseVisible == true);
     return courses.flatMap((course) =>
         course.data.content.flatMap((section) =>
             section.sectionContent.flatMap((subsection) =>

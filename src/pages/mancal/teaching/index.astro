@@ -9,7 +9,7 @@ const coursesName = "coursesMancal";
 const semesters = ["winter", "summer"];
 const rootPath = "/mancal/teaching/";
 
-const allCourses = await getCollection(coursesName);
+const allCourses = await getCollection(coursesName, ({ data }) => data.courseVisible == true);
 console.log('Courses found:', allCourses.length);
 
 const meta = {

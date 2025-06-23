@@ -12,7 +12,7 @@ const rootPath = "/mancal/teaching/";
 const contentFolder = "/content/mancal-teaching/";
 
 export async function getStaticPaths() {
-    const courses = await getCollection("coursesMancal");
+    const courses = await getCollection("coursesMancal", ({ data }) => data.courseVisible == true);
     return courses.map((course) => ({
         params: {
             course: processCourseId(course.id),
