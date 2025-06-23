@@ -1,9 +1,7 @@
 ---
-import Badge from "@/components/Badge.astro";
 import { getCollection } from 'astro:content';
-import PageLayout from "@/layouts/Base.astro";
 import CoursesLayout from "@/layouts/Courses.astro";
-import { slugify, processCourseId } from "@/utils/strings.ts"
+import { processCourseId } from "@/utils/strings.ts"
 
 const coursesName = "coursesMancal";
 const semesters = ["winter", "summer"];

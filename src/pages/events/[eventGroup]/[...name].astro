@@ -1,9 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { render } from "astro:content";
-import BaseLayout from "@/layouts/Base.astro";
-import { getUniqueTags, groupEventsByYear } from "@/data/post";
-import type { GetStaticPaths, Page } from "astro";
+import { getUniqueTags } from "@/data/post";
 import { slugify } from "@/utils/strings.ts"
 import EventPostLayout from "@/layouts/EventPost.astro";
 
