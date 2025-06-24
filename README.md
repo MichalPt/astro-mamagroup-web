@@ -14,21 +14,18 @@ The webpage uses [Astro framework](https://docs.astro.build) and it was built up
 # Docs
 ## Table Of Contents
 
-1. [Key Features](#key-features)
-2. [Demo](#demo)
+1. [Before You Start...](#before-you-start)
+2. [Technical Insight](#technical-insight)
 3. [Quick start](#quick-start)
-4. [Preview](#preview)
-5. [Commands](#commands)
-6. [Configure](#configure)
-7. [Updating](#updating)
-8. [Adding posts and notes](#adding-posts-and-notes)
-   - [Post Frontmatter](#post-frontmatter)
-   - [Note Frontmatter](#note-frontmatter)
-   - [Frontmatter Snippet](#frontmatter-snippet)
-9. [Pagefind search](#pagefind-search)
-10. [Analytics](#analytics)
-11. [Deploy](#deploy)
-12. [Acknowledgment](#acknowledgment)
+    - [Recommended steps](#recommended-steps)
+4. [Project structure](https://github.com/MichalPt/astro-mamagroup-web/wiki/Project-structure) 
+5. Tutorials
+    - [How to add a new course](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-add-a-new-course)
+    - [How to add and edit group members](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-add-and-edit-group-members)
+    - [How to add and edit outreach](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-add-and-edit-outreach)
+    - [How to create a custom banner](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-create-a-custom-banner)
+    - [How to create a new event](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-create-a-new-event)
+    - [How to create a news post](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-create-a-news-post)
 
 <!-- ## Key Features
 
@@ -50,7 +47,7 @@ The webpage uses [Astro framework](https://docs.astro.build) and it was built up
 - [Astro Icon](https://github.com/natemoo-re/astro-icon) svg icon component
 - [Rehype Pretty Code](https://rehype-pretty.pages.dev/) code blocks and syntax highlighter -->
 
-## Before You Start ...
+## Before You Start...
 
 To be able to contribute to the website (add or edit content, bug fix, add features, ...) you need a GitHub account. Also keep in mind, that any pull requests will need to be confirmed by one of the administrators of the GitHub repository before they get translated to the public website.
 
@@ -101,7 +98,7 @@ pnpm dev
 
 Do not close the terminal window, the server is now running there. If you need to interact with the project (e.g. install new libraries as you are coding), open a new terminal and navigate to the project folder. 
 
-The local server should be by default accessible through this address (eventually check the server logs as it is starting, you should find the defaulted port number there):
+The local server should be by default accessible through this address (eventually check the server logs as it is starting, you should find the default port number there):
 
 [http://localhost:4321/](http://localhost:4321/)
 
@@ -114,7 +111,7 @@ Any changes you make to the code in the project repository will be, upon saving 
 
 #### 1. VSCode
 
-A piece of software that I would greatly rcommend for working on an Astro project is [Visual Studio Code](https://code.visualstudio.com/download). It supports all file formats you will be dealing with thanks to installable Astro extension and it has native GIT support. To set it up and link it with your GitHub account, follow the official [docs](https://code.visualstudio.com/docs) and install the [Astro extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
+A piece of software that I would greatly recommend for working on an Astro project is [Visual Studio Code](https://code.visualstudio.com/download). It supports all file formats you will be dealing with thanks to installable Astro extension and it has native GIT support. To set it up and link it with your GitHub account, follow the official [docs](https://code.visualstudio.com/docs) and install the [Astro extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode).
 
 
 #### 2. `.env` file
@@ -133,7 +130,11 @@ ORCID_ACCESS_TOKEN = "XXX"
 
 where you replace `XXX` with your (32-digit) token. 
 
-You can still edit and send pull requests of your code even **without** having the `.env` file and generating the API access token. The `.env` file is included in the `.gitignore` file for security reasons but the access token that is actually used for building and deploying the website to Netlify is securely stored on GitHub as a *secret environment variable* of the project. To sum up, by skipping this voluntary step you just won't be able to locally preview the pages with lists of publications. But the deployed website will still work in this respect.
+> ***NOTE:*** You can still edit and send pull requests of your code even **without** having the `.env` file and generating the API access token. The `.env` file is included in the `.gitignore` file for security reasons but the access token that is actually used for building and deploying the website to Netlify is the one affiliated to me and my e-mail (MP). The token is securely stored on GitHub as a *secret environment variable* of the project. 
+
+To sum up, by skipping this optional step you won't be able to locally preview the pages with lists of publications. But the deployed website will still work in this respect.
+
+> ***NOTE:*** In fact, just by hovering over links that directs to pages with the list of publications will result into an error. That is due to the *prefetch function* being enabled on most of the links to optimize page loading times and improve responsiveness. If the error occurs, you can just reload the page and beware of hovering over the particular link.
 
 <!-- ### Basic pnpm Commands
 
@@ -148,4 +149,4 @@ You can still edit and send pull requests of your code even **without** having t
 
 ---
 
-**For more detailed information abou the website including tutorials and "How to ..." please visit the [wiki page](https://github.com/MichalPt/astro-mamagroup-web/wiki) of this GitHub project.**
+**For more detailed information about the website including tutorials and "How to ..." please visit the [wiki page](https://github.com/MichalPt/astro-mamagroup-web/wiki) of this GitHub project.**
