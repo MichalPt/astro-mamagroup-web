@@ -41,6 +41,7 @@ export const PrevButton = (props) => {
     <button
       className="embla__button embla__button--prev"
       type="button"
+      title="Previous Slide"
       {...restProps}
     >
       <svg className="embla__button__svg" viewBox="0 0 532 532">
@@ -61,6 +62,7 @@ export const NextButton = (props) => {
     <button
       className="embla__button embla__button--next"
       type="button"
+      title="Next Slide"
       {...restProps}
     >
       <svg className="embla__button__svg" viewBox="0 0 532 532">
