@@ -1,11 +1,59 @@
 ---
+import FormattedDate from "./FormattedDate.astro";
+import { Icon } from "astro-icon/components";
+
 const { list } = Astro.props;
 const omitInTitle = ["author correction", ];
 const filteredList = list.filter(work => !omitInTitle.some(key => work.title.toLowerCase().includes(key.toLowerCase())));
+
+const today = new Date();
 ---
 
+
 <h1>List of publications:</h1>
-<p class="text-sm mb-2">(automatically imported from ORCID)</p>
+
+<div class="flex text-xs text-lightest w-full items-center">
+    <p class="mr-1">(as it was imported from ORCID on </p>
+    <FormattedDate date={today} class="" />
+    <p class="mr-2">)</p>
+    <button 
+        id="reload-btn" 
+        class="flex items-center ml-auto text-xs dark:hover:text-gray-100 hover:text-gray-900"
+        title="Update list"
+        aria-label="Reload publications"
+    >
+        <Icon name="oui:refresh" width="13" height="13" class="inline-block mr-1" />
+    </button>
+</div>
+
+<!-- Secure Password Modal -->
+<div id="password-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-sm w-full mx-4">
+        <h3 class="text-lg font-semibold mb-4 dark:text-white">Enter Password</h3>
+        <input 
+            type="password" 
+            id="password-input" 
+            class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg mb-4 dark:bg-gray-700 dark:text-white"
+            placeholder="Password"
+        />
+        <div id="error-message" class="text-red-500 text-sm mb-2 hidden"></div>
+        <div id="status-message" class="text-green-500 text-sm mb-2 hidden"></div>
+        <div class="flex gap-2">
+            <button 
+                id="submit-password" 
+                class="flex-1 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50"
+            >
+                Submit
+            </button>
+            <button 
+                id="cancel-password" 
+                class="flex-1 bg-gray-300 dark:bg-gray-600 text-gray-700 dark:text-white px-4 py-2 rounded-lg hover:bg-gray-400 dark:hover:bg-gray-500 transition-colors"
+            >
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
 
 <ul class="list-none mx-auto py-2">
     {filteredList.map((work) => (
@@ -29,3 +77,216 @@ const filteredList = list.filter(work => !omitInTitle.some(key => work.title.toL
       </li>
     ))}
 </ul>
+
+<script>
+    class SecureReloadHandler {
+        constructor() {
+            this.modal = null;
+            this.passwordInput = null;
+            this.submitBtn = null;
+            this.cancelBtn = null;
+            this.errorMessage = null;
+            this.isLoading = false;
+        }
+
+        init() {
+            const reloadBtn = document.getElementById('reload-btn');
+            this.modal = document.getElementById('password-modal');
+            this.passwordInput = document.getElementById('password-input');
+            this.submitBtn = document.getElementById('submit-password');
+            this.cancelBtn = document.getElementById('cancel-password');
+            this.errorMessage = document.getElementById('error-message');
+            this.statusMessage = document.getElementById('status-message');
+
+            if (!reloadBtn || !this.modal || !this.passwordInput || !this.submitBtn || !this.cancelBtn) {
+                return;
+            }
+
+            this.bindEvents(reloadBtn);
+        }
+
+        bindEvents(reloadBtn) {
+            reloadBtn.addEventListener('click', () => this.showModal());
+            this.cancelBtn.addEventListener('click', () => this.hideModal());
+            this.submitBtn.addEventListener('click', () => this.handleSubmit());
+            
+            // Close on outside click
+            this.modal.addEventListener('click', (e) => {
+                if (e.target === this.modal) {
+                    this.hideModal();
+                }
+            });
+
+            // Submit on Enter key
+            this.passwordInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' && !this.isLoading) {
+                    this.handleSubmit();
+                }
+            });
+        }
+
+        showModal() {
+            this.modal.classList.remove('hidden');
+            this.modal.classList.add('flex');
+            this.passwordInput.focus();
+            this.passwordInput.value = '';
+            this.hideError();
+        }
+
+        hideModal() {
+            this.modal.classList.add('hidden');
+            this.modal.classList.remove('flex');
+            this.passwordInput.value = '';
+            this.hideError();
+            this.setLoading(false);
+        }
+
+        showError(message) {
+            this.errorMessage.textContent = message;
+            this.errorMessage.classList.remove('hidden');
+        }
+
+        hideError() {
+            this.errorMessage.classList.add('hidden');
+        }
+
+        showStatus(message) {
+            this.statusMessage.innerHTML = message;
+            this.statusMessage.classList.remove('hidden');
+        }
+
+        hideStatus() {
+            this.statusMessage.classList.add('hidden');
+        }
+
+        setLoading(loading) {
+            this.isLoading = loading;
+            this.submitBtn.disabled = loading;
+            this.submitBtn.textContent = loading ? 'Verifying...' : 'Submit';
+        }
+
+        async handleSubmit() {
+            if (this.isLoading) return;
+
+            const password = this.passwordInput.value.trim();
+            if (!password) {
+                this.showError('Please enter a password');
+                return;
+            }
+
+            this.setLoading(true);
+            this.hideError();
+
+            try {
+                const response = await fetch('/api/verify-reload', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ password })
+                });
+
+                const data = await response.json();
+
+                if (data.success && data.url) {
+                    // Password correct - trigger build
+                    const netlifyResponse = await fetch(data.url, {
+                        method: 'POST',
+                    });
+                    
+                    if (!netlifyResponse.ok) {
+                        throw new Error('Failed to trigger build');
+                    }
+                    
+                    this.showStatus('Fetching publications... (it may take several minutes)<br>Current state: <span id="build-status">initializing</span>');
+                    
+                    let buildDone = false;
+                    let retryCount = 0;
+                    const maxRetries = 48; // 5 minutes maximum
+                    
+                    while (!buildDone && retryCount < maxRetries) {
+                        try {
+                            const statusResponse = await fetch('/api/build-status', {
+                                method: 'GET'
+                            });
+                            
+                            if (!statusResponse.ok) {
+                                throw new Error('Failed to fetch build status');
+                            }
+                            
+                            const statusData = await statusResponse.json();
+                            
+                            if (!statusData.success) {
+                                throw new Error(statusData.error || 'Build status check failed');
+                            }
+                            
+                            buildDone = statusData.done;
+                            
+                            // Update only the status part
+                            const statusSpan = document.getElementById('build-status');
+                            if (statusSpan) {
+                                statusSpan.textContent = statusData.status;
+                            }
+                            
+                            if (!buildDone) {
+                                await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds
+                                retryCount++;
+                            }
+                        } catch (error) {
+                            console.error('Error checking build status:', error);
+                            retryCount++;
+                            await new Promise(resolve => setTimeout(resolve, 5000));
+                        }
+                    }
+                    
+                    if (retryCount >= maxRetries) {
+                        this.showStatus('Build timeout. Please check manually or try again later.');
+                    } else {
+                        this.showStatus('Done! Please reload the page to see the updated publications.');
+                    }
+                } else {
+                    this.showError(data.error || 'Invalid password');
+                    this.passwordInput.value = '';
+                    this.passwordInput.focus();
+                }
+            } catch (error) {
+                console.error('Authentication error:', error);
+                this.showError('Network error. Please try again.');
+            } finally {
+                this.setLoading(false);
+            }
+        }
+
+        // openSecureLink(url) {
+        //     // Create temporary link that won't be visible in DOM inspection
+        //     const tempLink = document.createElement('a');
+        //     tempLink.href = url;
+        //     tempLink.target = '_blank';
+        //     tempLink.rel = 'noopener noreferrer';
+        //     tempLink.style.position = 'absolute';
+        //     tempLink.style.left = '-9999px';
+        //     tempLink.style.opacity = '0';
+            
+        //     document.body.appendChild(tempLink);
+            
+        //     // Use setTimeout to avoid direct detection
+        //     setTimeout(() => {
+        //         tempLink.click();
+        //         // Clean up immediately
+        //         setTimeout(() => {
+        //             document.body.removeChild(tempLink);
+        //         }, 100);
+        //     }, 50);
+        // }
+    }
+
+    // Initialize the secure reload handler
+    function initSecureReload() {
+        const handler = new SecureReloadHandler();
+        handler.init();
+    }
+
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', initSecureReload);
+    document.addEventListener('astro:page-load', initSecureReload);
+</script>

@@ -124,20 +124,36 @@ export default defineConfig({
   },
   env: {
     schema: {
-      WEBMENTION_API_KEY: envField.string({
+      // WEBMENTION_API_KEY: envField.string({
+      //   context: "server",
+      //   access: "secret",
+      //   optional: true,
+      // }),
+      // WEBMENTION_URL: envField.string({
+      //   context: "client",
+      //   access: "public",
+      //   optional: true,
+      // }),
+      // WEBMENTION_PINGBACK: envField.string({
+      //   context: "client",
+      //   access: "public",
+      //   optional: true,
+      // }),
+      REBUILD_PASSWORD_HASH: envField.string({
+          context: "server",
+          access: "secret",
+      }),
+      NETLIFY_BUILD_HOOK: envField.string({
+        context: "server", 
+        access: "secret",
+      }),
+      NETLIFY_ACCESS_TOKEN: envField.string({
         context: "server",
         access: "secret",
-        optional: true,
       }),
-      WEBMENTION_URL: envField.string({
-        context: "client",
+      NETLIFY_SITE_ID: envField.string({
+        context: "server",
         access: "public",
-        optional: true,
-      }),
-      WEBMENTION_PINGBACK: envField.string({
-        context: "client",
-        access: "public",
-        optional: true,
       }),
     },
   },
