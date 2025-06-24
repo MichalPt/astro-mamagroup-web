@@ -1,0 +1,12 @@
+---
+const { sites } = Astro.props;
+---
+<div class="flex flex-wrap justify-center gap-4 max-w-xl mt-4">
+    {Object.entries(sites).map(([name, link]) => (
+        <a href={link} class="flex items-center justify-center h-[48px] px-4 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest flex-grow min-w-[140px] max-w-[180px]">
+            <span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two text-center">
+                {name}
+            </span>
+        </a>
+    ))}
+</div>

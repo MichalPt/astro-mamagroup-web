@@ -2,6 +2,13 @@
 import TitlePageLayout from "@/layouts/TitlePageBase.astro";
 import { Image } from 'astro:assets';
 import profilePhoto from "@/assets/profile_photos/tomas-mancal-source.jpg";
+import Tiles from "@/components/Tiles.astro";
+
+const sites = {"About Me": "/mancal/about/",
+			   "Research Interests": "/about/",
+			   "Publications": "/mancal/publications/",
+			   "Teaching": "/mancal/teaching/",
+			   "Outreach": "/mancal/outreach/"};
 
 ---
 <TitlePageLayout meta={{ title: "Mančal" }}>
@@ -16,38 +23,7 @@ import profilePhoto from "@/assets/profile_photos/tomas-mancal-source.jpg";
 			<p class="mt-4 mb-4 text-lg font-medium">
 				Welcome to my personal site!
 			</p>
-			<div class="flex flex-wrap justify-center space-x-4 space-y-2 mt-4 min-h-9">
-				<a href="/mancal/about/" class="relative flex items-center justify-center px-4 min-h-10 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
-					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
-						About Me
-					</span>
-				</a>
-
-				<a href="/about/" class="relative flex items-center justify-center px-4 min-h-10 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
-					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
-						Research Interests
-					</span>
-				</a>
-
-				<a href="/mancal/publications/" class="relative flex items-center justify-center px-4 min-h-10 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
-					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
-						Publications
-					</span>
-				</a>
-			</div>
-            <div class="flex justify-center space-x-4 mt-4">
-				<a href="/mancal/teaching/" class="relative flex items-center justify-center px-4 min-h-10 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
-					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
-						Teaching
-					</span>
-				</a>
-
-				<a href="/mancal/outreach/" class="relative flex items-center justify-center px-4 min-h-10 rounded-lg shadow-lg bg-special-lighter hover:brightness-110 hover:bg-special-lightest">
-					<span class="bg-clip-text text-transparent font-semibold bg-gradient-to-r from-accent-one to-accent-two">
-						Outreach
-					</span>
-				</a>
-			</div>
+			<Tiles sites={sites} />
 		</div>
 	</section>
 </TitlePageLayout>
