@@ -29,7 +29,7 @@ import {
 
 // https://astro.build/config
 export default defineConfig({
-  output: "hybrid",
+  output: "server",
   adapter: netlify(),
   image: {
     domains: ["webmention.io"],
