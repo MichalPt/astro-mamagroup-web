@@ -34,7 +34,7 @@ import { capitalize } from '@/utils/strings';
 
 //// version 2 - with authors
 
-const fetchWithRetry = async (url, options, retries = 10, backoff = 600) => {
+const fetchWithRetry = async (url, options, retries = 15, backoff = 700) => {
   try {
     const response = await fetch(url, options);
     if (!response.ok) {

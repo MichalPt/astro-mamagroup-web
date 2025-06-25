@@ -1,6 +1,19 @@
-import { Handler } from '@netlify/functions';
+import type { Handler } from '@netlify/functions';
 
 export const handler: Handler = async (event, context) => {
+    // Handle CORS preflight
+    if (event.httpMethod === 'OPTIONS') {
+        return {
+            statusCode: 200,
+            headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': 'Content-Type',
+                'Access-Control-Allow-Methods': 'GET, OPTIONS'
+            },
+            body: ''
+        };
+    }
+
     // Only allow GET requests
     if (event.httpMethod !== 'GET') {
         return {
@@ -12,19 +25,6 @@ export const handler: Handler = async (event, context) => {
                 'Access-Control-Allow-Methods': 'GET, OPTIONS'
             },
             body: JSON.stringify({ error: 'Method not allowed' })
-        };
-    }
-
-    // Handle CORS preflight
-    if (event.httpMethod === 'OPTIONS') {
-        return {
-            statusCode: 200,
-            headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': 'Content-Type',
-                'Access-Control-Allow-Methods': 'GET, OPTIONS'
-            },
-            body: ''
         };
     }
 
