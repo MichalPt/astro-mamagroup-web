@@ -194,10 +194,7 @@ const today = new Date();
         async handleSubmit() {
             if (this.isLoading) return;
 
-            if (this.refreshPage) {
-                window.location.reload();
-                return;
-            }
+            if (this.refreshPage)
 
             const password = this.passwordInput.value.trim();
             if (!password) {
@@ -266,6 +263,7 @@ const today = new Date();
                         this.showStatus('Build timeout. Please check manually or try again later.');
                     } else {
                         this.showStatus('Done! Please reload the page to see the updated publications.');
+                        this.setReloadPage(true);
                     }
                 } else {
                     this.showError(data.error || 'Invalid password');
@@ -276,8 +274,9 @@ const today = new Date();
                 console.error('Authentication error:', error);
                 this.showError('Network error. Please try again.');
             } finally {
-                this.setReloadPage(true);
-
+                if (!this.refreshPage) { 
+                  this.setLoading(false)
+                };
             }
         }
     }
