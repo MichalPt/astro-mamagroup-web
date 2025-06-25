@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { collectionName } = Astro.props;
-const courses = await getCollection(collectionName);
+const courses = await getCollection(collectionName, ({ data }) => data.courseVisible == true)
 
 // Custom semester order
 const semesterOrder = { winter: 0, summer: 1, both: 2 };

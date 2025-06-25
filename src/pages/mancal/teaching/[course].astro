@@ -69,7 +69,7 @@ const meta = {
                                 {subsection.subsectionContent.map((video) => (
                                     <li id={slugify(video.title)}>
                                         <div class="flex items-left">
-                                            <a href={`${rootPath}${courseId}/${slugify(video.title)}`} class="text-base hover:text-accent-base text-light flex items-left gap-x-1 peer">
+                                            <a href={`${rootPath}${courseId}/${slugify(video.title)}`} class="text-base shrink hover:text-accent-base text-light flex items-left gap-x-1 peer">
                                                 {video.title}
                                             </a>
                                                 {video.videoUrl && 
