@@ -87,6 +87,7 @@ const today = new Date();
         errorMessage;
         statusMessage;
         isLoading;
+        initialized;
 
         constructor() {
             this.modal = null;
@@ -96,9 +97,15 @@ const today = new Date();
             this.errorMessage = null;
             this.statusMessage = null;
             this.isLoading = false;
+            this.initialized = false;
         }
 
         init() {
+            // Prevent double initialization
+            if (this.initialized) {
+                return;
+            }
+
             const reloadBtn = document.getElementById('reload-btn');
             this.modal = document.getElementById('password-modal');
             this.passwordInput = document.getElementById('password-input');
@@ -112,6 +119,7 @@ const today = new Date();
             }
 
             this.bindEvents(reloadBtn);
+            this.initialized = true;
         }
 
         bindEvents(reloadBtn) {
@@ -259,13 +267,27 @@ const today = new Date();
         }
     }
 
+    // Global handler instance to prevent duplicates
+    let globalHandler: SecureReloadHandler | null = null;
+
     // Initialize the secure reload handler
     function initSecureReload() {
-        const handler = new SecureReloadHandler();
-        handler.init();
+        // Prevent duplicate initialization
+        if (globalHandler) {
+            return;
+        }
+        
+        globalHandler = new SecureReloadHandler();
+        globalHandler.init();
     }
 
     // Initialize when DOM is ready
-    document.addEventListener('DOMContentLoaded', initSecureReload);
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSecureReload);
+    } else {
+        initSecureReload();
+    }
+    
+    // Handle Astro page transitions
     document.addEventListener('astro:page-load', initSecureReload);
 </script>

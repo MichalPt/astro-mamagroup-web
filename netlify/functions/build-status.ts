@@ -87,7 +87,7 @@ export const handler: Handler = async (event, context) => {
             body: JSON.stringify({
                 success: true,
                 done: lastBuild.done,
-                status: lastBuild.deploy_state || 'unknown',
+                status: lastBuild.deploy_state || 'initializing',
                 created_at: lastBuild.created_at
             })
         };
