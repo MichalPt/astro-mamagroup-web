@@ -6,8 +6,8 @@ import FormattedDate from "@/components/FormattedDate.astro";
 import { siteConfig } from "@/site.config";
 
 const outreach = await getCollection("outreachMancal", ({ data }) => typeof data.sectionVisible === "boolean" ? data.sectionVisible : true);
-console.log("Outreach sections:", outreach.length);
-console.log(outreach)
+// console.log("Outreach sections:", outreach.length);
+// console.log(outreach)
 
 function getItemIcon(type: string): string {
     switch (type) {
