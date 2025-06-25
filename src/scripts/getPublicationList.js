@@ -1,6 +1,7 @@
 import orcidFetch from '@/scripts/orcidFetcher.js';
 import fs from 'fs/promises';
 import { getFormattedDate } from '@/utils/date.js';
+import { siteConfig } from '@/site.config';
 
 const getPublicationList = async (orcid) => {
     const filePath = `src/content/publications/${orcid}.json`;
@@ -36,9 +37,9 @@ const getPublicationList = async (orcid) => {
             hour: '2-digit',
             minute: '2-digit',
             hour12: false,
-            timeZone: 'Europe/Prague',
+            timeZone: siteConfig.date.options.timeZone,
         });
-        console.log(`Using cached file from ${getFormattedDate(fetchDate)} ${fetchTimeString}: ${filePath}`);
+        console.log(`Using cached file from ${getFormattedDate(fetchDate)} ${fetchTimeString} from '${filePath}'`);
         
         return jsonFile;
     };

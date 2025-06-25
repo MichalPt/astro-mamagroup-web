@@ -10,6 +10,7 @@ export const siteConfig: SiteConfig = {
 			day: "numeric",
 			month: "numeric",
 			year: "numeric",
+			timeZone: "Europe/Prague",
 		},
 	},
 	// Used as the default description meta property and webmanifest description
