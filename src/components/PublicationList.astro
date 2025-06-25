@@ -15,7 +15,7 @@ const today = new Date();
 <div class="flex text-xs text-lightest w-full items-center">
     <p class="mr-1">(as it was imported from ORCID on </p>
     <FormattedDate date={today} class="" />
-    <p class="mr-2">)</p>
+    <p class="ml-1 mr-2">{today.getHours()}.{today.getMinutes()})</p>
     <button 
         id="reload-btn" 
         class="flex items-center ml-auto text-xs dark:hover:text-gray-100 hover:text-gray-900"
