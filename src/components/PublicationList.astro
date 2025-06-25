@@ -194,7 +194,10 @@ const today = new Date();
         async handleSubmit() {
             if (this.isLoading) return;
 
-            if (this.refreshPage)
+            if (this.refreshPage) {
+                window.location.reload();
+                return;
+            }
 
             const password = this.passwordInput.value.trim();
             if (!password) {
@@ -274,9 +277,7 @@ const today = new Date();
                 console.error('Authentication error:', error);
                 this.showError('Network error. Please try again.');
             } finally {
-                if (!this.refreshPage) { 
-                  this.setLoading(false)
-                };
+                this.setLoading(false);
             }
         }
     }
