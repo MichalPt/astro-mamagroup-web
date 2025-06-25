@@ -84,6 +84,7 @@ export interface NavigationLink {
 				aria-label={siteConfig.title}
 				aria-current={Astro.url.pathname === "/" ? "page" : false}
 				class="group flex h-8 items-center hover:filter-none"
+				title="Home page"
 				href="/"
 			>	
 				<div class="items-center justify-center flex">
@@ -96,7 +97,6 @@ export interface NavigationLink {
 		<!-- Navigation section -->
 		<nav
 			aria-label="Main menu"
-			title="Main menu"
 			class="hidden md:flex items-center gap-x-8 lg:gap-x-10 xl:gap-x-16 md:mx-4"
 			id="main-navigation-menu"
 		>
@@ -106,7 +106,12 @@ export interface NavigationLink {
 					{menu.showsub ? (
 					<div class="nav-item group relative cursor-pointer flex md:shrink">
 						<span class="nav-link inline-flex items-center shrink">
-							<a href={menu.path} class="underline-offset-2 hover:underline text-base/4 text-center shrink">{menu.title}</a>
+							<a 
+								href={menu.path} 
+								class="underline-offset-2 hover:underline text-base/4 text-center shrink"
+							>
+									{menu.title}
+							</a>
 							<svg class="h-5 w-5 fill-current" viewBox="0 0 20 20">
 								<path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
 							</svg>
@@ -114,17 +119,23 @@ export interface NavigationLink {
 						<ul class="nav-dropdown-list hidden group-hover:block md:invisible md:absolute md:block md:opacity-0 md:group-hover:visible md:group-hover:opacity-100 left-1/2 -translate-x-1/2">
 						{menu.subfolder?.map((child) => (
 							<li class="nav-dropdown-item">
-							<a href={menu.path+child.path} class="underline-offset-2 hover:underline text-base">
-								{child.title}
-							</a>
+								<a 
+									href={menu.path+child.path} 
+									class="underline-offset-2 hover:underline text-base"
+								>
+									{child.title}
+								</a>
 							</li>
 						))}
 						</ul>
 					</div>
 					) : (
 					<div class="nav-item flex grow">
-						<a href={menu.path} class="underline-offset-2 hover:underline text-base/4 text-center">
-						{menu.title}
+						<a 
+							href={menu.path} 
+							class="underline-offset-2 hover:underline text-base/4 text-center"
+						>
+							{menu.title}
 						</a>
 					</div>
 					)}

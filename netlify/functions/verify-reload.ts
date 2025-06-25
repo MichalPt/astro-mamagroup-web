@@ -1,4 +1,4 @@
-import { Handler } from '@netlify/functions';
+import type { Handler } from '@netlify/functions';
 import bcrypt from 'bcryptjs';
 
 export const handler: Handler = async (event, context) => {
@@ -43,7 +43,7 @@ export const handler: Handler = async (event, context) => {
 
         const { password } = JSON.parse(event.body);
         
-        const storedHash = process.env.REBUILD_PASSWORD_HASH?.replace('$', '\\$');
+        const storedHash = process.env.REBUILD_PASSWORD_HASH?.replace('$', '\$');
         const hiddenUrl = process.env.NETLIFY_BUILD_HOOK;
 
         if (!storedHash || !hiddenUrl) {
@@ -58,7 +58,7 @@ export const handler: Handler = async (event, context) => {
             };
         }
         
-        const isValid = bcrypt.compareSync(password, storedHash.trim());
+        const isValid = bcrypt.compareSync(password, storedHash);
         console.log('Password verification result:', isValid);
         
         if (isValid) {
