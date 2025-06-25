@@ -35,7 +35,8 @@ const getPublicationList = async (orcid) => {
         const fetchTimeString = fetchDate.toLocaleTimeString('en-GB', {
             hour: '2-digit',
             minute: '2-digit',
-            hour12: false
+            hour12: false,
+            timeZone: 'Europe/Prague',
         });
         console.log(`Using cached file from ${getFormattedDate(fetchDate)} ${fetchTimeString}: ${filePath}`);
         

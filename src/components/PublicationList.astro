@@ -11,17 +11,16 @@ const filteredList = list.filter(work => !omitInTitle.some(key => work.title.toL
 
 // const today = new Date();
 const today = fetchDate;
-const todayTimeString = today.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
+const todayTimeString = today.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'Europe/Prague' });
+const todayDateString = today.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Europe/Prague' });
 ---
 
 
 <h1>List of publications:</h1>
 
 <div class="flex text-xs text-lightest w-full items-center">
-    <p class="mr-1">(as it was imported from ORCID on </p>
-    <FormattedDate date={today} class="" />
-    <p class="ml-1 mr-2">
-      {todayTimeString}
+    <p class="mr-1">
+      (as it was imported from ORCID on {todayDateString} {todayTimeString})
     </p>
     <button 
         id="reload-btn" 

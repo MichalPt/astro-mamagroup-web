@@ -17,7 +17,7 @@ if (!date) {
 
 export function formatDate(date: Date | Array<Date>, options?: Intl.DateTimeFormatOptions): string {
     options = options || { year: "numeric", month: "long", day: "numeric" };
-    const locale = Astro.locale || 'en-UK';
+    const locale = Astro.locale || 'en-GB';
 
     if (Array.isArray(date)) {
         const startDate = new Date(String(date[0]));
