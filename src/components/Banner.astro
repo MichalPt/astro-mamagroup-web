@@ -9,6 +9,9 @@ const events = await getCollection("events", ({ data }) =>
 const news = await getCollection("news", ({ data }) => 
     (data.createBanner ? data.createBanner : false) && (typeof data.visible === "boolean" ? data.visible : true));
 
+const alerts = await getCollection("alerts", ({ data }) => 
+    (typeof data.visible === "boolean" ? data.visible : true) );
+    
 // Combine and sort by date (newest first)
 const bannerEventItems = events
     .map(event => ({
@@ -34,8 +37,18 @@ const bannerNewsItems = news
         url: `/news/${newi.id}`
     }))
 
+const bannerAlerts = alerts
+    .map(alert => ({
+        id: alert.id,
+        title: alert.data.message,
+        type: alert.data.label || "alert",
+        date: alert.data.autoHideBannerOn ? new Date(alert.data.autoHideBannerOn) : new Date((new Date()).getTime() + 48 * 60 * 60 * 1000), // Use autoHideBannerOn or default to 48 hours from now
+        autoHide: alert.data.autoHideBanner || false,
+        url: alert.data.url || null
+    }))
+
 // Pass all items to client-side for dynamic filtering
-const allBannerItems = [...bannerEventItems, ...bannerNewsItems];
+const allBannerItems = [...bannerEventItems, ...bannerNewsItems, ...bannerAlerts];
 ---
 
 <!-- Always render banner container, let client-side decide visibility -->

@@ -1,6 +1,8 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
-import { removeDupsAndLowerCase } from "./utils/strings.ts";
+import { removeDupsAndLowerCase, slugify } from "./utils/strings.ts";
+import { alertsLoader } from "./loaders/alertsLoader.ts";
+
 
 const baseSchema = z.object({
 	title: z.string().max(60),
@@ -106,6 +108,18 @@ const events = defineCollection({
 		}),
 });
 
+const alerts = defineCollection({
+	loader: alertsLoader(),
+	schema: z.object({
+		message: z.string(),
+		visible: z.boolean().default(true).optional(),
+		label: z.string().optional().default("alert"),
+		autoHideBanner: z.boolean().default(false).optional(),
+		autoHideBannerOn: z.string().or(z.date()).optional(),
+		url: z.string().url().optional()
+	})
+});
+
 
 // Function to create an outreach collection with a specific path
 // This function allows for reusability and avoids code duplication
@@ -189,4 +203,4 @@ const coursesMaly = createCourseCollection("maly-teaching");
 const outreachMancal = createOutreachCollection("mancal-outreach");
 
 // Series
-export const collections = { news, coursesMancal, coursesMaly, outreachMancal, events };
+export const collections = { news, coursesMancal, coursesMaly, outreachMancal, events, alerts };

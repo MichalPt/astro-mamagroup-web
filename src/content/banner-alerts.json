@@ -1,0 +1,10 @@
+[
+    {
+        "message": "This is an example of a banner alert.",
+        "label": "TEACHING",
+        "autoHideBanner": true,
+        "autoHideBannerOn": "2025-06-26",
+        "url": "https://seznam.cz",
+        "visible": false
+    }
+]
