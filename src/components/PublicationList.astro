@@ -178,7 +178,7 @@ const today = new Date();
             this.hideError();
 
             try {
-                const response = await fetch('/api/verify-reload', {
+                const response = await fetch('/.netlify/functions/verify-reload', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -206,7 +206,7 @@ const today = new Date();
                     
                     while (!buildDone && retryCount < maxRetries) {
                         try {
-                            const statusResponse = await fetch('/api/build-status', {
+                            const statusResponse = await fetch('/.netlify/functions/build-status', {
                                 method: 'GET'
                             });
                             

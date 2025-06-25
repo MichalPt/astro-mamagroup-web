@@ -1,3 +1,22 @@
 [build]
   publish = "dist"
+  command = "pnpm build"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Environment variables that will be available in functions
+[context.production.environment]
+  NODE_VERSION = "18"
+
+# Redirect old API routes to new function endpoints (optional)
+[[redirects]]
+  from = "/api/verify-reload"
+  to = "/.netlify/functions/verify-reload"
+  status = 301
   
+[[redirects]]
+  from = "/api/build-status"
+  to = "/.netlify/functions/build-status"
+  status = 301
