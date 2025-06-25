@@ -63,17 +63,36 @@ export const handler: Handler = async (event, context) => {
         
         if (isValid) {
             console.log('Authentication successful!');
-            return {
-                statusCode: 200,
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
-                },
-                body: JSON.stringify({ 
-                    success: true, 
-                    url: hiddenUrl 
-                })
-            };
+            // Password correct - trigger build
+            const netlifyResponse = await fetch(hiddenUrl, {
+                method: 'POST',
+            });
+            
+            if (netlifyResponse.ok) {
+                return {
+                    statusCode: 200,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+                    },
+                    body: JSON.stringify({ 
+                        success: true, 
+                    })
+                };
+            } else {
+                console.error('Netlify build trigger failed:', netlifyResponse.statusText);
+                return {
+                    statusCode: 500,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin': '*'
+                    },
+                    body: JSON.stringify({ 
+                        success: false, 
+                        error: 'Failed to trigger build' 
+                    })
+                };
+            }
         } else {
             console.log('Authentication failed - password mismatch');
             return {

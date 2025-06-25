@@ -80,12 +80,21 @@ const today = new Date();
 
 <script>
     class SecureReloadHandler {
+        modal;
+        passwordInput;
+        submitBtn;
+        cancelBtn;
+        errorMessage;
+        statusMessage;
+        isLoading;
+
         constructor() {
             this.modal = null;
             this.passwordInput = null;
             this.submitBtn = null;
             this.cancelBtn = null;
             this.errorMessage = null;
+            this.statusMessage = null;
             this.isLoading = false;
         }
 
@@ -188,21 +197,13 @@ const today = new Date();
 
                 const data = await response.json();
 
-                if (data.success && data.url) {
-                    // Password correct - trigger build
-                    const netlifyResponse = await fetch(data.url, {
-                        method: 'POST',
-                    });
-                    
-                    if (!netlifyResponse.ok) {
-                        throw new Error('Failed to trigger build');
-                    }
-                    
-                    this.showStatus('Fetching publications... (it may take several minutes)<br>Current state: <span id="build-status">initializing</span>');
+                if (data.success) {
+                    this.submitBtn.textContent = 'Veryfied';
+                    this.showStatus('Fetching publications in progress... <br>Current state: <span id="build-status">initializing</span>');
                     
                     let buildDone = false;
                     let retryCount = 0;
-                    const maxRetries = 48; // 5 minutes maximum
+                    const maxRetries = 48; // 4 minutes maximum
                     
                     while (!buildDone && retryCount < maxRetries) {
                         try {
@@ -256,28 +257,6 @@ const today = new Date();
                 this.setLoading(false);
             }
         }
-
-        // openSecureLink(url) {
-        //     // Create temporary link that won't be visible in DOM inspection
-        //     const tempLink = document.createElement('a');
-        //     tempLink.href = url;
-        //     tempLink.target = '_blank';
-        //     tempLink.rel = 'noopener noreferrer';
-        //     tempLink.style.position = 'absolute';
-        //     tempLink.style.left = '-9999px';
-        //     tempLink.style.opacity = '0';
-            
-        //     document.body.appendChild(tempLink);
-            
-        //     // Use setTimeout to avoid direct detection
-        //     setTimeout(() => {
-        //         tempLink.click();
-        //         // Clean up immediately
-        //         setTimeout(() => {
-        //             document.body.removeChild(tempLink);
-        //         }, 100);
-        //     }, 50);
-        // }
     }
 
     // Initialize the secure reload handler
