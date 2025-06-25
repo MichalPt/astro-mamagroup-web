@@ -30,7 +30,7 @@ const todayDateString = today.toLocaleDateString('en-GB', {
 
 <div class="flex text-xs text-lightest w-full items-center">
     <p class="mr-1">
-      (as it was imported from ORCID on {todayDateString} {todayTimeString})
+      (as it was imported from ORCID database on {todayDateString} {todayTimeString})
     </p>
     <button 
         id="reload-btn" 
@@ -282,7 +282,7 @@ const todayDateString = today.toLocaleDateString('en-GB', {
                         this.showStatus('Build timeout. Please check manually or try again later.');
                     } else {
                         this.showStatus('Done! Please reload the page to see the updated publications.');
-                        this.setReloadPage(true);
+                        this.refreshPage = true;
                     }
                 } else {
                     this.showError(data.error || 'Invalid password');
@@ -293,10 +293,14 @@ const todayDateString = today.toLocaleDateString('en-GB', {
                 console.error('Authentication error:', error);
                 this.showError('Network error. Please try again.');
             } finally {
-                this.setLoading(false);
+                if (this.refreshPage) {
+                  this.setReloadPage(true);
+                } else {
+                  this.setLoading(false);
+              }
             }
         }
-    }
+    };
 
     // Global handler instance to prevent duplicates
     let globalHandler: SecureReloadHandler | null = null;
