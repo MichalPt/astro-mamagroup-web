@@ -2,11 +2,16 @@
 import FormattedDate from "./FormattedDate.astro";
 import { Icon } from "astro-icon/components";
 
-const { list } = Astro.props;
+const { data } = Astro.props;
+
+const list = data.data || [];
+const fetchDate = new Date(data.date) || new Date();
 const omitInTitle = ["author correction", ];
 const filteredList = list.filter(work => !omitInTitle.some(key => work.title.toLowerCase().includes(key.toLowerCase())));
 
-const today = new Date();
+// const today = new Date();
+const today = fetchDate;
+const todayTimeString = today.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false });
 ---
 
 
@@ -15,7 +20,9 @@ const today = new Date();
 <div class="flex text-xs text-lightest w-full items-center">
     <p class="mr-1">(as it was imported from ORCID on </p>
     <FormattedDate date={today} class="" />
-    <p class="ml-1 mr-2">{today.getHours()}.{today.getMinutes()})</p>
+    <p class="ml-1 mr-2">
+      {todayTimeString}
+    </p>
     <button 
         id="reload-btn" 
         class="flex items-center ml-auto text-xs dark:hover:text-gray-100 hover:text-gray-900"

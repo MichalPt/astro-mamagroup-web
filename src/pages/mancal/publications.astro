@@ -1,13 +1,15 @@
 ---
 import TitlePageLayout from "@/layouts/TitlePageBase.astro";
-import orcidFetch from '@/scripts/orcidFetcher.js';
+// import orcidFetch from '@/scripts/orcidFetcher.js';
 import PublicationList from "@/components/PublicationList.astro";
+import getPublicationList from "@/scripts/getPublicationList";
 
 const orcid = '0000-0003-1736-3054';
-const token = import.meta.env.ORCID_ACCESS_TOKEN;
-const works = await orcidFetch(orcid, token);
+// const token = import.meta.env.ORCID_ACCESS_TOKEN;
+// const works = await orcidFetch(orcid, token);
+const data = await getPublicationList(orcid);
 ---
 
 <TitlePageLayout meta={{ title: "Publications" }}>
-    <PublicationList list={works}/>
+    <PublicationList data={data}/>
 </TitlePageLayout>
