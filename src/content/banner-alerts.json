@@ -1,10 +1,10 @@
 [
     {
-        "message": "This is an example of a banner alert.",
-        "label": "TEACHING",
+        "message": "TM holidays: 23/06&ndash;27/06/2025",
+        "label": "holiday",
+        "url": "https://www.mff.cuni.cz/",
+        "visible": true,
         "autoHideBanner": true,
-        "autoHideBannerOn": "2025-06-26",
-        "url": "https://seznam.cz",
-        "visible": false
+        "autoHideBannerOn": "2025-06-28"
     }
 ]

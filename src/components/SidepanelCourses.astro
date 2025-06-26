@@ -2,13 +2,14 @@
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
 import { slugify, processCourseId } from "@/utils/strings.ts";
+import type CollectionEntry from "astro:content";
 
 interface Props {
     collectionName: string;
 }
 
 const { collectionName } = Astro.props;
-const courses = await getCollection(collectionName, ({ data }) => data.courseVisible == true)
+const courses = await getCollection(collectionName as any, ({ data }: any) => data.courseVisible === true);
 
 // Custom semester order
 const semesterOrder = { winter: 0, summer: 1, both: 2 };
@@ -150,14 +151,14 @@ function hasCurrentChild(course: any) {
             
             <div class="space-y-4">
                 {semesters.map((semester) => {
-                    const semesterCourses = courses.filter((course) => (course.data.semester ?? "winter") === semester);
+                    const semesterCourses = courses.filter((course: any) => (course.data.semester ?? "winter") === semester);
                     if (semesterCourses.length === 0) return null;
                     
                     return (
                         <div>
                             <h4 class="text-accent-base text-xl mt-6 font-semibold">{semester} semester:</h4>
                             <div class="mt-4 mb-4 space-y-2">
-                                {semesterCourses.map((course) => {
+                                {semesterCourses.map((course: any) => {
                                     const courseExpanded = hasCurrentChild(course);
                                     const coursePath = `${rootPath}${processCourseId(course.id)}`;
                                     

@@ -1,5 +1,5 @@
 import { defineCollection, z } from "astro:content";
-import { glob } from "astro/loaders";
+import { glob, file } from "astro/loaders";
 import { removeDupsAndLowerCase, slugify } from "./utils/strings.ts";
 import { alertsLoader } from "./loaders/alertsLoader.ts";
 
