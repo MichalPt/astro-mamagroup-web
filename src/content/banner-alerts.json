@@ -1,9 +1,9 @@
 [
     {
-        "message": "TM holidays: 23/06&ndash;27/06/2025",
-        "label": "holiday",
+        "message": "This is an example alert message.",
+        "label": "example",
         "url": "https://www.mff.cuni.cz/",
-        "visible": true,
+        "visible": false,
         "autoHideBanner": true,
         "autoHideBannerOn": "2025-06-28"
     }
