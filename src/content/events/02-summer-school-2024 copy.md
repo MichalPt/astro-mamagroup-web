@@ -1,5 +1,5 @@
 ---
-name: "Prague May Summer School 2025"
+name: "Prague May Summer School 2024"
 group: "school"
 date: ["2024-06-13", "2024-06-14"]
 createBanner: true
