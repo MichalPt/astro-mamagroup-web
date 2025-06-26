@@ -3,7 +3,7 @@ import { siteConfig } from "@/site.config";
 import rss from "@astrojs/rss";
 
 export const GET = async () => {
-	const notes = await getCollection("news");
+	const notes = await getCollection("news", ({ data }) => typeof data.visible === "boolean" ? data.visible : true);
 
 	return rss({
 		title: siteConfig.title,

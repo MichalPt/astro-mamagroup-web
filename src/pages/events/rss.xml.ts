@@ -5,7 +5,7 @@ import { slugify } from "@/utils/strings";
 import { formatDate } from "@/components/FormattedDate.astro";
 
 export const GET = async () => {
-    const events = await getCollection("events");
+    const events = await getCollection("events", ({ data }) => typeof data.visible === "boolean" ? data.visible : true);
 
     return rss({
         title: siteConfig.title,
