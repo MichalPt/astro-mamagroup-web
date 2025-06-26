@@ -82,7 +82,7 @@ const meta = {
                                                         />
                                                     </a>
                                                 } 
-                                                {(video.pdfName && video.pdfName[0].length > 0) &&
+                                                {(video.pdfName && video.pdfName[0] && video.pdfName[0].length > 0) &&
                                                     <a href={`${contentFolder}${courseId}/files/${video.pdfName}`} target="_blank" class="text-gray-300 dark:text-gray-600 hover:text-accent-base peer-hover:text-accent-base">
                                                         <Icon
                                                             name="ri:sticky-note-fill"
