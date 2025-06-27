@@ -10,6 +10,13 @@
 [context.production.environment]
   NODE_VERSION = "18"
 
+# Headers for PDF files to ensure proper inline display
+[[headers]]
+  for = "/*.pdf"
+  [headers.values]
+    Content-Type = "application/pdf"
+    Content-Disposition = "inline"
+
 # Redirect old API routes to new function endpoints (optional)
 [[redirects]]
   from = "/api/verify-reload"
