@@ -4,7 +4,7 @@ group: "tutorial"
 date: ["2025-06-29", "2025-07-01"]
 createBanner: true
 autoHideBanner: true
-visible: true
+visible: false
 tags: ["example","prague"]
 ---
 
