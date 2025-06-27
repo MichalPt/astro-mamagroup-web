@@ -115,6 +115,32 @@ const allBannerItems = [...bannerEventItems, ...bannerNewsItems, ...bannerAlerts
         });
     }
 
+    function formatDateInterval(dates: Date[] | string[]): string {
+        if (!Array.isArray(dates) || dates.length === 0) return "";
+
+        // Convert to Date objects if needed
+        const toDate = (d: Date | string) => d instanceof Date ? d : new Date(d);
+        const sortedDates = [...dates].sort((a, b) => new Date(a) - new Date(b));
+        const [start, end] = [toDate(sortedDates[0]), dates.length > 1 ? toDate(sortedDates[1]) : null];
+
+        const pad = (n: number) => n.toString().padStart(2, "0");
+
+        if (dates.length === 1 || !end) {
+            return `${pad(start.getDate())}/${pad(start.getMonth() + 1)}/${start.getFullYear()}`;
+        }
+
+        // If years differ, show full for both
+        if (start.getFullYear() !== end.getFullYear()) {
+            return `${pad(start.getDate())}/${pad(start.getMonth() + 1)}/${start.getFullYear()} – ${pad(end.getDate())}/${pad(end.getMonth() + 1)}/${end.getFullYear()}`;
+        }
+        // If months differ, show month for both, year once
+        if (start.getMonth() !== end.getMonth()) {
+            return `${pad(start.getDate())}/${pad(start.getMonth() + 1)} – ${pad(end.getDate())}/${pad(end.getMonth() + 1)}/${end.getFullYear()}`;
+        }
+        // Same month and year, show day-day/month/year
+        return `${pad(start.getDate())} – ${pad(end.getDate())}/${pad(end.getMonth() + 1)}/${end.getFullYear()}`;
+    }
+
     function generateBannerContent(filteredItems) {
         const bannerContent = document.getElementById('banner-content');
         const bannerDots = document.getElementById('banner-dots');
@@ -151,7 +177,7 @@ const allBannerItems = [...bannerEventItems, ...bannerNewsItems, ...bannerAlerts
                     </div>
                     ${item.eventDates && item.eventDates.length > 0 ? `
                         <span class="px-2 py-1 bg-white/10 dark:bg-white rounded text-xs font-medium uppercase tracking-wide flex-shrink-0">
-                            ${[...item.eventDates].sort((a, b) => new Date(a) - new Date(b)).map(date => new Date(date).toLocaleDateString()).join('&ndash;')}
+                            ${formatDateInterval(item.eventDates)}
                         </span>
                         ` : ''}
                 </div>

@@ -4,6 +4,10 @@ import BaseLayout from "@/layouts/Base.astro";
 import type { CollectionEntry } from "astro:content";
 import type { GetStaticPaths, Page } from "astro";
 import { slugify } from "@/utils/strings.ts";
+import { Icon } from "astro-icon/components";
+import Badge from "@/components/Badge.astro";
+import FormattedDate from "@/components/FormattedDate.astro";
+import { capitalize } from "@/utils/strings.ts";
 
 export const getStaticPaths = (async ({ paginate }) => {
     const MAX_POSTS_PER_PAGE = 10;
@@ -101,13 +105,9 @@ function formatEventDate(date: Date | Date[]) {
 ---
 
 <BaseLayout meta={meta}>
-    <div class="mb-6">
-        <h1 class="title mb-4">
-            {eventGroup} Events
-        </h1>
-        
+    <div class="mb-4 mt-4">
         <!-- Group Navigation -->
-        <div class="flex flex-wrap gap-2 mb-6">
+        <div class="flex flex-wrap gap-2 mb-6 -ml-1">
             {allGroups.map((group) => (
                 <a 
                     href={`/events/${slugify(group)}`}
@@ -121,42 +121,57 @@ function formatEventDate(date: Date | Date[]) {
                 </a>
             ))}
         </div>
+        <h1 class="title">
+            {capitalize(eventGroup)} Events
+        </h1>
     </div>
 
     <!-- Events List -->
     <div class="space-y-6">
         {page.data.map((event) => (
-            <article class="border rounded-lg p-6 hover:shadow-lg transition-shadow">
-                <div class="flex justify-between items-start mb-3">
-                    <h2 class="text-xl font-semibold">
-                        <a 
-                            href={`/events/${slugify(eventGroup)}/${slugify(event.data.name)}`}
-                            class="hover:text-accent-base transition-colors"
-                        >
+            <a 
+                href={`/events/${slugify(eventGroup)}/${slugify(event.data.name)}`}
+                class="hover:text-accent-base transition-colors"
+            >
+                <article class="shadow-lg rounded-lg p-5 hover:brightness-120 transition-shadow bg-gray-75">
+                    <div class="flex justify-center flex-col items-start mb-3">
+                        <h2 class="text-xl font-semibold text-accent-base">
                             {event.data.name}
-                        </a>
-                    </h2>
-                    <time class="text-sm text-gray-600 whitespace-nowrap ml-4">
-                        {event.data.date}
-                    </time>
-                </div>
-                
-                {event.data.description && (
-                    <p class="text-gray-700 mb-3">
-                        {event.data.description}
-                    </p>
-                )}
-                
-                {event.data.tags && (
-                    <div class="flex flex-wrap gap-2">
-                        {event.data.tags.map((tag) => (
-                            <span class="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded">
-                                {tag}
+                        </h2>
+                    
+                        <div class="flex flex-wrap items-center text-lighter text-sm mt-1 mx-2">
+                            <span class="flex items-center h-[1.75rem]">
+                                <Icon aria-hidden="true" class="flex items-center h-4 w-4 me-1" focusable="false" name="hugeicons:calendar-03" />
+                                <FormattedDate date={event.data.date}/>
                             </span>
-                        ))}
+                        </div>
                     </div>
-                )}
-            </article>
+                    
+                    <div class="mt-0 flex flex-wrap items-center gap-2 mx-1">
+                        {event.data.tags?.length ? (
+                            
+                            <Icon aria-hidden="true" class="flex-shrink-0 inline-block h-6 w-6 text-accent-base" focusable="false" name="solar:tag-line-duotone" />	
+                            <>
+                                {event.data.tags.map((tag) => (
+                                    <a aria-label={`View all posts with the tag: ${tag}`} href={`/tags/${tag}`}>
+                                        <Badge variant="accent-two" title={tag} />
+                                    </a>
+                                ))}
+                            </>
+                        ) : (
+                            <Icon aria-hidden="true" class="flex-shrink-0 inline-block h-6 w-6 text-lightest" focusable="false" name="solar:tag-line-duotone" />
+                            <span class="text-sm text-lightest">No tags</span>
+                        )
+                        }
+                    </div>
+
+                    {event.data.description && (
+                        <p class="text-gray-700 mb-3">
+                            {event.data.description}
+                        </p>
+                    )}
+                </article>
+            </a>
         ))}
     </div>
 
