@@ -1,7 +1,7 @@
 ---
 title: "Example"
 date: "2025-06-28"
-image: "mff-logo.png"
+image: "kitten.jpg"
 tags: ['website',]
 teaser: "This is just an example!"
 createBanner: true
