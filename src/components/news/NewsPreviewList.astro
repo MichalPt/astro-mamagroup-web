@@ -14,6 +14,7 @@ type Props<Tag extends HTMLTag> = Polymorphic<{ as: Tag }> & {
 const { as: Tag = "div", post } = Astro.props;
 const image = post.data.image;
 ---
+
 <div class="flex">
     <div class="relative group cursor-pointer">
         <div class="shadow-lg rounded-lg p-5 hover:brightness-120 transition-shadow bg-gray-50 flex flex-col md:flex-row">
