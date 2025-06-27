@@ -1,15 +1,48 @@
 ---
+const pdfPath = "/public/group/ptacek/resonances-2022.pdf";
+
+const videos = [
+    {
+        title: "Quantum Theory of Resonances",
+        url: "https://www.youtube.com/watch?v=example1",
+        description: "an introduction to the quantum theory of resonances.",
+    },
+    {
+        title: "Advanced Quantum Mechanics",
+        url: "https://www.youtube.com/watch?v=example2",
+        description: "a deep dive into advanced topics in quantum mechanics.",
+    },
+];
 ---
 
-<center>Welcome to my webpage!</center>
+<center>Welcome to the customized part of my webpage!</center>
 
-<!-- <div class="mx-auto flex flex-col items-center content-center">
-    <h2>Quantum Theory of Resonances</h2>
+<div class="mx-auto flex flex-col items-center content-center mt-4">
+    Here is a project file that I'm planning to expand on in the future.
+
+    <h2 class="title">Quantum Theory of Resonances</h2>
     <div class="resize-y overflow-auto">
-        <object data="/public/group/ptacek/resonances-2022.pdf" type="application/pdf" width="800px" height="500px">
-            <embed src="/public/group/ptacek/resonances-2022.pdf">
-                <p>This browser does not support PDFs. Please download the PDF to view it: <a href="/public/group/ptacek/resonances-2022.pdf">Download PDF</a>.</p>
+        <object data={pdfPath} type="application/pdf" width="800px" height="500px">
+            <embed src={pdfPath}>
+                <p>This browser does not support PDFs. Please download the PDF to view it: 
+                    <a href={pdfPath}>
+                        Download PDF
+                    </a>
+                    .
+                </p>
             </embed>
         </object>
     </div>
-</div> -->
+
+    <div class="mt-8 text-xl">You can also visit YouTube channels that I'm co-author of:</div>
+    <ul class="list-disc">
+        {videos.map((video) => (
+            <li class="mt-2">
+                <a href={video.url} target="_blank" class="text-accent-base hover:underline">
+                    {video.title}
+                </a>
+                &mdash; {video.description}
+            </li>
+        ))}
+    </ul>
+</div>
