@@ -5,7 +5,7 @@ image: "kitten.jpg"
 tags: ['website',]
 teaser: "This is just an example!"
 createBanner: true
-autoHideBanner: false
+autoHideBanner: true
 autoHideBannerAfter: 30
 visible: false
 ---
