@@ -26,7 +26,7 @@ const { headings } = await render(newspost);
 		<article class="grid flex-grow grid-cols-1 break-words pt-4" data-pagefind-body>
             {image && 
                 <div class="flex justify-start mb-8">
-                    <Image src={image} alt={image.split('/').at(-1)} height="160" width="600" layout="responsive"/>
+                    <Image src={image} alt={image.split('/').at(-1)} height="600" width="600" layout="responsive"/>
                 </div>
             }
 			<div class="max-w-4xl prose prose-citrus flex-grow prose-headings:font-semibold prose-headings:text-accent-base prose-headings:before:text-accent-two sm:prose-headings:before:content-['#'] sm:prose-th:before:content-none">
