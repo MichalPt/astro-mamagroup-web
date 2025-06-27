@@ -4,7 +4,7 @@ group: "school"
 date: ["2026-05-13", "2026-06-14"]
 createBanner: true
 autoHideBanner: true
-visible: true
+visible: false
 tags: ["test","school"]
 ---
 

@@ -171,11 +171,20 @@ const allBannerItems = [...bannerEventItems, ...bannerNewsItems, ...bannerAlerts
         
         if (!banner || !window.BANNER_ITEMS) return;
 
-        // Check if banner was manually closed
-        const bannerClosed = localStorage.getItem('banner-closed');
-        if (bannerClosed) {
-            banner.classList.add('hidden');
-            return;
+        // Check if banner was manually closed and if 30 minutes have passed
+        const bannerClosedTime = localStorage.getItem('banner-closed-time');
+        if (bannerClosedTime) {
+            const closedTime = parseInt(bannerClosedTime);
+            const currentTime = Date.now();
+            const thirtyMinutes = 30 * 60 * 1000; // 30 minutes in milliseconds
+            
+            if (currentTime - closedTime < thirtyMinutes) {
+                banner.classList.add('hidden');
+                return;
+            } else {
+                // 30 minutes have passed, remove the closed flag
+                localStorage.removeItem('banner-closed-time');
+            }
         }
 
         // Filter items based on current date
@@ -204,7 +213,7 @@ const allBannerItems = [...bannerEventItems, ...bannerNewsItems, ...bannerAlerts
                 banner.classList.add('hidden');
                 banner.style.transform = '';
             }, 300);
-            localStorage.setItem('banner-closed', 'true');
+            localStorage.setItem('banner-closed-time', Date.now().toString());
             if (rotationInterval) {
                 clearInterval(rotationInterval);
             }
@@ -286,12 +295,12 @@ const allBannerItems = [...bannerEventItems, ...bannerNewsItems, ...bannerAlerts
         }
     });
 
-    // Re-check banner every hour for date changes
-    setInterval(initBanner, 60 * 60 * 1000);
+    // Re-check banner every 30 minutes for date changes
+    setInterval(initBanner, 30 * 60 * 1000);
 
     // Debug functions (optional)
     window.resetBanner = () => {
-        localStorage.removeItem('banner-closed');
+        localStorage.removeItem('banner-closed-time');
         initBanner();
     };
 </script>
