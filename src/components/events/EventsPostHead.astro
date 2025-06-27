@@ -24,14 +24,14 @@ const entryDate = getEntryDate(content); // This safely extracts the date
 
 ---
 
-<div class="md:top-8 flex items-end mt-4">
+<div class="md:top-8 flex items-start mt-4 w-full">
 
 	<div class="flex h-8 w-8 items-center flex-shrink-0 bg-accent-base/10 justify-center rounded-lg text-accent-base">	
 		<Icon aria-hidden="true" class="h-6 w-6" focusable="false" name="ri:team-fill" />
 	</div>
 
 	<h1 
-		class="title ml-2 md:sticky md:top-4 line-clamp-none md:line-clamp-1 md:max-w-[calc(100%-10rem)]"
+		class="title ml-2 md:top-4 line-clamp-none"
 		title={content.data.name}
 		data-pagefind-body
 	>
