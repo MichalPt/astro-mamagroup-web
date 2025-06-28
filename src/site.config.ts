@@ -23,16 +23,18 @@ export const siteConfig: SiteConfig = {
 	title: "MaMa Group",
 };
 
+// Settingsfor the number of elemnts to be displayed in auto generated lists (on home page and in pagination environment).
 export const siteSettings = {
 	homePage: {
-		carouselNews: 3,
-		newestNews: 8,
-		newestEvents: 6
+		carouselNews: 3,  // Number of news items to display in the carousel on the home page ... plus the welcome slide with FMO
+		newestNews: 8,	  // Number of news items to display in the "News" section on the home page
+		newestEvents: 6	  // Number of events to display in the "Events" section on the home page
 	},
-	newsPerPage: 20,
-	eventsPerPage: 20,
-	maxTags: 10
+	newsPerPage: 20,	  // Number of news items to display on a single news page
+	eventsPerPage: 20,	  // Number of events to display on a single events page
+	maxTags: 10	 		  // Maximum number of tags to display in the tag island
 }
+
 
 // Used to generate links in both the Header & Footer.
 export const menuLinks: { path: string; title: string; showsub?: boolean; subfolder?: object }[] = [
