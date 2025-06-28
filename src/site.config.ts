@@ -23,6 +23,17 @@ export const siteConfig: SiteConfig = {
 	title: "MaMa Group",
 };
 
+export const siteSettings = {
+	homePage: {
+		carouselNews: 3,
+		newestNews: 8,
+		newestEvents: 6
+	},
+	newsPerPage: 20,
+	eventsPerPage: 20,
+	maxTags: 10
+}
+
 // Used to generate links in both the Header & Footer.
 export const menuLinks: { path: string; title: string; showsub?: boolean; subfolder?: object }[] = [
 	{

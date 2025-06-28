@@ -8,9 +8,10 @@ import { Icon } from "astro-icon/components";
 import Badge from "@/components/Badge.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import { capitalize } from "@/utils/strings.ts";
+import { siteSettings } from "@/site.config";
 
 export const getStaticPaths = (async ({ paginate }) => {
-    const MAX_POSTS_PER_PAGE = 10;
+    const MAX_POSTS_PER_PAGE = siteSettings.eventsPerPage || 10; // default to 10 if not set
     
     // Get all events
     const allEvents = await getCollection('events');

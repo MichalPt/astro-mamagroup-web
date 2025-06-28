@@ -10,10 +10,11 @@ import type { GetStaticPaths, Page } from "astro";
 import { Icon } from "astro-icon/components";
 import Badge from "@/components/Badge.astro";
 import NewsPreviewList from "@/components/news/NewsPreviewList.astro";
+import { siteSettings } from "@/site.config";
 
 export const getStaticPaths = (async ({ paginate }) => {
-	const MAX_POSTS_PER_PAGE = 5;
-	const MAX_TAGS = 10;
+	const MAX_POSTS_PER_PAGE = siteSettings.newsPerPage || 20; // default to 10 if not set
+	const MAX_TAGS = siteSettings.maxTags || 10; // default to 10 if not set
 	const allNews = await getCollection("news", ({ data }) => typeof data.visible === "boolean" ? data.visible : true);
 	const uniqueTags = getUniqueTags(allNews).slice(0, MAX_TAGS);
 	return paginate(allNews.sort(collectionDateSort), {

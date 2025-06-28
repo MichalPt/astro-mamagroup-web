@@ -6,6 +6,7 @@ import TitlePageLayout from "@/layouts/TitlePageBase.astro";
 import EmblaCarousel from "@/components/carousel/EmblaCarousel";
 import Research from "@/components/Research.astro";
 import EventEntry from "@/components/events/EventEntry.astro";
+import { siteSettings } from "@/site.config";
 
 const meta = {
     description: "Research group at Charles University in Prague, Czechia. We focus on nonlinear spectroscopy of molecular aggregates and theory of open quantum systems.",
@@ -13,19 +14,22 @@ const meta = {
 };
 
 // Posts, News
-const maxNews = 10;
-const maxTopNews = 3; // plus intro slide
+
+const carouselNews = siteSettings.homePage.carouselNews || 3; // plus intro slide
+const newestNews = siteSettings.homePage.newestNews || 8; // max number of news to show
+const newestEvents = siteSettings.homePage.newestEvents || 6; // max number of events to show
 const allNews = await getCollection("news", ({ data }) => typeof data.visible === "boolean" ? data.visible : true);
 const events = await getCollection("events", ({ data }) => typeof data.visible === "boolean" ? data.visible : true);
 
 const topNewsByDate = allNews
 	.sort(collectionDateSort)
-	.slice(0, maxTopNews) as CollectionEntry<"news">[];
+	.slice(0, carouselNews) as CollectionEntry<"news">[];
 const moreNewsByDate = allNews
 	.sort(collectionDateSort)
-	.slice(0, maxNews) as CollectionEntry<"news">[];
-const sorrtedEvents = events
-	.sort(collectionDateIntervalSort) as CollectionEntry<"events">[];
+	.slice(0, newestNews) as CollectionEntry<"news">[];
+const sortedEvents = events
+	.sort(collectionDateIntervalSort)
+	.slice(0, newestEvents) as CollectionEntry<"events">[];
 
 const options = { direction: 'ltr', loop: true };
 ---
@@ -97,7 +101,7 @@ const options = { direction: 'ltr', loop: true };
 			<a href="/events" class="title text-3xl citrus-link">Events</a>
 		</h2>
 		<div class="mt-4 flex flex-col w-full md:grid md:grid-cols-3 align-content-center gap-4">
-			{events.map((event) => 
+			{sortedEvents.map((event) => 
 				<EventEntry event={event}/>
 			)}
 		</div>
