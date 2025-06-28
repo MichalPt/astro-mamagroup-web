@@ -15,9 +15,9 @@ const { as: Tag = "div", post } = Astro.props;
 const image = post.data.image;
 ---
 
-<div class="flex">
-    <div class="relative group cursor-pointer">
-        <div class="shadow-lg rounded-lg p-5 hover:brightness-120 transition-shadow bg-gray-50 flex flex-col md:flex-row">
+<div class="flex w-full">
+    <div class="relative group cursor-pointer w-full">
+        <div class="shadow-lg rounded-lg p-5 hover:shadow-xl hover:brightness-105 transition-all duration-300 bg-gray-50 hover:bg-white flex flex-col md:flex-row w-full">
             {post.data.image && (
                 <div class="flex justify-center items-center mb-3 md:mr-4">
                     <Image src={image} alt={image.split('/').at(-1)} height="180" width="180" class="rounded-lg shadow-md" />
@@ -33,7 +33,7 @@ const image = post.data.image;
                         <span class="sr-only">{post.data.title}</span>
                     </a>
                     
-                    <h2 class="text-xl font-semibold text-accent-base text-center md:text-left group-hover:text-accent-base transition-colors">
+                    <h2 class="text-xl font-semibold text-accent-base text-center md:text-left group-hover:text-accent-base group-hover:underline transition-all duration-300">
                         {post.data.title}
                     </h2>
                 

@@ -7,6 +7,7 @@ import EmblaCarousel from "@/components/carousel/EmblaCarousel";
 import Research from "@/components/Research.astro";
 import EventEntry from "@/components/events/EventEntry.astro";
 import { siteSettings } from "@/site.config";
+import NewsPreviewList from "@/components/news/NewsPreviewList.astro";
 
 const meta = {
     description: "Research group at Charles University in Prague, Czechia. We focus on nonlinear spectroscopy of molecular aggregates and theory of open quantum systems.",
@@ -91,8 +92,8 @@ const options = { direction: 'ltr', loop: true };
 		<h2 class="text-center mb-4 mt-4">
 			<a href="/news" class="title text-3xl citrus-link">News</a>
 		</h2>
-		<div class="mt-4 flex flex-col w-full md:grid md:grid-cols-4 align-content-center gap-4">
-			{ moreNewsByDate.map((p) => <NewsPreview post={p} />)}
+		<div class="mt-4 flex flex-col w-full md:grid md:grid-cols-2 md:grow align-content-center gap-4">
+			{ moreNewsByDate.map((p) => <NewsPreviewList post={p} />)}
 		</div>
 	</section>
 
