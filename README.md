@@ -1,5 +1,5 @@
 <div align="center">
-  <img alt="Astro logo" src="/public/astro-icon.svg" width="70" />
+  <img alt="Astro logo" src="https://mama-group.cz/astro-icon.svg" width="70" />
 </div>
 <h1 align="center">
   MaMa Group Web project
@@ -14,18 +14,20 @@ The webpage uses [Astro framework](https://docs.astro.build) and it was built up
 # Docs
 ## Table Of Contents
 
-1. [Before You Start...](#before-you-start)
-2. [Technical Insight](#technical-insight)
-3. [Quick start](#quick-start)
+0. [Before You Start...](#before-you-start)
+1. [Technical Insight](#technical-insight)
+2. [Quick start](#quick-start)
     - [Recommended steps](#recommended-steps)
-4. [Project structure](https://github.com/MichalPt/astro-mamagroup-web/wiki/Project-structure) 
-5. Tutorials
+3. [Project structure](https://github.com/MichalPt/astro-mamagroup-web/wiki/Project-structure) 
+4. Tutorials
+    - [How to create a news post](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-create-a-news-post)
+    - [How to create a new event](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-create-a-new-event)
+    - [How to create a custom banner](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-create-a-custom-banner)
     - [How to add a new course](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-add-a-new-course)
     - [How to add and edit group members](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-add-and-edit-group-members)
     - [How to add and edit outreach](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-add-and-edit-outreach)
-    - [How to create a custom banner](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-create-a-custom-banner)
-    - [How to create a new event](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-create-a-new-event)
-    - [How to create a news post](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-create-a-news-post)
+    - [How to customize personal webpage](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-customize-personal-webpage)
+    - [How to refresh list of publications](https://github.com/MichalPt/astro-mamagroup-web/wiki/How-to-refresh-list-of-publications)
 
 <!-- ## Key Features
 
@@ -116,13 +118,13 @@ A piece of software that I would greatly recommend for working on an Astro proje
 
 #### 2. `.env` file
 
-In order to be able to locally build and display the pages that include automatically fetched lists of publications from ORCID (e.g. [mama-group.cz/mancal/publications/](https://mama-group.cz/mancal/publications/)), you need to create an ORCID account first, fill in an application to access developer tools, and generate an [API access token](https://orcid.org/developer-tools) for [ORCID Public API](https://info.orcid.org/ufaqs/how-do-i-register-a-public-api-client/). To get the token, use the terminal commands listed in the bottom of the ORCID developer tools webpage or use this template command:
+In order to be able to locally preview freshly fetched lists of publications from ORCID (e.g. [mama-group.cz/mancal/publications/](https://mama-group.cz/mancal/publications/)), you need to create an ORCID account first, fill in an application to access developer tools, and generate an [API access token](https://orcid.org/developer-tools) for [ORCID Public API](https://info.orcid.org/ufaqs/how-do-i-register-a-public-api-client/). To get the token, use the terminal commands listed in the bottom of the ORCID developer tools webpage or use this template command:
 
 ```bash
 curl -X "POST" "https://orcid.org/oauth/token" -H "Accept: application/json" -d "client_id=APP-XXXXXXXXXXXXXXXX&client_secret=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&grant_type=client_credentials&scope=/read-public"
 ```
 
-where you replace the `XXX...` with **Client ID** and **Client secret**. Once you have the token, create a `.env` text file in the root folder with the following content:
+where you replace the `XXX...` with **Client ID** and **Client secret**. Once you have the token, create a `/src/.env` text file with the following content:
 
 ```
 ORCID_ACCESS_TOKEN = "XXX"
@@ -130,11 +132,11 @@ ORCID_ACCESS_TOKEN = "XXX"
 
 where you replace `XXX` with your (32-digit) token. 
 
-> ***NOTE:*** You can still edit and send pull requests of your code even **without** having the `.env` file and generating the API access token. The `.env` file is included in the `.gitignore` file for security reasons but the access token that is actually used for building and deploying the website to Netlify is the one affiliated to me and my e-mail (MP). The token is securely stored on GitHub as a *secret environment variable* of the project. 
+> ***NOTE:*** You can still edit and send pull requests of your code even **without** having the `.env` file and generating the API access token. The `.env` file is included in the `.gitignore` file for security reasons but the access token that is actually used for building and deploying the website to Netlify is the one affiliated to me and my e-mail (MP). The token is securely stored on GitHub as a *secret environment variable* of the project and on the Netlify server as a *projecct variable*. 
 
-To sum up, by skipping this optional step you won't be able to locally preview the pages with lists of publications. But the deployed website will still work in this respect.
+To sum up, by skipping this optional step you won't be able to locally preview freshly fetched lists of publications. But the deployed website will still work in this respect.
 
-> ***NOTE:*** In fact, just by hovering over links that directs to pages with the list of publications will result into an error. That is due to the *prefetch function* being enabled on most of the links to optimize page loading times and improve responsiveness. If the error occurs, you can just reload the page and beware of hovering over the particular link.
+> ***NOTE:*** If the fetching from the ORCID database fails, the list will by default source a cached list of publications from the last successful fetch (timestamp can be visible in the header of the webpage). Tha cached files are saved in `/src/content/publications/` and named by the ORCID ID.
 
 <!-- ### Basic pnpm Commands
 
