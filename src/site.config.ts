@@ -34,7 +34,9 @@ export const siteSettings = {
 	eventsPerPage: 20,	  // Number of events to display on a single events page
 	maxTags: 10, 		  // Maximum number of tags to display in the tag island
 	//
-	passwordHint: "Universitas ******** founded in ****"  // Hint for the password protected pages
+	passwordHint: "Universitas ******** founded in ****",  // Hint for the password protected pages
+	//
+	omitInPublicationList: ["author correction", ]   // List of strings that if found in a publication title, that publication will not be displayed in the list
 }
 
 
