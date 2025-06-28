@@ -136,7 +136,7 @@ where you replace `XXX` with your (32-digit) token.
 
 To sum up, by skipping this optional step you won't be able to locally preview freshly fetched lists of publications. But the deployed website will still work in this respect.
 
-> ***NOTE:*** If the fetching from the ORCID database fails, the list will by default source a cached list of publications from the last successful fetch (timestamp can be visible in the header of the webpage). Tha cached files are saved in `/src/content/publications/` and named by the ORCID ID.
+> ***NOTE:*** If the fetching from the ORCID database fails, the list will by default source a cached list of publications from the last successful fetch (timestamp can be visible in the header of the webpage). Tha cached JSON files are saved in `/src/content/publications/` and named by the ORCID ID.
 
 <!-- ### Basic pnpm Commands
 
