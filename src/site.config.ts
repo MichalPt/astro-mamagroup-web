@@ -32,7 +32,9 @@ export const siteSettings = {
 	},
 	newsPerPage: 20,	  // Number of news items to display on a single news page
 	eventsPerPage: 20,	  // Number of events to display on a single events page
-	maxTags: 10	 		  // Maximum number of tags to display in the tag island
+	maxTags: 10, 		  // Maximum number of tags to display in the tag island
+	//
+	passwordHint: "Universitas ******** founded in ****"  // Hint for the password protected pages
 }
 
 
