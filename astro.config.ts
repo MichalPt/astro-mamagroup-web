@@ -142,22 +142,22 @@ export default defineConfig({
       //   access: "public",
       //   optional: true,
       // }),
-      REBUILD_PASSWORD_HASH: envField.string({
-          context: "server",
-          access: "secret",
-      }),
-      NETLIFY_BUILD_HOOK: envField.string({
-        context: "server", 
-        access: "secret",
-      }),
-      NETLIFY_ACCESS_TOKEN: envField.string({
-        context: "server",
-        access: "secret",
-      }),
-      NETLIFY_SITE_ID: envField.string({
-        context: "server",
-        access: "public",
-      }),
+      // REBUILD_PASSWORD_HASH: envField.string({
+      //     context: "server",
+      //     access: "secret",
+      // }),
+      // NETLIFY_BUILD_HOOK: envField.string({
+      //   context: "server", 
+      //   access: "secret",
+      // }),
+      // NETLIFY_ACCESS_TOKEN: envField.string({
+      //   context: "server",
+      //   access: "secret",
+      // }),
+      // NETLIFY_SITE_ID: envField.string({
+      //   context: "server",
+      //   access: "public",
+      // }),
     },
   },
   server: {
