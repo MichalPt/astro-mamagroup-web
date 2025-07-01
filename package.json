@@ -30,7 +30,6 @@
     "astro-robots-txt": "^1.0.0",
     "astro-webmanifest": "^1.0.0",
     "bcryptjs": "^3.0.2",
-    "better-auth": "^1.2.10",
     "cssnano": "^7.0.7",
     "embla-carousel": "^8.6.0",
     "embla-carousel-autoplay": "^8.6.0",

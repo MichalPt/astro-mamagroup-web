@@ -36,7 +36,9 @@ export const siteSettings = {
 	//
 	passwordHint: "Universitas ******** founded in ****",  // Hint for the password protected pages
 	//
-	omitInPublicationList: ["author correction", ]   // List of strings that if found in a publication title, that publication will not be displayed in the list
+	omitInPublicationList: ["author correction", ],   // List of strings that if found in a publication title, that publication will not be displayed in the list
+	//
+	reopenBannerAfter: 30, // Time in minutes after which the banner will be reopened after being closed by the user
 }
 
 

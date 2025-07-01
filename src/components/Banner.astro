@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { slugify } from "@/utils/strings.ts";
 import { formatDateInterval } from "@/utils/date.ts";
+import { siteSettings } from "@/site.config.ts";
 
 // Get highlighted entries from both collections (build-time data)
 const events = await getCollection("events", ({ data }) => 
@@ -88,8 +89,9 @@ const allBannerItems = [...bannerEventItems, ...bannerNewsItems, ...bannerAlerts
 </div>
 
 <!-- Pass data to JavaScript -->
-<script define:vars={{ bannerItems: allBannerItems }}>
+<script define:vars={{ bannerItems: allBannerItems, reopenBannerAfter: siteSettings.reopenBannerAfter }}>
     window.BANNER_ITEMS = bannerItems;
+    window.REOPEN_BANNER_AFTER = reopenBannerAfter;
 </script>
 
 <script>
@@ -208,10 +210,9 @@ const allBannerItems = [...bannerEventItems, ...bannerNewsItems, ...bannerAlerts
         const bannerClosedTime = localStorage.getItem('banner-closed-time');
         if (bannerClosedTime) {
             const closedTime = parseInt(bannerClosedTime);
-            const currentTime = Date.now();
-            const thirtyMinutes = 30 * 60 * 1000; // 30 minutes in milliseconds
+            const reinitTime = (window.REOPEN_BANNER_AFTER || 30) * 60 * 1000; // use the value from settings or default to 30 minutes (in milliseconds)
             
-            if (currentTime - closedTime < thirtyMinutes) {
+            if (currentTime - closedTime < reinitTime) {
                 banner.classList.add('hidden');
                 return;
             } else {
