@@ -85,7 +85,7 @@ const videoId = video.videoUrl.split("watch?v=")[1];
                     <a href={`${contentFolder}${courseId}/files/${filename}`} target="_blank" class="text-light hover:text-accent-base" title={filename}>
                         <span class="text-xs sm:text-sm">{filename}</span>
                     </a>
-                    {index < video.pdfName.length - 1 && <span>, </span>}
+                    {index < (video.pdfName?.length ?? 1) - 1 && <span>, </span>}
                 </span>
             ))}
         </p>
