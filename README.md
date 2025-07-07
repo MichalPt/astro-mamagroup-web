@@ -63,7 +63,7 @@ The domain provided by Netlify ([mamagroup.netlify.app](https://mamagroup.netlif
 
 ## Quick start
 
-In order to run, develop, and contribute to the website, you need to prepare a JavaScript (JS) website development environment first. There are several package managers available (npm, yarn, pnpm, ...) but I would recommend using Performant Node Package Manager (pnpm) since it is the newest one. 
+In order to run, develop, and contribute to the website, you need to prepare a JavaScript (JS) website development environment first. There are several package managers available (npm, yarn, pnpm, ...) but I would recommend using the Performant Node Package Manager (pnpm). 
 
 <!-- To install it on Linux or WSL (Windows Subsystem for Linux), type the following commands into your terminal (more installation options can be found in the [pnpm installation guide](https://pnpm.io/installation)): -->
 
@@ -71,9 +71,9 @@ In order to run, develop, and contribute to the website, you need to prepare a J
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 ``` -->
 
-First, you need to have Node.js:registered: (JavaScript language runtime environment) installed. Please follow the official installation instructions at [`https://nodejs.org/en/download`](https://nodejs.org/en/download). I'd recommend selecting the "LTS" version of Node.js (currently v22.17.0), `nvm` (=node version manager), and `pnpm` (=performant node package manager) in the.
+First, you need to have `Node.js` (JavaScript language runtime environment) installed. Please follow the official installation instructions at [`https://nodejs.org/en/download`](https://nodejs.org/en/download) that will install the package manager as well. I'd recommend selecting the "LTS" version of `Node.js` (currently v22.17.0), `nvm` (=node version manager), and `pnpm` (=performant node package manager).
 
-> ***EXAMPLE:*** Node.js installation `v22.17.0 (LTS)` for `Linux` using `nvm` with `pnpm`:
+> ***EXAMPLE:*** `Node.js` installation `v22.17.0 (LTS)` for `Linux` using `nvm` with `pnpm`:
 > 
 > ```bash
 > # Download and install nvm:
@@ -94,6 +94,8 @@ You can validate the installation of `pnpm` by running (you might need to restar
 ```bash
 pnpm -v
 ```
+
+> ***TROUBLESHOOTING:*** The `pnpm` can be also installed independent of the `Node.js`. However, you might than encounter a *"Sharp package not found."* error due to unproperly linked environments. You can install the `Node.js` after `pnpm` is already installed to resolve these errors. You need to to run the command `pnpm install` in the project root directory again to install missing packages and setup links properly.
 
 Additionally, you will also need GIT. If you don't have it installed yet (you can check with `git --version`), install it using your package manager, e.g. `sudo apt install git`. 
 
