@@ -73,7 +73,12 @@ const meta = {
                                                 {video.title}
                                             </a>
                                                 {video.videoUrl && 
-                                                    <a href={video.videoUrl} target="_blank" class="ml-1 text-gray-300 dark:text-gray-600 hover:text-accent-base peer-hover:text-accent-base">
+                                                    <a 
+                                                        href={video.videoUrl} 
+                                                        target="_blank" 
+                                                        class="ml-1 text-gray-300 dark:text-gray-600 hover:text-accent-base peer-hover:text-accent-base"
+                                                        title="YouTube video"
+                                                        >
                                                             <Icon
                                                             name="ri:video-fill"
                                                             focusable="false"
@@ -83,7 +88,13 @@ const meta = {
                                                     </a>
                                                 } 
                                                 {(video.pdfName && video.pdfName[0] && video.pdfName[0].length > 0) &&
-                                                    <a href={`${contentFolder}${courseId}/files/${video.pdfName}`} target="_blank" class="text-gray-300 dark:text-gray-600 hover:text-accent-base peer-hover:text-accent-base">
+                                                    video.pdfName.map((filename) => (
+                                                        <a 
+                                                            href={`${contentFolder}${courseId}/files/${filename}`} 
+                                                            target="_blank" 
+                                                            class="text-gray-300 dark:text-gray-600 hover:text-accent-base peer-hover:text-accent-base"
+                                                            title={filename}
+                                                            >
                                                         <Icon
                                                             name="ri:sticky-note-fill"
                                                             focusable="false"
@@ -91,6 +102,7 @@ const meta = {
                                                             height="1.4em"
                                                         />
                                                     </a>
+                                                    ))
                                                 }
                                                 {(video.date && course.data.showDates ) && ( 
                                                         <span class="inline-flex items-center px-2 py-0.5 bg-gray-200 dark:bg-gray-600/50 rounded-lg text-xs text-lighter ml-1 w-auto">
