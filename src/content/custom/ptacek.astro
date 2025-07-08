@@ -1,6 +1,17 @@
 ---
 const CVPath = "/group/ptacek/CV_2025_ENG.pdf";
 
+const links = [
+    {
+        title: "CV",
+        url: CVPath,
+    },
+    {
+        title: "GitHub",
+        url: "https://github.com/MichalPt/"
+    }
+]
+
 const videos = [
     {
         title: "Open Quantum Sytems",
@@ -16,9 +27,13 @@ const videos = [
 ---
 
 <div class="flex flex-col items-center gap-y-6">
-    <a href={CVPath} target="_blank" class="px-2 py-1 bg-gray-200/75 dark:bg-gray-800/75 rounded-lg justify-center items-center hover:brightness-95 transition-all duration-100">
-        resumé
-    </a>
+    <div class="flex flex-row space-x-2 items-center">
+        {links.map((link) => (
+            <a href={link.url} target="_blank" class="px-2 py-1 bg-gray-200/75 dark:bg-gray-900/75 rounded-lg justify-center items-center hover:brightness-90 dark:hover:brightness-110 transition-all duration-100">
+                {link.title}
+            </a>
+        ))}
+    </div>
 
     <div>
         <div>
@@ -30,7 +45,7 @@ const videos = [
                     <a href={video.url} class="citrus-link">
                         {video.title}
                     </a>
-                    <div class="text-sm font-extralight text-gray-300 dark:text-gray-800">
+                    <div class="text-sm font-extralight text-gray-300 dark:text-gray-600">
                         {video.description}
                     </div> 
                 </li>
