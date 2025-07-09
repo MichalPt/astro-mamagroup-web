@@ -4,7 +4,7 @@ import { Icon } from "astro-icon/components";
 import { siteConfig } from "@/site.config";
 import { siteSettings } from "@/site.config";
 
-const { data } = Astro.props;
+const { name, data } = Astro.props;
 
 const list = data.data || [];
 const fetchDate = new Date(data.date) || new Date();
@@ -27,7 +27,7 @@ const todayDateString = today.toLocaleDateString('en-GB', {
 
 ---
 
-<h1 class="mt-2">List of publications:</h1>
+<h1 class="mt-2">List of publications of {name}:</h1>
 
 <div class="flex text-xs text-lightest w-full items-center">
     <p class="mr-1">
