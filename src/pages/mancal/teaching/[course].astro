@@ -33,7 +33,7 @@ const meta = {
 
 <CoursesLayout meta={meta} collectionName={collectionName}>
     <span class="flex flex-wrap text-xs leading-tight gap-x-1">
-        <a href={rootPath.split('/').slice(1,2).toString()} class="text-light">
+        <a href={rootPath.split('/').splice(0,2).join('/')} class="text-light">
             Tomáš Mančal
         </a> / 
         <a href={rootPath} class="text-light">
