@@ -9,11 +9,11 @@
     "content": [
         {
             "sectionTitle": "Non-Linear Optical Spectroscopy",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Introduction to Non-Linear Optical Spectroscopy",
-                    "subsectionVisisble": true,
+                    "subsectionVisible": true,
                     "subsectionContent": [
                         {
                             "title": "Welcome note from the lecturer",
@@ -103,7 +103,7 @@
                             "visible": true,
                             "label": "",
                             "tags": [],
-                            "description": "Rotational averaging of the third order Liouville pathways. Examples for pathways describing population decay, energy transfer and excited state coherence. Derivation of the magic angle condition for a single transition and in a general case. Cancelation of the signal of even order spectroscopies in an isotropic sample. Observation of energy transfer by pump-probe spectroscopy and construction of two-dimensional frequency resolved pump-probe."
+                            "description": "Rotational averaging of the third order Liouville pathways. Examples for pathways describing population decay, energy transfer and excited state coherence. Derivation of the magic angle condition for a single transition and in a general case. Cancellation of the signal of even order spectroscopies in an isotropic sample. Observation of energy transfer by pump-probe spectroscopy and construction of two-dimensional frequency resolved pump-probe."
                         },
                         {
                             "title": "Pump-probe spectroscopy with pulse of finite temporal width",

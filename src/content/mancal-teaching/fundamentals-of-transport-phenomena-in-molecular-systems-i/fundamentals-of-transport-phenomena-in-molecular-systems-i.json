@@ -1,7 +1,7 @@
 {
     "courseName": "Fundamental of Transport Phenomena in Molecular Systems I",
     "courseCode": "NBCM041",
-    "courseDescription": "The lecture introduces students into the description of quantum states of molecules and their aggregates, introduces Frenkel exciton model, charge transfer states, Wannier-Mott excitions, discusses the influence of thermodynamic bath and phonons on the transfer of energy and electrons, and provides a compact unified quantum mechanical description of transport phenomena from the point of view of open quantum system theory. The theory will be presented in the context of primary processes in photosynthesis.",
+    "courseDescription": "The lecture introduces students into the description of quantum states of molecules and their aggregates, introduces Frenkel exciton model, charge transfer states, Wannier-Mott excitons, discusses the influence of thermodynamic bath and phonons on the transfer of energy and electrons, and provides a compact unified quantum mechanical description of transport phenomena from the point of view of open quantum system theory. The theory will be presented in the context of primary processes in photosynthesis.",
     "language": "Czech",
     "semester": "winter",
     "courseVisible": true,
@@ -9,7 +9,7 @@
     "content": [
         {
             "sectionTitle": "Úvod",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Přehled kvantové mechaniky",
@@ -99,7 +99,7 @@
                         {
                             "title": "*Reprezentace jedničky",
                             "videoUrl": "https://www.youtube.com/watch?v=E7YBhSzdmZQ",
-                            "pdfName": "Reprerentace_jidnicky.pdf",
+                            "pdfName": "Reprezentace_jednicky.pdf",
                             "visible": true,
                             "label": "",
                             "tags": [],
@@ -345,7 +345,7 @@
         },
         {
             "sectionTitle": "Obecné metody teorie otevřených systémů",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Projekčně operátorové techniky",
@@ -525,7 +525,7 @@
         },
         {
             "sectionTitle": "Redfieldovy rovnice a Redfieldův tenzor",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Obecný tenzor relaxace druhého řádu",
@@ -657,7 +657,7 @@
         },
         {
             "sectionTitle": "Försterova teorie a odpovídající relaxační tenzor",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Experimentální relevance Försterovy teorie",

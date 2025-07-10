@@ -9,7 +9,7 @@
     "content": [
         {
             "sectionTitle": "Introduction",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Introduction and historical excursions",
@@ -144,7 +144,7 @@
         },
         {
             "sectionTitle": "Cannonical Quantization of Electromagnetic Field",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Lagrangian and Hamiltonian of Electromagnetic Field",
@@ -288,7 +288,7 @@
         },
         {
             "sectionTitle": "States of Light",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Eigenstates of the Hamiltonian",
@@ -507,7 +507,7 @@
         },
         {
             "sectionTitle": "Light-Matter Interaction",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Lagrangian and Hamiltonian of Light-Matter Interaction",
@@ -1107,7 +1107,7 @@
         },
         {
             "sectionTitle": "Miscellaneous",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Absorption of Pulsed Light",

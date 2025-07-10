@@ -9,7 +9,7 @@
     "content": [
         {
             "sectionTitle": "Basics of Quantum Mechanics",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Introductory Notes",
@@ -115,9 +115,9 @@
                     "subsectionVisible": true,
                     "subsectionContent": [
                         {
-                            "title": "de Brogliovy vlny",
+                            "title": "de Broglieovy vlny",
                             "videoUrl": "https://www.youtube.com/watch?v=glsDX_LrZAc",
-                            "pdfName": "03_01_De_Brogliovy_vlny.pdf",
+                            "pdfName": "03_01_De_Broglieovy_vlny.pdf",
                             "visible": true,
                             "label": "",
                             "tags": [],
@@ -231,7 +231,7 @@
                         {
                             "title": "Schrödingerův, Heisenbergův a Diracův obraz",
                             "videoUrl": "https://www.youtube.com/watch?v=7z9WYk0oB3o",
-                            "pdfName": "04_05_Schrodingerir__Heisentergir_a_Diracv_obrar.pdf",
+                            "pdfName": "04_05_Schrodingeruv_Heisenberguv_a_Diracuv_obraz.pdf",
                             "visible": true,
                             "label": "",
                             "tags": [],
@@ -336,7 +336,7 @@
         },
         {
             "sectionTitle": "Two-Level Systems, QBits and One Dimensional Problems",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Časový vývoj ve dvouhladinových systémech",
@@ -729,7 +729,7 @@
         },
         {
             "sectionTitle": "Úvod do přibližných metod v kvantové mechanice",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Variační principy",
@@ -801,7 +801,7 @@
         },
         {
             "sectionTitle": "Kvantový systém ve 3D: příprava na atom vodíku",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Moment hybnosti",
@@ -882,7 +882,7 @@
         },
         {
             "sectionTitle": "Atom vodíku",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Úvod do problému",

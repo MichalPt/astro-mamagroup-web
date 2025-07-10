@@ -9,7 +9,7 @@
     "content": [
         {
             "sectionTitle": "Classical Theory of Fluctuations",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Origin and measurement of fluctuations",
@@ -141,7 +141,7 @@
         },
         {
             "sectionTitle": "Quantum Theory of Fluctuations",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Detection of Fields and Quantum Mechanics",
@@ -726,7 +726,7 @@
         },
         {
             "sectionTitle": "Selected Topics of Light-Matter Interaction",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Non-linear response",
@@ -834,7 +834,7 @@
         },
         {
             "sectionTitle": "Optics for Fundamental Tests of Quantum Mechanics",
-            "sectionVisisble": true,
+            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Fundamental properties of quantum mechanics",
