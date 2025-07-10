@@ -61,7 +61,7 @@ const meta = {
                 <h3 id={`section:${slugify(section.sectionTitle)}`} class="text-lg font-semibold mb-0 mt-0">{section.sectionTitle}</h3>
                 <hr class="h-px mt-0 mb-2 bg-gray-200 border-0 dark:bg-gray-700"/>
 
-                <div class="ml-1 sm:ml-4 lg:ml-8 grid grid-cols-1 md:grid-cols-2 3xl:grid-cols-3 gap-4 auto-rows-min">
+                <div class="ml-1 sm:ml-4 lg:ml-8 grid grid-cols-1 md:grid-cols-2 4xl:grid-cols-3 gap-4 auto-rows-min">
                     {section.sectionContent.map((subsection) => (
                         <div class="break-inside-avoid">
                             <h4 id={`section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}`} class="font-medium mb-0 mt-0">{subsection.subsectionTitle}</h4>
