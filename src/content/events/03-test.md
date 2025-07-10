@@ -5,7 +5,7 @@ date: ["2026-05-13", "2026-06-14"]
 createBanner: true
 autoHideBanner: true
 visible: false
-tags: ["test","school"]
+tags: ["test","school","maymeeting"]
 ---
 
 <!-- # Prague May Summer School 2025 -->
@@ -14,7 +14,7 @@ An associated event of the [Prague May Meeting](/events/maymeeting/prague-maymee
 
 ## Dates and hosting institution: 
 
-June 13.-14. 2024, Charles University, Prague
+June 13.-14. 2026, Charles University, Prague
 
 ## Venue: 
 
