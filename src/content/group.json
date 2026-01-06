@@ -119,12 +119,12 @@
         "name": "Erika Keil",
         "position": "postdoc",
         "path": "keil",
-        "photo": "",
+        "photo": "erika-keil-120.jpg",
         "active": "true",
-        "visible": "false",
+        "visible": "true",
         "years":{
             "from":2026, 
-            "to":""
+            "to":2027
         }
     },
     {

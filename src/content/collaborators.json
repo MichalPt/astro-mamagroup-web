@@ -40,5 +40,12 @@
         "photo": "",
         "visible": "true",
         "url":"https://physics.mff.cuni.cz/kchfo/oos/"
+    },
+    {
+        "name": "Petr Heřman",
+        "institute": "Charles University",
+        "photo": "",
+        "visible": "true",
+        "url":"http://biophysics.mff.cuni.cz/Petr_Herman/"
     }
 ]
