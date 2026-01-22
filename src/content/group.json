@@ -120,12 +120,13 @@
         "position": "postdoc",
         "path": "keil",
         "photo": "erika-keil-120.jpg",
-        "active": "true",
-        "visible": "true",
+        "active": "True",
+        "visible": "True",
         "years":{
             "from":2026, 
             "to":2027
-        }
+        },
+        "email":"erika.keil@matfyz.cuni.cz"
     },
     {
         "name": "Aurélia Chenu",
