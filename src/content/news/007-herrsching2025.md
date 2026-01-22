@@ -2,7 +2,7 @@
 title: "Ultrafast dynamics in photochemistry and biology - Theory meets experiment 2025"
 date: "2025-09-15"
 image: "herrsching-2025.jpg"
-tags: ['meeting','TUM','Hauer group','Renger group''Herrsching','Germany']
+tags: ['meeting','TUM','Hauer group','Renger group','Herrsching','Germany']
 teaser: "Meeting in Herrsching, Bavaria, Germany."
 ---
 
