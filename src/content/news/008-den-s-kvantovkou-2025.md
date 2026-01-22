@@ -3,7 +3,7 @@ title: "Den s kvantovkou 2025"
 date: "2025-09-25"
 image: "q-day-logo-small.WebP"
 tags: ['science popularization','CUNI',]
-teaser: ""
+teaser: "The Day with Quantum Mechanics 2025 event at Charles University (CUNI) Troja campus."
 useImageInHeader: false
 ---
 

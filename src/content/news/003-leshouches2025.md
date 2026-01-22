@@ -2,7 +2,7 @@
 title: "Ècole de Physique Des Houches 2025"
 date: "2025-03-01"
 image: "les-houches-2025.WebP"
-tags: ['leshouches','school','group']
+tags: ['leshouches','school','group','Université Grenoble Alpes']
 teaser: "Our entire group attended the winter school and follow-up workshop in Les Houches (FR)."
 ---
 
