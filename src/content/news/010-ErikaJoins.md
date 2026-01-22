@@ -1,7 +1,7 @@
 ---
 title: "Erika joins the group"
 date: "2026-01-05"
-image: "Erika_photo.WebP"
+image: "Erika_photo-2.WebP"
 tags: ['Group members','Humboldt foundation']
 teaser: "Erika Keil joins the MaMa group for her Humboldt fellowship"
 createBanner: true
