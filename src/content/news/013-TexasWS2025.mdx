@@ -5,6 +5,10 @@ image: "texas-2026-1.WebP"
 tags: ['school','University of Texas at Austin','Austin','USA']
 teaser: "Michal attended the Texas Quantum Winter School on Open Quantum Systems and Quantum Information in the Chemical Sciences (Wimberley, TX, USA)."
 ---
+
+import SecuredLink from "@/components/SecuredLink.astro";
+import { Icon } from "astro-icon/components";
+
 From January 4 to January 9, 2026, [Michal](/group/ptacek) attended the [Texas Quantum Winter School on Open Quantum Systems and Quantum Information in the Chemical Sciences](https://www.texquantum.com/home) organized by the University of Texas at Austin, USA, at a nearby village of Wimberley, TX. 
 
 The school intense schedule was focused on general theory of open quantum systems, introduction to quantum information theory and quantum computing. Several hands-on session gave us opportunity to get familiar with various Python packages developed by the groups of the lecturers (e.g. [mesohops](https://github.com/MesoscienceLab/mesohops), [pytenso](https://github.com/ifgroup/pytenso)). We were provided with many tutorial files and examples to work with during the school and later on.
@@ -18,6 +22,21 @@ But the week wasn't only about science. We had also a chance to enjoy the beauti
 ![The city of Austin, TX, USA](/news/texas-austin-2026.WebP)
 
 Attendence at the winter school was made possible thanks to the financial support from the Grant Agency of Charles University and the U.S. National Science Foundation (grants no. CHE-2534158 and CHE-2338663) provided to the winter school attendees by the University of Texas at Austin.
+
+<div class="flex flex-col justify-center align-left">
+    <div class="flex mx-auto max-w-md">
+        <SecuredLink 
+            client:load
+            pwdVariable="TEXAS_WS_NOTES_PWD_HASH" 
+            urlVariable="TEXAS_WS_NOTES_URL"
+        >
+            <span class="flex text-sm citrus-link mb-2 px-3 py-1 bg-accent-two dark:bg-white text-bgColor dark:text-gray-800 rounded-lg justify-center items-center hover:brightness-110 dark:hover:brightness-90 transition-all duration-100">
+                <Icon name="ri:book-2-fill" class="inline-block mr-2 w-6 h-6" />
+                <span>Notes & Presentations</span>
+            </span>
+        </SecuredLink>
+    </div>  
+</div>  
 
 
 
