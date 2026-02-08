@@ -33,6 +33,9 @@ export default defineConfig({
   adapter: netlify(),
   image: {
     domains: ["webmention.io"],
+    service: process.env.NODE_ENV === 'production' 
+      ? { entrypoint: 'astro/assets/services/sharp' }
+      : { entrypoint: 'astro/assets/services/noop' }, // No optimization in dev
   },
   integrations: [icon(), tailwind({
     applyBaseStyles: false,
