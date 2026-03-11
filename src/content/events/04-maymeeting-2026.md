@@ -9,7 +9,7 @@ tags: ["maymeeting","prague"]
 ---
 
 <!-- # Prague May Meeting 2026 -->
-![](public/events/04-maymeeting-2026/karlov.WebP)
+![The Karlov campus of Charles University](public/events/04-maymeeting-2026/karlov.WebP "The Karlov campus of Charles University")
 
 ## Dates and hosting institution: 
 
@@ -38,6 +38,8 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 
 - Pavel Malý
 - Tomáš Mančal
+- Jakub Pšenčík
+- František Šanda
 
 ## List of attendees:
 
