@@ -41,9 +41,15 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 - Jakub Pšenčík
 - František Šanda
 
-## List of attendees:
+## List of attendees (as of March 17th, 2026):
 
-- TBA
+- Jürgen Hauer, Technische Universität München, Germany
+- Oliver Kühn, Universität Rostock, Germany
+- Mirek Kloz, ELI Beamlines, Czech Republic
+- Jürgen Köhler, Universität Bayreuth, Germany
+- Tomáš Polívka, University of South Bohemia, Czech Republic
+- Darius Abramavičius, Vilnius University, Lithuania
+
 
 ## Number of participants: 
 
