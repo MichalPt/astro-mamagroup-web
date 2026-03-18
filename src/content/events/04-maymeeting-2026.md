@@ -8,7 +8,6 @@ visible: true
 tags: ["maymeeting","prague"]
 ---
 
-<!-- # Prague May Meeting 2026 -->
 ![The Karlov campus of Charles University](public/events/04-maymeeting-2026/karlov.WebP "The Karlov campus of Charles University")
 
 ## Dates and hosting institution: 
@@ -60,3 +59,6 @@ We do not plan to set any strict limits or targets for the number of participant
 We are not a club with a membership. Friendship is valued more than impact factors. Intellectually relevant contribution to the meeting is what is desired. We welcome suggestions for the list of invitees.
 
 Any information missing? Write to: [tomas.mancal@matfyz.cuni.cz](mailto:mancal@matfyz.cuni.cz).
+
+
+<iframe style="border:none" src="https://mapy.com/s/lupuvenefo" width="700" height="500" frameborder="0"></iframe>
