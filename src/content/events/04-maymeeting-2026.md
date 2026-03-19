@@ -49,6 +49,7 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 - Tomáš Polívka, University of South Bohemia, Czech Republic
 - Darius Abramavičius, Vilnius University, Lithuania
 - Veljko Janković, University of Belgrade, Serbia
+- Elisa Palacino González, Heinrich-Heine Universität Düsseldorf, Germany
 
 ## Number of participants: 
 
