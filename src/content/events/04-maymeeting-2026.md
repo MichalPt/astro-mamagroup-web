@@ -50,6 +50,7 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 - Darius Abramavičius, Vilnius University, Lithuania
 - Veljko Janković, University of Belgrade, Serbia
 - Elisa Palacino González, Heinrich-Heine Universität Düsseldorf, Germany
+- Jérémie Leonard, Institut de Physique et Chimie des Matériaux de Strasbourg, France
 
 ## Number of participants: 
 
