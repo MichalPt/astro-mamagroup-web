@@ -1,0 +1,119 @@
+---
+import { getCollection } from "astro:content";
+import CoursesLayout from "@/layouts/Courses.astro";
+import { slugify, processCourseId } from "@/utils/strings.ts"
+
+const collectionName = "coursesMaly";
+const rootPath = "/maly/teaching/";
+const contentFolder = "/content/maly-teaching/";
+
+export async function getStaticPaths() {
+    // The getCollection function accepts only literal string, not a vriable!
+    const courses = await getCollection("coursesMaly", ({ data }) => data.courseVisible == true);
+    return courses.flatMap((course) =>
+        course.data.content.flatMap((section) =>
+            section.sectionContent.flatMap((subsection) =>
+                subsection.subsectionContent.map((video, idx, arr) => ({
+                    params: {
+                        course: processCourseId(course.id),
+                        page: slugify(video.title),
+                    },
+                    props: {
+                        course,
+                        section,
+                        subsection,
+                        video,
+                        videoIndex: idx,
+                        videos: arr,
+                    },
+                }))
+            )
+        )
+    );
+}
+
+const { course, section, subsection, video, videoIndex, videos } = Astro.props;
+const courseId = processCourseId(course.id);
+
+// Pagination logic for previous/next video in the same subsection
+const prevVideo = videoIndex > 0 ? videos[videoIndex - 1] : null;
+const nextVideo = videoIndex < videos.length - 1 ? videos[videoIndex + 1] : null;
+
+const prevUrl = prevVideo
+    ? `${rootPath}${courseId}/${slugify(prevVideo.title)}`
+    : null;
+const nextUrl = nextVideo
+    ? `${rootPath}${courseId}/${slugify(nextVideo.title)}`
+    : null;
+
+const meta = {
+    title: video.title,
+    description: video.description || "",
+};
+
+const videoId = video.videoUrl.split("watch?v=")[1];
+---
+
+<CoursesLayout meta={meta} collectionName={collectionName}>
+    <span class="flex flex-wrap text-xs leading-tight gap-x-1">
+        <a href={rootPath.split('/').slice(0,2).join('/')} class="text-light">
+            Pavel Malý
+        </a> / 
+        <a href={rootPath} class="text-light">
+            Teaching
+        </a> / 
+        <a href=`${rootPath}${courseId}` class="text-light">
+            {course.data.courseName}
+        </a> /
+        <a href=`${rootPath}${courseId}/#section:${slugify(section.sectionTitle)}` class="text-light">
+            {section.sectionTitle}
+        </a> /
+        <a href=`${rootPath}${courseId}/#section:${slugify(section.sectionTitle)}#subsection:${slugify(subsection.subsectionTitle)}` class="text-light">
+            {subsection.subsectionTitle}
+        </a> /
+    </span>
+
+    <h2 class="title text-base sm:text-2xl mb-1 mt-1">{videoIndex+1} - {video.title}</h2>
+
+    {video.description && <p class="mb-1">{video.description}</p>}
+
+    {(video.pdfName && video.pdfName[0] && video.pdfName[0].length > 0) && (
+        <p class="mb-2">
+            <span class="text-sm sm:text-base">Attachment: </span>
+            {video.pdfName.map((filename, index) => (
+                <span key={index}>
+                    <a href={`${contentFolder}${courseId}/files/${filename}`} target="_blank" class="text-light hover:text-accent-base" title={filename}>
+                        <span class="text-xs sm:text-sm">{filename}</span>
+                    </a>
+                    {index < (video.pdfName?.length ?? 1) - 1 && <span>, </span>}
+                </span>
+            ))}
+        </p>
+    )}
+
+    <div class="flex justify-center mt-6 mb-4">
+        <iframe src={`https://www.youtube.com/embed/${videoId}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <nav class="flex flex-row mt-4">
+        {prevUrl && prevVideo && (
+            <a href={prevUrl} class="flex flex-col items-right">
+                <div  class="text-sm sm:text-base">← Previous Video</div>
+                <div class="text-xs sm:text-sm text-light">
+                    <div>{prevVideo.title}</div>
+                    <div>({videoIndex} of {videos.length})</div>
+                </div>
+            </a>
+        )}
+        <div class="mx-auto"></div>
+        {nextUrl && nextVideo && (
+            <a href={nextUrl} class="flex flex-col text-right items-right">
+                <div class="text-sm sm:text-base">Next Video →</div>
+                <div class="text-xs sm:text-sm text-light">
+                    <div>{nextVideo.title}</div>
+                    <div>({videoIndex + 2} of {videos.length})</div>
+                </div>
+            </a>
+        )}
+    </nav>
+</CoursesLayout>
