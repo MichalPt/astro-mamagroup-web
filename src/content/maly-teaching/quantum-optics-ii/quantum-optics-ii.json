@@ -1,0 +1,58 @@
+{  "courseName": "Quantum Optics II",
+    "courseCode": "NBCM093",
+    "courseDescription": "Introduction into the theory of coherence and the statistical properties of light.",
+    "language": "English",
+    "semester": "summer",
+    "courseVisible": true,
+    "showDates": false,
+  "content": [
+        {
+            "sectionTitle": "Original publications",
+            "sectionVisible": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Reading",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Quantum State Tomography",
+                            "videoUrl": "https://www.youtube.com/watch",
+                            "pdfName": "Quantum_State_Tomography.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Quantum State Measurement",
+                            "videoUrl": "https://www.youtube.com/watch",
+                            "pdfName": "Quantum_State_Measurement.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Squeezed light generation",
+                            "videoUrl": "https://www.youtube.com/watch",
+                            "pdfName": "josab-4-10-1465_Squeezed_State_Generation.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        },
+                        {
+                            "title": "Squeezed states of light",
+                            "videoUrl": "https://www.youtube.com/watch",
+                            "pdfName": "Squeezed Light 1987.pdf",
+                            "visible": true,
+                            "label": "",
+                            "tags": [],
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

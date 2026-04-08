@@ -1,0 +1,64 @@
+---
+import { getCollection } from 'astro:content';
+import CoursesLayout from "@/layouts/Courses.astro";
+import { processCourseId } from "@/utils/strings.ts"
+
+const coursesName = "coursesMaly";
+const semesters = ["winter", "summer"];
+const rootPath = "/maly/teaching/";
+
+const allCourses = await getCollection(coursesName, ({ data }) => data.courseVisible == true);
+console.log('Courses found:', allCourses.length);
+
+const meta = {
+	description: "Homepage for Maly courses",
+	title: "Maly Courses",
+};
+---
+
+<CoursesLayout meta={meta} collectionName={coursesName}>
+    <!-- <SidepanelCourses collectionName="coursesMaly"/> -->
+
+	<div class="items-center flex flex-col">
+		<div class="title text-3xl font-semibold text-accent-base mb-4">Courses</div>
+		<div class="">
+			{semesters.map((semester) => 
+				<h2 class="mt-4 mb-2 text:xl sm:text-2xl">{semester} semester:</h2>
+				<ul class="course-list mt-1 text-sm sm:text-base font-medium">
+					{allCourses.filter((course) => (course.data.semester ?? "winter") === semester).map((course) => (
+						<li>
+							<a href={`${rootPath}${processCourseId(course.id)}`} class="text-accent-base">
+								{course.data.courseName}
+							</a>
+						</li>
+					))}
+				</ul> 
+			)}
+
+        <!-- <p>Found {allCourses.length} courses</p>
+
+		{
+			allCourses.map((course) => (
+                <div class="flex items-center ">
+                    <a href={`/maly/teaching/${course.id}`}>
+						{course.data.courseName}
+					</a>
+                </div>
+			))
+		} -->
+	</div>
+
+	<!-- <div>
+		{allCourses.flatMap((course) =>
+			course.data.content.flatMap((section) =>
+				section.sectionContent.flatMap((subsection) =>
+					subsection.subsectionContent.map((video, idx, arr) => 
+						<a href={`${rootPath}${course.id}/${slugify(video.title)}`} class="block mb-2">
+							1: {course.id}, 3: {subsection.subsectionTitle}, 4: {video.title}, {idx}
+						</a>
+					)
+				)
+			)
+		)}
+	</div> -->
+</CoursesLayout>
