@@ -3,51 +3,37 @@
     "courseDescription": "Introduction into the theory of coherence and the statistical properties of light.",
     "language": "English",
     "semester": "summer",
-    "courseVisible": false,
+    "courseVisible": true,
     "showDates": false,
   "content": [
         {
             "sectionTitle": "Original publications",
-            "sectionVisible": true,
             "sectionContent": [
                 {
                     "subsectionTitle": "Reading",
-                    "subsectionVisible": true,
                     "subsectionContent": [
                         {
                             "title": "Quantum State Tomography",
-                            "videoUrl": "",
                             "pdfName": "Quantum_State_Tomography.pdf",
-                            "visible": true,
-                            "label": "",
-                            "tags": [],
+                            "type": "pdf",
                             "description": ""
                         },
                         {
                             "title": "Quantum State Measurement",
-                            "videoUrl": "",
                             "pdfName": "Quantum_State_Measurement.pdf",
-                            "visible": true,
-                            "label": "",
-                            "tags": [],
+                            "type": "pdf",
                             "description": ""
                         },
                         {
                             "title": "Squeezed light generation",
-                            "videoUrl": "",
                             "pdfName": "josab-4-10-1465_Squeezed_State_Generation.pdf",
-                            "visible": true,
-                            "label": "",
-                            "tags": [],
+                            "type": "pdf",
                             "description": ""
                         },
                         {
                             "title": "Squeezed states of light",
-                            "videoUrl": "",
                             "pdfName": "Squeezed Light 1987.pdf",
-                            "visible": true,
-                            "label": "",
-                            "tags": [],
+                            "type": "pdf",
                             "description": ""
                         }
                     ]

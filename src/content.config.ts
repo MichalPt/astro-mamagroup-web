@@ -158,7 +158,7 @@ function createOutreachCollection(path: string) {
 
 // Function to create a course collection with a specific path
 // This function allows for reusability and avoids code duplication
-function createCourseCollection(path: string) { 
+function createVideoCourseCollection(path: string) { 
 	return defineCollection({
 		loader: glob({ base: `./src/content/${path}`, pattern: "**/*.json" }),
 		schema: z.object({
@@ -197,9 +197,52 @@ function createCourseCollection(path: string) {
 	})
 };
 
+// Function to create a course collection with a specific path
+// This function allows for reusability and avoids code duplication
+function createGeneralCourseCollection(path: string) { 
+	return defineCollection({
+		loader: glob({ base: `./src/content/${path}`, pattern: "**/*.json" }),
+		schema: z.object({
+			courseName: z.string(),
+			courseCode: z.string().optional(),
+			courseDescription: z.string().optional(),
+			language: z.string(),
+			semester: z.enum(["summer", "winter", "both"]).default("winter").optional(),
+			courseVisible: z.boolean().default(true).optional(),
+			showDates: z.boolean().default(false).optional(),
+			content: z.array(
+				z.object({
+					sectionTitle: z.string(),
+					sectionVisible: z.boolean().default(true).optional(),
+					sectionContent: z.array(
+						z.object({
+							subsectionTitle: z.string(),
+							subsectionVisible: z.boolean().default(true).optional(),
+							subsectionContent: z.array(
+								z.object({
+									title: z.string(),
+									linkUrl: z.string().url().optional(),
+									pdfName: z.string().or(z.array(z.string())).transform((val) => 
+    												Array.isArray(val) ? val : [val]).optional(),
+									type: z.enum(["video", "pdf", "website", "other"]).default("video").optional(),
+									generateSite: z.boolean().default(false).optional(),
+									visible: z.boolean().default(true).optional(),
+									label: z.string().optional(),
+									description: z.string().optional(),
+									date: z.string().or(z.date()).optional(),
+								})
+							)
+						})
+					)
+				})
+			)
+		})
+	})
+};
+
 // Courses
-const coursesMancal = createCourseCollection("mancal-teaching");
-const coursesMaly = createCourseCollection("maly-teaching");
+const coursesMancal = createVideoCourseCollection("mancal-teaching");
+const coursesMaly = createGeneralCourseCollection("maly-teaching");
 
 // Outreach
 const outreachMancal = createOutreachCollection("mancal-outreach");
