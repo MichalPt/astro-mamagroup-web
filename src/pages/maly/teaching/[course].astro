@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import BaseLayout from "@/layouts/Base.astro";
 import CoursesLayout from "@/layouts/Courses.astro";
 import { Icon } from "astro-icon/components";
 import { slugify, processCourseId } from "@/utils/strings.ts"
@@ -46,7 +47,7 @@ function getItemIcon(type: string): string {
 }
 ---
 
-<CoursesLayout meta={meta} collectionName={collectionName}>
+<BaseLayout meta={{ title: "Teaching" }}>
     <span class="flex flex-wrap text-xs leading-tight gap-x-1">
         <a href={rootPath.split('/').splice(0,2).join('/')} class="text-light">
             Pavel Malý
@@ -216,7 +217,7 @@ function getItemIcon(type: string): string {
             </div>
         ))}
     </div>
-</CoursesLayout>
+</BaseLayout>
 
 <style>
     /* Ensure proper grid item behavior */
