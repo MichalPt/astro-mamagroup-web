@@ -52,6 +52,16 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 - Elisa Palacino González, Heinrich-Heine Universität Düsseldorf, Germany
 - Jérémie Leonard, Institut de Physique et Chimie des Matériaux de Strasbourg, France
 - Stefan Müller, Universität Würzburg, Germany
+- Jakub Dostál, ELI Beamlines, Czech Republic
+- Karel Bouda, Charles University, Czech Republic
+- Tomáš Malina, Charles University, Czech Republic
+- Matteo Bruschi, Charles University, Czech Republic
+- Erika Keil, Charles University, Czech Republic
+- Pavel Malý, Charles University, Czech Republic
+- Tomáš Mančal, Charles University, Czech Republic
+- Jakub Pšenčík, Charles University, Czech Republic
+- František Šanda, Charles University, Czech Republic
+
 
 ## Number of participants: 
 
