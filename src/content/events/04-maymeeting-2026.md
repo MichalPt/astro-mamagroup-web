@@ -40,7 +40,7 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 - Jakub Pšenčík
 - František Šanda
 
-## List of attendees (as of March 19th, 2026):
+## List of attendees (as of April 27th, 2026):
 
 - Jürgen Hauer, Technische Universität München, Germany
 - Oliver Kühn, Universität Rostock, Germany
@@ -61,6 +61,7 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 - Tomáš Mančal, Charles University, Czech Republic
 - Jakub Pšenčík, Charles University, Czech Republic
 - František Šanda, Charles University, Czech Republic
+- Michal Ptáček, Charles University, Czech Republic
 
 
 ## Number of participants: 
