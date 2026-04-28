@@ -57,47 +57,65 @@ export default function copyFiles(): AstroIntegration {
                 
                 // Create course destination directory
                 await fs.mkdir(courseFilesDestDir, { recursive: true });
-                
-                // Read the course JSON file
-                const jsonFile = jsonFiles[0];
-                if (!jsonFile) {
-                  console.warn(`Warning: No JSON file found in course directory ${courseDir.name}`);
-                  continue;
-                }
-                const jsonPath = path.join(contentDir, courseDir.name, jsonFile.name);
-                console.log(`Processing course: ${courseDir.name}, JSON file: ${jsonPath}`);
-                
-                try {
-                  const jsonContent = await fs.readFile(jsonPath, 'utf-8');
-                  const courseData = JSON.parse(jsonContent);
-                  
-                  // Process all videos in the course
-                  for (const section of courseData.content || []) {
-                    for (const subsection of section.sectionContent || []) {
-                      for (const video of subsection.subsectionContent || []) {
-                        if (video.pdfName && video.visible) {
-                          const pdfNames = Array.isArray(video.pdfName) ? video.pdfName : [video.pdfName];
-                          
-                          for (const pdfName of pdfNames) {
-                            const srcPath = path.join(courseFilesPath, pdfName);
-                            const destPath = path.join(courseFilesDestDir, pdfName);
-                            
-                            try {
-                              // Check if source file exists
-                              await fs.access(srcPath);
-                              await fs.copyFile(srcPath, destPath);
-                              console.log(`Copied: ${courseDir.name}/${pdfName}`);
-                            } catch (error) {
-                              console.warn(`Warning: Could not copy ${courseDir.name}/${pdfName}:`, error.message);
-                            }
-                          }
-                        }
-                      }
+
+                // Get the content of the course directory 
+                const filesDirContent = await fs.readdir(path.join(contentDir, courseDir.name, generalCourseContentFolderName), { withFileTypes: true });
+
+                // Copy all files from the course's 'files' folder to the destination directory
+                for (const file of filesDirContent) {
+                  if (file.isFile()) {
+                    const srcPath = path.join(courseFilesPath, file.name);
+                    const destPath = path.join(courseFilesDestDir, file.name);
+                    
+                    try {
+                      await fs.copyFile(srcPath, destPath);
+                      console.log(`Copied: ${courseDir.name}/${generalCourseContentFolderName}/${file.name}`);
+                    } catch (error) {
+                      console.warn(`Warning: Could not copy ${courseDir.name}/${generalCourseContentFolderName}/${file.name}:`, error.message);
                     }
                   }
-                } catch (jsonError) {
-                  console.warn(`Warning: Could not read course data for ${courseDir.name}:`, jsonError.message);
                 }
+                
+                // // Read the course JSON file
+                // const jsonFile = jsonFiles[0];
+                // if (!jsonFile) {
+                //   console.warn(`Warning: No JSON file found in course directory ${courseDir.name}`);
+                //   continue;
+                // }
+                // const jsonPath = path.join(contentDir, courseDir.name, jsonFile.name);
+                // console.log(`Processing course: ${courseDir.name}, JSON file: ${jsonPath}`);
+                
+                // try {
+                //   const jsonContent = await fs.readFile(jsonPath, 'utf-8');
+                //   const courseData = JSON.parse(jsonContent);
+                  
+                //   // Process all videos in the course
+                //   for (const section of courseData.content || []) {
+                //     for (const subsection of section.sectionContent || []) {
+                //       for (const video of subsection.subsectionContent || []) {
+                //         if (video.pdfName && video.visible) {
+                //           const pdfNames = Array.isArray(video.pdfName) ? video.pdfName : [video.pdfName];
+                          
+                //           for (const pdfName of pdfNames) {
+                //             const srcPath = path.join(courseFilesPath, pdfName);
+                //             const destPath = path.join(courseFilesDestDir, pdfName);
+                            
+                //             try {
+                //               // Check if source file exists
+                //               await fs.access(srcPath);
+                //               await fs.copyFile(srcPath, destPath);
+                //               console.log(`Copied: ${courseDir.name}/${pdfName}`);
+                //             } catch (error) {
+                //               console.warn(`Warning: Could not copy ${courseDir.name}/${pdfName}:`, error.message);
+                //             }
+                //           }
+                //         }
+                //       }
+                //     }
+                //   }
+                // } catch (jsonError) {
+                //   console.warn(`Warning: Could not read course data for ${courseDir.name}:`, jsonError.message);
+                // }
               }
             }
             
