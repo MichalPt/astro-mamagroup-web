@@ -166,11 +166,7 @@ export default defineConfig({
   server: {
     // port: 1234,
     host: true,
-  },
-  redirects: {
-    '/group/mancal/': '/mancal/',
-    '/group/maly/': '/maly/',
-    },
+  }
 });
 
 function rawFonts(ext: string[]) {
