@@ -87,12 +87,12 @@
         "position": "PhD student",
         "path": "shein",
         "photo": "",
-        "active": "True",
+        "active": "False",
         "years":{
             "from":2024, 
-            "to":""
+            "to":2026
         },
-        "email": "maymyatnoe.shein789@student.cuni.cz",
+        "email": "maymyatnoeshein@gmail.com",
         "orcid": "0009-0003-9074-5806"
     },
     {
@@ -201,5 +201,29 @@
                 "to":2023
             }
         ]
+    },
+    {
+        "name": "Lina Magron--Mathis",
+        "position": "internship",
+        "path": "magron--mathis",
+        "email": "lina.magron--mathis@ens-lyon.fr",
+        "photo": "",
+        "active": "True",
+        "years":{
+            "from":2026, 
+            "to":2026
+        }
+    },
+    {
+        "name": "Antonio Sampaoli",
+        "position": "internship",
+        "path": "sampaoli",
+        "email": "antonio.sampaoli@icfo.eu",
+        "photo": "",
+        "active": "True",
+        "years":{
+            "from":2026, 
+            "to":2026
+        }
     }
 ]
