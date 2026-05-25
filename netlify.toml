@@ -29,13 +29,13 @@
   status = 301
 
 [[redirects]]
-  from = "/group/mancal"
-  to = "/mancal"
+  from = "/group/mancal/"
+  to = "/mancal/"
   status = 301
   force = true
 
 [[redirects]]
-  from = "/group/maly"
-  to = "/maly"
+  from = "/group/maly/"
+  to = "/maly/"
   status = 301
   force = true
