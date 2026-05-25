@@ -27,7 +27,7 @@ export const siteConfig: SiteConfig = {
 export const siteSettings = {
 	homePage: {
 		carouselNews: 3,  // Number of news items to display in the carousel on the home page ... plus the welcome slide with FMO
-		newestNews: 8,	  // Number of news items to display in the "News" section on the home page
+		newestNews: 10,	  // Number of news items to display in the "News" section on the home page
 		newestEvents: 6	  // Number of events to display in the "Events" section on the home page
 	},
 	newsPerPage: 20,	  // Number of news items to display on a single news page
