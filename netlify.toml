@@ -32,8 +32,10 @@
   from = "/group/mancal"
   to = "/mancal"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/group/maly"
   to = "/maly"
   status = 301
+  force = true
