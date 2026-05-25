@@ -27,3 +27,13 @@
   from = "/api/build-status"
   to = "/.netlify/functions/build-status"
   status = 301
+
+[[redirects]]
+  from = "/group/mancal"
+  to = "/mancal"
+  status = 301
+
+[[redirects]]
+  from = "/group/maly"
+  to = "/maly"
+  status = 301

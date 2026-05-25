@@ -168,8 +168,8 @@ export default defineConfig({
     host: true,
   },
   redirects: {
-    '/group/mancal/': '/mancal/',
-    '/group/maly/': '/maly/',
+    '/group/mancal': '/mancal/',
+    '/group/maly': '/maly/',
     },
 });
 
