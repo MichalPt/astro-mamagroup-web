@@ -61,7 +61,6 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 - Tomáš Mančal, Charles University, Czech Republic
 - Jakub Pšenčík, Charles University, Czech Republic
 - František Šanda, Charles University, Czech Republic
-- Michal Ptáček, Charles University, Czech Republic
 
 
 ## Number of participants: 
