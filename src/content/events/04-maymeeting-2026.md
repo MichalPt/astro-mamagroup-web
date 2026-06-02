@@ -40,19 +40,21 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 - Jakub Pšenčík
 - František Šanda
 
-## List of attendees (as of April 27th, 2026):
+## List of speakers (as of June 2nd, 2026):
 
 - Jürgen Hauer, Technische Universität München, Germany
 - Erling Thyrhaug, Technische Universität München, Germany
 - Oliver Kühn, Universität Rostock, Germany
-- Mirek Kloz, ELI Beamlines, Czech Republic
 - Jürgen Köhler, Universität Bayreuth, Germany
-- Tomáš Polívka, University of South Bohemia, Czech Republic
+- Stefan Müller, Universität Würzburg, Germany
+- Elisa Palacino González, Heinrich-Heine Universität Düsseldorf, Germany
+- Donatas Zigmantas, Lund University, Sweden
+- Antonio Sampaoli, The Institute of Photonic Sciences, Spain
 - Darius Abramavičius, Vilnius University, Lithuania
 - Veljko Janković, University of Belgrade, Serbia
-- Elisa Palacino González, Heinrich-Heine Universität Düsseldorf, Germany
 - Jérémie Leonard, Institut de Physique et Chimie des Matériaux de Strasbourg, France
-- Stefan Müller, Universität Würzburg, Germany
+- Mirek Kloz, ELI Beamlines, Czech Republic
+- Tomáš Polívka, University of South Bohemia, Czech Republic
 - Jakub Dostál, ELI Beamlines, Czech Republic
 - Karel Bouda, Charles University, Czech Republic
 - Tomáš Malina, Charles University, Czech Republic
@@ -63,19 +65,18 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 - Tomáš Mančal, Charles University, Czech Republic
 - Jakub Pšenčík, Charles University, Czech Republic
 - František Šanda, Charles University, Czech Republic
-- Donatas Zigmantas, Lund University, Sweden
-- Antonio Sampaoli, The Institute of Photonic Sciences, Spain
 
 
-## Number of participants: 
+<!-- ## Number of participants: 
 
-We do not plan to set any strict limits or targets for the number of participants. We expect the meeting to be small and intensive.
+We do not plan to set any strict limits or targets for the number of participants. 
+We expect the meeting to be small and intensive. -->
 
-## Invitation: 
+<!-- ## Invitation: 
 
 We are not a club with a membership. Friendship is valued more than impact factors. Intellectually relevant contribution to the meeting is what is desired. We welcome suggestions for the list of invitees.
 
-Any information missing? Write to: [tomas.mancal@matfyz.cuni.cz](mailto:mancal@matfyz.cuni.cz).
+Any information missing? Write to: [tomas.mancal@matfyz.cuni.cz](mailto:mancal@matfyz.cuni.cz). -->
 
 ## Programme:
 
