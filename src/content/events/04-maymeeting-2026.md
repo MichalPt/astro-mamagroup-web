@@ -43,6 +43,7 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 ## List of attendees (as of April 27th, 2026):
 
 - Jürgen Hauer, Technische Universität München, Germany
+- Erling Thyrhaug, Technische Universität München, Germany
 - Oliver Kühn, Universität Rostock, Germany
 - Mirek Kloz, ELI Beamlines, Czech Republic
 - Jürgen Köhler, Universität Bayreuth, Germany
@@ -57,10 +58,13 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 - Tomáš Malina, Charles University, Czech Republic
 - Matteo Bruschi, Charles University, Czech Republic
 - Erika Keil, Charles University, Czech Republic
+- Malcolm Garrow, Charles University, Czech Republic
 - Pavel Malý, Charles University, Czech Republic
 - Tomáš Mančal, Charles University, Czech Republic
 - Jakub Pšenčík, Charles University, Czech Republic
 - František Šanda, Charles University, Czech Republic
+- Donatas Zigmantas, Lund University, Sweden
+- Antonio Sampaoli, The Institute of Photonic Sciences, Spain
 
 
 ## Number of participants: 
@@ -72,6 +76,22 @@ We do not plan to set any strict limits or targets for the number of participant
 We are not a club with a membership. Friendship is valued more than impact factors. Intellectually relevant contribution to the meeting is what is desired. We welcome suggestions for the list of invitees.
 
 Any information missing? Write to: [tomas.mancal@matfyz.cuni.cz](mailto:mancal@matfyz.cuni.cz).
+
+## Programme:
+
+<iframe 
+  src="https://docs.google.com/gview?url=https://mama-group.cz/events/04-maymeeting-2026/Prague-May-Meeting-2026.pdf&embedded=true" 
+  width="800px" 
+  height="1000px"
+  style="border: none;">
+    This browser does not support PDFs. Please download the PDF to view it: 
+        <a href="/events/04-maymeeting-2026/Prague-May-Meeting-2026.pdf">
+            Download PDF
+        </a>
+        .
+</iframe>
+
+## Map:
 
 
 <iframe style="border:none" src="https://mapy.com/s/lupuvenefo" width="700" height="500" frameborder="0"></iframe>
