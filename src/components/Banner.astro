@@ -164,27 +164,27 @@ const allBannerItems = [...bannerEventItems, ...bannerNewsItems, ...bannerAlerts
             >
                 <div class="flex items-center gap-3 flex-nowrap justify-center banner-content-row">
                     <!-- Type Badge -->
-                    <span class="px-2 py-1 bg-white/20 dark:bg-white rounded text-xs font-medium uppercase tracking-wide flex-shrink-0 max-[360px]:px-1">
+                    <span class="px-2 py-1 bg-white/20 dark:bg-white rounded text-xs font-medium uppercase tracking-wide flex-shrink-0 max-[360px]:px-1 banner-hide-small-screen">
                         ${item.type.toUpperCase()}
                     </span>
                     <!-- Content -->
                     <div class="flex py-1 items-center">
                         ${item.url ? `
                             <a href="${item.url}" class="hover:underline block">
-                                <div class="text-xs md:text-sm whitespace-nowrap">
+                                <div class="text-xs md:text-sm whitespace-nowrap font-bold">
                                     ${item.title}
                                 </div>
                             </a>
                         ` : `
                             <div>
-                                <div class="text-xs md:text-sm whitespace-nowrap">
+                                <div class="text-xs md:text-sm whitespace-nowrap font-bold">
                                     ${item.title}
                                 </div>
                             </div>
                         `}
                     </div>
                     ${item.eventDates && item.eventDates.length > 0 ? `
-                        <span class="px-2 py-1 bg-white/10 dark:bg-white rounded text-xs font-medium uppercase tracking-wide flex-shrink-0 max-[360px]:px-1 banner-date-badge">
+                        <span class="px-2 py-1 bg-white/10 dark:bg-white rounded text-xs font-medium uppercase tracking-wide flex-shrink-0 max-[360px]:px-1 banner-hide-verysmall-screen">
                             ${formatDateInterval(item.eventDates)}
                         </span>
                         ` : ''}
@@ -398,7 +398,13 @@ const allBannerItems = [...bannerEventItems, ...bannerNewsItems, ...bannerAlerts
     }
 
     @media (max-width: 500px) {
-        .banner-date-badge {
+        .banner-hide-small-screen {
+            display: none;
+        }
+    }
+
+    @media (max-width: 360px) {
+        .banner-hide-verysmall-screen {
             display: none;
         }
     }
