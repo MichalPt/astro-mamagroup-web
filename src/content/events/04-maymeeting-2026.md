@@ -80,13 +80,19 @@ Any information missing? Write to: [tomas.mancal@matfyz.cuni.cz](mailto:mancal@m
 
 ## Programme:
 
+<div style="text-align: center;">
+    <a href="/events/04-maymeeting-2026/Prague-May-Meeting-2026.pdf" target="_blank" style="color: #6b7280;">
+        Open in new tab
+    </a>
+</div>
+
 <iframe 
   src="https://docs.google.com/gview?url=https://mama-group.cz/events/04-maymeeting-2026/Prague-May-Meeting-2026.pdf&embedded=true" 
   width="800px" 
   height="1000px"
   style="border: none;">
     This browser does not support PDFs. Please download the PDF to view it: 
-        <a href="/events/04-maymeeting-2026/Prague-May-Meeting-2026.pdf">
+        <a href="/events/04-maymeeting-2026/Prague-May-Meeting-2026.pdf" target="_blank">
             Download PDF
         </a>
         .
