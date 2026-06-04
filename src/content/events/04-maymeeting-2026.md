@@ -47,11 +47,11 @@ The nearest Metro stations to the venue are the **I. P. Pavlova** Metro station 
 - Oliver Kühn, Universität Rostock, Germany
 - Jürgen Köhler, Universität Bayreuth, Germany
 - Stefan Müller, Universität Würzburg, Germany
-- Elisa Palacino González, Heinrich-Heine Universität Düsseldorf, Germany
 - Donatas Zigmantas, Lund University, Sweden
 - Antonio Sampaoli, The Institute of Photonic Sciences, Spain
 - Darius Abramavičius, Vilnius University, Lithuania
 - Veljko Janković, University of Belgrade, Serbia
+- Elisa Palacino González, CNRS/Nantes University, France
 - Jérémie Leonard, Institut de Physique et Chimie des Matériaux de Strasbourg, France
 - Mirek Kloz, ELI Beamlines, Czech Republic
 - Tomáš Polívka, University of South Bohemia, Czech Republic
