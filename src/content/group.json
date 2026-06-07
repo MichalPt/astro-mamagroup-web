@@ -160,7 +160,7 @@
         "active": "False",
         "years":{
             "from":2010, 
-            "to":2020
+            "to":2019
         }
     },
     {
@@ -220,7 +220,7 @@
         "path": "sampaoli",
         "email": "antonio.sampaoli@icfo.eu",
         "photo": "",
-        "active": "True",
+        "active": "False",
         "years":{
             "from":2026, 
             "to":2026
