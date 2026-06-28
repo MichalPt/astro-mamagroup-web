@@ -12,11 +12,11 @@ visible: true
 
 ![The Karlov campus of Charles University](public/events/06-prague-summer-school-2026/karlov.WebP "The Karlov campus of Charles University")
 
-Prague Summer School of Nonlinear Spectroscopy 2026
+## Prague Summer School of Nonlinear Spectroscopy 2026
 
 ## Dates and hosting institution: 
 
-September 3.-4. 2026, Charles University, Prague
+September 3-4 2026, Charles University, Prague
 
 ## Venue: 
 
@@ -55,6 +55,6 @@ Expenses mostly covered, University canteen and selected restaurants
 
 ## Participant registration: 
 
-Expected number of participants is around 20
+Registration for the school is currently **open**, to register write to: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz). **Registration deadline is July 31!**
 
-Registration for the school is currently open, to register write to: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz).
+Expected number of participants is around 20. 
