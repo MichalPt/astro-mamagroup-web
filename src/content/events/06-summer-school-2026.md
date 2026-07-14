@@ -27,19 +27,19 @@ Institute of Physics, Faculty of Mathematics and Physics, Charles University, **
 Non-linear time and frequency resolved spectroscopy with coherent and incoherent (e.g. fluorescence) detection; from atomistic description to spectra of molecular aggregates,  related topics of open quantum systems theory and excitation dynamics, with practical demonstrations both computational (QuantaRhei in Python) and experimental (local laboratories).
 
 ## Lecturers:
-(to be confirmed...)
-- Jakub Dostál, ELI Beamlines: Ultrafast nonlinear spectroscopy
-- Vladislav Sláma, EPFL Lausanne: From atomistic description to spectroscopy
+
+- Jakub Dostál, ELI Beamlines: Ultrafast nonlinear TA and 2DES spectroscopy
+- Vladislav Sláma, Charles University: From atomistic description to excitonic model
 - Jakub Pšenčík, Charles University: Spectroscopy of molecular aggregates
-- Tomáš Mančal, Charles University: Open quantum system dynamics
+- Tomáš Mančal, Charles University: Open quantum system dynamics for spectroscopy
 - Pavel Malý, Charles University: Coherently and Action-detected spectroscopy
 - Participation fee: None, funded by Charles University
 
 ## Accommodation: 
 
-September 02 -- 04/05 (based on preference), University dormitory Vltava (
+September 02 -- 05 (or shorter upon preference), University dormitory Otava 
 
-Chemická 953, 148 28 Prague 4, bus 177 and metro line C station Chodov), single-person rooms with bathroom shared between two, no fee
+(Chemická 954, 148 28 Prague 4, bus 177 and metro line C station Chodov), single-person rooms with bathroom shared between two, no fee
 
 ## Food: 
 
@@ -55,6 +55,7 @@ Expenses mostly covered, University canteen and selected restaurants
 
 ## Participant registration: 
 
-Registration for the school is currently **open**, to register write to: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz). **Registration deadline is July 31!**
+At present (July 14), we are approaching 20 confirmed participants from 8 research groups worldwide
 
-Expected number of participants is around 20. 
+Registration for the school is still **open**, with **couple of last places remaining**. To register write to: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz). 
+
