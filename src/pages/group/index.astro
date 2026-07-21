@@ -16,7 +16,7 @@ const getImagePath = (photo) => {
 };
 
 // order the members according to the dictionary, others will be put to the end
-const positionOrder = { "group co-leader": 1, "researcher": 2, "postdoc": 3, "PhD student": 4, "visiting student": 5, "collaborator": 'last', "secretary": 'last', };
+const positionOrder = { "group co-leader": 1, "researcher": 2, "postdoc": 3, "PhD student": 4, "visiting student": 5, "collaborator": 6, "secretary": 7, };
 
 const visibleMembers = membersList.filter((person) => String(person.visible ?? "true").toLowerCase() !== "false");
 const activeMembers = visibleMembers.filter((person) => String(person.active).toLowerCase() == "true");
@@ -73,7 +73,7 @@ const sortedActiveMembers = activeMembers.sort((a, b) => {
                     {person.years && (Array.isArray(person.years) ? (
                             <p><i>{person.years.map(years => years.from === years.to ? (`${years.from}`) : (`${years.from} \u2013 ${years.to}`)).join(', ')}</i></p>
                         ) : (
-                            <p><i>{person.years.from} &ndash; {person.years.to}</i></p>
+                            <p><i>{person.years.from === person.years.to ? (`${person.years.from}`) : (`${person.years.from} \u2013 ${person.years.to}`)}</i></p>
                         )
                     )}
                 </a>)}
