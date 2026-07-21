@@ -208,7 +208,7 @@
         "path": "magron--mathis",
         "email": "lina.magron--mathis@ens-lyon.fr",
         "photo": "",
-        "active": "True",
+        "active": "False",
         "years":{
             "from":2026, 
             "to":2026
