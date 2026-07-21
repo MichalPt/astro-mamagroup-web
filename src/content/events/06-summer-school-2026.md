@@ -16,7 +16,9 @@ visible: true
 
 ## Dates and hosting institution: 
 
-September 3&ndash;4, 2026, Charles University, Prague
+September 3&ndash;4, 2026
+
+Charles University, Prague
 
 ## Venue: 
 
@@ -49,13 +51,13 @@ Expenses mostly covered, University canteen and selected restaurants
 
 **Wednesday 2nd:** arrival, accommodation, voluntary get-together
 
-**Thursday 3rd:** 9:00&ndash;12:40 Morning lectures, 14:00&ndash;17:10 Afternoon lecture + Experimental demonstration, 17:10&ndash;18:20 poster session with coffee, 18:30 Common dinner
+**Thursday 3rd:** 9:00&ndash;12:40 morning lectures, 14:00&ndash;17:10 afternoon lecture + Experimental demonstration, 17:10&ndash;18:20 poster session with coffee, 18:30 Common dinner
 
-**Friday 4th:** 9:00&ndash;12:40 Morning lectures, 14:00&ndash;17:10 afternoon lectures with practical applications, 18:00 Walk through historical Prague, departure/voluntary get-together
+**Friday 4th:** 9:00&ndash;12:40 morning lectures, 14:00&ndash;17:10 afternoon lectures with practical applications, 18:00 Walk through historical Prague, departure/voluntary get-together
 
 ## Participant registration: 
 
-At present (July 14), we are approaching 20 confirmed participants from 8 research groups worldwide
+At present (July 14), we are approaching 20 confirmed participants from 8 research groups worldwide.
 
 Registration for the school is still **open**, with **couple of last places remaining**. To register write to: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz). 
 
