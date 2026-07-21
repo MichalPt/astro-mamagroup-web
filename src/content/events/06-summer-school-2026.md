@@ -16,7 +16,7 @@ visible: true
 
 ## Dates and hosting institution: 
 
-September 3-4 2026, Charles University, Prague
+September 3&ndash;4, 2026, Charles University, Prague
 
 ## Venue: 
 
@@ -37,7 +37,7 @@ Non-linear time and frequency resolved spectroscopy with coherent and incoherent
 
 ## Accommodation: 
 
-September 02 -- 05 (or shorter upon preference), University dormitory Otava 
+September 2&ndash;5 (or shorter upon preference), University dormitory Otava 
 
 (Chemická 954, 148 28 Prague 4, bus 177 and metro line C station Chodov), single-person rooms with bathroom shared between two, no fee
 
@@ -59,3 +59,7 @@ At present (July 14), we are approaching 20 confirmed participants from 8 resear
 
 Registration for the school is still **open**, with **couple of last places remaining**. To register write to: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz). 
 
+
+## Map:
+
+<iframe style="border:none" src="https://mapy.com/s/nevedumufa" width="700" height="500" frameborder="0"></iframe>
