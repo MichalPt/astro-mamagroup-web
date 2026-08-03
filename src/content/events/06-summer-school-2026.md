@@ -39,9 +39,9 @@ Non-linear time and frequency resolved spectroscopy with coherent and incoherent
 
 ## Accommodation: 
 
-September 2&ndash;5 (or shorter upon preference), University dormitory Otava 
+September 2&ndash;5, University dormitory **Vltava** 
 
-(Chemická 954, 148 28 Prague 4, bus 177 and metro line C station Chodov), single-person rooms with bathroom shared between two, no fee
+(Chemická 953, 148 28 Prague 4, bus 177 and metro line C station Chodov), single-person rooms with bathroom shared between two, no fee
 
 ## Food: 
 
@@ -57,9 +57,11 @@ Expenses mostly covered, University canteen and selected restaurants
 
 ## Participant registration: 
 
-At present (July 14), we are approaching 20 confirmed participants from 8 research groups worldwide.
+The school registration is **closed**, we have a reached a **full capacity** of 25 international participants from all around the world. We are looking forward to an exciting school! 
 
-Registration for the school is still **open**, with **couple of last places remaining**. To register write to: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz). 
+## Contact
+
+To contact us, write to: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz). 
 
 
 ## Map:
