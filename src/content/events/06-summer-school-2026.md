@@ -46,6 +46,8 @@ September 2&ndash;5, University dormitory **Vltava**
 
 (Chemická 953, 148 28 Prague 4, bus 177 and metro line C station Chodov), single-person rooms with bathroom shared between two, no fee
 
+**Check-in:** after 12:00, registration desk is at the adjacent dormitory Otava, Chemická 954, 148 28 Prague 4
+
 ## Food: 
 
 Expenses mostly covered, University canteen and selected restaurants, Vegan/vegetarian option on request
