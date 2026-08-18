@@ -35,7 +35,10 @@ Non-linear time and frequency resolved spectroscopy with coherent and incoherent
 - Jakub Pšenčík, Charles University: Spectroscopy of molecular aggregates
 - Tomáš Mančal, Charles University: Open quantum system dynamics for spectroscopy
 - Pavel Malý, Charles University: Coherently and Action-detected spectroscopy
-- Participation fee: None, funded by Charles University
+
+## Participation fee: 
+
+None, funded by Charles University
 
 ## Accommodation: 
 
@@ -45,15 +48,19 @@ September 2&ndash;5, University dormitory **Vltava**
 
 ## Food: 
 
-Expenses mostly covered, University canteen and selected restaurants
+Expenses mostly covered, University canteen and selected restaurants, Vegan/vegetarian option on request
 
-## (very) Preliminary Schedule:
+## (somewhat) Preliminary Schedule:
 
-**Wednesday 2nd:** arrival, accommodation, voluntary get-together
+**Wednesday 2nd:** arrival, after 12:00 accommodation, voluntary get-together
 
-**Thursday 3rd:** 9:00&ndash;12:40 morning lectures, 14:00&ndash;17:10 afternoon lecture + Experimental demonstration, 17:10&ndash;18:20 poster session with coffee, 18:30 Common dinner
+**Thursday 3rd:** 9:00&ndash;12:20 morning lectures, 14:00&ndash;15:30 afternoon lecture, 15:50&ndash;18:30 Experimental excursion + poster session with coffee, 19:00 Common dinner
 
-**Friday 4th:** 9:00&ndash;12:40 morning lectures, 14:00&ndash;17:10 afternoon lectures with practical applications, 18:00 Walk through historical Prague, departure/voluntary get-together
+**Friday 4th:** 9:00&ndash;12:20 morning lectures, 14:00&ndash;15:30 afternoon lecture, 15:50&ndash;17:20 Practical exercises, 17:50 voluntary walk through historical Prague, departure
+
+## Poster session: 
+
+There is a poster session planned for Thursday afternoon, **all participants are encouraged to bring a poster** about their own work. Standard poster size (A0 or smaller, portrait), boards and things to hang the posters will be provided.  
 
 ## Participant registration: 
 
