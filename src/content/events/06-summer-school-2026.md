@@ -35,6 +35,7 @@ Non-linear time and frequency resolved spectroscopy with coherent and incoherent
 - Jakub Pšenčík, Charles University: Spectroscopy of molecular aggregates
 - Tomáš Mančal, Charles University: Open quantum system dynamics for spectroscopy
 - Pavel Malý, Charles University: Coherently and Action-detected spectroscopy
+- Matteo Bruschi, Charles University: Calculation of nonlinear spectra
 
 ## Participation fee: 
 
