@@ -69,6 +69,13 @@ There is a poster session planned for Thursday afternoon, **all participants are
 
 The school registration is **closed**, we have a reached a **full capacity** of 25 international participants from all around the world. We are looking forward to an exciting school! 
 
+## Organizers:
+
+- Pavel Malý
+- Tomáš Mančal
+- Matteo Bruschi 
+
+
 ## Contact
 
 To contact us, write to: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz). 
