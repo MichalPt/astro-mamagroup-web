@@ -58,7 +58,7 @@ Expenses mostly covered, University canteen and selected restaurants, Vegan/vege
 <iframe 
   src="https://docs.google.com/gview?url=https://mama-group.cz/events/06-prague-summer-school-2026/SummerSchool_schedule26.pdf&embedded=true" 
   width="100%" 
-  height="500px"
+  height="450px"
   style="border: none;">
     This browser does not support PDFs. Please download the PDF to view it: 
         <a href="/events/06-prague-summer-school-2026/SummerSchool_schedule26.pdf" target="_blank">
