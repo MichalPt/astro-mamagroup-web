@@ -53,17 +53,41 @@ September 2&ndash;5, University dormitory **Vltava**
 
 Expenses mostly covered, University canteen and selected restaurants, Vegan/vegetarian option on request
 
-## (somewhat) Preliminary Schedule:
+## Schedule:
 
-**Wednesday 2nd:** arrival, after 12:00 accommodation, voluntary get-together
+<iframe 
+  src="https://docs.google.com/gview?url=https://mama-group.cz/events/06-prague-summer-school-2026/SummerSchool_schedule26.pdf&embedded=true" 
+  width="100%" 
+  height="500px"
+  style="border: none;">
+    This browser does not support PDFs. Please download the PDF to view it: 
+        <a href="/events/06-prague-summer-school-2026/SummerSchool_schedule26.pdf" target="_blank">
+            Download PDF
+        </a>
+        .
+</iframe>
+
+<!-- **Wednesday 2nd:** arrival, after 12:00 accommodation, voluntary get-together
 
 **Thursday 3rd:** 9:00&ndash;12:20 morning lectures, 14:00&ndash;15:30 afternoon lecture, 15:50&ndash;18:30 Experimental excursion + poster session with coffee, 19:00 Common dinner
 
-**Friday 4th:** 9:00&ndash;12:20 morning lectures, 14:00&ndash;15:30 afternoon lecture, 15:50&ndash;17:20 Practical exercises, 17:50 voluntary walk through historical Prague, departure
+**Friday 4th:** 9:00&ndash;12:20 morning lectures, 14:00&ndash;15:30 afternoon lecture, 15:50&ndash;17:20 Practical exercises, 17:50 voluntary walk through historical Prague, departure -->
 
 ## Poster session: 
 
 There is a poster session planned for Thursday afternoon, **all participants are encouraged to bring a poster** about their own work. Standard poster size (A0 or smaller, portrait), boards and things to hang the posters will be provided.  
+
+<iframe 
+  src="https://docs.google.com/gview?url=https://mama-group.cz/events/06-prague-summer-school-2026/Poster_Session_Prague_School_2026.pdf&embedded=true" 
+  width="500px"
+  height="800px"
+  style="border: none;">
+    This browser does not support PDFs. Please download the PDF to view it: 
+        <a href="/events/06-prague-summer-school-2026/Poster_Session_Prague_School_2026.pdf" target="_blank">
+            Download PDF
+        </a>
+        .
+</iframe>
 
 ## Participant registration: 
 
@@ -76,9 +100,11 @@ The school registration is **closed**, we have a reached a **full capacity** of 
 - Matteo Bruschi 
 
 
-## Contact
+## Contacts
 
-To contact us, write to: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz). 
+Pavel Malý: [pavel.maly@matfyz.cuni.cz](mailto:pavel.maly@matfyz.cuni.cz), [+420 602 590 444](tel:+420602590444)
+
+Tomáš Mančal: [tomas.mancal@matfyz.cuni.cz](mailto:tomas.mancal@matfyz.cuni.cz)
 
 
 ## Map:
