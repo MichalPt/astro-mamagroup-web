@@ -55,10 +55,10 @@ Expenses mostly covered, University canteen and selected restaurants, Vegan/vege
 
 ## Schedule:
 
-<iframe 
+<iframe
+  class="pdf-embed pdf-embed-schedule"
   src="https://docs.google.com/gview?url=https://mama-group.cz/events/06-prague-summer-school-2026/SummerSchool_schedule26.pdf&embedded=true" 
   width="100%" 
-  height="450px"
   style="border: none;">
     This browser does not support PDFs. Please download the PDF to view it: 
         <a href="/events/06-prague-summer-school-2026/SummerSchool_schedule26.pdf" target="_blank">
@@ -77,10 +77,10 @@ Expenses mostly covered, University canteen and selected restaurants, Vegan/vege
 
 There is a poster session planned for Thursday afternoon, **all participants are encouraged to bring a poster** about their own work. Standard poster size (A0 or smaller, portrait), boards and things to hang the posters will be provided.  
 
-<iframe 
+<iframe
+  class="pdf-embed pdf-embed-poster"
   src="https://docs.google.com/gview?url=https://mama-group.cz/events/06-prague-summer-school-2026/Poster_Session_Prague_School_2026.pdf&embedded=true" 
-  width="500px"
-  height="800px"
+  width="100%"
   style="border: none;">
     This browser does not support PDFs. Please download the PDF to view it: 
         <a href="/events/06-prague-summer-school-2026/Poster_Session_Prague_School_2026.pdf" target="_blank">

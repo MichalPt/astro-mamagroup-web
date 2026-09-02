@@ -350,6 +350,18 @@ iframe {
     width: 100% !important;
 }
 
+.pdf-embed {
+	height: auto !important;
+}
+
+.pdf-embed-schedule {
+	aspect-ratio: 16 / 9;
+}
+
+.pdf-embed-poster {
+	aspect-ratio: 5 / 7;
+}
+
 /* images */
 
 .imgcircle {
