@@ -28,6 +28,22 @@ Institute of Physics, Faculty of Mathematics and Physics, Charles University, **
 
 Non-linear time and frequency resolved spectroscopy with coherent and incoherent (e.g. fluorescence) detection; from atomistic description to spectra of molecular aggregates,  related topics of open quantum systems theory and excitation dynamics, with practical demonstrations both computational (QuantaRhei in Python) and experimental (local laboratories).
 
+
+<div class="flex flex-col justify-center align-left">
+    <div class="flex mx-auto max-w-md">
+        <SecuredLink 
+            client:load
+            pwdVariable="PSS26_WS_NOTES_PWD_HASH" 
+            urlVariable="PSS26_WS_NOTES_URL"
+        >
+            <span class="flex text-sm citrus-link mb-2 px-3 py-1 bg-accent-two dark:bg-white text-bgColor dark:text-gray-800 rounded-lg justify-center items-center hover:brightness-110 dark:hover:brightness-90 transition-all duration-100">
+                <Icon name="ri:book-2-fill" class="inline-block mr-2 w-6 h-6" />
+                <span>Notes & Materials</span>
+            </span>
+        </SecuredLink>
+    </div>  
+</div>  
+
 ## Lecturers:
 
 - Jakub Dostál, ELI Beamlines: Ultrafast nonlinear TA and 2DES spectroscopy
@@ -75,7 +91,9 @@ Expenses mostly covered, University canteen and selected restaurants, Vegan/vege
 
 ## Poster session: 
 
-There is a poster session planned for Thursday afternoon, **all participants are encouraged to bring a poster** about their own work. Standard poster size (A0 or smaller, portrait), boards and things to hang the posters will be provided.  
+<!-- There is a poster session planned for Thursday afternoon, **all participants are encouraged to bring a poster** about their own work. Standard poster size (A0 or smaller, portrait), boards and things to hang the posters will be provided.   -->
+
+The poster session is scheduled for Thursday afternoon. The recommended size is A0 (or smaller) in portrait format. For the first time, this year we will announce **best poster awards**.
 
 <iframe
   class="pdf-embed pdf-embed-poster"
