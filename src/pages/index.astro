@@ -1,13 +1,13 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
-import NewsPreview from "@/components/news/NewsPreview.astro";
-import { collectionDateSort, collectionDateIntervalSort } from "@/utils/date";
-import TitlePageLayout from "@/layouts/TitlePageBase.astro";
-import EmblaCarousel from "@/components/carousel/EmblaCarousel";
-import Research from "@/components/Research.astro";
-import EventEntry from "@/components/events/EventEntry.astro";
-import { siteSettings } from "@/site.config";
-import NewsPreviewList from "@/components/news/NewsPreviewList.astro";
+import NewsPreview from "../components/news/NewsPreview.astro";
+import { collectionDateSort, collectionDateIntervalSort } from "../utils/date";
+import TitlePageLayout from "../layouts/TitlePageBase.astro";
+import EmblaCarousel from "../components/carousel/EmblaCarousel";
+import Research from "../components/Research.astro";
+import EventEntry from "../components/events/EventEntry.astro";
+import { siteSettings } from "../site.config";
+import NewsPreviewList from "../components/news/NewsPreviewList.astro";
 
 const meta = {
     description: "Research group at Charles University in Prague, Czechia. We focus on nonlinear spectroscopy of molecular aggregates and theory of open quantum systems.",
@@ -95,6 +95,9 @@ const options = { direction: 'ltr', loop: true };
 		<div class="mt-4 flex flex-col w-full md:grid md:grid-cols-2 md:grow align-content-center gap-4">
 			{ moreNewsByDate.map((p) => <NewsPreviewList post={p} />)}
 		</div>
+		<a href="/news" class="mt-6 inline-flex items-center rounded-lg border border-accent-two px-4 py-1.5 text-sm font-medium text-accent-two transition-colors hover:bg-accent-two hover:text-bgColor">
+			show all news
+		</a>
 	</section>
 
 	<section class="mx-auto flex flex-col items-center justify-center mb-6 client:visible">
@@ -106,6 +109,9 @@ const options = { direction: 'ltr', loop: true };
 				<EventEntry event={event}/>
 			)}
 		</div>
+		<a href="/events" class="mt-6 inline-flex items-center rounded-lg border border-accent-two px-4 py-1.5 text-sm font-medium text-accent-two transition-colors hover:bg-accent-two hover:text-bgColor">
+			show all events
+		</a>
 	</section>
 </TitlePageLayout>
 
