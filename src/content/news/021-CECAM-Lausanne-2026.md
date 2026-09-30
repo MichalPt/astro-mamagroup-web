@@ -6,7 +6,7 @@ tags: ['school','CECAM','EPFL','Lausanne','Switzerland']
 teaser: "We attended the CECAM flagship school on computational spectroscopic methods across the electromagnetic spectrum in Lausanne, Switzerland."
 ---
 
-In the second week of September, 7.--11. 10. 2026, [Matteo](/group/bruschi), [Michal](/group/ptacek) and [Kateřina](/group/charvatova) attended the flagship school "SpectroDynamics 2026: Connecting computational spectroscopic methods across the electromagnetic spectrum". Hosted at EPFL CECAM-HQ, Lausanne, Switzerland, from September 7 to September 11, 2026, the five-day intensive event brought together computational researchers (and some experimentalists as well) from around the world to bridge gaps between different areas of molecular simulation and spectroscopy.
+[Matteo](/group/bruschi), [Michal](/group/ptacek) and [Kateřina](/group/charvatova) attended the flagship school "SpectroDynamics 2026: Connecting computational spectroscopic methods across the electromagnetic spectrum". Hosted at EPFL CECAM-HQ, Lausanne, Switzerland, from September 7 to September 11, 2026, the five-day intensive event brought together computational researchers (and some experimentalists as well) from around the world to bridge gaps between different areas of molecular simulation and spectroscopy.
 
 ![venue](/news/lausanne2026-venue.WebP)
 
