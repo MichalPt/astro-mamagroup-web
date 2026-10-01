@@ -1,0 +1,29 @@
+{  
+    "courseName": "Quantum Optics I - Tutorial",
+    "courseCode": "NBCM067",
+    "courseDescription": "Quantum theory of electromagnetic radiation, interaction of light with matter, kinetic processes, introduction into spectroscopy and theory of open systems.",
+    "language": "Czech/English",
+    "semester": "winter",
+    "courseVisible": true,
+    "showDates": true,
+  "content": [
+        {
+            "sectionTitle": "Tutorial materials",
+            "sectionVisible": true,
+            "sectionContent": [
+                {
+                    "subsectionTitle": "Updated list of problems",
+                    "subsectionVisible": true,
+                    "subsectionContent": [
+                        {
+                            "title": "Tutorial problems",
+                            "pdfName": "KOI_cvic_problems_2627.pdf",
+                            "type": "pdf",
+                            "description": ""
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
