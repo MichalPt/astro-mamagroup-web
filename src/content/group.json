@@ -225,5 +225,17 @@
             "from":2026, 
             "to":2026
         }
+    },
+    {
+        "name": "Michael Šrámek",
+        "position": "PhD student",
+        "path": "sramek",
+        "photo": "",
+        "active": "True",
+        "years":{
+            "from":2026, 
+            "to":""
+        },
+        "email": "michael.sramek283@student.cuni.cz"
     }
 ]
