@@ -14,6 +14,6 @@ The progamme was intensive, with a variety of topics covered in the talks. In to
 
 ![The meeting venue, Charles University, Prague, Czech Republic](/news/maymeeting2026-2.WebP)
 
-
+*autoři fotografií: Michal Ptáček, Tomáš Mančal*
 
 

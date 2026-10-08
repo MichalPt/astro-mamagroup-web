@@ -39,3 +39,5 @@ Each block of lectures was supported by an exercise session providing hands-on e
 In the free time, we explored the natural and cultural (and culinary) beauties of the city and the surrounding area. Some of us even enjoyed the perfect water temperature of Lac Léman for swimming.
 
 ![Lausanne](/news/lausanne2026-city.WebP)
+
+*autoři fotografií: Michal Ptáček, Kateřina Charvátová*
